@@ -6,7 +6,6 @@ with open('data.json') as f:
 with open('template.html', encoding='utf-8') as f:
     template = f.read()
 
-# Fix unicode placeholders
 template = template.replace('_WARNING_', '\u26a0\ufe0f')
 template = template.replace('_RED_', '\U0001f534')
 template = template.replace('_CLOCK_', '\u23f1\ufe0f')
@@ -19,7 +18,6 @@ template = template.replace('_COPY_', '\u00a9')
 template = template.replace('_BACK_', '\u2190')
 
 services = data['services']
-cities = data['cities']
 
 service_content = {
     'plumber': {
@@ -69,50 +67,66 @@ service_content = {
     },
 }
 
+# State abbreviation mapping
+state_abbr = {}
+for state_key, state_info in data["states"].items():
+    state_abbr[state_key] = state_info["name"]
+
+# Clean old directories
+existing_dirs = [d for d in os.listdir('.') if os.path.isdir(d) and d not in ['.git','node_modules','__pycache__','.hermes']]
+for d in existing_dirs:
+    if d in data["states"] or d in ['data.json','template.html','generate.py','index.html','providers.json','dashboard.html','ops.bat','outreach_emails.txt','robots.txt','sitemap.xml','billing_report.txt','AGENT_COMMANDS.md','SEARCH_CRITERIA.md']:
+        continue
+    shutil.rmtree(d, ignore_errors=True)
+
 total = 0
-for city_slug, city in cities.items():
-    for svc in services:
-        svc_id = svc['id']
-        sc = service_content.get(svc_id, {})
+ext_map = {'plumber':'0199','electrician':'0200','locksmith':'0300','hvac':'0400','roofer':'0500','mechanic':'0600','appliance':'0700','pest-control':'0800','water-damage':'0900'}
 
-        # Build nearby links
-        nearby = []
-        for other in services:
-            if other['id'] != svc_id:
-                nearby.append(f'<a href="/{city_slug}/{other["id"]}/">{other["icon"]} Emergency {other["name"]}</a>')
+for state_key, state_info in data["states"].items():
+    state_name = state_info["name"]
+    state_abbr_code = state_info["abbr"]
+    
+    for city_slug, city in state_info["cities"].items():
+        for svc in services:
+            svc_id = svc['id']
+            sc = service_content.get(svc_id, {})
 
-        # Neighborhood list
-        n_list = '\n    '.join([f'<li>{n}</li>' for n in city['neighborhoods']])
+            # Nearby links (other services in same city)
+            nearby = []
+            for other in services:
+                if other['id'] != svc_id:
+                    nearby.append(f'<a href="/{state_key}/{city_slug}/{other["id"]}/">{other["icon"]} Emergency {other["name"]}</a>')
 
-        # Phone
-        phone = city['phones'].get(svc_id, '')
-        area = city['areaCode']
-        ext_map = {'plumber':'0199','electrician':'0200','locksmith':'0300','hvac':'0400','roofer':'0500','mechanic':'0600','appliance':'0700','pest-control':'0800','water-damage':'0900'}
-        phone_display = f'({area}) 555-{ext_map.get(svc_id, "0000")}'
+            n_list = '\n    '.join([f'<li>{n}</li>' for n in city['neighborhoods']])
+            
+            phone = city['phones'].get(svc_id, '')
+            area = city['areaCode']
+            phone_display = f'({area}) 555-{ext_map.get(svc_id, "0000")}'
 
-        html = template
-        html = html.replace('__TITLE__', f'Emergency {svc["name"]} {city["name"]} \u2014 24/7 Services | Call Now')
-        html = html.replace('__DESCRIPTION__', f'Emergency {svc["name"].lower()} in {city["name"]} available 24/7. {sc.get("emergency_examples","")[:120]}. Licensed & insured. 30-minute response. Call now.')
-        html = html.replace('__CITY_NAME__', city['name'])
-        html = html.replace('__CITY_STATE__', city['state'])
-        html = html.replace('__CITY_SLUG__', city_slug)
-        html = html.replace('__SERVICE_NAME__', svc['name'])
-        html = html.replace('__SERVICE_SLUG__', svc_id)
-        html = html.replace('__PHONE__', phone)
-        html = html.replace('__PHONE_DISPLAY__', phone_display)
-        html = html.replace('__AVG_COST__', svc['avgCost'])
-        html = html.replace('__HERO_DESC__', sc.get('hero_desc','').replace('__CITY_NAME__', city['name']))
-        html = html.replace('__EMERGENCY_EXAMPLES__', sc.get('emergency_examples',''))
-        html = html.replace('__SERVICE_ITEMS__', sc.get('items',''))
-        html = html.replace('__NEIGHBORHOODS__', json.dumps(city['neighborhoods']))
-        html = html.replace('__NEIGHBORHOOD_LIST__', n_list)
-        html = html.replace('__NEARBY_LINKS__', '\n    '.join(nearby))
+            html = template
+            html = html.replace('__TITLE__', f'Emergency {svc["name"]} {city["name"]}, {state_abbr_code} \u2014 24/7 Services | Call Now')
+            html = html.replace('__DESCRIPTION__', f'Emergency {svc["name"].lower()} in {city["name"]}, {state_abbr_code} available 24/7. {sc.get("emergency_examples","")[:120]}. Licensed & insured. 30-minute response. Call now.')
+            html = html.replace('__STATE_NAME__', state_name)
+            html = html.replace('__STATE_SLUG__', state_key)
+            html = html.replace('__CITY_NAME__', city['name'])
+            html = html.replace('__CITY_STATE__', state_abbr_code)
+            html = html.replace('__CITY_SLUG__', city_slug)
+            html = html.replace('__SERVICE_NAME__', svc['name'])
+            html = html.replace('__SERVICE_SLUG__', svc_id)
+            html = html.replace('__PHONE__', phone)
+            html = html.replace('__PHONE_DISPLAY__', phone_display)
+            html = html.replace('__AVG_COST__', svc['avgCost'])
+            html = html.replace('__HERO_DESC__', sc.get('hero_desc','').replace('__CITY_NAME__', city['name']))
+            html = html.replace('__EMERGENCY_EXAMPLES__', sc.get('emergency_examples',''))
+            html = html.replace('__SERVICE_ITEMS__', sc.get('items',''))
+            html = html.replace('__NEIGHBORHOODS__', json.dumps(city['neighborhoods']))
+            html = html.replace('__NEIGHBORHOOD_LIST__', n_list)
+            html = html.replace('__NEARBY_LINKS__', '\n    '.join(nearby))
 
-        dir_path = os.path.join(city_slug, svc_id)
-        os.makedirs(dir_path, exist_ok=True)
-        with open(os.path.join(dir_path, 'index.html'), 'w', encoding='utf-8') as f:
-            f.write(html)
-        total += 1
-        print(f'Created: /{city_slug}/{svc_id}/')
+            dir_path = os.path.join(state_key, city_slug, svc_id)
+            os.makedirs(dir_path, exist_ok=True)
+            with open(os.path.join(dir_path, 'index.html'), 'w', encoding='utf-8') as f:
+                f.write(html)
+            total += 1
 
-print(f'\nDone! {total} pages generated.')
+print(f'Done! {total} pages generated across {len(data["states"])} states.')
