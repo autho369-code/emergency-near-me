@@ -46,7 +46,27 @@ service_content = {
         'emergency_examples': 'Roof leak during storm, wind damage, fallen tree on roof, missing shingles, water coming through ceiling, ice dam, emergency tarping needed',
         'hero_desc': '__CITY_NAME__ water coming through the ceiling? Storm rip off shingles? Our emergency roofers respond fast with emergency tarping and permanent repair.',
         'items': '<div class="svc"><h3>Leak Repair</h3><p>Emergency patch & seal</p></div><div class="svc"><h3>Storm Damage</h3><p>Wind & hail emergency repair</p></div><div class="svc"><h3>Tree Damage</h3><p>Impact assessment & tarping</p></div><div class="svc"><h3>Emergency Tarp</h3><p>Immediate water protection</p></div><div class="svc"><h3>Missing Shingles</h3><p>Replacement & matching</p></div><div class="svc"><h3>Ice Dam</h3><p>Removal & prevention</p></div><div class="svc"><h3>Ceiling Leak</h3><p>Trace source & fix</p></div><div class="svc"><h3>Inspection</h3><p>Full roof assessment</p></div>'
-    }
+    },
+    'mechanic': {
+        'emergency_examples': 'Dead battery, flat tire, engine failure, car will not start, overheated engine, check engine light, brake failure, alternator failure',
+        'hero_desc': '__CITY_NAME__ dead battery? Flat tire on the highway? Engine will not start? Our emergency mechanics are on the way. 24/7 roadside assistance, 30-minute response.',
+        'items': '<div class="svc"><h3>Dead Battery</h3><p>Jump start & replacement</p></div><div class="svc"><h3>Flat Tire</h3><p>Change & tire repair</p></div><div class="svc"><h3>Engine Failure</h3><p>Diagnosis & emergency repair</p></div><div class="svc"><h3>Car Will Not Start</h3><p>Starter, alternator, fuel issues</p></div><div class="svc"><h3>Overheated Engine</h3><p>Coolant leak & radiator fix</p></div><div class="svc"><h3>Brake Failure</h3><p>Emergency brake repair</p></div><div class="svc"><h3>Lockout Service</h3><p>Keys locked in car</p></div><div class="svc"><h3>Fuel Delivery</h3><p>Ran out of gas? We bring it</p></div>'
+    },
+    'appliance': {
+        'emergency_examples': 'Refrigerator stopped cooling, washing machine flooding, oven will not heat, dryer not working, dishwasher leak, freezer failure, food spoiling',
+        'hero_desc': '__CITY_NAME__ fridge died with $500 in groceries? Washing machine flooding the laundry room? Our emergency appliance repair techs respond fast. Same-day service.',
+        'items': '<div class="svc"><h3>Refrigerator</h3><p>Not cooling? Emergency fix</p></div><div class="svc"><h3>Washing Machine</h3><p>Leak, spin failure, no drain</p></div><div class="svc"><h3>Oven/Stove</h3><p>Will not heat? Same-day repair</p></div><div class="svc"><h3>Dryer</h3><p>No heat, will not spin</p></div><div class="svc"><h3>Dishwasher</h3><p>Leak, will not drain</p></div><div class="svc"><h3>Freezer</h3><p>Thawing out? Emergency service</p></div><div class="svc"><h3>Water Heater</h3><p>No hot water? We fix it</p></div><div class="svc"><h3>Garbage Disposal</h3><p>Jammed or broken? Fast fix</p></div>'
+    },
+    'pest-control': {
+        'emergency_examples': 'Wasp nest inside or near entry, rodent in the house, bed bug discovery, termite swarm, cockroach infestation, ants invading kitchen, bee hive in wall',
+        'hero_desc': '__CITY_NAME__ wasps in the house? Rodent in the kitchen? Our emergency pest control teams respond within the hour. Same-day extermination. 24/7 availability.',
+        'items': '<div class="svc"><h3>Wasp/Bee Removal</h3><p>Nest removal & prevention</p></div><div class="svc"><h3>Rodent Control</h3><p>Mice, rats, squirrels</p></div><div class="svc"><h3>Bed Bugs</h3><p>Heat treatment & chemical</p></div><div class="svc"><h3>Termites</h3><p>Inspection & colony treatment</p></div><div class="svc"><h3>Roaches</h3><p>Infestation treatment</p></div><div class="svc"><h3>Ants</h3><p>Colony location & elimination</p></div><div class="svc"><h3>Wildlife</h3><p>Raccoon, skunk, snake removal</p></div><div class="svc"><h3>Fumigation</h3><p>Whole-home treatment</p></div>'
+    },
+    'water-damage': {
+        'emergency_examples': 'Burst pipe flooding, sewage backup, water heater rupture, storm flooding, basement flood, roof leak water damage, appliance overflow, mold growth',
+        'hero_desc': '__CITY_NAME__ water flooding your home? Sewage backing up? Our emergency restoration teams respond in 30 minutes. Water extraction, drying, and full restoration.',
+        'items': '<div class="svc"><h3>Water Extraction</h3><p>Industrial pumps & vacuums</p></div><div class="svc"><h3>Sewage Cleanup</h3><p>Hazmat-trained, full sanitation</p></div><div class="svc"><h3>Structural Drying</h3><p>Commercial dehumidifiers & fans</p></div><div class="svc"><h3>Mold Remediation</h3><p>Detection, removal, prevention</p></div><div class="svc"><h3>Flood Damage</h3><p>Basement & ground floor restoration</p></div><div class="svc"><h3>Fire & Smoke</h3><p>Post-fire water damage cleanup</p></div><div class="svc"><h3>Pipe Burst</h3><p>Emergency shut-off & dry-out</p></div><div class="svc"><h3>Insurance Claims</h3><p>Direct billing & documentation</p></div>'
+    },
 }
 
 total = 0
@@ -67,7 +87,7 @@ for city_slug, city in cities.items():
         # Phone
         phone = city['phones'].get(svc_id, '')
         area = city['areaCode']
-        ext_map = {'plumber':'0199','electrician':'0200','locksmith':'0300','hvac':'0400','roofer':'0500'}
+        ext_map = {'plumber':'0199','electrician':'0200','locksmith':'0300','hvac':'0400','roofer':'0500','mechanic':'0600','appliance':'0700','pest-control':'0800','water-damage':'0900'}
         phone_display = f'({area}) 555-{ext_map.get(svc_id, "0000")}'
 
         html = template
