@@ -1,0 +1,27 @@
+============================================================
+EmergencyNearMe.com - Monthly Billing Report
+Generated: 2026-06-16
+============================================================
+
+STATUS: No active providers. All 4,545 slots are in "searching" status.
+
+ACTIVE PROVIDERS: 0
+TOTAL LEADS (this month): 0
+TOTAL REVENUE (this month): $0.00
+
+------------------------------------------------------------
+No individual provider line items (zero active slots).
+------------------------------------------------------------
+
+Summary:
+  Total slots:        4,545
+  Active:                  0
+  Searching:           4,545
+  Contacted:               0
+  Leads this month:        0
+  Revenue this month:  $0.00
+
+Next step: recruit providers to fill active slots and start
+generating leads. Each lead = $30 default rate.
+
+============================================================
