@@ -50,6 +50,11 @@
 
 <div class="summary-bar" id="summary"></div>
 
+<div class="summary-bar" id="agent-bar" style="background:#0d1117;border-color:#238636">
+  <span>🤖 <b>Agent Status</b></span>
+  <span id="agent-status">Loading...</span>
+</div>
+
 <div class="filters">
   <select id="filterCity"><option value="">All Cities</option></select>
   <select id="filterService"><option value="">All Services</option></select>
@@ -148,6 +153,18 @@ function render() {
     `<span>Showing <b>${rows.length}</b> of <b>${DATA._meta?.total_slots||0}</b> slots</span>` +
     `<span>Active: <b style="color:#3fb950">${stats.active||0}</b></span>` +
     `<span>Monthly revenue: <b style="color:#3fb950">$${stats.revenue.toLocaleString()}</b></span>`;
+
+  // Agent status from real data
+  let agentHtml = '';
+  if (DATA._meta) {
+    let m = DATA._meta;
+    agentHtml += `<span>🔍 Found: <b>${m.contacted||0} providers</b></span>`;
+    agentHtml += `<span>✅ Active: <b style="color:#3fb950">${m.active||0}</b></span>`;
+    agentHtml += `<span>🔎 Searching: <b>${m.searching||0} slots</b></span>`;
+    agentHtml += `<span>📅 Updated: <b>${(m.updated||'').slice(0,10)}</b></span>`;
+    agentHtml += `<span>💰 Revenue: <b style="color:#3fb950">$${(m.revenue_month||0).toLocaleString()}</b></span>`;
+  }
+  document.getElementById('agent-status').innerHTML = agentHtml;
 
   // Table
   let html = '';
