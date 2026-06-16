@@ -125,17 +125,38 @@ function render() {
     if (cityF && c._name !== cityF) continue;
     for (let sk in c) {
       if (sk.startsWith('_')) continue;
-      let p = c[sk];
+      let vendors = c[sk];  // Array of vendor objects
+      if (!Array.isArray(vendors)) continue;
       if (svcF && sk !== svcF) continue;
-      if (statusF && p.status !== statusF) continue;
-      if (searchF && p.provider_name && !p.provider_name.toLowerCase().includes(searchF)) continue;
+      // Check if any vendor matches search
+      let anyMatch = !searchF;
+      if (searchF) {
+        for (let v of vendors) {
+          if (v.provider_name && v.provider_name.toLowerCase().includes(searchF)) {
+            anyMatch = true; break;
+          }
+        }
+      }
+      if (!anyMatch) continue;
 
-      stats[p.status] = (stats[p.status]||0) + 1;
-      stats.leads += p.leads_month||0;
-      stats.revenue += (p.leads_month||0) * (p.rate||0);
+      for (let v of vendors) {
+        if (statusF && v.status !== statusF) continue;
+        stats[v.status] = (stats[v.status]||0) + 1;
+        stats.leads += v.leads_month||0;
+        stats.revenue += (v.leads_month||0) * (v.rate||0);
+      }
 
-      let statusClass = p.status||'searching';
-      rows.push({city:c._name,state:c._state,service:sk,serviceIcon:ICONS[sk]||'',provider:p,statusClass:statusClass});
+      // Only add row if at least one vendor matches
+      let matchingVendors = vendors.filter(v => !statusF || v.status === statusF);
+      if (matchingVendors.length > 0) {
+        rows.push({
+          city: c._name,
+          state: c._state,
+          service: sk,
+          serviceIcon: ICONS[sk]||'',
+          providers: vendors
+        });
+      }
     }
   }
 
@@ -169,16 +190,20 @@ function render() {
   // Table
   let html = '';
   rows.forEach(r=>{
-    html += `<tr>
-      <td>${r.city}, ${r.state}</td>
-      <td>${r.serviceIcon} ${r.service}</td>
-      <td><span class="status ${r.statusClass}">${r.provider.status}</span></td>
-      <td><strong>${r.provider.provider_name||'—'}</strong></td>
-      <td><a href="tel:${r.provider.provider_phone}" class="phone">${r.provider.provider_phone||'—'}</a></td>
-      <td>${r.provider.leads_month||0}</td>
-      <td>$${r.provider.rate||0}</td>
-      <td>$${((r.provider.leads_month||0)*(r.provider.rate||0)).toLocaleString()}</td>
-    </tr>`;
+    r.providers.forEach((v,i)=>{
+      let statusClass = v.status||'searching';
+      let rowStyle = i === 0 ? '' : 'style="opacity:0.7"';
+      html += `<tr ${rowStyle}>
+        <td>${i===0 ? r.city+', '+r.state : ''}</td>
+        <td>${i===0 ? r.serviceIcon+' '+r.service : ''}</td>
+        <td><span class="status ${statusClass}">${v.status}</span></td>
+        <td><strong>${v.provider_name||'—'}</strong></td>
+        <td><a href="tel:${v.provider_phone}" class="phone">${v.provider_phone||'—'}</a></td>
+        <td>${v.leads_month||0}</td>
+        <td>$${v.rate||0}</td>
+        <td>$${((v.leads_month||0)*(v.rate||0)).toLocaleString()}</td>
+      </tr>`;
+    });
   });
   document.getElementById('tbody').innerHTML = html || '<tr><td colspan="8" style="text-align:center;color:#8b949e;padding:40px">No results match your filters</td></tr>';
   document.getElementById('updated').textContent = DATA._meta?.updated ? 'Updated: ' + DATA._meta.updated : '';
