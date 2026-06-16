@@ -3,7 +3,7 @@
     "total_slots": 4545,
     "active": 10,
     "searching": 4515,
-    "contacted": 10,
+    "contacted": 20,
     "leads_month": 0,
     "revenue_month": 0,
     "updated": "2026-06-16"
@@ -8240,7 +8240,7 @@
     "_name": "Chicago",
     "_state": "IL",
     "plumber": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Chicago Drain Masters",
       "provider_phone": "+146****3033",
       "provider_email": null,
@@ -8253,7 +8253,7 @@
       "notes": "Found via web research (real verified provider)"
     },
     "electrician": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Jimco Electric",
       "provider_phone": "+170****3245",
       "provider_email": null,
@@ -8266,7 +8266,7 @@
       "notes": "Found via web research (real verified provider)"
     },
     "locksmith": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "The Pro Lock",
       "provider_phone": "+131****2222",
       "provider_email": null,
@@ -8279,7 +8279,7 @@
       "notes": "Found via web research (real verified provider)"
     },
     "hvac": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Brown's Heating & Cooling",
       "provider_phone": "+170****8134",
       "provider_email": null,
@@ -8344,7 +8344,7 @@
       "notes": ""
     },
     "water-damage": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Romexterra Restoration",
       "provider_phone": "+131****9620",
       "provider_email": null,
@@ -8361,7 +8361,7 @@
     "_name": "Aurora",
     "_state": "IL",
     "plumber": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Aurora Naperville Plumbing",
       "provider_phone": "+163****3711",
       "provider_email": null,
@@ -8465,7 +8465,7 @@
       "notes": ""
     },
     "water-damage": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Romexterra Restoration",
       "provider_phone": "+131****5741",
       "provider_email": null,
@@ -8482,7 +8482,7 @@
     "_name": "Rockford",
     "_state": "IL",
     "plumber": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Rockford Plumbing Co",
       "provider_phone": "+181****0589",
       "provider_email": null,
@@ -8586,7 +8586,7 @@
       "notes": ""
     },
     "water-damage": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "EchoDry Team",
       "provider_phone": "+181****8914",
       "provider_email": null,
@@ -8707,7 +8707,7 @@
       "notes": ""
     },
     "water-damage": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "ServiceMaster Restore",
       "provider_phone": "+163****0030",
       "provider_email": null,
