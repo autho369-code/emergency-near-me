@@ -8240,22 +8240,22 @@
     "_name": "Chicago",
     "_state": "IL",
     "plumber": {
-      "status": "contacted",
-      "provider_name": "Chicago Drain Masters",
-      "provider_phone": "+146****3033",
+      "status": "found",
+      "provider_name": "D&B Plumbing",
+      "provider_phone": "+1773XXX0199",
       "provider_email": null,
-      "provider_website": "https://chicagodrainmasters.com",
+      "provider_website": "https://www.db-plumbing.com/",
       "leads_month": 0,
       "leads_total": 0,
       "rate": 30,
       "contacted_at": "2026-06-16T06:00:24.622297+00:00",
       "active_since": null,
-      "notes": "Found via web research (real verified provider)"
+      "notes": "Real phone: 773.406.0030 \u2014 hand-picked by Mirsad"
     },
     "electrician": {
-      "status": "contacted",
-      "provider_name": "Jimco Electric",
-      "provider_phone": "+170****3245",
+      "status": "found",
+      "provider_name": "Highlights Chicago",
+      "provider_phone": "+1773XXXX202",
       "provider_email": null,
       "provider_website": "https://www.jimcoelectric.com",
       "leads_month": 0,
@@ -8263,12 +8263,12 @@
       "rate": 30,
       "contacted_at": "2026-06-16T06:00:24.622297+00:00",
       "active_since": null,
-      "notes": "Found via web research (real verified provider)"
+      "notes": "Hand-picked by Mirsad"
     },
     "locksmith": {
-      "status": "contacted",
-      "provider_name": "The Pro Lock",
-      "provider_phone": "+131****2222",
+      "status": "found",
+      "provider_name": "MegaLock / Ashland Lock",
+      "provider_phone": "+1773XXXX303",
       "provider_email": null,
       "provider_website": "https://www.theprolock.com",
       "leads_month": 0,
@@ -8276,12 +8276,12 @@
       "rate": 30,
       "contacted_at": "2026-06-16T06:00:24.622297+00:00",
       "active_since": null,
-      "notes": "Found via web research (real verified provider)"
+      "notes": "MegaLock & Ashland Lock \u2014 hand-picked by Mirsad"
     },
     "hvac": {
-      "status": "contacted",
-      "provider_name": "Brown's Heating & Cooling",
-      "provider_phone": "+170****8134",
+      "status": "found",
+      "provider_name": "AA Heating and Cooling",
+      "provider_phone": "+1773XXXX404",
       "provider_email": null,
       "provider_website": "https://brownshvac.net",
       "leads_month": 0,
@@ -8289,12 +8289,12 @@
       "rate": 30,
       "contacted_at": "2026-06-16T06:00:24.622297+00:00",
       "active_since": null,
-      "notes": "Found via web research (real verified provider)"
+      "notes": "Hand-picked by Mirsad"
     },
     "roofer": {
-      "status": "searching",
-      "provider_name": "Available",
-      "provider_phone": "+1773XXXX0505",
+      "status": "found",
+      "provider_name": "Kiko and Son Porch Builders",
+      "provider_phone": "+1773XXXX505",
       "provider_email": null,
       "provider_website": null,
       "leads_month": 0,
@@ -8302,7 +8302,7 @@
       "rate": 30,
       "contacted_at": null,
       "active_since": null,
-      "notes": ""
+      "notes": "Hand-picked by Mirsad"
     },
     "mechanic": {
       "status": "searching",
