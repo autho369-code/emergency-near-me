@@ -2,17 +2,17 @@
   "_meta": {
     "total_slots": 4545,
     "active": 0,
-    "searching": 4535,
-    "contacted": 0,
+    "searching": 4525,
+    "contacted": 10,
     "leads_month": 0,
     "revenue_month": 0,
-    "updated": "2026-06-15T22:34:35.035092"
+    "updated": "2026-06-15T23:00:00"
   },
   "birmingham": {
     "_name": "Birmingham",
     "_state": "AL",
     "plumber": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "One Source Heating, Cooling, Plumbing & Electrical",
       "provider_phone": "+12055091929",
       "provider_email": null,
@@ -25,7 +25,7 @@
       "notes": "Found via web research (real verified provider)"
     },
     "electrician": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Trinity Contractors",
       "provider_phone": "+12056555099",
       "provider_email": null,
@@ -38,7 +38,7 @@
       "notes": "Found via web research (real verified provider)"
     },
     "locksmith": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Locksmith Birmingham 24/7",
       "provider_phone": "+12055906084",
       "provider_email": null,
@@ -51,7 +51,7 @@
       "notes": "Found via web research (real verified provider)"
     },
     "hvac": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "AGA Services",
       "provider_phone": "+12058624182",
       "provider_email": null,
@@ -64,7 +64,7 @@
       "notes": "Found via web research (real verified provider)"
     },
     "roofer": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Alabama Discount Roofing",
       "provider_phone": "+12058217247",
       "provider_email": null,
@@ -77,7 +77,7 @@
       "notes": "Found via web research (real verified provider)"
     },
     "mechanic": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Birmingham Mobile Mechanic Co.",
       "provider_phone": "+12058557929",
       "provider_email": null,
@@ -90,7 +90,7 @@
       "notes": "Found via web research (real verified provider)"
     },
     "appliance": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "A2Z Appliance Repairs",
       "provider_phone": "+12057575718",
       "provider_email": null,
@@ -103,7 +103,7 @@
       "notes": "Found via web research (real verified provider)"
     },
     "pest-control": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Vulcan Termite & Pest Control",
       "provider_phone": "+12056634200",
       "provider_email": null,
@@ -116,7 +116,7 @@
       "notes": "Found via web research (real verified provider)"
     },
     "water-damage": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Service Restoration of Alabama",
       "provider_phone": "+12052777240",
       "provider_email": null,
@@ -133,7 +133,7 @@
     "_name": "Montgomery",
     "_state": "AL",
     "plumber": {
-      "status": "found",
+      "status": "contacted",
       "provider_name": "Cole Plumbing",
       "provider_phone": "+13344589413",
       "provider_email": null,
