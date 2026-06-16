@@ -216,9 +216,9 @@ function renderServices(key) {
     html += '<h3>'+s.name+'</h3>';
     html += '<p class="desc">'+s.description+'</p>';
     html += '<p class="cost">Avg. cost: '+s.avgCost+'</p>';
-    html += '<a href="tel:'+(city.phones[s.id]||'')+'" class="phone">';
+    html += '<a href="tel:'+(city.phones[s.id]||'')+'" class="phone track-call" data-phone="'+(city.phones[s.id]||'')+'" data-city="'+key+'" data-service="'+s.id+'">';
     html += '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>';
-    html += 'Call Now';
+    html += '<span class="phone-text">Call Now</span>';
     html += '</a>';
     html += '</div>';
   });
@@ -231,6 +231,32 @@ function showNoCity() {
   document.getElementById('results').style.display = 'none';
   document.getElementById('no-city').style.display = 'block';
 }
+</script>
+
+<script>
+// Click tracker for call buttons (must be after renderServices adds them to DOM)
+document.addEventListener('click', function(e) {
+  var btn = e.target.closest('.track-call');
+  if (!btn) return;
+
+  var city = btn.getAttribute('data-city');
+  var service = btn.getAttribute('data-service');
+  var key = 'call_' + city + '_' + service;
+
+  var counts = JSON.parse(localStorage.getItem('emn_call_counts') || '{}');
+  counts[key] = (counts[key] || 0) + 1;
+  localStorage.setItem('emn_call_counts', JSON.stringify(counts));
+
+  fetch('https://api.countapi.xyz/hit/emergencynearme.com/' + key).catch(function(){});
+
+  e.preventDefault();
+  var phone = btn.getAttribute('data-phone');
+  var span = btn.querySelector('.phone-text');
+  if (span) span.textContent = 'Connecting...';
+  setTimeout(function() {
+    window.location.href = 'tel:' + phone;
+  }, 200);
+});
 </script>
 
 </body>

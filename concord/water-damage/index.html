@@ -94,9 +94,9 @@
   <div class="badge">🔴 24/7 EMERGENCY SERVICE</div>
   <h1>Emergency Water Damage _🏙️NAME__<br><span style="font-size:20px;font-weight:400;opacity:0.8">30-Minute Response — Day or Night</span></h1>
   <p>Concord water flooding your home? Sewage backing up? Our emergency restoration teams respond in 30 minutes. Water extraction, drying, and full restoration.</p>
-  <a href="tel:+1925XXXX0909" class="cta-phone">
+  <a href="tel:+1925XXXX0909" class="cta-phone track-call" data-phone="+1925XXXX0909" data-city="_🏙️SLUG__" data-service="water-damage">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
-    (925) 555-0900
+    <span class="phone-text">(925) 555-0900</span>
   </a>
   <div class="cta-sub">Free estimate over the phone — no obligation</div>
 </section>
@@ -167,9 +167,9 @@
 <section class="cta-banner">
   <h2>Water Damage On the Way in 30 Minutes</h2>
   <p>Don't let a small problem become a big expense. Call now.</p>
-  <a href="tel:+1925XXXX0909" class="cta-phone">
+  <a href="tel:+1925XXXX0909" class="cta-phone track-call" data-phone="+1925XXXX0909" data-city="_🏙️SLUG__" data-service="water-damage">
     <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.36 11.36 0 003.58.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
-    (925) 555-0900
+    <span class="phone-text">(925) 555-0900</span>
   </a>
 </section>
 
@@ -179,5 +179,33 @@
   <p style="margin-top:8px"><a href="/" style="color:#e03131">← Back to Emergency Near Me</a></p>
 </footer>
 
+<script>
+// Click tracker for call buttons
+document.querySelectorAll('.track-call').forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    var city = this.getAttribute('data-city');
+    var service = this.getAttribute('data-service');
+    var key = 'call_' + city + '_' + service;
+
+    // Track in localStorage
+    var counts = JSON.parse(localStorage.getItem('emn_call_counts') || '{}');
+    counts[key] = (counts[key] || 0) + 1;
+    localStorage.setItem('emn_call_counts', JSON.stringify(counts));
+
+    // Ping counter API (free, no account)
+    fetch('https://api.countapi.xyz/hit/emergencynearme.com/' + key)
+      .catch(function(){});
+
+    // Short delay then dial
+    e.preventDefault();
+    var phone = this.getAttribute('data-phone');
+    var span = this.querySelector('.phone-text');
+    span.textContent = 'Connecting...';
+    setTimeout(function() {
+      window.location.href = 'tel:' + phone;
+    }, 200);
+  });
+});
+</script>
 </body>
 </html>
