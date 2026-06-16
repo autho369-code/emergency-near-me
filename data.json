@@ -3,108 +3,1178 @@
     {
       "id": "plumber",
       "name": "Plumber",
-      "icon": "🔧",
-      "keywords": ["plumber","plumbing","burst pipe","water heater","clogged drain"],
+      "icon": "\ud83d\udd27",
+      "keywords": [
+        "plumber",
+        "plumbing",
+        "burst pipe",
+        "water heater",
+        "clogged drain"
+      ],
       "description": "Burst pipes, water heaters, clogged drains, sewer backup",
       "avgCost": "$150-500"
     },
     {
       "id": "electrician",
       "name": "Electrician",
-      "icon": "⚡",
-      "keywords": ["electrician","electrical","power outage","sparking","breaker"],
+      "icon": "\u26a1",
+      "keywords": [
+        "electrician",
+        "electrical",
+        "power outage",
+        "sparking",
+        "breaker"
+      ],
       "description": "Power outages, sparking outlets, breaker trips, rewiring",
       "avgCost": "$150-400"
     },
     {
       "id": "locksmith",
       "name": "Locksmith",
-      "icon": "🔐",
-      "keywords": ["locksmith","lockout","broken key","lock change","safe"],
+      "icon": "\ud83d\udd10",
+      "keywords": [
+        "locksmith",
+        "lockout",
+        "broken key",
+        "lock change",
+        "safe"
+      ],
       "description": "Lockouts, broken keys, lock changes, safe opening",
       "avgCost": "$75-250"
     },
     {
       "id": "hvac",
       "name": "HVAC",
-      "icon": "❄️",
-      "keywords": ["hvac","ac repair","furnace","heating","air conditioning"],
+      "icon": "\u2744\ufe0f",
+      "keywords": [
+        "hvac",
+        "ac repair",
+        "furnace",
+        "heating",
+        "air conditioning"
+      ],
       "description": "No heat, no AC, furnace repair, emergency cooling",
       "avgCost": "$200-600"
     },
     {
       "id": "roofer",
       "name": "Roofer",
-      "icon": "🏠",
-      "keywords": ["roofer","roof leak","storm damage","emergency tarp","roof repair"],
+      "icon": "\ud83c\udfe0",
+      "keywords": [
+        "roofer",
+        "roof leak",
+        "storm damage",
+        "emergency tarp",
+        "roof repair"
+      ],
       "description": "Leaks, storm damage, emergency tarping, shingle repair",
       "avgCost": "$300-1000"
     }
   ],
   "cities": {
-    "chicago": {
-      "name": "Chicago",
-      "state": "IL",
-      "areaCode": "773",
-      "neighborhoods": ["Lincoln Park","Wicker Park","Logan Square","River North","West Loop","South Loop","Hyde Park","Lakeview","Bucktown","Old Town","Gold Coast","Pilsen","Bridgeport"],
-      "phones": {
-        "plumber": "+17735550101",
-        "electrician": "+17735550202",
-        "locksmith": "+17735550303",
-        "hvac": "+17735550404",
-        "roofer": "+17735550505"
-      }
-    },
     "new-york": {
       "name": "New York",
       "state": "NY",
       "areaCode": "212",
-      "neighborhoods": ["Manhattan","Brooklyn","Queens","Bronx","Staten Island"],
+      "neighborhoods": [
+        "Manhattan",
+        "Brooklyn",
+        "Queens",
+        "Bronx",
+        "Staten Island",
+        "Harlem",
+        "Long Island City",
+        "Williamsburg"
+      ],
       "phones": {
-        "plumber": "+12125550101",
-        "electrician": "+12125550202",
-        "locksmith": "+12125550303",
-        "hvac": "+12125550404",
-        "roofer": "+12125550505"
+        "plumber": "+1212XXXX0101",
+        "electrician": "+1212XXXX0202",
+        "locksmith": "+1212XXXX0303",
+        "hvac": "+1212XXXX0404",
+        "roofer": "+1212XXXX0505"
       }
     },
     "los-angeles": {
       "name": "Los Angeles",
       "state": "CA",
       "areaCode": "310",
-      "neighborhoods": ["Downtown","Hollywood","Santa Monica","Venice","Beverly Hills","Silver Lake","Echo Park"],
+      "neighborhoods": [
+        "Downtown",
+        "Hollywood",
+        "Santa Monica",
+        "Venice",
+        "Beverly Hills",
+        "Silver Lake",
+        "Echo Park",
+        "Koreatown"
+      ],
       "phones": {
-        "plumber": "+13105550101",
-        "electrician": "+13105550202",
-        "locksmith": "+13105550303",
-        "hvac": "+13105550404",
-        "roofer": "+13105550505"
+        "plumber": "+1310XXXX0101",
+        "electrician": "+1310XXXX0202",
+        "locksmith": "+1310XXXX0303",
+        "hvac": "+1310XXXX0404",
+        "roofer": "+1310XXXX0505"
+      }
+    },
+    "chicago": {
+      "name": "Chicago",
+      "state": "IL",
+      "areaCode": "773",
+      "neighborhoods": [
+        "Lincoln Park",
+        "Wicker Park",
+        "Logan Square",
+        "River North",
+        "West Loop",
+        "South Loop",
+        "Hyde Park",
+        "Lakeview",
+        "Bucktown",
+        "Old Town",
+        "Gold Coast",
+        "Pilsen",
+        "Bridgeport"
+      ],
+      "phones": {
+        "plumber": "+1773XXXX0101",
+        "electrician": "+1773XXXX0202",
+        "locksmith": "+1773XXXX0303",
+        "hvac": "+1773XXXX0404",
+        "roofer": "+1773XXXX0505"
       }
     },
     "houston": {
       "name": "Houston",
       "state": "TX",
       "areaCode": "713",
-      "neighborhoods": ["Downtown","Midtown","Montrose","Heights","Galleria","Woodlands","Sugar Land"],
+      "neighborhoods": [
+        "Downtown",
+        "Midtown",
+        "Montrose",
+        "Heights",
+        "Galleria",
+        "Woodlands",
+        "Sugar Land",
+        "Eado"
+      ],
       "phones": {
-        "plumber": "+17135550101",
-        "electrician": "+17135550202",
-        "locksmith": "+17135550303",
-        "hvac": "+17135550404",
-        "roofer": "+17135550505"
+        "plumber": "+1713XXXX0101",
+        "electrician": "+1713XXXX0202",
+        "locksmith": "+1713XXXX0303",
+        "hvac": "+1713XXXX0404",
+        "roofer": "+1713XXXX0505"
       }
     },
-    "miami": {
-      "name": "Miami",
-      "state": "FL",
-      "areaCode": "305",
-      "neighborhoods": ["South Beach","Brickell","Coral Gables","Coconut Grove","Wynwood","Doral","Hialeah"],
+    "phoenix": {
+      "name": "Phoenix",
+      "state": "AZ",
+      "areaCode": "602",
+      "neighborhoods": [
+        "Downtown",
+        "Scottsdale",
+        "Tempe",
+        "Mesa",
+        "Glendale",
+        "Chandler",
+        "Arcadia",
+        "Desert Ridge"
+      ],
       "phones": {
-        "plumber": "+13055550101",
-        "electrician": "+13055550202",
-        "locksmith": "+13055550303",
-        "hvac": "+13055550404",
-        "roofer": "+13055550505"
+        "plumber": "+1602XXXX0101",
+        "electrician": "+1602XXXX0202",
+        "locksmith": "+1602XXXX0303",
+        "hvac": "+1602XXXX0404",
+        "roofer": "+1602XXXX0505"
+      }
+    },
+    "philadelphia": {
+      "name": "Philadelphia",
+      "state": "PA",
+      "areaCode": "215",
+      "neighborhoods": [
+        "Center City",
+        "Fishtown",
+        "Northern Liberties",
+        "South Philly",
+        "University City",
+        "Manayunk",
+        "Old City",
+        "Rittenhouse"
+      ],
+      "phones": {
+        "plumber": "+1215XXXX0101",
+        "electrician": "+1215XXXX0202",
+        "locksmith": "+1215XXXX0303",
+        "hvac": "+1215XXXX0404",
+        "roofer": "+1215XXXX0505"
+      }
+    },
+    "san-antonio": {
+      "name": "San Antonio",
+      "state": "TX",
+      "areaCode": "210",
+      "neighborhoods": [
+        "Downtown",
+        "Alamo Heights",
+        "Stone Oak",
+        "Pearl District",
+        "Southtown",
+        "King William",
+        "La Cantera",
+        "Leon Valley"
+      ],
+      "phones": {
+        "plumber": "+1210XXXX0101",
+        "electrician": "+1210XXXX0202",
+        "locksmith": "+1210XXXX0303",
+        "hvac": "+1210XXXX0404",
+        "roofer": "+1210XXXX0505"
+      }
+    },
+    "san-diego": {
+      "name": "San Diego",
+      "state": "CA",
+      "areaCode": "619",
+      "neighborhoods": [
+        "Gaslamp",
+        "Pacific Beach",
+        "La Jolla",
+        "Hillcrest",
+        "North Park",
+        "Ocean Beach",
+        "Little Italy",
+        "Coronado"
+      ],
+      "phones": {
+        "plumber": "+1619XXXX0101",
+        "electrician": "+1619XXXX0202",
+        "locksmith": "+1619XXXX0303",
+        "hvac": "+1619XXXX0404",
+        "roofer": "+1619XXXX0505"
+      }
+    },
+    "dallas": {
+      "name": "Dallas",
+      "state": "TX",
+      "areaCode": "214",
+      "neighborhoods": [
+        "Downtown",
+        "Uptown",
+        "Deep Ellum",
+        "Bishop Arts",
+        "Highland Park",
+        "Lakewood",
+        "Oak Lawn",
+        "Preston Hollow"
+      ],
+      "phones": {
+        "plumber": "+1214XXXX0101",
+        "electrician": "+1214XXXX0202",
+        "locksmith": "+1214XXXX0303",
+        "hvac": "+1214XXXX0404",
+        "roofer": "+1214XXXX0505"
+      }
+    },
+    "austin": {
+      "name": "Austin",
+      "state": "TX",
+      "areaCode": "512",
+      "neighborhoods": [
+        "Downtown",
+        "South Congress",
+        "East Austin",
+        "Zilker",
+        "Hyde Park",
+        "Mueller",
+        "Domain",
+        "Barton Hills"
+      ],
+      "phones": {
+        "plumber": "+1512XXXX0101",
+        "electrician": "+1512XXXX0202",
+        "locksmith": "+1512XXXX0303",
+        "hvac": "+1512XXXX0404",
+        "roofer": "+1512XXXX0505"
+      }
+    },
+    "jacksonville": {
+      "name": "Jacksonville",
+      "state": "FL",
+      "areaCode": "904",
+      "neighborhoods": [
+        "Downtown",
+        "Riverside",
+        "San Marco",
+        "Avondale",
+        "Springfield",
+        "Beaches",
+        "Mandarin",
+        "Ortega"
+      ],
+      "phones": {
+        "plumber": "+1904XXXX0101",
+        "electrician": "+1904XXXX0202",
+        "locksmith": "+1904XXXX0303",
+        "hvac": "+1904XXXX0404",
+        "roofer": "+1904XXXX0505"
+      }
+    },
+    "fort-worth": {
+      "name": "Fort Worth",
+      "state": "TX",
+      "areaCode": "817",
+      "neighborhoods": [
+        "Downtown",
+        "Cultural District",
+        "Stockyards",
+        "TCU",
+        "Magnolia",
+        "Fairmount",
+        "Alliance",
+        "Clearfork"
+      ],
+      "phones": {
+        "plumber": "+1817XXXX0101",
+        "electrician": "+1817XXXX0202",
+        "locksmith": "+1817XXXX0303",
+        "hvac": "+1817XXXX0404",
+        "roofer": "+1817XXXX0505"
+      }
+    },
+    "san-jose": {
+      "name": "San Jose",
+      "state": "CA",
+      "areaCode": "408",
+      "neighborhoods": [
+        "Downtown",
+        "Santana Row",
+        "Willow Glen",
+        "Almaden",
+        "Japantown",
+        "Rose Garden",
+        "Evergreen",
+        "Cambrian"
+      ],
+      "phones": {
+        "plumber": "+1408XXXX0101",
+        "electrician": "+1408XXXX0202",
+        "locksmith": "+1408XXXX0303",
+        "hvac": "+1408XXXX0404",
+        "roofer": "+1408XXXX0505"
+      }
+    },
+    "columbus": {
+      "name": "Columbus",
+      "state": "OH",
+      "areaCode": "614",
+      "neighborhoods": [
+        "Short North",
+        "German Village",
+        "Arena District",
+        "Clintonville",
+        "Upper Arlington",
+        "Dublin",
+        "Grandview",
+        "Brewery District"
+      ],
+      "phones": {
+        "plumber": "+1614XXXX0101",
+        "electrician": "+1614XXXX0202",
+        "locksmith": "+1614XXXX0303",
+        "hvac": "+1614XXXX0404",
+        "roofer": "+1614XXXX0505"
+      }
+    },
+    "charlotte": {
+      "name": "Charlotte",
+      "state": "NC",
+      "areaCode": "704",
+      "neighborhoods": [
+        "Uptown",
+        "South End",
+        "NoDa",
+        "Plaza Midwood",
+        "Dilworth",
+        "Ballantyne",
+        "Myers Park",
+        "Elizabeth"
+      ],
+      "phones": {
+        "plumber": "+1704XXXX0101",
+        "electrician": "+1704XXXX0202",
+        "locksmith": "+1704XXXX0303",
+        "hvac": "+1704XXXX0404",
+        "roofer": "+1704XXXX0505"
+      }
+    },
+    "indianapolis": {
+      "name": "Indianapolis",
+      "state": "IN",
+      "areaCode": "317",
+      "neighborhoods": [
+        "Downtown",
+        "Broad Ripple",
+        "Fountain Square",
+        "Mass Ave",
+        "Carmel",
+        "Fishers",
+        "Irvington",
+        "Meridian-Kessler"
+      ],
+      "phones": {
+        "plumber": "+1317XXXX0101",
+        "electrician": "+1317XXXX0202",
+        "locksmith": "+1317XXXX0303",
+        "hvac": "+1317XXXX0404",
+        "roofer": "+1317XXXX0505"
+      }
+    },
+    "san-francisco": {
+      "name": "San Francisco",
+      "state": "CA",
+      "areaCode": "415",
+      "neighborhoods": [
+        "SOMA",
+        "Mission",
+        "Marina",
+        "Nob Hill",
+        "Pacific Heights",
+        "Richmond",
+        "Sunset",
+        "Hayes Valley"
+      ],
+      "phones": {
+        "plumber": "+1415XXXX0101",
+        "electrician": "+1415XXXX0202",
+        "locksmith": "+1415XXXX0303",
+        "hvac": "+1415XXXX0404",
+        "roofer": "+1415XXXX0505"
+      }
+    },
+    "seattle": {
+      "name": "Seattle",
+      "state": "WA",
+      "areaCode": "206",
+      "neighborhoods": [
+        "Downtown",
+        "Capitol Hill",
+        "Ballard",
+        "Fremont",
+        "Queen Anne",
+        "Wallingford",
+        "Belltown",
+        "Green Lake"
+      ],
+      "phones": {
+        "plumber": "+1206XXXX0101",
+        "electrician": "+1206XXXX0202",
+        "locksmith": "+1206XXXX0303",
+        "hvac": "+1206XXXX0404",
+        "roofer": "+1206XXXX0505"
+      }
+    },
+    "denver": {
+      "name": "Denver",
+      "state": "CO",
+      "areaCode": "303",
+      "neighborhoods": [
+        "LoDo",
+        "RiNo",
+        "Capitol Hill",
+        "Highlands",
+        "Cherry Creek",
+        "Wash Park",
+        "Baker",
+        "Five Points"
+      ],
+      "phones": {
+        "plumber": "+1303XXXX0101",
+        "electrician": "+1303XXXX0202",
+        "locksmith": "+1303XXXX0303",
+        "hvac": "+1303XXXX0404",
+        "roofer": "+1303XXXX0505"
+      }
+    },
+    "nashville": {
+      "name": "Nashville",
+      "state": "TN",
+      "areaCode": "615",
+      "neighborhoods": [
+        "Downtown",
+        "East Nashville",
+        "Germantown",
+        "12 South",
+        "Green Hills",
+        "The Gulch",
+        "Midtown",
+        "Sylvan Park"
+      ],
+      "phones": {
+        "plumber": "+1615XXXX0101",
+        "electrician": "+1615XXXX0202",
+        "locksmith": "+1615XXXX0303",
+        "hvac": "+1615XXXX0404",
+        "roofer": "+1615XXXX0505"
+      }
+    },
+    "washington": {
+      "name": "Washington",
+      "state": "DC",
+      "areaCode": "202",
+      "neighborhoods": [
+        "Georgetown",
+        "Dupont Circle",
+        "Adams Morgan",
+        "Capitol Hill",
+        "Logan Circle",
+        "Navy Yard",
+        "Shaw",
+        "Columbia Heights"
+      ],
+      "phones": {
+        "plumber": "+1202XXXX0101",
+        "electrician": "+1202XXXX0202",
+        "locksmith": "+1202XXXX0303",
+        "hvac": "+1202XXXX0404",
+        "roofer": "+1202XXXX0505"
+      }
+    },
+    "boston": {
+      "name": "Boston",
+      "state": "MA",
+      "areaCode": "617",
+      "neighborhoods": [
+        "Back Bay",
+        "Beacon Hill",
+        "South End",
+        "North End",
+        "Seaport",
+        "Cambridge",
+        "Somerville",
+        "Jamaica Plain"
+      ],
+      "phones": {
+        "plumber": "+1617XXXX0101",
+        "electrician": "+1617XXXX0202",
+        "locksmith": "+1617XXXX0303",
+        "hvac": "+1617XXXX0404",
+        "roofer": "+1617XXXX0505"
+      }
+    },
+    "las-vegas": {
+      "name": "Las Vegas",
+      "state": "NV",
+      "areaCode": "702",
+      "neighborhoods": [
+        "Strip",
+        "Downtown",
+        "Summerlin",
+        "Henderson",
+        "Green Valley",
+        "Centennial Hills",
+        "Spring Valley",
+        "Enterprise"
+      ],
+      "phones": {
+        "plumber": "+1702XXXX0101",
+        "electrician": "+1702XXXX0202",
+        "locksmith": "+1702XXXX0303",
+        "hvac": "+1702XXXX0404",
+        "roofer": "+1702XXXX0505"
+      }
+    },
+    "portland": {
+      "name": "Portland",
+      "state": "OR",
+      "areaCode": "503",
+      "neighborhoods": [
+        "Downtown",
+        "Pearl District",
+        "Alberta",
+        "Hawthorne",
+        "Division",
+        "Nob Hill",
+        "Sellwood",
+        "Mississippi"
+      ],
+      "phones": {
+        "plumber": "+1503XXXX0101",
+        "electrician": "+1503XXXX0202",
+        "locksmith": "+1503XXXX0303",
+        "hvac": "+1503XXXX0404",
+        "roofer": "+1503XXXX0505"
+      }
+    },
+    "memphis": {
+      "name": "Memphis",
+      "state": "TN",
+      "areaCode": "901",
+      "neighborhoods": [
+        "Downtown",
+        "Midtown",
+        "Cooper-Young",
+        "East Memphis",
+        "Germantown",
+        "Cordova",
+        "Harbor Town",
+        "Central Gardens"
+      ],
+      "phones": {
+        "plumber": "+1901XXXX0101",
+        "electrician": "+1901XXXX0202",
+        "locksmith": "+1901XXXX0303",
+        "hvac": "+1901XXXX0404",
+        "roofer": "+1901XXXX0505"
+      }
+    },
+    "louisville": {
+      "name": "Louisville",
+      "state": "KY",
+      "areaCode": "502",
+      "neighborhoods": [
+        "Downtown",
+        "Highlands",
+        "NuLu",
+        "Crescent Hill",
+        "St Matthews",
+        "Clifton",
+        "Old Louisville",
+        "Butchertown"
+      ],
+      "phones": {
+        "plumber": "+1502XXXX0101",
+        "electrician": "+1502XXXX0202",
+        "locksmith": "+1502XXXX0303",
+        "hvac": "+1502XXXX0404",
+        "roofer": "+1502XXXX0505"
+      }
+    },
+    "baltimore": {
+      "name": "Baltimore",
+      "state": "MD",
+      "areaCode": "410",
+      "neighborhoods": [
+        "Inner Harbor",
+        "Fells Point",
+        "Federal Hill",
+        "Canton",
+        "Hampden",
+        "Mount Vernon",
+        "Charles Village",
+        "Locust Point"
+      ],
+      "phones": {
+        "plumber": "+1410XXXX0101",
+        "electrician": "+1410XXXX0202",
+        "locksmith": "+1410XXXX0303",
+        "hvac": "+1410XXXX0404",
+        "roofer": "+1410XXXX0505"
+      }
+    },
+    "milwaukee": {
+      "name": "Milwaukee",
+      "state": "WI",
+      "areaCode": "414",
+      "neighborhoods": [
+        "Downtown",
+        "Third Ward",
+        "East Side",
+        "Bay View",
+        "Walker's Point",
+        "Shorewood",
+        "Wauwatosa",
+        "Riverwest"
+      ],
+      "phones": {
+        "plumber": "+1414XXXX0101",
+        "electrician": "+1414XXXX0202",
+        "locksmith": "+1414XXXX0303",
+        "hvac": "+1414XXXX0404",
+        "roofer": "+1414XXXX0505"
+      }
+    },
+    "albuquerque": {
+      "name": "Albuquerque",
+      "state": "NM",
+      "areaCode": "505",
+      "neighborhoods": [
+        "Downtown",
+        "Nob Hill",
+        "Old Town",
+        "North Valley",
+        "Northeast Heights",
+        "Westside",
+        "Corrales",
+        "Uptown"
+      ],
+      "phones": {
+        "plumber": "+1505XXXX0101",
+        "electrician": "+1505XXXX0202",
+        "locksmith": "+1505XXXX0303",
+        "hvac": "+1505XXXX0404",
+        "roofer": "+1505XXXX0505"
+      }
+    },
+    "tucson": {
+      "name": "Tucson",
+      "state": "AZ",
+      "areaCode": "520",
+      "neighborhoods": [
+        "Downtown",
+        "University",
+        "Sam Hughes",
+        "Armory Park",
+        "Foothills",
+        "Oro Valley",
+        "Catalina",
+        "Barrio Historico"
+      ],
+      "phones": {
+        "plumber": "+1520XXXX0101",
+        "electrician": "+1520XXXX0202",
+        "locksmith": "+1520XXXX0303",
+        "hvac": "+1520XXXX0404",
+        "roofer": "+1520XXXX0505"
+      }
+    },
+    "fresno": {
+      "name": "Fresno",
+      "state": "CA",
+      "areaCode": "559",
+      "neighborhoods": [
+        "Downtown",
+        "Tower District",
+        "Woodward Park",
+        "Fig Garden",
+        "Clovis",
+        "River Park",
+        "Sunnyside",
+        "Bullard"
+      ],
+      "phones": {
+        "plumber": "+1559XXXX0101",
+        "electrician": "+1559XXXX0202",
+        "locksmith": "+1559XXXX0303",
+        "hvac": "+1559XXXX0404",
+        "roofer": "+1559XXXX0505"
+      }
+    },
+    "sacramento": {
+      "name": "Sacramento",
+      "state": "CA",
+      "areaCode": "916",
+      "neighborhoods": [
+        "Midtown",
+        "Downtown",
+        "East Sac",
+        "Land Park",
+        "Natomas",
+        "Elk Grove",
+        "Curtis Park",
+        "Oak Park"
+      ],
+      "phones": {
+        "plumber": "+1916XXXX0101",
+        "electrician": "+1916XXXX0202",
+        "locksmith": "+1916XXXX0303",
+        "hvac": "+1916XXXX0404",
+        "roofer": "+1916XXXX0505"
+      }
+    },
+    "atlanta": {
+      "name": "Atlanta",
+      "state": "GA",
+      "areaCode": "404",
+      "neighborhoods": [
+        "Midtown",
+        "Buckhead",
+        "Old Fourth Ward",
+        "Inman Park",
+        "Virginia Highland",
+        "West Midtown",
+        "Grant Park",
+        "Decatur"
+      ],
+      "phones": {
+        "plumber": "+1404XXXX0101",
+        "electrician": "+1404XXXX0202",
+        "locksmith": "+1404XXXX0303",
+        "hvac": "+1404XXXX0404",
+        "roofer": "+1404XXXX0505"
+      }
+    },
+    "kansas-city": {
+      "name": "Kansas City",
+      "state": "MO",
+      "areaCode": "816",
+      "neighborhoods": [
+        "Downtown",
+        "Plaza",
+        "Westport",
+        "Crossroads",
+        "Brookside",
+        "River Market",
+        "Waldo",
+        "Power & Light"
+      ],
+      "phones": {
+        "plumber": "+1816XXXX0101",
+        "electrician": "+1816XXXX0202",
+        "locksmith": "+1816XXXX0303",
+        "hvac": "+1816XXXX0404",
+        "roofer": "+1816XXXX0505"
+      }
+    },
+    "omaha": {
+      "name": "Omaha",
+      "state": "NE",
+      "areaCode": "402",
+      "neighborhoods": [
+        "Downtown",
+        "Old Market",
+        "Blackstone",
+        "Dundee",
+        "Aksarben",
+        "Benson",
+        "Midtown Crossing",
+        "Millard"
+      ],
+      "phones": {
+        "plumber": "+1402XXXX0101",
+        "electrician": "+1402XXXX0202",
+        "locksmith": "+1402XXXX0303",
+        "hvac": "+1402XXXX0404",
+        "roofer": "+1402XXXX0505"
+      }
+    },
+    "raleigh": {
+      "name": "Raleigh",
+      "state": "NC",
+      "areaCode": "919",
+      "neighborhoods": [
+        "Downtown",
+        "North Hills",
+        "Five Points",
+        "Boylan Heights",
+        "Cameron Village",
+        "Glenwood South",
+        "Warehouse District",
+        "Mordecai"
+      ],
+      "phones": {
+        "plumber": "+1919XXXX0101",
+        "electrician": "+1919XXXX0202",
+        "locksmith": "+1919XXXX0303",
+        "hvac": "+1919XXXX0404",
+        "roofer": "+1919XXXX0505"
+      }
+    },
+    "virginia-beach": {
+      "name": "Virginia Beach",
+      "state": "VA",
+      "areaCode": "757",
+      "neighborhoods": [
+        "Oceanfront",
+        "Town Center",
+        "Sandbridge",
+        "Chicks Beach",
+        "Great Neck",
+        "Kempsville",
+        "Shore Drive",
+        "Chesapeake Beach"
+      ],
+      "phones": {
+        "plumber": "+1757XXXX0101",
+        "electrician": "+1757XXXX0202",
+        "locksmith": "+1757XXXX0303",
+        "hvac": "+1757XXXX0404",
+        "roofer": "+1757XXXX0505"
+      }
+    },
+    "oakland": {
+      "name": "Oakland",
+      "state": "CA",
+      "areaCode": "510",
+      "neighborhoods": [
+        "Downtown",
+        "Jack London",
+        "Temescal",
+        "Rockridge",
+        "Grand Lake",
+        "Uptown",
+        "Montclair",
+        "Adams Point"
+      ],
+      "phones": {
+        "plumber": "+1510XXXX0101",
+        "electrician": "+1510XXXX0202",
+        "locksmith": "+1510XXXX0303",
+        "hvac": "+1510XXXX0404",
+        "roofer": "+1510XXXX0505"
+      }
+    },
+    "minneapolis": {
+      "name": "Minneapolis",
+      "state": "MN",
+      "areaCode": "612",
+      "neighborhoods": [
+        "Downtown",
+        "North Loop",
+        "Uptown",
+        "Northeast",
+        "Linden Hills",
+        "Whittier",
+        "Longfellow",
+        "Dinkytown"
+      ],
+      "phones": {
+        "plumber": "+1612XXXX0101",
+        "electrician": "+1612XXXX0202",
+        "locksmith": "+1612XXXX0303",
+        "hvac": "+1612XXXX0404",
+        "roofer": "+1612XXXX0505"
+      }
+    },
+    "tampa": {
+      "name": "Tampa",
+      "state": "FL",
+      "areaCode": "813",
+      "neighborhoods": [
+        "Downtown",
+        "Hyde Park",
+        "Seminole Heights",
+        "Ybor City",
+        "Channelside",
+        "South Tampa",
+        "Westchase",
+        "Davis Islands"
+      ],
+      "phones": {
+        "plumber": "+1813XXXX0101",
+        "electrician": "+1813XXXX0202",
+        "locksmith": "+1813XXXX0303",
+        "hvac": "+1813XXXX0404",
+        "roofer": "+1813XXXX0505"
+      }
+    },
+    "tulsa": {
+      "name": "Tulsa",
+      "state": "OK",
+      "areaCode": "918",
+      "neighborhoods": [
+        "Downtown",
+        "Cherry Street",
+        "Brookside",
+        "Pearl District",
+        "Midtown",
+        "Brady Arts",
+        "Maple Ridge",
+        "Jenks"
+      ],
+      "phones": {
+        "plumber": "+1918XXXX0101",
+        "electrician": "+1918XXXX0202",
+        "locksmith": "+1918XXXX0303",
+        "hvac": "+1918XXXX0404",
+        "roofer": "+1918XXXX0505"
+      }
+    },
+    "new-orleans": {
+      "name": "New Orleans",
+      "state": "LA",
+      "areaCode": "504",
+      "neighborhoods": [
+        "French Quarter",
+        "Garden District",
+        "Marigny",
+        "Bywater",
+        "Uptown",
+        "Warehouse District",
+        "Mid-City",
+        "Carrollton"
+      ],
+      "phones": {
+        "plumber": "+1504XXXX0101",
+        "electrician": "+1504XXXX0202",
+        "locksmith": "+1504XXXX0303",
+        "hvac": "+1504XXXX0404",
+        "roofer": "+1504XXXX0505"
+      }
+    },
+    "cleveland": {
+      "name": "Cleveland",
+      "state": "OH",
+      "areaCode": "216",
+      "neighborhoods": [
+        "Downtown",
+        "Ohio City",
+        "Tremont",
+        "Gordon Square",
+        "University Circle",
+        "Coventry",
+        "Shaker Square",
+        "Detroit-Shoreway"
+      ],
+      "phones": {
+        "plumber": "+1216XXXX0101",
+        "electrician": "+1216XXXX0202",
+        "locksmith": "+1216XXXX0303",
+        "hvac": "+1216XXXX0404",
+        "roofer": "+1216XXXX0505"
+      }
+    },
+    "detroit": {
+      "name": "Detroit",
+      "state": "MI",
+      "areaCode": "313",
+      "neighborhoods": [
+        "Downtown",
+        "Midtown",
+        "Corktown",
+        "Eastern Market",
+        "Indian Village",
+        "Palmer Woods",
+        "Boston-Edison",
+        "Riverfront"
+      ],
+      "phones": {
+        "plumber": "+1313XXXX0101",
+        "electrician": "+1313XXXX0202",
+        "locksmith": "+1313XXXX0303",
+        "hvac": "+1313XXXX0404",
+        "roofer": "+1313XXXX0505"
+      }
+    },
+    "st-louis": {
+      "name": "St Louis",
+      "state": "MO",
+      "areaCode": "314",
+      "neighborhoods": [
+        "Downtown",
+        "Central West End",
+        "Soulard",
+        "The Hill",
+        "Lafayette Square",
+        "Tower Grove",
+        "Cherokee Street",
+        "Clayton"
+      ],
+      "phones": {
+        "plumber": "+1314XXXX0101",
+        "electrician": "+1314XXXX0202",
+        "locksmith": "+1314XXXX0303",
+        "hvac": "+1314XXXX0404",
+        "roofer": "+1314XXXX0505"
+      }
+    },
+    "pittsburgh": {
+      "name": "Pittsburgh",
+      "state": "PA",
+      "areaCode": "412",
+      "neighborhoods": [
+        "Downtown",
+        "Shadyside",
+        "Lawrenceville",
+        "Squirrel Hill",
+        "South Side",
+        "Strip District",
+        "Bloomfield",
+        "Oakland"
+      ],
+      "phones": {
+        "plumber": "+1412XXXX0101",
+        "electrician": "+1412XXXX0202",
+        "locksmith": "+1412XXXX0303",
+        "hvac": "+1412XXXX0404",
+        "roofer": "+1412XXXX0505"
+      }
+    },
+    "orlando": {
+      "name": "Orlando",
+      "state": "FL",
+      "areaCode": "407",
+      "neighborhoods": [
+        "Downtown",
+        "Winter Park",
+        "Thornton Park",
+        "College Park",
+        "Baldwin Park",
+        "Mills 50",
+        "Dr Phillips",
+        "Lake Nona"
+      ],
+      "phones": {
+        "plumber": "+1407XXXX0101",
+        "electrician": "+1407XXXX0202",
+        "locksmith": "+1407XXXX0303",
+        "hvac": "+1407XXXX0404",
+        "roofer": "+1407XXXX0505"
+      }
+    },
+    "salt-lake-city": {
+      "name": "Salt Lake City",
+      "state": "UT",
+      "areaCode": "801",
+      "neighborhoods": [
+        "Downtown",
+        "Sugar House",
+        "Avenues",
+        "9th & 9th",
+        "Liberty Wells",
+        "Marmalade",
+        "Central City",
+        "Yalecrest"
+      ],
+      "phones": {
+        "plumber": "+1801XXXX0101",
+        "electrician": "+1801XXXX0202",
+        "locksmith": "+1801XXXX0303",
+        "hvac": "+1801XXXX0404",
+        "roofer": "+1801XXXX0505"
+      }
+    },
+    "cincinnati": {
+      "name": "Cincinnati",
+      "state": "OH",
+      "areaCode": "513",
+      "neighborhoods": [
+        "Downtown",
+        "Over-the-Rhine",
+        "Hyde Park",
+        "Mount Adams",
+        "Clifton",
+        "Oakley",
+        "Northside",
+        "Mount Lookout"
+      ],
+      "phones": {
+        "plumber": "+1513XXXX0101",
+        "electrician": "+1513XXXX0202",
+        "locksmith": "+1513XXXX0303",
+        "hvac": "+1513XXXX0404",
+        "roofer": "+1513XXXX0505"
+      }
+    },
+    "buffalo": {
+      "name": "Buffalo",
+      "state": "NY",
+      "areaCode": "716",
+      "neighborhoods": [
+        "Downtown",
+        "Elmwood Village",
+        "Allentown",
+        "North Buffalo",
+        "Larkinville",
+        "Parkside",
+        "Hertel",
+        "Canalside"
+      ],
+      "phones": {
+        "plumber": "+1716XXXX0101",
+        "electrician": "+1716XXXX0202",
+        "locksmith": "+1716XXXX0303",
+        "hvac": "+1716XXXX0404",
+        "roofer": "+1716XXXX0505"
       }
     }
   }
