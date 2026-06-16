@@ -143,7 +143,7 @@ function detectLocation() {
   document.getElementById('no-city').style.display = 'none';
 
   if (!navigator.geolocation) {
-    showNoCity();
+    showCityPicker();
     return;
   }
 
@@ -152,42 +152,79 @@ function detectLocation() {
       reverseGeocode(pos.coords.latitude, pos.coords.longitude);
     },
     function() {
-      showNoCity();
+      // Geolocation denied or failed — try IP fallback
+      tryIPFallback();
     },
-    { timeout: 5000, maximumAge: 600000 }
+    { timeout: 8000, maximumAge: 600000 }
   );
 }
 
+function tryIPFallback() {
+  fetch('https://ipapi.co/json/')
+    .then(function(r){return r.json()})
+    .then(function(data){
+      var city = data.city;
+      if (city) {
+        var slug = city.toLowerCase().replace(/\s+/g,'-').replace(/\./g,'');
+        if (DATA.cities[slug]) {
+          selectCity(slug, true);
+          return;
+        }
+        // Try partial match
+        for (var key in DATA.cities) {
+          if (DATA.cities[key].name.toLowerCase() === city.toLowerCase()) {
+            selectCity(key, true);
+            return;
+          }
+        }
+      }
+      showCityPicker();
+    })
+    .catch(function(){ showCityPicker(); });
+}
+
+function showCityPicker() {
+  document.getElementById('city-display').textContent = 'Select your city below';
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('no-city').style.display = 'block';
+  document.getElementById('city-pills').style.display = 'flex';
+}
+
 function reverseGeocode(lat, lon) {
-  fetch('https://nominatim.openstreetmap.org/reverse?format=json&lat='+lat+'&lon='+lon)
+  fetch('https://nominatim.openstreetmap.org/reverse?format=json&lat='+lat+'&lon='+lon+'&zoom=10')
     .then(function(r){return r.json()})
     .then(function(data){
       var addr = data.address || {};
       var detected = addr.city || addr.town || addr.county || addr.state || null;
 
-      if (detected && DATA.cities[detected.toLowerCase().replace(/\s/g,'-')]) {
-        selectCity(detected.toLowerCase().replace(/\s/g,'-'), true);
-      } else if (detected) {
-        // Try to match by state or partial name
-        var matched = null;
+      if (detected) {
+        var slug = detected.toLowerCase().replace(/\s+/g,'-').replace(/\./g,'');
+        // Try exact slug match
+        if (DATA.cities[slug]) {
+          selectCity(slug, true);
+          return;
+        }
+        // Try by exact name match
+        for (var key in DATA.cities) {
+          if (DATA.cities[key].name.toLowerCase() === detected.toLowerCase()) {
+            selectCity(key, true);
+            return;
+          }
+        }
+        // Try partial name match
         for (var key in DATA.cities) {
           if (DATA.cities[key].name.toLowerCase().includes(detected.toLowerCase()) ||
               detected.toLowerCase().includes(DATA.cities[key].name.toLowerCase())) {
-            matched = key;
-            break;
+            selectCity(key, true);
+            return;
           }
         }
-        if (matched) {
-          selectCity(matched, true);
-        } else {
-          showNoCity();
-        }
-      } else {
-        showNoCity();
       }
+      showCityPicker();
     })
     .catch(function(){
-      showNoCity();
+      showCityPicker();
     });
 }
 
@@ -225,12 +262,6 @@ function renderServices(key) {
   document.getElementById('service-grid').innerHTML = html;
 }
 
-function showNoCity() {
-  document.getElementById('city-display').textContent = 'Could not detect your city';
-  document.getElementById('loading').style.display = 'none';
-  document.getElementById('results').style.display = 'none';
-  document.getElementById('no-city').style.display = 'block';
-}
 </script>
 
 <script>
