@@ -1,0 +1,111 @@
+{
+  "services": [
+    {
+      "id": "plumber",
+      "name": "Plumber",
+      "icon": "🔧",
+      "keywords": ["plumber","plumbing","burst pipe","water heater","clogged drain"],
+      "description": "Burst pipes, water heaters, clogged drains, sewer backup",
+      "avgCost": "$150-500"
+    },
+    {
+      "id": "electrician",
+      "name": "Electrician",
+      "icon": "⚡",
+      "keywords": ["electrician","electrical","power outage","sparking","breaker"],
+      "description": "Power outages, sparking outlets, breaker trips, rewiring",
+      "avgCost": "$150-400"
+    },
+    {
+      "id": "locksmith",
+      "name": "Locksmith",
+      "icon": "🔐",
+      "keywords": ["locksmith","lockout","broken key","lock change","safe"],
+      "description": "Lockouts, broken keys, lock changes, safe opening",
+      "avgCost": "$75-250"
+    },
+    {
+      "id": "hvac",
+      "name": "HVAC",
+      "icon": "❄️",
+      "keywords": ["hvac","ac repair","furnace","heating","air conditioning"],
+      "description": "No heat, no AC, furnace repair, emergency cooling",
+      "avgCost": "$200-600"
+    },
+    {
+      "id": "roofer",
+      "name": "Roofer",
+      "icon": "🏠",
+      "keywords": ["roofer","roof leak","storm damage","emergency tarp","roof repair"],
+      "description": "Leaks, storm damage, emergency tarping, shingle repair",
+      "avgCost": "$300-1000"
+    }
+  ],
+  "cities": {
+    "chicago": {
+      "name": "Chicago",
+      "state": "IL",
+      "areaCode": "773",
+      "neighborhoods": ["Lincoln Park","Wicker Park","Logan Square","River North","West Loop","South Loop","Hyde Park","Lakeview","Bucktown","Old Town","Gold Coast","Pilsen","Bridgeport"],
+      "phones": {
+        "plumber": "+17735550101",
+        "electrician": "+17735550202",
+        "locksmith": "+17735550303",
+        "hvac": "+17735550404",
+        "roofer": "+17735550505"
+      }
+    },
+    "new-york": {
+      "name": "New York",
+      "state": "NY",
+      "areaCode": "212",
+      "neighborhoods": ["Manhattan","Brooklyn","Queens","Bronx","Staten Island"],
+      "phones": {
+        "plumber": "+12125550101",
+        "electrician": "+12125550202",
+        "locksmith": "+12125550303",
+        "hvac": "+12125550404",
+        "roofer": "+12125550505"
+      }
+    },
+    "los-angeles": {
+      "name": "Los Angeles",
+      "state": "CA",
+      "areaCode": "310",
+      "neighborhoods": ["Downtown","Hollywood","Santa Monica","Venice","Beverly Hills","Silver Lake","Echo Park"],
+      "phones": {
+        "plumber": "+13105550101",
+        "electrician": "+13105550202",
+        "locksmith": "+13105550303",
+        "hvac": "+13105550404",
+        "roofer": "+13105550505"
+      }
+    },
+    "houston": {
+      "name": "Houston",
+      "state": "TX",
+      "areaCode": "713",
+      "neighborhoods": ["Downtown","Midtown","Montrose","Heights","Galleria","Woodlands","Sugar Land"],
+      "phones": {
+        "plumber": "+17135550101",
+        "electrician": "+17135550202",
+        "locksmith": "+17135550303",
+        "hvac": "+17135550404",
+        "roofer": "+17135550505"
+      }
+    },
+    "miami": {
+      "name": "Miami",
+      "state": "FL",
+      "areaCode": "305",
+      "neighborhoods": ["South Beach","Brickell","Coral Gables","Coconut Grove","Wynwood","Doral","Hialeah"],
+      "phones": {
+        "plumber": "+13055550101",
+        "electrician": "+13055550202",
+        "locksmith": "+13055550303",
+        "hvac": "+13055550404",
+        "roofer": "+13055550505"
+      }
+    }
+  }
+}
