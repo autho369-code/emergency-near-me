@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CallNowService — AIOS Agent Dashboard</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,system-ui,sans-serif;background:#0f1117;color:#e1e4e8;padding:24px}
+  h1{font-size:20px;margin-bottom:4px}
+  .sub{color:#8b949e;font-size:12px;margin-bottom:24px}
+  .agent-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+  .agent-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px}
+  .agent-card.active{border-color:#238636}
+  .agent-card .icon{font-size:28px;margin-bottom:8px}
+  .agent-card h3{font-size:16px;font-weight:700;margin-bottom:4px}
+  .agent-card .role{font-size:12px;color:#8b949e;margin-bottom:12px}
+  .agent-card .schedule{font-size:12px;color:#58a6ff;margin-bottom:8px}
+  .agent-card .next{font-size:12px;color:#8b949e}
+  .badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700}
+  .badge.ok{background:rgba(63,185,80,0.15);color:#3fb950}
+  .badge.waiting{background:rgba(88,166,255,0.15);color:#58a6ff}
+  .badge.off{background:rgba(139,148,158,0.15);color:#8b949e}
+  .divider{border-top:1px solid #30363d;margin:20px 0 16px;padding-top:12px}
+  .divider span{font-size:11px;color:#8b949e;font-weight:600;text-transform:uppercase}
+  .edit-hint{font-size:11px;color:#8b949e;margin-top:10px;font-style:italic}
+  .pipeline{margin-top:24px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .pipe-step{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px 14px;font-size:12px;text-align:center}
+  .pipe-step .arrow{color:#58a6ff;margin:0 4px}
+  .pipe-step strong{display:block;font-size:14px}
+</style>
+</head>
+<body>
+
+<h1>CallNowService — AIOS Dashboard</h1>
+<div class="sub">7 autonomous agents running on cron. Double-click any card to edit its skill.</div>
+
+<div class="pipeline">
+  <div class="pipe-step">🔍<br><strong>Research</strong>Mon 8am</div>
+  <span class="arrow">→</span>
+  <div class="pipe-step">✉️<br><strong>Outreach</strong>Mon 10am</div>
+  <span class="arrow">→</span>
+  <div class="pipe-step">📥<br><strong>Intake</strong>Hourly</div>
+  <span class="arrow">→</span>
+  <div class="pipe-step">🤝<br><strong>Onboard</strong>Hourly</div>
+  <span class="arrow">→</span>
+  <div class="pipe-step">💰<br><strong>Payment</strong>Daily</div>
+  <span class="arrow">→</span>
+  <div class="pipe-step">👁️<br><strong>Supervisor</strong>Daily</div>
+  <span class="arrow">→</span>
+  <div class="pipe-step">📊<br><strong>Monitor</strong>Daily</div>
+</div>
+
+<div class="divider"><span>Agent Status</span></div>
+
+<div class="agent-grid" id="grid"></div>
+
+<script>
+var agents = [
+  {icon:"🔍",name:"Research Agent",role:"Finds emergency service providers via Google",schedule:"Monday 8am",next:"2026-06-22 8:00 AM",status:"waiting",skill:"callnow-research"},
+  {icon:"✉️",name:"Outreach Agent",role:"Sends cold outreach emails to found providers",schedule:"Monday 10am (after Research)",next:"2026-06-22 10:00 AM",status:"waiting",skill:"callnow-outreach"},
+  {icon:"📥",name:"Intake Agent",role:"Reads provider reply emails, extracts details",schedule:"Every hour",next:"Next hour",status:"waiting",skill:"callnow-intake"},
+  {icon:"🤝",name:"Onboarding Agent",role:"Sends pricing + payment link to interested providers",schedule:"Every hour (30 min after Intake)",next:"Next hour",status:"waiting",skill:"callnow-onboarding"},
+  {icon:"💰",name:"Payment Agent",role:"Confirms payments, marks providers as paid",schedule:"Daily 9am",next:"2026-06-16 9:00 AM",status:"waiting",skill:"callnow-payment"},
+  {icon:"👁️",name:"Supervisor Agent",role:"Activates paid listings, checks pipeline health",schedule:"Daily 10am",next:"2026-06-16 10:00 AM",status:"waiting",skill:"callnow-supervisor"},
+  {icon:"📊",name:"Monitor Agent",role:"Tracks leads, uptime, generates monthly invoices",schedule:"Daily 7am",next:"2026-06-16 7:00 AM",status:"waiting",skill:"callnow-monitor"}
+];
+
+var html='';
+agents.forEach(function(a){
+  var badge = a.status==='ok' ? '<span class="badge ok">RUNNING</span>' : a.status==='waiting' ? '<span class="badge waiting">SCHEDULED</span>' : '<span class="badge off">STOPPED</span>';
+  html+='<div class="agent-card '+(a.status==='ok'?'active':'')+'">';
+  html+='<div class="icon">'+a.icon+'</div>';
+  html+='<h3>'+a.name+' '+badge+'</h3>';
+  html+='<div class="role">'+a.role+'</div>';
+  html+='<div class="schedule">_SCHED_ '+a.schedule+'</div>';
+  html+='<div class="next">_NEXT_ '+a.next+'</div>';
+  html+='<div class="edit-hint">Edit: skills/callnow/'+a.skill+'/SKILL.md</div>';
+  html+='</div>';
+});
+document.getElementById('grid').innerHTML=html;
+</script>
+
+</body>
+</html>
