@@ -3,82 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CallNowService — AIOS Agent Dashboard</title>
+<title>CallNowService — AIOS Control Board</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,system-ui,sans-serif;background:#0f1117;color:#e1e4e8;padding:24px}
   h1{font-size:20px;margin-bottom:4px}
   .sub{color:#8b949e;font-size:12px;margin-bottom:24px}
-  .agent-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
-  .agent-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px}
-  .agent-card.active{border-color:#238636}
-  .agent-card .icon{font-size:28px;margin-bottom:8px}
-  .agent-card h3{font-size:16px;font-weight:700;margin-bottom:4px}
-  .agent-card .role{font-size:12px;color:#8b949e;margin-bottom:12px}
-  .agent-card .schedule{font-size:12px;color:#58a6ff;margin-bottom:8px}
-  .agent-card .next{font-size:12px;color:#8b949e}
-  .badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700}
-  .badge.ok{background:rgba(63,185,80,0.15);color:#3fb950}
-  .badge.waiting{background:rgba(88,166,255,0.15);color:#58a6ff}
-  .badge.off{background:rgba(139,148,158,0.15);color:#8b949e}
-  .divider{border-top:1px solid #30363d;margin:20px 0 16px;padding-top:12px}
-  .divider span{font-size:11px;color:#8b949e;font-weight:600;text-transform:uppercase}
-  .edit-hint{font-size:11px;color:#8b949e;margin-top:10px;font-style:italic}
-  .pipeline{margin-top:24px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-  .pipe-step{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px 14px;font-size:12px;text-align:center}
-  .pipe-step .arrow{color:#58a6ff;margin:0 4px}
-  .pipe-step strong{display:block;font-size:14px}
+  .stats{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+  .stat{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:12px 16px;min-width:100px;text-align:center}
+  .stat .num{font-size:24px;font-weight:700}
+  .stat .label{font-size:10px;color:#8b949e;text-transform:uppercase}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:20px;padding:16px;background:#161b22;border:1px solid #30363d;border-radius:10px;overflow-x:auto}
+  .flow-step{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:10px 14px;text-align:center;min-width:90px}
+  .flow-step .icon{font-size:20px}
+  .flow-step .name{font-size:10px;font-weight:700;margin-top:2px}
+  .flow-step .count{font-size:18px;font-weight:700;color:#58a6ff;margin-top:2px}
+  .flow-step .count.green{color:#3fb950}
+  .flow-step .count.orange{color:#d2991d}
+  .flow-step .count.red{color:#f85149}
+  .flow-arrow{color:#30363d;font-size:18px;font-weight:700}
+  .flow-arrow.active{color:#58a6ff}
+  h2{font-size:15px;margin-bottom:12px;margin-top:24px}
+  .agent-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+  .agent-card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:16px}
+  .agent-card .top{display:flex;justify-content:space-between;align-items:start;margin-bottom:6px}
+  .agent-card h3{font-size:14px}
+  .badge{display:inline-block;padding:2px 8px;border-radius:8px;font-size:10px;font-weight:700}
+  .badge.on{background:rgba(63,185,80,0.15);color:#3fb950}
+  .badge.wait{background:rgba(88,166,255,0.15);color:#58a6ff}
+  .agent-card .desc{font-size:11px;color:#8b949e;margin-bottom:8px}
+  .agent-card .sched{font-size:11px;color:#8b949e}
+  .agent-card .edit{font-size:10px;color:#d2991d;margin-top:8px;font-style:italic}
+  .recent{font-size:11px;color:#8b949e;margin-top:24px;padding:12px;background:#161b22;border:1px solid #30363d;border-radius:8px}
+  .recent div{margin-bottom:3px}
 </style>
 </head>
 <body>
 
-<h1>CallNowService — AIOS Dashboard</h1>
-<div class="sub">7 autonomous agents running on cron. Double-click any card to edit its skill.</div>
+<h1>CallNowService — Agent Control Board</h1>
+<div class="sub" id="updated">Loading providers.json...</div>
 
-<div class="pipeline">
-  <div class="pipe-step">🔍<br><strong>Research</strong>Mon 8am</div>
-  <span class="arrow">→</span>
-  <div class="pipe-step">✉️<br><strong>Outreach</strong>Mon 10am</div>
-  <span class="arrow">→</span>
-  <div class="pipe-step">📥<br><strong>Intake</strong>Hourly</div>
-  <span class="arrow">→</span>
-  <div class="pipe-step">🤝<br><strong>Onboard</strong>Hourly</div>
-  <span class="arrow">→</span>
-  <div class="pipe-step">💰<br><strong>Payment</strong>Daily</div>
-  <span class="arrow">→</span>
-  <div class="pipe-step">👁️<br><strong>Supervisor</strong>Daily</div>
-  <span class="arrow">→</span>
-  <div class="pipe-step">📊<br><strong>Monitor</strong>Daily</div>
+<div class="stats" id="stats"></div>
+
+<h2>Pipeline Flow</h2>
+<div class="flow">
+  <div class="flow-step"><div class="icon">🔍</div><div class="name">RESEARCH</div><div class="count" id="cnt-searching">—</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step"><div class="icon">✉️</div><div class="name">OUTREACH</div><div class="count orange" id="cnt-found">—</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step"><div class="icon">📥</div><div class="name">INTAKE</div><div class="count orange" id="cnt-contacted">—</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step"><div class="icon">🤝</div><div class="name">ONBOARD</div><div class="count orange" id="cnt-onboarding">—</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step"><div class="icon">💰</div><div class="name">PAYMENT</div><div class="count orange" id="cnt-paid">—</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step"><div class="icon">👁️</div><div class="name">ACTIVE</div><div class="count green" id="cnt-active">—</div></div>
+  <div class="flow-arrow">→</div>
+  <div class="flow-step"><div class="icon">📊</div><div class="name">MONITOR</div><div class="count" id="cnt-revenue">—</div></div>
 </div>
 
-<div class="divider"><span>Agent Status</span></div>
+<h2>Agents</h2>
+<div class="agent-grid" id="agents"></div>
 
-<div class="agent-grid" id="grid"></div>
+<div class="recent" id="recent"></div>
 
 <script>
-var agents = [
-  {icon:"🔍",name:"Research Agent",role:"Finds emergency service providers via Google",schedule:"Monday 8am",next:"2026-06-22 8:00 AM",status:"waiting",skill:"callnow-research"},
-  {icon:"✉️",name:"Outreach Agent",role:"Sends cold outreach emails to found providers",schedule:"Monday 10am (after Research)",next:"2026-06-22 10:00 AM",status:"waiting",skill:"callnow-outreach"},
-  {icon:"📥",name:"Intake Agent",role:"Reads provider reply emails, extracts details",schedule:"Every hour",next:"Next hour",status:"waiting",skill:"callnow-intake"},
-  {icon:"🤝",name:"Onboarding Agent",role:"Sends pricing + payment link to interested providers",schedule:"Every hour (30 min after Intake)",next:"Next hour",status:"waiting",skill:"callnow-onboarding"},
-  {icon:"💰",name:"Payment Agent",role:"Confirms payments, marks providers as paid",schedule:"Daily 9am",next:"2026-06-16 9:00 AM",status:"waiting",skill:"callnow-payment"},
-  {icon:"👁️",name:"Supervisor Agent",role:"Activates paid listings, checks pipeline health",schedule:"Daily 10am",next:"2026-06-16 10:00 AM",status:"waiting",skill:"callnow-supervisor"},
-  {icon:"📊",name:"Monitor Agent",role:"Tracks leads, uptime, generates monthly invoices",schedule:"Daily 7am",next:"2026-06-16 7:00 AM",status:"waiting",skill:"callnow-monitor"}
-];
+fetch('providers.json').then(r=>r.json()).then(DATA=>{
+  var m = DATA._meta||{};
+  document.getElementById('updated').textContent = 'Data source: providers.json — Updated: '+(m.updated||'never');
 
-var html='';
-agents.forEach(function(a){
-  var badge = a.status==='ok' ? '<span class="badge ok">RUNNING</span>' : a.status==='waiting' ? '<span class="badge waiting">SCHEDULED</span>' : '<span class="badge off">STOPPED</span>';
-  html+='<div class="agent-card '+(a.status==='ok'?'active':'')+'">';
-  html+='<div class="icon">'+a.icon+'</div>';
-  html+='<h3>'+a.name+' '+badge+'</h3>';
-  html+='<div class="role">'+a.role+'</div>';
-  html+='<div class="schedule">_SCHED_ '+a.schedule+'</div>';
-  html+='<div class="next">_NEXT_ '+a.next+'</div>';
-  html+='<div class="edit-hint">Edit: skills/callnow/'+a.skill+'/SKILL.md</div>';
-  html+='</div>';
+  // Count all vendor statuses
+  var st={};
+  for(var ck in DATA){if(ck.startsWith('_'))continue;var c=DATA[ck];
+    for(var sk in c){if(sk.startsWith('_'))continue;var vendors=c[sk];
+      if(Array.isArray(vendors)) vendors.forEach(function(v){st[v.status]=(st[v.status]||0)+1;});
+    }
+  }
+
+  document.getElementById('stats').innerHTML =
+    '<div class="stat"><div class="num">'+(st.searching||0)+'</div><div class="label">Searching</div></div>'+
+    '<div class="stat"><div class="num">'+(st.found||0)+'</div><div class="label">Found</div></div>'+
+    '<div class="stat"><div class="num">'+(st.contacted||0)+'</div><div class="label">Contacted</div></div>'+
+    '<div class="stat"><div class="num">'+(st.active||0)+'</div><div class="label" style="color:#3fb950">Active</div></div>'+
+    '<div class="stat"><div class="num">'+(st.rejected||0)+'</div><div class="label" style="color:#f85149">Rejected</div></div>'+
+    '<div class="stat"><div class="num">$'+(m.revenue_month||0)+'</div><div class="label" style="color:#3fb950">Rev/Mo</div></div>';
+
+  document.getElementById('cnt-searching').textContent = st.searching||0;
+  document.getElementById('cnt-found').textContent = st.found||0;
+  document.getElementById('cnt-contacted').textContent = st.contacted||0;
+  document.getElementById('cnt-onboarding').textContent = (st.intake||0)+(st.onboarding||0);
+  document.getElementById('cnt-paid').textContent = st.paid||0;
+  document.getElementById('cnt-active').textContent = st.active||0;
+  document.getElementById('cnt-revenue').textContent = '$'+(m.revenue_month||0);
+
+  var agents = [
+    {icon:"🔍",name:"Research Agent",desc:"Finds providers via Google, fills vendor slots",sched:"Mon 8am",skill:"callnow-research"},
+    {icon:"✉️",name:"Outreach Agent",desc:"Sends cold emails to found providers",sched:"Mon 10am",skill:"callnow-outreach"},
+    {icon:"📥",name:"Intake Agent",desc:"Reads provider reply emails, extracts details",sched:"Every hour",skill:"callnow-intake"},
+    {icon:"🤝",name:"Onboarding Agent",desc:"Sends pricing + payment link",sched:"Every hour",skill:"callnow-onboarding"},
+    {icon:"💰",name:"Payment Agent",desc:"Confirms payments, marks paid",sched:"Daily 9am",skill:"callnow-payment"},
+    {icon:"👁️",name:"Supervisor Agent",desc:"Activates listings, checks pipeline health",sched:"Daily 10am",skill:"callnow-supervisor"},
+    {icon:"📊",name:"Monitor Agent",desc:"Tracks leads, uptime, monthly invoices",sched:"Daily 7am",skill:"callnow-monitor"}
+  ];
+
+  var ah='';
+  agents.forEach(function(a){
+    ah+='<div class="agent-card">';
+    ah+='<div class="top"><h3>'+a.icon+' '+a.name+'</h3><span class="badge wait">SCHEDULED</span></div>';
+    ah+='<div class="desc">'+a.desc+'</div>';
+    ah+='<div class="sched">Schedule: '+a.sched+'</div>';
+    ah+='<div class="edit">To edit: skills/callnow/'+a.skill+'/SKILL.md</div>';
+    ah+='</div>';
+  });
+  document.getElementById('agents').innerHTML=ah;
+
+  // Recent activity from actual data
+  var foundCount = st.found||0;
+  var activeCount = st.active||0;
+  document.getElementById('recent').innerHTML =
+    '<strong>Recent Activity</strong><br>'+
+    (foundCount > 0 ? '<div>🔍 Research Agent found <b>'+foundCount+' providers</b> — ready for outreach</div>' : '<div>🔍 No providers found yet — Research Agent runs Monday</div>')+
+    (activeCount > 0 ? '<div>✅ <b>'+activeCount+' active providers</b> receiving leads</div>' : '<div>💰 No active providers yet — payment not configured</div>')+
+    '<div style="margin-top:8px;color:#8b949e">Next agent run: Monitor Agent tomorrow 7am</div>';
+}).catch(function(){
+  document.getElementById('updated').textContent = 'Cannot load providers.json — start local server';
 });
-document.getElementById('grid').innerHTML=html;
 </script>
 
 </body>
