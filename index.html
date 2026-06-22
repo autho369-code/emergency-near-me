@@ -3,365 +3,240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Call Now Service — 24/7 Emergency Services Near You | Plumbers, Electricians, HVAC & More</title>
-<meta name="description" content="Emergency plumbers, electricians, locksmiths, HVAC, mechanics, roofers, pest control, appliance repair, and water damage restoration. 24/7 live dispatch. Get connected in 60 seconds.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://callnowservice.com/">
+<title>CallNowService — 24/7 Emergency Services | AI-Optimized Local Provider Directory</title>
+<meta name="description" content="Emergency plumbers, electricians, HVAC, locksmiths & more. AI-optimized for ChatGPT, Perplexity, and Google. 5 providers per city. Flat monthly fee.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0a0f;color:#e4e4e8;line-height:1.4;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-/* PULSING LIVE BAR */
-.live-bar{background:#1a1a2e;border-bottom:1px solid #2a2a3e;padding:8px 16px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;flex-wrap:wrap}
-.live-dot{width:8px;height:8px;background:#3fb950;border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-/* HEADER */
-header{background:#0d0d1a;border-bottom:1px solid #1a1a33;padding:12px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.logo{font-size:18px;font-weight:800;letter-spacing:-0.5px}
-.logo span{color:#e03131}
-.location-badge{font-size:11px;color:#8b949e;display:flex;align-items:center;gap:4px}
-.online-count{font-size:11px;color:#3fb950;display:flex;align-items:center;gap:4px}
-.time{font-size:11px;color:#8b949e}
-.btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;transition:all 0.15s}
-.btn-red{background:#e03131;color:#fff}
-.btn-red:hover{background:#c92a2a}
-.btn-outline{background:transparent;border:1px solid #30363d;color:#e4e4e8}
-.btn-outline:hover{border-color:#e03131}
-/* HERO */
-.hero{text-align:center;padding:40px 20px 32px;max-width:700px;margin:0 auto}
-.hero-badge{display:inline-block;background:rgba(63,185,80,0.1);border:1px solid rgba(63,185,80,0.2);color:#3fb950;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:600;margin-bottom:12px}
-.hero h1{font-size:36px;font-weight:800;line-height:1.1;margin-bottom:8px;color:#fff}
-.hero h1 span{display:block;color:#e03131;font-size:28px;margin-top:2px}
-@media(min-width:600px){.hero h1{font-size:44px}.hero h1 span{font-size:34px}}
-.hero p{font-size:14px;color:#8b949e;max-width:500px;margin:0 auto 16px}
-/* STATS ROW */
-.stats-row{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:8px}
-.stat-item{text-align:center}
-.stat-item .num{font-size:24px;font-weight:800;color:#fff}
-.stat-item .label{font-size:10px;color:#8b949e;text-transform:uppercase;margin-top:2px}
-/* LEAD FORM */
-.lead-form{max-width:460px;margin:0 auto 20px;background:#161b22;border:1px solid #30363d;border-radius:14px;padding:20px}
-.lead-form h3{font-size:15px;margin-bottom:4px}
-.lead-form .sub{font-size:12px;color:#8b949e;margin-bottom:16px}
-.lead-form select,.lead-form input,.lead-form textarea{width:100%;padding:10px 12px;margin-bottom:8px;background:#0d1117;border:1px solid #30363d;border-radius:8px;color:#e4e4e8;font-size:13px;font-family:inherit}
-.lead-form textarea{resize:vertical;min-height:60px}
-.lead-form select:focus,.lead-form input:focus,.lead-form textarea:focus{outline:none;border-color:#e03131}
-.lead-form .btn{width:100%;justify-content:center;padding:12px;font-size:14px}
-/* PROVIDERS SECTION */
-.providers-section{max-width:800px;margin:0 auto;padding:0 16px 32px}
-.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.section-header h2{font-size:16px}
-.live-tag{font-size:10px;color:#3fb950;display:flex;align-items:center;gap:4px}
-/* SERVICE TABS */
-.service-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-bottom:12px;margin-bottom:12px}
-@media(max-width:500px){.service-tabs{grid-template-columns:repeat(2,1fr)}}
-.service-tab{padding:16px 12px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;background:#161b22;border:1px solid #30363d;color:#8b949e;text-align:center;transition:all 0.12s}
-.service-tab .icon{display:block;font-size:28px;margin-bottom:6px}
-.service-tab .label{display:block;font-size:12px;margin-top:2px}
-.service-tab .count{display:block;font-size:10px;color:#3fb950;margin-top:4px}
-.service-tab:hover{border-color:#e03131;color:#e4e4e8}
-.service-tab.active{background:rgba(224,49,49,0.1);border-color:#e03131;color:#e03131}
-/* PROVIDER CARDS */
-.provider-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:16px;margin-bottom:10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.provider-card.unavailable{opacity:0.5}
-.provider-card .rank{width:32px;height:32px;border-radius:50%;background:#0d1117;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
-.provider-card .info{flex:1;min-width:120px}
-.provider-card .name{font-size:15px;font-weight:700;margin-bottom:2px}
-.provider-card .meta{font-size:11px;color:#8b949e;display:flex;gap:10px;flex-wrap:wrap}
-.provider-card .meta span{display:flex;align-items:center;gap:3px}
-.provider-card .stars{color:#f0883e}
-.provider-card .actions{display:flex;gap:6px;flex-shrink:0}
-.provider-card .btn-sm{padding:8px 14px;font-size:12px;border-radius:8px}
-.available-badge{display:inline-block;background:rgba(63,185,80,0.1);color:#3fb950;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600;margin-left:6px}
-.unavailable-badge{display:inline-block;background:rgba(139,148,158,0.1);color:#8b949e;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:600;margin-left:6px}
-/* PROVIDER FORM */
-.provider-cta{text-align:center;padding:32px 16px;background:#161b22;border:1px solid #30363d;border-radius:14px;max-width:800px;margin:0 auto 40px}
-.provider-cta h2{font-size:18px;margin-bottom:8px}
-.provider-cta p{font-size:13px;color:#8b949e;margin-bottom:16px}
-/* HOW IT WORKS */
-.how{max-width:800px;margin:0 auto 40px;padding:0 16px;text-align:center}
-.how h2{font-size:18px;margin-bottom:20px}
-.how-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
-.how-step{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px}
-.how-step .icon{font-size:28px;margin-bottom:8px}
-.how-step h3{font-size:14px;margin-bottom:4px}
-.how-step p{font-size:12px;color:#8b949e}
-/* FOOTER */
-footer{text-align:center;padding:24px 16px;border-top:1px solid #1a1a33;font-size:11px;color:#8b949e;max-width:800px;margin:0 auto}
-footer a{color:#58a6ff}
-footer a:hover{text-decoration:underline}
-.hidden{display:none!important}
-/* MOBILE */
-@media(max-width:480px){
-  .hero h1{font-size:28px}.hero h1 span{font-size:22px}
-  .provider-card .actions{width:100%;justify-content:stretch}
-  .provider-card .actions .btn-sm{flex:1;text-align:center;justify-content:center}
-}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;color:#000;background:#fff;line-height:1.5}
+  /* WHISPER SHADOWS */
+  .card-shadow{box-shadow:rgba(0,0,0,0.12) 0px 4px 16px 0px}
+  .card-shadow-hover{box-shadow:rgba(0,0,0,0.16) 0px 4px 16px 0px}
+
+  /* TOP BAR */
+  .topbar{background:#000;color:#fff;text-align:center;padding:8px;font-size:12px;font-weight:500}
+
+  /* HEADER */
+  header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1136px;margin:0 auto}
+  .logo{font-size:18px;font-weight:700;letter-spacing:-0.5px;color:#000}
+  .logo span{font-weight:400}
+  .header-right{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500}
+  .header-right a{color:#000;text-decoration:none}
+  .header-right a:hover{text-decoration:underline}
+
+  /* HERO */
+  .hero-wrap{max-width:1136px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  @media(max-width:768px){.hero-wrap{grid-template-columns:1fr;text-align:center}}
+  .hero-text h1{font-size:52px;font-weight:700;line-height:1.23;letter-spacing:-0.5px;margin-bottom:16px}
+  .hero-text p{font-size:16px;color:#4b4b4b;line-height:1.5;margin-bottom:24px}
+  .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+  @media(max-width:768px){.hero-actions{justify-content:center}}
+  .btn{display:inline-flex;align-items:center;padding:10px 14px;border-radius:999px;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;border:none;transition:background 0.15s}
+  .btn-black{background:#000;color:#fff}.btn-black:hover{background:#333}
+  .btn-white{background:#fff;color:#000;border:1px solid #000}.btn-white:hover{background:#e2e2e2}
+  .btn-gray{background:#efefef;color:#000}.btn-gray:hover{background:#ddd}
+  .hero-visual{background:#efefef;border-radius:16px;height:320px;display:flex;align-items:center;justify-content:center;font-size:64px}
+
+  /* STATS */
+  .stats-bar{max-width:1136px;margin:0 auto;padding:0 24px 48px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+  .stat{text-align:center}
+  .stat .num{font-size:28px;font-weight:700}
+  .stat .label{font-size:11px;color:#4b4b4b;text-transform:uppercase;margin-top:4px}
+
+  /* HOW IT WORKS */
+  .section-heading{text-align:center;margin-bottom:32px}
+  .section-heading h2{font-size:36px;font-weight:700;line-height:1.22;margin-bottom:8px}
+  .section-heading p{font-size:15px;color:#4b4b4b}
+  .how-grid{max-width:1136px;margin:0 auto;padding:0 24px 64px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:768px){.how-grid{grid-template-columns:1fr}}
+  .how-card{text-align:center;padding:32px 20px}
+  .how-card .icon{font-size:36px;margin-bottom:12px}
+  .how-card h3{font-size:18px;font-weight:700;margin-bottom:6px}
+  .how-card p{font-size:13px;color:#4b4b4b}
+
+  /* SERVICES GRID */
+  .services-section{max-width:1136px;margin:0 auto;padding:0 24px 64px}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media(max-width:600px){.service-grid{grid-template-columns:repeat(2,1fr)}}
+  .service-card{padding:24px;border-radius:8px;text-align:center;cursor:pointer;background:#fff;border:1px solid #e5e5e5;transition:all 0.15s}
+  .service-card:hover{border-color:#000;box-shadow:rgba(0,0,0,0.12) 0px 4px 16px}
+  .service-card.active{background:#000;color:#fff;border-color:#000}
+  .service-card .svc-icon{display:block;font-size:32px;margin-bottom:8px}
+  .service-card .svc-name{font-size:16px;font-weight:700;margin-bottom:4px}
+  .service-card .svc-spots{font-size:12px;color:#4b4b4b}.service-card.active .svc-spots{color:#afafaf}
+
+  /* PROVIDER LIST */
+  .providers-section{max-width:1136px;margin:0 auto;padding:0 24px 64px}
+  .providers-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+  .providers-header h3{font-size:20px;font-weight:700}
+  .live-dot{display:inline-block;width:8px;height:8px;background:#27a644;border-radius:50%;margin-right:6px;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+  .provider-card{display:flex;align-items:center;gap:14px;padding:16px;margin-bottom:8px;border-radius:8px;background:#fff;border:1px solid #e5e5e5;flex-wrap:wrap}
+  .provider-card:hover{border-color:#000}
+  .provider-card .rank{width:32px;height:32px;border-radius:50%;background:#efefef;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
+  .provider-card .info{flex:1;min-width:140px}
+  .provider-card .pname{font-size:15px;font-weight:700;margin-bottom:2px}
+  .provider-card .pname .spot{font-size:10px;padding:2px 8px;border-radius:999px;font-weight:500;margin-left:6px}
+  .spot-available{background:#efefef;color:#000}
+  .provider-card .pmeta{font-size:11px;color:#4b4b4b}
+  .provider-card .actions{display:flex;gap:6px;flex-shrink:0}
+
+  /* PROVIDER CTA */
+  .provider-cta{max-width:1136px;margin:0 auto 64px;padding:40px;background:#000;color:#fff;border-radius:12px;text-align:center}
+  .provider-cta h3{font-size:24px;font-weight:700;margin-bottom:8px}
+  .provider-cta p{font-size:14px;color:#afafaf;margin-bottom:20px}
+  .provider-cta .btn-white{background:#fff;color:#000;border:none}
+
+  /* OBJECTIONS */
+  .obj-grid{max-width:1136px;margin:0 auto;padding:0 24px 64px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:768px){.obj-grid{grid-template-columns:1fr}}
+  .obj-card{padding:24px;border-radius:12px;border:1px solid #e5e5e5;box-shadow:rgba(0,0,0,0.12) 0px 4px 16px}
+  .obj-card .q{font-size:13px;font-weight:700;margin-bottom:6px}
+  .obj-card .a{font-size:12px;color:#4b4b4b;line-height:1.6}
+
+  /* FOOTER */
+  footer{background:#000;color:#fff;padding:48px 24px 32px}
+  .footer-inner{max-width:1136px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+  @media(max-width:600px){.footer-inner{grid-template-columns:repeat(2,1fr)}}
+  footer h4{font-size:14px;font-weight:700;margin-bottom:12px}
+  footer ul{list-style:none}.footer li{margin-bottom:6px}
+  footer a{color:#afafaf;text-decoration:none;font-size:12px}footer a:hover{color:#fff}
+  .footer-bottom{max-width:1136px;margin:32px auto 0;padding-top:24px;border-top:1px solid #333;display:flex;justify-content:space-between;font-size:11px;color:#afafaf;flex-wrap:wrap;gap:8px}
+
+  /* LEAD FORM */
+  .lead-form{max-width:400px;margin:0 auto;padding:24px}
+  .lead-form input,.lead-form select,.lead-form textarea{width:100%;padding:12px;margin-bottom:8px;border:1px solid #000;border-radius:8px;font-size:13px;font-family:inherit}
+  .lead-form textarea{resize:vertical;min-height:60px}
+  .lead-form input:focus,.lead-form select:focus,.lead-form textarea:focus{outline:none;border-width:2px}
 </style>
 </head>
 <body>
 
-<!-- LIVE STATUS BAR -->
-<div class="live-bar">
-  <div class="live-dot"></div>
-  <span>24/7 EMERGENCY SERVICES LIVE</span>
-  <span style="color:#e03131">—</span>
-  <span id="detected-city">Detecting location...</span>
-  <span style="color:#e03131">—</span>
-  <span>PROVIDERS RESPONDING NOW</span>
-  <div class="live-dot"></div>
-</div>
+<div class="topbar">24/7 Emergency Services · 505 Cities · 9 Service Categories · 22,725 Provider Slots</div>
 
-<!-- HEADER -->
 <header>
-  <div class="logo">CALL<span>NOW</span>SERVICE</div>
-  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-    <div class="location-badge">📍 <span id="header-city">Chicago, IL</span></div>
-    <div class="online-count">● <span id="online-count">3</span> providers online</div>
-    <div class="time" id="current-time"></div>
+  <div class="logo">Call<span>Now</span>Service</div>
+  <div class="header-right">
+    <a href="/provider">List Your Business</a>
+    <a href="/provider" class="btn btn-black">Claim Territory — $49/mo</a>
   </div>
-  <button class="btn btn-red" onclick="scrollToForm()">Get Help Now</button>
 </header>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-badge">● AI-OPTIMIZED · GEO-TARGETED · 24/7</div>
-  <h1>EMERGENCY HELP<span>STARTS HERE. NOW.</span></h1>
-  <p>When people ask ChatGPT, Perplexity, or Claude for an emergency plumber — we're the answer. AI-indexed across every major search engine. Your customers find you, not your competitors.</p>
-  <div class="stats-row">
-    <div class="stat-item"><div class="num" id="stat-online">3</div><div class="label">Online Now</div></div>
-    <div class="stat-item"><div class="num">8 min</div><div class="label">Avg Response</div></div>
-    <div class="stat-item"><div class="num" id="stat-jobs">0</div><div class="label">Calls Today</div></div>
-    <div class="stat-item"><div class="num">4.8★</div><div class="label">Satisfaction</div></div>
+<div class="hero-wrap">
+  <div class="hero-text">
+    <h1>Emergency help,<br>where you need it.</h1>
+    <p>When people ask ChatGPT, Perplexity, or Google for an emergency plumber — we're the answer. AI-optimized across every major search engine. Your customers find you, not your competitors.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn btn-black">Find Services Near You</a>
+      <a href="/provider" class="btn btn-gray">List Your Business</a>
+    </div>
   </div>
-</section>
-
-<!-- LEAD CAPTURE FORM -->
-<div class="lead-form" id="lead-form">
-  <h3>GET CONNECTED NOW</h3>
-  <div class="sub">A provider will contact you within 60 seconds</div>
-  <label style="font-size:10px;color:#8b949e;font-weight:600">SERVICE NEEDED</label>
-  <select id="form-service">
-    <option value="plumber">🔧 Plumber</option>
-    <option value="electrician">⚡ Electrician</option>
-    <option value="hvac">❄️ HVAC</option>
-    <option value="locksmith">🔐 Locksmith</option>
-    <option value="mechanic">🚗 Mechanic</option>
-    <option value="roofer">🏠 Roofer</option>
-    <option value="appliance">🔌 Appliance Repair</option>
-    <option value="pest-control">🐛 Pest Control</option>
-    <option value="water-damage">💧 Water Damage</option>
-  </select>
-  <input type="text" id="form-name" placeholder="Your Name" required>
-  <input type="tel" id="form-phone" placeholder="(555) 555-0000" required>
-  <input type="text" id="form-address" placeholder="Your Address" required>
-  <textarea id="form-desc" placeholder="Describe your emergency..."></textarea>
-  <button class="btn btn-red" onclick="submitLead()">CONNECT ME NOW</button>
+  <div class="hero-visual">🔧</div>
 </div>
 
-<!-- PROVIDER LISTINGS -->
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="num">505</div><div class="label">Cities</div></div>
+  <div class="stat"><div class="num">5</div><div class="label">Spots Per Service</div></div>
+  <div class="stat"><div class="num">Flat</div><div class="label">Monthly Fee</div></div>
+  <div class="stat"><div class="num">22,725</div><div class="label">Total Slots</div></div>
+  <div class="stat"><div class="num">AI</div><div class="label">Optimized</div></div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section-heading"><h2>How it works</h2><p>Three steps. No friction.</p></div>
+<div class="how-grid">
+  <div class="how-card card-shadow">
+    <div class="icon">📍</div><h3>We detect your location</h3><p>Automatically matches you with providers in your city. No typing required.</p>
+  </div>
+  <div class="how-card card-shadow">
+    <div class="icon">⚡</div><h3>We match instantly</h3><p>Five verified providers per category. You choose who to call.</p>
+  </div>
+  <div class="how-card card-shadow">
+    <div class="icon">📞</div><h3>They answer</h3><p>One tap to call. Provider picks up. Problem solved.</p>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<div class="services-section" id="services">
+  <div class="section-heading"><h2>Emergency services</h2><p>Select a category to see available providers in your area</p></div>
+  <div class="service-grid" id="service-grid">
+    <div class="service-card active" data-service="plumber" onclick="selectService(this,'plumber')"><span class="svc-icon">🔧</span><span class="svc-name">Plumber</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" data-service="electrician" onclick="selectService(this,'electrician')"><span class="svc-icon">⚡</span><span class="svc-name">Electrician</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" data-service="hvac" onclick="selectService(this,'hvac')"><span class="svc-icon">❄️</span><span class="svc-name">HVAC</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" data-service="locksmith" onclick="selectService(this,'locksmith')"><span class="svc-icon">🔐</span><span class="svc-name">Locksmith</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" data-service="mechanic" onclick="selectService(this,'mechanic')"><span class="svc-icon">🚗</span><span class="svc-name">Mechanic</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" data-service="roofer" onclick="selectService(this,'roofer')"><span class="svc-icon">🏠</span><span class="svc-name">Roofer</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" data-service="appliance" onclick="selectService(this,'appliance')"><span class="svc-icon">🔌</span><span class="svc-name">Appliance Repair</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" data-service="pest-control" onclick="selectService(this,'pest-control')"><span class="svc-icon">🐛</span><span class="svc-name">Pest Control</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" data-service="water-damage" onclick="selectService(this,'water-damage')"><span class="svc-icon">💧</span><span class="svc-name">Water Damage</span><span class="svc-spots">5 spots</span></div>
+  </div>
+</div>
+
+<!-- PROVIDERS -->
 <div class="providers-section">
-  <div class="section-header">
-    <h2 id="providers-title">🔧 Plumber — Chicago, IL</h2>
-    <div class="live-tag"><div class="live-dot"></div> Live</div>
+  <div class="providers-header">
+    <h3><span class="live-dot"></span> Plumber — Chicago, IL</h3>
+    <a href="/provider" class="btn btn-gray" style="font-size:12px">Claim a spot</a>
   </div>
+  <div id="provider-list"></div>
+</div>
 
-  <div class="service-tabs" id="service-tabs">
-    <button class="service-tab active" data-service="plumber"><span class="icon">🔧</span>Plumber<span class="count">5 spots</span></button>
-    <button class="service-tab" data-service="electrician"><span class="icon">⚡</span>Electrician<span class="count">5 spots</span></button>
-    <button class="service-tab" data-service="hvac"><span class="icon">❄️</span>HVAC<span class="count">5 spots</span></button>
-    <button class="service-tab" data-service="locksmith"><span class="icon">🔐</span>Locksmith<span class="count">5 spots</span></button>
-    <button class="service-tab" data-service="mechanic"><span class="icon">🚗</span>Mechanic<span class="count">5 spots</span></button>
-    <button class="service-tab" data-service="roofer"><span class="icon">🏠</span>Roofer<span class="count">5 spots</span></button>
-    <button class="service-tab" data-service="appliance"><span class="icon">🔌</span>Appliance<span class="count">5 spots</span></button>
-    <button class="service-tab" data-service="pest-control"><span class="icon">🐛</span>Pest Control<span class="count">5 spots</span></button>
-    <button class="service-tab" data-service="water-damage"><span class="icon">💧</span>Water Damage<span class="count">5 spots</span></button>
-  </div>
-
-  <div id="provider-cards"></div>
+<!-- OBJECTIONS -->
+<div class="section-heading"><h2>Already have a website?</h2><p>Here's why you still need us.</p></div>
+<div class="obj-grid">
+  <div class="obj-card"><div class="q">"I already have a website."</div><div class="a">Your website waits for people to find it. We put you where people are already searching: ChatGPT, Perplexity, Google AI. When someone asks AI "emergency plumber near me," we're in the answer. Your site alone won't be.</div></div>
+  <div class="obj-card"><div class="q">"I'm on Google Maps."</div><div class="a">Maps is one channel. AI assistants are three more — and growing faster. We're indexed on all of them. Maps doesn't help when someone asks ChatGPT at 2am.</div></div>
+  <div class="obj-card"><div class="q">"I use HomeAdvisor."</div><div class="a">They show 20 competitors next to you and charge per lead. We show 5 providers per city total. Flat monthly fee. No commissions. No bidding wars.</div></div>
 </div>
 
 <!-- PROVIDER CTA -->
 <div class="provider-cta">
-  <h2>ARE YOU A SERVICE PROVIDER?</h2>
-  <p>5 spots per service per city. Flat monthly fee. No per-lead charges. First come, first served.</p>
-  <a href="https://callnowservice.com/provider" class="btn btn-outline">Claim Your Territory — from $49/mo</a>
-  <a href="https://callnowservice.com/pricing" class="btn btn-outline" style="margin-left:8px">See Pricing Plans</a>
+  <h3>Are you a service provider?</h3>
+  <p>5 spots per service per city. First come, first served. Flat monthly fee. No per-lead charges.</p>
+  <a href="/provider" class="btn btn-white">Claim Your Territory — from $49/mo</a>
+  <a href="/provider" class="btn btn-gray" style="margin-left:8px">Pricing Plans</a>
 </div>
 
-<!-- HOW IT WORKS -->
-<div class="how">
-  <h2>HOW IT WORKS</h2>
-  <div class="how-steps">
-    <div class="how-step"><div class="icon">📍</div><h3>We Detect Your Location</h3><p>Automatically finds providers in your city</p></div>
-    <div class="how-step"><div class="icon">⚡</div><h3>We Match You Instantly</h3><p>Connected to available providers near you</p></div>
-    <div class="how-step"><div class="icon">📞</div><h3>Provider Calls You</h3><p>A verified professional responds within minutes</p></div>
-  </div>
-</div>
-
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 CallNowService.com — Emergency service connections nationwide.</p>
-  <p style="margin-top:4px"><a href="/provider">List Your Business</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
-  <p style="margin-top:8px;color:#8b949e">hello@callnowservice.com</p>
+  <div class="footer-inner">
+    <div><h4>Services</h4><ul><li><a href="#">Plumber</a></li><li><a href="#">Electrician</a></li><li><a href="#">HVAC</a></li><li><a href="#">Locksmith</a></li></ul></div>
+    <div><h4>More</h4><ul><li><a href="#">Mechanic</a></li><li><a href="#">Roofer</a></li><li><a href="#">Appliance Repair</a></li><li><a href="#">Pest Control</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/provider">List Your Business</a></li><li><a href="/provider">Pricing</a></li><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li>hello@callnowservice.com</li><li>(847) 652-2338</li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CallNowService.com — Emergency service connections nationwide.</span>
+    <span>AI-optimized · Geo-targeted · 505 cities</span>
+  </div>
 </footer>
 
 <script>
-var DATA = null;
-var currentService = 'plumber';
-var currentCity = 'chicago';
-var currentCityName = 'Chicago, IL';
-var providerCount = 0;
+var currentService='plumber';
+var providers=[{name:'Available',placeholder:true},{name:'Available',placeholder:true},{name:'Available',placeholder:true},{name:'Available',placeholder:true},{name:'Available',placeholder:true}];
 
-// Load from providers.json
-fetch('providers.json')
-  .then(r=>r.json())
-  .then(d=>{PROVIDERS_DB=d;renderProviders();updateProviderCount();})
-  .catch(()=>{renderProviders();updateProviderCount();});
-
-var PROVIDERS_DB = null;
-
-// Chicago providers — loaded from providers.json
-var chicagoProviders = {
-  plumber: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
-  electrician: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
-  hvac: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
-  locksmith: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
-  mechanic: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
-  roofer: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
-  appliance: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
-  "pest-control": [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
-  "water-damage": [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}]
-};
-
-function updateTime() {
-  var now = new Date();
-  document.getElementById('current-time').textContent = now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
-}
-updateTime(); setInterval(updateTime,1000);
-
-// Geolocation
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(function(pos){
-    fetch('https://nominatim.openstreetmap.org/reverse?format=json&lat='+pos.coords.latitude+'&lon='+pos.coords.longitude+'&zoom=10')
-      .then(r=>r.json()).then(d=>{
-        var c = (d.address||{}).city||(d.address||{}).town||'';
-        if(c){setCity(c);return;}
-        tryIP();
-      }).catch(tryIP);
-  },tryIP,{timeout:6000});
-} else { tryIP(); }
-
-function tryIP(){
-  fetch('https://ipapi.co/json/').then(r=>r.json()).then(d=>{
-    if(d.city) setCity(d.city);
-    else setDefault();
-  }).catch(setDefault);
-}
-function setDefault(){setCity('Chicago');}
-
-function setCity(cityName){
-  currentCityName = cityName + ', IL';
-  document.getElementById('detected-city').textContent = cityName.toUpperCase() + ', IL';
-  document.getElementById('header-city').textContent = cityName + ', IL';
-  document.getElementById('providers-title').textContent = '🔧 Plumber — ' + cityName + ', IL';
-  updateProviderCount();
-}
-
-// Service tab switching
-document.getElementById('service-tabs').addEventListener('click',function(e){
-  var tab = e.target.closest('.service-tab');
-  if(!tab) return;
-  document.querySelectorAll('.service-tab').forEach(t=>t.classList.remove('active'));
-  tab.classList.add('active');
-  currentService = tab.dataset.service;
-  document.getElementById('form-service').value = currentService;
-  var icons = {plumber:'🔧',electrician:'⚡',hvac:'❄️',locksmith:'🔐',mechanic:'🚗',roofer:'🏠',appliance:'🔌','pest-control':'🐛','water-damage':'💧'};
-  document.getElementById('providers-title').textContent = icons[currentService]+' '+currentService.replace('-',' ').replace(/\b\w/g,l=>l.toUpperCase())+' — ' + currentCityName;
-  updateProviderCount();
+function selectService(el,svc){
+  document.querySelectorAll('.service-card').forEach(function(c){c.classList.remove('active')});
+  el.classList.add('active');currentService=svc;
   renderProviders();
-});
-
-function updateProviderCount(){
-  var providers = chicagoProviders[currentService] || [];
-  var online = providers.filter(p=>p.available).length;
-  document.getElementById('online-count').textContent = online + ' providers online';
-  document.getElementById('stat-online').textContent = online;
-  providerCount = online;
+  document.querySelector('.providers-header h3').innerHTML='<span class="live-dot"></span> '+svc.charAt(0).toUpperCase()+svc.slice(1).replace('-',' ')+' — Chicago, IL';
 }
 
-// Render provider cards
 function renderProviders(){
-  var providers = chicagoProviders[currentService] || [];
-  var html = '';
+  var h='';
   providers.forEach(function(p,i){
-    var placeholder = p.placeholder || false;
-    var availClass = placeholder ? 'unavailable' : (p.available ? '' : 'unavailable');
-    var badge = placeholder ? '<span class="unavailable-badge">Available Spot</span>' : (p.available ? '<span class="available-badge">Available Now</span>' : '<span class="unavailable-badge">Unavailable</span>');
-    html+='<div class="provider-card '+availClass+'">';
-    html+='<div class="rank">'+(i+1)+'</div>';
-    html+='<div class="info">';
-    html+='<div class="name">'+p.name+badge+'</div>';
-    html+='<div class="meta">';
-    if(p.placeholder){
-      html+='<span>5 spots · 2 filled · 3 available</span>';
-    } else {
-      html+='<span class="stars">★ '+p.rating+'</span>';
-      html+='<span>('+p.reviews+')</span>';
-      html+='<span>📍 '+p.distance+' mi</span>';
-      html+='<span>⏱ ~'+p.eta+' min</span>';
-    }
-    html+='</div></div>';
-    html+='<div class="actions">';
-    if(p.placeholder){
-      html+='<a href="/provider" class="btn btn-red btn-sm" style="text-decoration:none">Claim This Spot</a>';
-    } else if(p.available){
-      html+='<button class="btn btn-red btn-sm" onclick="callProvider(\''+p.phone+'\',\''+p.name+'\',\''+currentService+'\')">📞 Call Now</button>';
-      html+='<button class="btn btn-outline btn-sm" onclick="connectProvider(\''+p.name+'\',\''+currentService+'\')">Get Connected</button>';
-    } else {
-      html+='<button class="btn btn-sm" disabled style="background:#21262d;color:#8b949e;border:none;font-size:12px;padding:8px 14px;border-radius:8px">📞 Currently Busy</button>';
-    }
-    html+='</div></div>';
+    h+='<div class="provider-card card-shadow">';
+    h+='<div class="rank">'+(i+1)+'</div>';
+    h+='<div class="info"><div class="pname">'+p.name+'<span class="spot spot-available">Spot '+(i+1)+'</span></div>';
+    h+='<div class="pmeta">5 providers per category · First come, first served</div></div>';
+    h+='<div class="actions"><a href="/provider" class="btn btn-black" style="font-size:12px">Claim This Spot</a></div>';
+    h+='</div>';
   });
-  document.getElementById('provider-cards').innerHTML = html;
+  document.getElementById('provider-list').innerHTML=h;
 }
-
-function callProvider(phone, name, service){
-  var key = 'call_chicago_'+service+'_'+name.replace(/\s/g,'');
-  fetch('https://api.countapi.xyz/hit/callnowservice.com/'+key).catch(function(){});
-  window.location.href = 'tel:'+phone;
-}
-
-function connectProvider(name, service){
-  document.getElementById('form-service').value = service;
-  document.getElementById('form-desc').value = 'Requesting connection to: ' + name;
-  scrollToForm();
-}
-
-function scrollToForm(){
-  document.getElementById('lead-form').scrollIntoView({behavior:'smooth'});
-}
-
-function submitLead(){
-  var service = document.getElementById('form-service').value;
-  var name = document.getElementById('form-name').value;
-  var phone = document.getElementById('form-phone').value;
-  var address = document.getElementById('form-address').value;
-  var desc = document.getElementById('form-desc').value;
-  if(!name||!phone||!address){alert('Please fill in all required fields');return;}
-  var key = 'lead_'+Date.now();
-  var lead = {service:service,name:name,phone:phone,address:address,desc:desc,time:new Date().toISOString(),city:currentCityName};
-  localStorage.setItem(key, JSON.stringify(lead));
-  fetch('https://api.countapi.xyz/hit/callnowservice.com/'+key).catch(function(){});
-  alert('Request submitted! A ' + service + ' provider will contact you shortly.');
-  document.getElementById('form-name').value='';
-  document.getElementById('form-phone').value='';
-  document.getElementById('form-address').value='';
-  document.getElementById('form-desc').value='';
-  document.getElementById('stat-jobs').textContent = (parseInt(document.getElementById('stat-jobs').textContent)+1);
-}
-
-// Initial render
-setTimeout(function(){renderProviders();updateProviderCount();},500);
+renderProviders();
 </script>
 
 </body>
