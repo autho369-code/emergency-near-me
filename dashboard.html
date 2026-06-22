@@ -3,221 +3,137 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EmergencyNearMe — Supervisor Dashboard</title>
+<title>CallNowService — Provider Database</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,system-ui,sans-serif;background:#0f1117;color:#e1e4e8;padding:20px}
-  .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px}
-  .header h1{font-size:22px;font-weight:700}
-  .stats{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px}
-  .stat{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:16px 20px;min-width:120px}
-  .stat .num{font-size:28px;font-weight:700}
-  .stat .label{font-size:11px;color:#8b949e;text-transform:uppercase;margin-top:4px}
-  .stat .num.green{color:#3fb950}
-  .stat .num.yellow{color:#d2991d}
-  .stat .num.red{color:#f85149}
-  .stat .num.blue{color:#58a6ff}
-  .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-  .filters select,.filters input,.filters button{background:#161b22;border:1px solid #30363d;color:#e1e4e8;padding:8px 12px;border-radius:6px;font-size:13px}
-  .filters button{background:#238636;border-color:#238636;cursor:pointer;font-weight:600}
-  .filters button:hover{background:#2ea043}
-  table{width:100%;border-collapse:collapse;font-size:13px}
-  th{text-align:left;padding:10px 12px;background:#161b22;border-bottom:1px solid #30363d;color:#8b949e;font-weight:600;font-size:12px;text-transform:uppercase;position:sticky;top:0;z-index:1}
-  td{padding:8px 12px;border-bottom:1px solid #21262d}
-  tr:hover td{background:rgba(255,255,255,0.03)}
-  .status{display:inline-block;padding:3px 10px;border-radius:100px;font-size:11px;font-weight:600}
-  .status.searching{background:rgba(88,166,255,0.15);color:#58a6ff}
-  .status.contacted{background:rgba(210,153,29,0.15);color:#d2991d}
-  .status.negotiating{background:rgba(188,140,255,0.15);color:#bc8cff}
-  .status.active{background:rgba(63,185,80,0.15);color:#3fb950}
-  .status.rejected{background:rgba(248,81,73,0.15);color:#f85149}
-  .phone{color:#58a6ff;text-decoration:none}
-  .phone:hover{text-decoration:underline}
-  .summary-bar{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:14px 20px;margin-bottom:16px;display:flex;gap:24px;flex-wrap:wrap;font-size:13px}
-  .summary-bar span{color:#8b949e}
-  .summary-bar b{color:#e1e4e8}
-  @media(max-width:768px){table{font-size:11px}td,th{padding:6px 8px}}
+  .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+  .header h1{font-size:18px}
+  .loading-msg{text-align:center;padding:60px;color:#8b949e;font-size:14px}
+  .spinner{display:inline-block;width:20px;height:20px;border:2px solid #30363d;border-top-color:#e03131;border-radius:50%;animation:spin 0.6s linear infinite;margin-right:8px;vertical-align:middle}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  .stat{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px 14px;text-align:center;min-width:80px}
+  .stat .num{font-size:22px;font-weight:700}
+  .stat .label{font-size:9px;color:#8b949e;text-transform:uppercase;margin-top:2px}
+  .filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+  .filters select,.filters input{background:#161b22;border:1px solid #30363d;color:#e4e4e8;padding:6px 10px;border-radius:6px;font-size:12px}
+  table{width:100%;border-collapse:collapse;font-size:11px}
+  th{padding:8px;background:#161b22;border-bottom:1px solid #30363d;color:#8b949e;font-size:10px;text-transform:uppercase;text-align:left;position:sticky;top:0;z-index:1}
+  td{padding:6px 8px;border-bottom:1px solid #21262d}
+  tr:hover td{background:rgba(255,255,255,0.02)}
+  .badge{display:inline-block;padding:2px 7px;border-radius:8px;font-size:9px;font-weight:600}
+  .badge.searching{background:rgba(88,166,255,0.12);color:#58a6ff}
+  .badge.found{background:rgba(210,153,29,0.12);color:#d2991d}
+  .badge.contacted{background:rgba(139,148,158,0.12);color:#8b949e}
+  .badge.active{background:rgba(63,185,80,0.12);color:#3fb950}
+  .badge.onboarding,.badge.intake{background:rgba(188,140,255,0.12);color:#bc8cff}
+  .badge.rejected{background:rgba(248,81,73,0.12);color:#f85149}
+  .total-row{background:#161b22;font-weight:700}
+  .phone-link{color:#58a6ff;text-decoration:none;font-size:10px}
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>🔧 EmergencyNearMe — Supervisor Dashboard</h1>
-  <span style="color:#8b949e;font-size:12px" id="updated"></span>
+  <h1>CallNowService — Provider Database</h1>
+  <span style="font-size:11px;color:#8b949e" id="meta-info"></span>
 </div>
 
-<div class="stats" id="stats"></div>
+<div id="loading" class="loading-msg"><span class="spinner"></span> Loading provider data...</div>
 
-<div class="summary-bar" id="summary"></div>
+<div id="content" style="display:none">
+  <div class="stats" id="stats"></div>
 
-<div class="summary-bar" id="agent-bar" style="background:#0d1117;border-color:#238636">
-  <span>🤖 <b>Agent Status</b></span>
-  <span id="agent-status">Loading...</span>
+  <div class="filters">
+    <select id="fState"><option value="">All States</option></select>
+    <select id="fService"><option value="">All Services</option></select>
+    <select id="fStatus"><option value="">All Status</option><option value="searching">Searching</option><option value="found">Found</option><option value="contacted">Contacted</option><option value="active">Active</option></select>
+    <input type="text" id="fSearch" placeholder="Search provider..." style="min-width:140px">
+  </div>
+
+  <table>
+    <thead><tr><th>City</th><th>St</th><th>Service</th><th>Status</th><th>Provider</th><th>Phone</th><th>Leads</th><th>$/mo</th></tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
 </div>
-
-<div class="filters">
-  <select id="filterCity"><option value="">All Cities</option></select>
-  <select id="filterService"><option value="">All Services</option></select>
-  <select id="filterStatus"><option value="">All Statuses</option><option value="searching">Searching</option><option value="contacted">Contacted</option><option value="negotiating">Negotiating</option><option value="active">Active</option><option value="rejected">Rejected</option></select>
-  <input type="text" id="filterSearch" placeholder="Search provider name..." style="min-width:180px">
-  <button onclick="render()">Filter</button>
-  <button onclick="resetFilters()" style="background:#30363d;border-color:#30363d">Reset</button>
-</div>
-
-<table>
-  <thead>
-    <tr>
-      <th>City</th>
-      <th>Service</th>
-      <th>Status</th>
-      <th>Provider</th>
-      <th>Phone</th>
-      <th>Leads/Mo</th>
-      <th>Rate</th>
-      <th>Revenue</th>
-    </tr>
-  </thead>
-  <tbody id="tbody"></tbody>
-</table>
 
 <script>
-let DATA = null;
-let ICONS = {plumber:'🔧',electrician:'⚡',locksmith:'🔐',hvac:'❄️',roofer:'🏠',mechanic:'🚗',appliance:'🔌','pest-control':'🐀','water-damage':'💧'};
+var DATA = [];
 
 fetch('providers.json')
   .then(r=>r.json())
-  .then(d=>{DATA=d;initFilters();render();});
-
-function initFilters() {
-  let cities = '<option value="">All Cities</option>';
-  let services = '<option value="">All Services</option>';
-  let seenCities = new Set();
-  let seenServices = new Set();
-
-  for (let k in DATA) {
-    if (k.startsWith('_')) continue;
-    let c = DATA[k];
-    seenCities.add(c._name);
-    for (let sk in c) {
-      if (sk.startsWith('_')) continue;
-      seenServices.add(sk);
-    }
-  }
-  [...seenCities].sort().forEach(c => cities += `<option value="${c}">${c}</option>`);
-  [...seenServices].sort().forEach(s => services += `<option value="${s}">${ICONS[s]||''} ${s}</option>`);
-
-  document.getElementById('filterCity').innerHTML = cities;
-  document.getElementById('filterService').innerHTML = services;
-}
-
-function render() {
-  let cityF = document.getElementById('filterCity').value;
-  let svcF = document.getElementById('filterService').value;
-  let statusF = document.getElementById('filterStatus').value;
-  let searchF = document.getElementById('filterSearch').value.toLowerCase();
-
-  let rows = [];
-  let stats = {searching:0,contacted:0,negotiating:0,active:0,rejected:0,leads:0,revenue:0};
-
-  for (let ck in DATA) {
-    if (ck.startsWith('_')) continue;
-    let c = DATA[ck];
-    if (cityF && c._name !== cityF) continue;
-    for (let sk in c) {
-      if (sk.startsWith('_')) continue;
-      let vendors = c[sk];  // Array of vendor objects
-      if (!Array.isArray(vendors)) continue;
-      if (svcF && sk !== svcF) continue;
-      // Check if any vendor matches search
-      let anyMatch = !searchF;
-      if (searchF) {
-        for (let v of vendors) {
-          if (v.provider_name && v.provider_name.toLowerCase().includes(searchF)) {
-            anyMatch = true; break;
-          }
-        }
-      }
-      if (!anyMatch) continue;
-
-      for (let v of vendors) {
-        if (statusF && v.status !== statusF) continue;
-        stats[v.status] = (stats[v.status]||0) + 1;
-        stats.leads += v.leads_month||0;
-        stats.revenue += (v.leads_month||0) * (v.rate||0);
-      }
-
-      // Only add row if at least one vendor matches
-      let matchingVendors = vendors.filter(v => !statusF || v.status === statusF);
-      if (matchingVendors.length > 0) {
-        rows.push({
-          city: c._name,
-          state: c._state,
-          service: sk,
-          serviceIcon: ICONS[sk]||'',
-          providers: vendors
+  .then(d=>{
+    for(var ck in d){if(ck.startsWith('_'))continue;var c=d[ck];
+      for(var sk in c){if(sk.startsWith('_'))continue;var vendors=c[sk];
+        if(!Array.isArray(vendors))continue;
+        vendors.forEach(function(v,i){
+          DATA.push({
+            city:c._name||ck,state:c._state||'',service:sk,vendor:v,slot:i
+          });
         });
       }
     }
-  }
-
-  // Stats cards
-  document.getElementById('stats').innerHTML =
-    `<div class="stat"><div class="num blue">${stats.searching||0}</div><div class="label">Searching</div></div>` +
-    `<div class="stat"><div class="num yellow">${stats.contacted||0}</div><div class="label">Contacted</div></div>` +
-    `<div class="stat"><div class="num" style="color:#bc8cff">${stats.negotiating||0}</div><div class="label">Negotiating</div></div>` +
-    `<div class="stat"><div class="num green">${stats.active||0}</div><div class="label">Active</div></div>` +
-    `<div class="stat"><div class="num red">${stats.rejected||0}</div><div class="label">Rejected</div></div>` +
-    `<div class="stat"><div class="num">${stats.leads}</div><div class="label">Leads/Mo</div></div>` +
-    `<div class="stat"><div class="num green">$${stats.revenue.toLocaleString()}</div><div class="label">Rev/Mo</div></div>`;
-
-  document.getElementById('summary').innerHTML =
-    `<span>Showing <b>${rows.length}</b> of <b>${DATA._meta?.total_slots||0}</b> slots</span>` +
-    `<span>Active: <b style="color:#3fb950">${stats.active||0}</b></span>` +
-    `<span>Monthly revenue: <b style="color:#3fb950">$${stats.revenue.toLocaleString()}</b></span>`;
-
-  // Agent status from real data
-  let agentHtml = '';
-  if (DATA._meta) {
-    let m = DATA._meta;
-    agentHtml += `<span>🔍 Found: <b>${m.contacted||0} providers</b></span>`;
-    agentHtml += `<span>✅ Active: <b style="color:#3fb950">${m.active||0}</b></span>`;
-    agentHtml += `<span>🔎 Searching: <b>${m.searching||0} slots</b></span>`;
-    agentHtml += `<span>📅 Updated: <b>${(m.updated||'').slice(0,10)}</b></span>`;
-    agentHtml += `<span>💰 Revenue: <b style="color:#3fb950">$${(m.revenue_month||0).toLocaleString()}</b></span>`;
-  }
-  document.getElementById('agent-status').innerHTML = agentHtml;
-
-  // Table
-  let html = '';
-  rows.forEach(r=>{
-    r.providers.forEach((v,i)=>{
-      let statusClass = v.status||'searching';
-      let rowStyle = i === 0 ? '' : 'style="opacity:0.7"';
-      html += `<tr ${rowStyle}>
-        <td>${i===0 ? r.city+', '+r.state : ''}</td>
-        <td>${i===0 ? r.serviceIcon+' '+r.service : ''}</td>
-        <td><span class="status ${statusClass}">${v.status}</span></td>
-        <td><strong>${v.provider_name||'—'}</strong></td>
-        <td><a href="tel:${v.provider_phone}" class="phone">${v.provider_phone||'—'}</a></td>
-        <td>${v.leads_month||0}</td>
-        <td>$${v.rate||0}</td>
-        <td>$${((v.leads_month||0)*(v.rate||0)).toLocaleString()}</td>
-      </tr>`;
-    });
+    document.getElementById('loading').style.display='none';
+    document.getElementById('content').style.display='block';
+    if(d._meta) document.getElementById('meta-info').textContent='Updated: '+(d._meta.updated||'')+' | Slots: '+(d._meta.total_slots||0);
+    initFilters();
+    render();
+  }).catch(function(e){
+    document.getElementById('loading').innerHTML='Error loading data. <br><small>'+e.message+'</small>';
   });
-  document.getElementById('tbody').innerHTML = html || '<tr><td colspan="8" style="text-align:center;color:#8b949e;padding:40px">No results match your filters</td></tr>';
-  document.getElementById('updated').textContent = DATA._meta?.updated ? 'Updated: ' + DATA._meta.updated : '';
+
+function initFilters(){
+  var states={},services={};
+  DATA.forEach(function(r){states[r.state]=1;services[r.service]=1});
+  var sh='<option value="">All States</option>',sv='<option value="">All Services</option>';
+  Object.keys(states).sort().forEach(function(s){sh+='<option value="'+s+'">'+s+'</option>'});
+  Object.keys(services).sort().forEach(function(s){sv+='<option value="'+s+'">'+s+'</option>'});
+  document.getElementById('fState').innerHTML=sh;
+  document.getElementById('fService').innerHTML=sv;
+  document.getElementById('fState').onchange=render;
+  document.getElementById('fService').onchange=render;
+  document.getElementById('fStatus').onchange=render;
+  document.getElementById('fSearch').oninput=render;
 }
 
-function resetFilters() {
-  document.getElementById('filterCity').value = '';
-  document.getElementById('filterService').value = '';
-  document.getElementById('filterStatus').value = '';
-  document.getElementById('filterSearch').value = '';
-  render();
-}
+function render(){
+  var sf=document.getElementById('fState').value,svf=document.getElementById('fService').value;
+  var stf=document.getElementById('fStatus').value,q=document.getElementById('fSearch').value.toLowerCase();
 
-render();
+  var filtered=DATA.filter(function(r){
+    if(sf&&r.state!==sf)return false;
+    if(svf&&r.service!==svf)return false;
+    if(stf&&r.vendor.status!==stf)return false;
+    if(q&&r.vendor.provider_name&&!r.vendor.provider_name.toLowerCase().includes(q))return false;
+    return true;
+  });
+
+  var st={};var totalLeads=0,totalRevenue=0;
+  filtered.forEach(function(r){st[r.vendor.status]=(st[r.vendor.status]||0)+1;totalLeads+=r.vendor.leads_month||0;totalRevenue+=(r.vendor.leads_month||0)*(r.vendor.rate||0);});
+
+  document.getElementById('stats').innerHTML=
+    '<div class="stat"><div class="num" style="color:#58a6ff">'+(st.searching||0)+'</div><div class="label">Searching</div></div>'+
+    '<div class="stat"><div class="num" style="color:#d2991d">'+(st.found||0)+'</div><div class="label">Found</div></div>'+
+    '<div class="stat"><div class="num">'+(st.contacted||0)+'</div><div class="label">Contacted</div></div>'+
+    '<div class="stat"><div class="num" style="color:#3fb950">'+(st.active||0)+'</div><div class="label">Active</div></div>'+
+    '<div class="stat"><div class="num">'+totalLeads+'</div><div class="label">Leads</div></div>'+
+    '<div class="stat"><div class="num" style="color:#3fb950">$'+totalRevenue.toLocaleString()+'</div><div class="label">Revenue</div></div>'+
+    '<div class="stat"><div class="num">'+filtered.length+'</div><div class="label">Showing</div></div>';
+
+  var html='';
+  var maxRows=200;
+  filtered.slice(0,maxRows).forEach(function(r){
+    var v=r.vendor,badge=v.status||'searching';
+    html+='<tr><td>'+r.city+'</td><td>'+r.state+'</td><td>'+r.service+'</td>'+
+      '<td><span class="badge '+badge+'">'+badge+'</span></td>'+
+      '<td>'+(v.provider_name||'—')+'</td>'+
+      '<td><a href="tel:'+v.provider_phone+'" class="phone-link">'+(v.provider_phone||'—')+'</a></td>'+
+      '<td>'+(v.leads_month||0)+'</td><td>$'+((v.leads_month||0)*(v.rate||30))+'</td></tr>';
+  });
+  if(filtered.length>maxRows) html+='<tr class="total-row"><td colspan="8">... and '+(filtered.length-maxRows)+' more results (filter to see details)</td></tr>';
+  document.getElementById('tbody').innerHTML=html||'<tr><td colspan="8" style="text-align:center;padding:30px;color:#8b949e">No results</td></tr>';
+}
 </script>
 </body>
 </html>
