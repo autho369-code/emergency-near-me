@@ -226,10 +226,33 @@ function submitClaim(){
     if(!d[fields[i]]){alert('Please fill all fields');return;}
   }
   d.time=new Date().toISOString();
-  localStorage.setItem('claim_'+Date.now(),JSON.stringify(d));
-  alert('Territory claim submitted! We will contact you within 24 hours to finalize your exclusive listing.\n\n'+d.service+' — '+d.city);
+  d.status='pending';
+  
+  // Save to pending signups
+  var signups=JSON.parse(localStorage.getItem('cns_signups')||'[]');
+  signups.push(d);
+  localStorage.setItem('cns_signups',JSON.stringify(signups));
+  
+  // Send notification email via SendGrid API
+  fetch('https://api.sendgrid.com/v3/mail/send',{
+    method:'POST',
+    headers:{
+      'Authorization':'Bearer '+SENDGRID_KEY,
+      'Content-Type':'application/json'
+    },
+    body:JSON.stringify({
+      personalizations:[{to:[{email:'hello@callservicenow.com'}]}],
+      from:{email:'hello@callservicenow.com',name:'CallNowService'},
+      subject:'NEW SIGNUP: '+d.service+' — '+d.city,
+      content:[{type:'text/plain',value:'New provider signup!\n\nService: '+d.service+'\nCity: '+d.city+'\nCompany: '+d.name+'\nContact: '+d.contact+'\nEmail: '+d.email+'\nPhone: '+d.phone+'\nPlan: '+d.plan+'\n\nReview at: https://callnowservice.com/dashboard'}]
+    })
+  }).catch(function(){});
+  
+  alert('Territory claim submitted! We will contact you within 24 hours.\n\n'+d.service+' — '+d.city+' — '+d.plan);
   document.querySelectorAll('#signup input,#signup select').forEach(function(el){el.value=''});
 }
+// Set SendGrid key — replace with real key
+var SENDGRID_KEY='';
 </script>
 </body>
 </html>

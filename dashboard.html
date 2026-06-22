@@ -45,6 +45,8 @@
 <div id="content" style="display:none">
   <div class="stats" id="stats"></div>
 
+  <div id="signups-section" style="display:none;margin-bottom:16px;padding:12px;background:#0d1117;border:1px solid #238636;border-radius:10px"></div>
+
   <div class="filters">
     <select id="fState"><option value="">All States</option></select>
     <select id="fService"><option value="">All Services</option></select>
@@ -95,6 +97,49 @@ function initFilters(){
   document.getElementById('fService').onchange=render;
   document.getElementById('fStatus').onchange=render;
   document.getElementById('fSearch').oninput=render;
+  loadSignups();
+}
+
+var SIGNUPS = [];
+
+function loadSignups(){
+  SIGNUPS = JSON.parse(localStorage.getItem('cns_signups')||'[]');
+  renderSignups();
+}
+
+function renderSignups(){
+  var div = document.getElementById('signups-section');
+  if(SIGNUPS.length === 0){ div.style.display='none'; return; }
+  div.style.display='block';
+  var html = '';
+  SIGNUPS.forEach(function(s,i){
+    html += '<div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px 14px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">';
+    html += '<div><strong>'+s.service+'</strong> — '+s.city+'<br><span style="font-size:11px;color:#8b949e">'+s.name+' | '+s.email+' | '+s.phone+' | '+s.plan+'</span></div>';
+    html += '<div style="display:flex;gap:4px">';
+    html += '<button onclick="approveSignup('+i+')" style="background:#238636;border:none;color:#fff;padding:4px 12px;border-radius:6px;cursor:pointer;font-size:11px">Approve</button>';
+    html += '<button onclick="rejectSignup('+i+')" style="background:#21262d;border:1px solid #30363d;color:#f85149;padding:4px 12px;border-radius:6px;cursor:pointer;font-size:11px">Reject</button>';
+    html += '</div></div>';
+  });
+  div.innerHTML = '<h3 style="font-size:14px;margin-bottom:8px">📥 Pending Signups ('+SIGNUPS.length+')</h3>'+html;
+}
+
+function approveSignup(i){
+  var s = SIGNUPS[i];
+  // Here we'd add to providers.json — for now, mark as approved
+  s.status = 'approved';
+  SIGNUPS[i] = s;
+  localStorage.setItem('cns_signups', JSON.stringify(SIGNUPS));
+  alert('Approved '+s.name+' for '+s.service+' in '+s.city+'. Add them to providers.json to go live.');
+  loadSignups();
+}
+
+function rejectSignup(i){
+  var s = SIGNUPS[i];
+  s.status = 'rejected';
+  SIGNUPS[i] = s;
+  localStorage.setItem('cns_signups', JSON.stringify(SIGNUPS));
+  alert('Rejected '+s.name);
+  loadSignups();
 }
 
 function render(){
