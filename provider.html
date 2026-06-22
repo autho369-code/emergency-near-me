@@ -25,7 +25,9 @@
   .check-list div{font-size:12px;color:#3fb950;display:flex;align-items:center;gap:4px}
   .check-list div::before{content:'✓';font-weight:700}
   /* Pricing cards */
-  .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:40px;align-items:stretch}
+  .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:40px;align-items:stretch}
+  @media(max-width:768px){.pricing-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:480px){.pricing-grid{grid-template-columns:1fr}}
     .plan{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:24px;text-align:center;position:relative;display:flex;flex-direction:column}
     .plan.featured{border-color:#e03131;background:linear-gradient(180deg,#1a0f0f 0%,#161b22 30%)}
     .plan ul{list-style:none;text-align:left;margin-bottom:auto;flex-grow:1}
