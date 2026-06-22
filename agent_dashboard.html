@@ -112,7 +112,7 @@ fetch('providers.json').then(r=>r.json()).then(DATA=>{
   } catch(e){}
 
   var agents = [
-    {icon:"🔍",name:"Research Agent",desc:"Searches Google for providers, fills 5 vendor slots per city/service",sched:"Mon 8am",skill:"callnow-research"},
+    {icon:"🔍",name:"Research Agent",desc:"Finds providers via Google search. Passes to Outreach Agent. Does NOT contact.",sched:"Mon 8am",skill:"callnow-research"},
     {icon:"✉️",name:"Outreach Agent",desc:"Sends cold emails via Gmail to found providers",sched:"Mon 10am",skill:"callnow-outreach"},
     {icon:"📥",name:"Intake Agent",desc:"Checks for provider replies, extracts details for onboarding",sched:"Every hour",skill:"callnow-intake"},
     {icon:"🤝",name:"Onboarding Agent",desc:"Sends pricing + payment info to interested providers",sched:"Every hour",skill:"callnow-onboarding"},
