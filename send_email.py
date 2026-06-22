@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
 """
-Gmail SMTP email sender for CallNowService
-Send up to 500 emails/day via Gmail.
-
-Setup: Set GMAIL_APP_PASSWORD environment variable
-       Get password at https://myaccount.google.com/apppasswords
-
-Usage: python send_email.py <to_email> <subject> <body_text>
+Email sender for CallNowService
+Sends from: hello@callnowservice.com
+SMTP relay: autho369@gmail.com (Gmail SMTP)
 """
 
 import os, sys, smtplib
@@ -14,7 +10,8 @@ from email.mime.text import MIMEText
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-FROM_EMAIL = "autho369@gmail.com"
+SMTP_USER = "autho369@gmail.com"
+FROM_EMAIL = "hello@callnowservice.com"
 FROM_NAME = "CallNowService"
 
 def send_email(to_email, subject, body, password=None):
@@ -30,7 +27,7 @@ def send_email(to_email, subject, body, password=None):
     try:
         with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
             server.starttls()
-            server.login(FROM_EMAIL, pw)
+            server.login(SMTP_USER, pw)
             server.send_message(msg)
         return {"status": "sent", "to": to_email}
     except Exception as e:
