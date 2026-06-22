@@ -26,7 +26,7 @@ Your listing: https://callnowservice.com
 
 NEXT STEP — PAYMENT
 To activate your listing, complete payment here:
-[PAYMENT LINK — replace with your Stripe/PayPal link]
+https://paypal.me/CallNowService
 
 Once payment is received, your listing goes live within 24 hours and calls start coming to your phone.
 
