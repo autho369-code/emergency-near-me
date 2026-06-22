@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CallNowService — Pricing for Service Providers</title>
+<meta name="description" content="Affordable lead pricing for emergency service providers. Pay only for real customer calls. No monthly fees. No contracts.">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,system-ui,sans-serif;background:#0f1117;color:#e4e4e8;line-height:1.5}
+  header{background:#0d0d1a;border-bottom:1px solid #1a1a33;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  .logo{font-size:18px;font-weight:800}.logo span{color:#e03131}
+  .logo a{color:inherit;text-decoration:none}
+  .container{max-width:900px;margin:0 auto;padding:40px 20px}
+  h1{font-size:28px;text-align:center;margin-bottom:4px}
+  .subtitle{text-align:center;color:#8b949e;font-size:14px;margin-bottom:32px}
+  .highlight{color:#3fb950}
+  .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:32px}
+  .plan{background:#161b22;border:1px solid #30363d;border-radius:14px;padding:28px;text-align:center;position:relative}
+  .plan.popular{border-color:#e03131;box-shadow:0 0 30px rgba(224,49,49,0.1)}
+  .popular-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:#e03131;color:#fff;padding:4px 16px;border-radius:100px;font-size:10px;font-weight:700;text-transform:uppercase}
+  .plan h3{font-size:18px;margin-bottom:16px}
+  .plan .price{font-size:36px;font-weight:800;margin-bottom:4px}
+  .plan .price span{font-size:14px;font-weight:400;color:#8b949e}
+  .plan .per{font-size:12px;color:#8b949e;margin-bottom:20px}
+  .plan ul{list-style:none;text-align:left;margin-bottom:20px}
+  .plan li{padding:8px 0;font-size:13px;border-bottom:1px solid #21262d;display:flex;gap:8px}
+  .plan li::before{content:'✓';color:#3fb950;font-weight:700}
+  .btn{display:inline-block;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;cursor:pointer;transition:all 0.12s}
+  .btn-red{background:#e03131;color:#fff}.btn-red:hover{background:#c92a2a}
+  .btn-outline{background:transparent;border:1px solid #30363d;color:#e4e4e8}.btn-outline:hover{border-color:#e03131}
+  .faq{margin-bottom:40px}
+  .faq h2{font-size:20px;margin-bottom:16px}
+  .faq-item{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:16px;margin-bottom:8px}
+  .faq-item h3{font-size:14px;margin-bottom:4px}
+  .faq-item p{font-size:13px;color:#8b949e}
+  .cta{text-align:center;padding:40px;background:#161b22;border:1px solid #30363d;border-radius:14px}
+  .cta h2{font-size:20px;margin-bottom:8px}
+  .cta p{font-size:14px;color:#8b949e;margin-bottom:20px}
+  .form{max-width:400px;margin:20px auto;display:flex;flex-direction:column;gap:10px}
+  .form input,.form select{width:100%;padding:12px;background:#0d1117;border:1px solid #30363d;border-radius:8px;color:#e4e4e8;font-size:13px;font-family:inherit}
+  .form input:focus,.form select:focus{outline:none;border-color:#e03131}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo"><a href="/">CALL<span>NOW</span>SERVICE</a></div>
+  <a href="/provider" class="btn btn-outline" style="font-size:12px">List Your Business</a>
+</header>
+
+<div class="container">
+  <h1>Simple, Fair Pricing</h1>
+  <div class="subtitle">Pay only for <span class="highlight">real emergency calls</span>. No monthly fees. No contracts. Cancel anytime.</div>
+
+  <div class="pricing-grid">
+    <!-- PAY-AS-YOU-GO -->
+    <div class="plan">
+      <h3>Pay As You Go</h3>
+      <div class="price">$30<span>/lead</span></div>
+      <div class="per">No minimum. No commitment.</div>
+      <ul>
+        <li>Pay only when a customer calls</li>
+        <li>Listing appears in your city</li>
+        <li>Click tracking included</li>
+        <li>Cancel anytime with no penalty</li>
+      </ul>
+      <a href="/provider" class="btn btn-outline">Get Started</a>
+    </div>
+
+    <!-- PROFESSIONAL — POPULAR -->
+    <div class="plan popular">
+      <div class="popular-badge">Most Popular</div>
+      <h3>Professional</h3>
+      <div class="price">$25<span>/lead</span></div>
+      <div class="per">50+ leads per month</div>
+      <ul>
+        <li>Everything in Pay As You Go</li>
+        <li>Priority placement above free listings</li>
+        <li>Verified badge on your listing</li>
+        <li>Detailed lead analytics</li>
+        <li>Monthly performance report</li>
+      </ul>
+      <a href="/provider" class="btn btn-red">Get Started</a>
+    </div>
+
+    <!-- ENTERPRISE -->
+    <div class="plan">
+      <h3>Enterprise</h3>
+      <div class="price">Custom</div>
+      <div class="per">200+ leads per month</div>
+      <ul>
+        <li>Everything in Professional</li>
+        <li>Exclusive territory rights</li>
+        <li>Multiple cities & services</li>
+        <li>Dedicated account manager</li>
+        <li>Custom integration support</li>
+      </ul>
+      <a href="mailto:hello@callnowservice.com" class="btn btn-outline">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <div style="text-align:center;margin-bottom:40px">
+    <h2 style="margin-bottom:16px">How Billing Works</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px">
+        <div style="font-size:28px;margin-bottom:8px">1</div>
+        <h3 style="font-size:14px;margin-bottom:4px">Customer Clicks Call</h3>
+        <p style="font-size:12px;color:#8b949e">Every click is tracked via our system</p>
+      </div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px">
+        <div style="font-size:28px;margin-bottom:8px">2</div>
+        <h3 style="font-size:14px;margin-bottom:4px">Call Connects to You</h3>
+        <p style="font-size:12px;color:#8b949e">The call forwards to your phone immediately</p>
+      </div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:10px;padding:20px">
+        <div style="font-size:28px;margin-bottom:8px">3</div>
+        <h3 style="font-size:14px;margin-bottom:4px">Invoiced Monthly</h3>
+        <p style="font-size:12px;color:#8b949e">Invoice on the 1st for the previous month</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><h3>What counts as a lead?</h3><p>A lead is counted when a customer clicks the "Call Now" button on your listing and the call connects. You are never charged for page views or impressions.</p></div>
+    <div class="faq-item"><h3>Is there a monthly fee?</h3><p>No. Zero monthly fees. You only pay when you receive a call from a customer.</p></div>
+    <div class="faq-item"><h3>Can I cancel anytime?</h3><p>Yes. There are no contracts. You can pause or remove your listing at any time with zero penalty.</p></div>
+    <div class="faq-item"><h3>How do I know leads are real?</h3><p>Our click tracking system logs every call. You can view your lead count in real-time via the provider dashboard. If a lead seems suspicious, contact us and we'll review it.</p></div>
+    <div class="faq-item"><h3>What if I get too many calls?</h3><p>You can set a daily or monthly lead cap. Once you reach your limit, your listing shows "Currently at capacity" and calls pause until the next period.</p></div>
+    <div class="faq-item"><h3>Which cities and services are available?</h3><p>We cover 505 cities across all 50 states. Every emergency service category is open — plumbing, electrical, HVAC, locksmith, mechanic, roofing, appliance repair, pest control, and water damage restoration.</p></div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <h2>Ready to Get Calls?</h2>
+    <p>Fill out the form and we'll list your business within 24 hours. No payment required to get listed.</p>
+    <div class="form">
+      <input type="text" id="name" placeholder="Your Name or Company">
+      <input type="email" id="email" placeholder="Email Address">
+      <input type="tel" id="phone" placeholder="Phone Number">
+      <select id="service">
+        <option value="">Select Service</option>
+        <option>Plumber</option><option>Electrician</option><option>HVAC</option>
+        <option>Locksmith</option><option>Mechanic</option><option>Roofer</option>
+        <option>Appliance Repair</option><option>Pest Control</option><option>Water Damage Restoration</option>
+      </select>
+      <input type="text" id="city" placeholder="City">
+      <button class="btn btn-red" style="width:100%" onclick="submitProvider()">Submit — Free Listing</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function submitProvider(){
+  var n=document.getElementById('name').value,e=document.getElementById('email').value;
+  var p=document.getElementById('phone').value,s=document.getElementById('service').value,c=document.getElementById('city').value;
+  if(!n||!e||!p||!s||!c){alert('Please fill all fields');return;}
+  var lead={name:n,email:e,phone:p,service:s,city:c,time:new Date().toISOString()};
+  localStorage.setItem('provider_'+Date.now(),JSON.stringify(lead));
+  alert('Thanks '+n+'! We\'ll contact you within 24 hours to set up your listing.');
+}
+</script>
+</body>
+</html>
