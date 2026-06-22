@@ -4,8 +4,6 @@
   "outputDirectory": ".",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/IL/:city/:service/", "destination": "/IL/:city/:service/index.html" },
-    { "source": "/:state/:city/:service/", "destination": "/:state/:city/:service/index.html" },
     { "source": "/dashboard", "destination": "/dashboard.html" },
     { "source": "/dashboard/", "destination": "/dashboard.html" },
     { "source": "/agents", "destination": "/agent_dashboard.html" },
@@ -13,6 +11,8 @@
     { "source": "/provider", "destination": "/provider.html" },
     { "source": "/provider/", "destination": "/provider.html" },
     { "source": "/pricing", "destination": "/provider.html" },
-    { "source": "/pricing/", "destination": "/provider.html" }
+    { "source": "/pricing/", "destination": "/provider.html" },
+    { "source": "/IL/:city/:service/", "destination": "/IL/:city/:service/index.html" },
+    { "source": "/:state/:city/:service/", "destination": "/:state/:city/:service/index.html" }
   ]
 }
