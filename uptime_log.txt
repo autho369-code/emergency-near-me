@@ -1,0 +1,4 @@
+=== CallNowService.com Uptime Log ===
+
+2026-06-21 07:00 | callnowservice.com      | DOWN | DNS resolution failure
+2026-06-21 07:00 | emergency-near-me (GH)    |  UP  | HTTP 200

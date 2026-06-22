@@ -1,5 +1,3 @@
-@echo off
-cd /d "C:\Users\autho\emergency-near-me"
-start http://localhost:8080/agent_dashboard.html
-start http://localhost:8080/dashboard.html
-python -m http.server 8080
+start https://callnowservice.com/dashboard
+start https://callnowservice.com/agents
+start https://callnowservice.com/
