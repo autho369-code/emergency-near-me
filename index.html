@@ -207,51 +207,78 @@ var currentCity = 'chicago';
 var currentCityName = 'Chicago, IL';
 var providerCount = 0;
 
-// Chicago providers — these are real businesses from our database
+// Load from providers.json
+fetch('providers.json')
+  .then(r=>r.json())
+  .then(d=>{PROVIDERS_DB=d;renderProviders();updateProviderCount();})
+  .catch(()=>{renderProviders();updateProviderCount();});
+
+var PROVIDERS_DB = null;
+
+// Chicago providers — loaded from providers.json
 var chicagoProviders = {
   plumber: [
     {name:"Rescue Plumbing",rating:4.9,reviews:512,distance:0.8,eta:12,available:true,phone:"+1773XXXX001"},
     {name:"D&B Plumbing",rating:4.8,reviews:387,distance:1.2,eta:15,available:true,phone:"+1773XXXX199"},
     {name:"Chicago Area Plumbing",rating:4.6,reviews:203,distance:2.1,eta:22,available:true,phone:"+131****0801"},
-    {name:"Lake Shore Plumbing Co.",rating:4.5,reviews:145,distance:2.9,eta:28,available:false,phone:"+1773XXXX099"}
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
   ],
   electrician: [
     {name:"Highlights Chicago",rating:4.8,reviews:298,distance:1.0,eta:14,available:true,phone:"+1773XXXX202"},
     {name:"Jimco Electric",rating:4.7,reviews:176,distance:1.5,eta:18,available:true,phone:"+1773XXXX101"},
-    {name:"Trinity Contractors",rating:4.5,reviews:89,distance:2.4,eta:25,available:false,phone:"+1XXXXXX0102"}
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
   ],
   hvac: [
     {name:"AA Heating and Cooling",rating:4.9,reviews:423,distance:0.6,eta:10,available:true,phone:"+1773XXXX404"},
     {name:"Brown's Heating & Cooling",rating:4.7,reviews:256,distance:1.3,eta:16,available:true,phone:"+1773XXXX102"},
-    {name:"AGA Services",rating:4.4,reviews:112,distance:2.7,eta:30,available:false,phone:"+1XXXXXX0103"}
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
   ],
   locksmith: [
     {name:"MegaLock",rating:4.9,reviews:634,distance:0.4,eta:8,available:true,phone:"+1773XXXX303"},
     {name:"Ashland Lock",rating:4.8,reviews:341,distance:0.9,eta:13,available:true,phone:"+1773XXXX103"},
-    {name:"Locksmith Birmingham 24/7",rating:4.6,reviews:198,distance:1.8,eta:20,available:true,phone:"+1XXXXXX0104"}
+    {name:"Locksmith Birmingham 24/7",rating:4.6,reviews:198,distance:1.8,eta:20,available:true,phone:"+1XXXXXX0104"},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
   ],
   mechanic: [
     {name:"Birmingham Mobile Mechanic Co",rating:4.7,reviews:287,distance:1.1,eta:15,available:true,phone:"+1XXXXXX0105"},
     {name:"Chicago Roadside Rescue",rating:4.6,reviews:154,distance:1.7,eta:22,available:true,phone:"+1773XXXX104"},
-    {name:"Metro Auto Emergency",rating:4.4,reviews:92,distance:2.5,eta:28,available:false,phone:"+1773XXXX105"}
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
   ],
   roofer: [
     {name:"Kiko and Son Porch Builders",rating:4.9,reviews:389,distance:1.0,eta:14,available:true,phone:"+1773XXXX505"},
-    {name:"Alabama Discount Roofing",rating:4.5,reviews:167,distance:2.3,eta:26,available:true,phone:"+1XXXXXX0106"}
+    {name:"Alabama Discount Roofing",rating:4.5,reviews:167,distance:2.3,eta:26,available:true,phone:"+1XXXXXX0106"},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
   ],
   appliance: [
     {name:"A2Z Appliance Repairs",rating:4.8,reviews:445,distance:0.7,eta:11,available:true,phone:"+1XXXXXX0107"},
-    {name:"Chicago Appliance Pro",rating:4.6,reviews:213,distance:1.6,eta:19,available:true,phone:"+1773XXXX106"}
+    {name:"Chicago Appliance Pro",rating:4.6,reviews:213,distance:1.6,eta:19,available:true,phone:"+1773XXXX106"},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
   ],
   "pest-control": [
     {name:"Perfect Pest Control",rating:4.9,reviews:567,distance:0.5,eta:9,available:true,phone:"+1773XXXX002"},
     {name:"Total Pest Control",rating:4.7,reviews:298,distance:1.2,eta:16,available:true,phone:"+1773XXXX003"},
-    {name:"Nevernest Pest Control",rating:4.8,reviews:412,distance:1.8,eta:21,available:true,phone:"+1773XXXX004"}
+    {name:"Nevernest Pest Control",rating:4.8,reviews:412,distance:1.8,eta:21,available:true,phone:"+1773XXXX004"},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
   ],
   "water-damage": [
     {name:"Romexterra Restoration",rating:4.9,reviews:823,distance:0.3,eta:7,available:true,phone:"+1773XXXX909"},
     {name:"ServiceMaster Restore",rating:4.7,reviews:456,distance:1.4,eta:17,available:true,phone:"+1773XXXX107"},
-    {name:"Service Restoration of AL",rating:4.5,reviews:178,distance:2.6,eta:29,available:false,phone:"+1XXXXXX0108"}
+    {name:"Service Restoration of AL",rating:4.5,reviews:178,distance:2.6,eta:29,available:false,phone:"+1XXXXXX0108"},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
+    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
   ]
 };
 
@@ -316,20 +343,27 @@ function renderProviders(){
   var providers = chicagoProviders[currentService] || [];
   var html = '';
   providers.forEach(function(p,i){
-    var availClass = p.available ? '' : 'unavailable';
-    var badge = p.available ? '<span class="available-badge">Available Now</span>' : '<span class="unavailable-badge">Unavailable</span>';
+    var placeholder = p.placeholder || false;
+    var availClass = placeholder ? 'unavailable' : (p.available ? '' : 'unavailable');
+    var badge = placeholder ? '<span class="unavailable-badge">Available Spot</span>' : (p.available ? '<span class="available-badge">Available Now</span>' : '<span class="unavailable-badge">Unavailable</span>');
     html+='<div class="provider-card '+availClass+'">';
     html+='<div class="rank">'+(i+1)+'</div>';
     html+='<div class="info">';
     html+='<div class="name">'+p.name+badge+'</div>';
     html+='<div class="meta">';
-    html+='<span class="stars">★ '+p.rating+'</span>';
-    html+='<span>('+p.reviews+')</span>';
-    html+='<span>📍 '+p.distance+' mi</span>';
-    html+='<span>⏱ ~'+p.eta+' min</span>';
+    if(p.placeholder){
+      html+='<span>5 spots · 2 filled · 3 available</span>';
+    } else {
+      html+='<span class="stars">★ '+p.rating+'</span>';
+      html+='<span>('+p.reviews+')</span>';
+      html+='<span>📍 '+p.distance+' mi</span>';
+      html+='<span>⏱ ~'+p.eta+' min</span>';
+    }
     html+='</div></div>';
     html+='<div class="actions">';
-    if(p.available){
+    if(p.placeholder){
+      html+='<a href="/provider" class="btn btn-red btn-sm" style="text-decoration:none">Claim This Spot</a>';
+    } else if(p.available){
       html+='<button class="btn btn-red btn-sm" onclick="callProvider(\''+p.phone+'\',\''+p.name+'\',\''+currentService+'\')">📞 Call Now</button>';
       html+='<button class="btn btn-outline btn-sm" onclick="connectProvider(\''+p.name+'\',\''+currentService+'\')">Get Connected</button>';
     } else {
