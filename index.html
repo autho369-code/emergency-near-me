@@ -53,8 +53,12 @@ header{background:#0d0d1a;border-bottom:1px solid #1a1a33;padding:12px 24px;disp
 .section-header h2{font-size:16px}
 .live-tag{font-size:10px;color:#3fb950;display:flex;align-items:center;gap:4px}
 /* SERVICE TABS */
-.service-tabs{display:flex;gap:6px;flex-wrap:wrap;padding-bottom:12px;margin-bottom:12px}
-.service-tab{flex-shrink:0;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;background:#161b22;border:1px solid #30363d;color:#8b949e;white-space:nowrap;transition:all 0.12s}
+.service-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding-bottom:12px;margin-bottom:12px}
+@media(max-width:500px){.service-tabs{grid-template-columns:repeat(2,1fr)}}
+.service-tab{padding:16px 12px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;background:#161b22;border:1px solid #30363d;color:#8b949e;text-align:center;transition:all 0.12s}
+.service-tab .icon{display:block;font-size:28px;margin-bottom:6px}
+.service-tab .label{display:block;font-size:12px;margin-top:2px}
+.service-tab .count{display:block;font-size:10px;color:#3fb950;margin-top:4px}
 .service-tab:hover{border-color:#e03131;color:#e4e4e8}
 .service-tab.active{background:rgba(224,49,49,0.1);border-color:#e03131;color:#e03131}
 /* PROVIDER CARDS */
@@ -163,15 +167,15 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="service-tabs" id="service-tabs">
-    <button class="service-tab active" data-service="plumber">🔧 Plumber <span style="color:#3fb950;font-size:10px">3</span></button>
-    <button class="service-tab" data-service="electrician">⚡ Electrician</button>
-    <button class="service-tab" data-service="hvac">❄️ HVAC</button>
-    <button class="service-tab" data-service="locksmith">🔐 Locksmith</button>
-    <button class="service-tab" data-service="mechanic">🚗 Mechanic</button>
-    <button class="service-tab" data-service="roofer">🏠 Roofer</button>
-    <button class="service-tab" data-service="appliance">🔌 Appliance</button>
-    <button class="service-tab" data-service="pest-control">🐛 Pest</button>
-    <button class="service-tab" data-service="water-damage">💧 Water</button>
+    <button class="service-tab active" data-service="plumber"><span class="icon">🔧</span>Plumber<span class="count">5 spots</span></button>
+    <button class="service-tab" data-service="electrician"><span class="icon">⚡</span>Electrician<span class="count">5 spots</span></button>
+    <button class="service-tab" data-service="hvac"><span class="icon">❄️</span>HVAC<span class="count">5 spots</span></button>
+    <button class="service-tab" data-service="locksmith"><span class="icon">🔐</span>Locksmith<span class="count">5 spots</span></button>
+    <button class="service-tab" data-service="mechanic"><span class="icon">🚗</span>Mechanic<span class="count">5 spots</span></button>
+    <button class="service-tab" data-service="roofer"><span class="icon">🏠</span>Roofer<span class="count">5 spots</span></button>
+    <button class="service-tab" data-service="appliance"><span class="icon">🔌</span>Appliance<span class="count">5 spots</span></button>
+    <button class="service-tab" data-service="pest-control"><span class="icon">🐛</span>Pest Control<span class="count">5 spots</span></button>
+    <button class="service-tab" data-service="water-damage"><span class="icon">💧</span>Water Damage<span class="count">5 spots</span></button>
   </div>
 
   <div id="provider-cards"></div>
@@ -217,69 +221,15 @@ var PROVIDERS_DB = null;
 
 // Chicago providers — loaded from providers.json
 var chicagoProviders = {
-  plumber: [
-    {name:"Rescue Plumbing",rating:4.9,reviews:512,distance:0.8,eta:12,available:true,phone:"+1773XXXX001"},
-    {name:"D&B Plumbing",rating:4.8,reviews:387,distance:1.2,eta:15,available:true,phone:"+1773XXXX199"},
-    {name:"Chicago Area Plumbing",rating:4.6,reviews:203,distance:2.1,eta:22,available:true,phone:"+131****0801"},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
-  ],
-  electrician: [
-    {name:"Highlights Chicago",rating:4.8,reviews:298,distance:1.0,eta:14,available:true,phone:"+1773XXXX202"},
-    {name:"Jimco Electric",rating:4.7,reviews:176,distance:1.5,eta:18,available:true,phone:"+1773XXXX101"},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
-  ],
-  hvac: [
-    {name:"AA Heating and Cooling",rating:4.9,reviews:423,distance:0.6,eta:10,available:true,phone:"+1773XXXX404"},
-    {name:"Brown's Heating & Cooling",rating:4.7,reviews:256,distance:1.3,eta:16,available:true,phone:"+1773XXXX102"},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
-  ],
-  locksmith: [
-    {name:"MegaLock",rating:4.9,reviews:634,distance:0.4,eta:8,available:true,phone:"+1773XXXX303"},
-    {name:"Ashland Lock",rating:4.8,reviews:341,distance:0.9,eta:13,available:true,phone:"+1773XXXX103"},
-    {name:"Locksmith Birmingham 24/7",rating:4.6,reviews:198,distance:1.8,eta:20,available:true,phone:"+1XXXXXX0104"},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
-  ],
-  mechanic: [
-    {name:"Birmingham Mobile Mechanic Co",rating:4.7,reviews:287,distance:1.1,eta:15,available:true,phone:"+1XXXXXX0105"},
-    {name:"Chicago Roadside Rescue",rating:4.6,reviews:154,distance:1.7,eta:22,available:true,phone:"+1773XXXX104"},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
-  ],
-  roofer: [
-    {name:"Kiko and Son Porch Builders",rating:4.9,reviews:389,distance:1.0,eta:14,available:true,phone:"+1773XXXX505"},
-    {name:"Alabama Discount Roofing",rating:4.5,reviews:167,distance:2.3,eta:26,available:true,phone:"+1XXXXXX0106"},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
-  ],
-  appliance: [
-    {name:"A2Z Appliance Repairs",rating:4.8,reviews:445,distance:0.7,eta:11,available:true,phone:"+1XXXXXX0107"},
-    {name:"Chicago Appliance Pro",rating:4.6,reviews:213,distance:1.6,eta:19,available:true,phone:"+1773XXXX106"},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
-  ],
-  "pest-control": [
-    {name:"Perfect Pest Control",rating:4.9,reviews:567,distance:0.5,eta:9,available:true,phone:"+1773XXXX002"},
-    {name:"Total Pest Control",rating:4.7,reviews:298,distance:1.2,eta:16,available:true,phone:"+1773XXXX003"},
-    {name:"Nevernest Pest Control",rating:4.8,reviews:412,distance:1.8,eta:21,available:true,phone:"+1773XXXX004"},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
-  ],
-  "water-damage": [
-    {name:"Romexterra Restoration",rating:4.9,reviews:823,distance:0.3,eta:7,available:true,phone:"+1773XXXX909"},
-    {name:"ServiceMaster Restore",rating:4.7,reviews:456,distance:1.4,eta:17,available:true,phone:"+1773XXXX107"},
-    {name:"Service Restoration of AL",rating:4.5,reviews:178,distance:2.6,eta:29,available:false,phone:"+1XXXXXX0108"},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true},
-    {name:"Your Company Here",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}
-  ]
+  plumber: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
+  electrician: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
+  hvac: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
+  locksmith: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
+  mechanic: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
+  roofer: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
+  appliance: [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
+  "pest-control": [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}],
+  "water-damage": [{name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}, {name:"Available",rating:null,reviews:null,distance:null,eta:null,available:false,phone:null,placeholder:true}]
 };
 
 function updateTime() {
