@@ -3,200 +3,264 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CallNowService — 24/7 Emergency Services | AI-Optimized Local Provider Directory</title>
-<meta name="description" content="Emergency plumbers, electricians, HVAC, locksmiths & more. AI-optimized for ChatGPT, Perplexity, and Google. 5 providers per city. Flat monthly fee.">
+<title>CallNowService — Emergency Service Providers | AI-Optimized Local Matching</title>
+<meta name="description" content="CallNowService connects homeowners to verified emergency service providers. 5 spots per category per city. Flat monthly pricing. No pay-per-lead.">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;color:#000;background:#fff;line-height:1.5}
-  /* WHISPER SHADOWS */
-  .card-shadow{box-shadow:rgba(0,0,0,0.12) 0px 4px 16px 0px}
-  .card-shadow-hover{box-shadow:rgba(0,0,0,0.16) 0px 4px 16px 0px}
+  body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;color:#111;background:#fff;line-height:1.5}
 
   /* TOP BAR */
-  .topbar{background:#000;color:#fff;text-align:center;padding:8px;font-size:12px;font-weight:500}
+  .topbar{background:#111;color:#fff;text-align:center;padding:8px;font-size:12px;font-weight:500}
 
   /* HEADER */
-  header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1136px;margin:0 auto}
-  .logo{font-size:18px;font-weight:700;letter-spacing:-0.5px;color:#000}
-  .logo span{font-weight:400}
+  header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1200px;margin:0 auto}
+  .logo{font-size:18px;font-weight:700;letter-spacing:-0.3px;color:#111}
+  .logo span{font-weight:400;opacity:0.6}
   .header-right{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:500}
-  .header-right a{color:#000;text-decoration:none}
-  .header-right a:hover{text-decoration:underline}
+  .header-right a{color:#111;text-decoration:none}
+  .header-right a:hover{opacity:0.7}
+
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;gap:6px;padding:12px 20px;border-radius:999px;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;border:none;transition:all 0.15s;white-space:nowrap}
+  .btn-primary{background:#111;color:#fff}.btn-primary:hover{background:#333}
+  .btn-secondary{background:#fff;color:#111;border:1.5px solid #ddd}.btn-secondary:hover{background:#f5f5f5;border-color:#999}
+  .btn-xs{padding:5px 10px;font-size:10px;font-weight:600;border-radius:999px}
+  .btn-green{background:#e6f7ee;color:#0d7d3e;border:1px solid #c3e8d3}
 
   /* HERO */
-  .hero-wrap{max-width:1136px;margin:0 auto;padding:64px 24px 48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-  @media(max-width:768px){.hero-wrap{grid-template-columns:1fr;text-align:center}}
-  .hero-text h1{font-size:52px;font-weight:700;line-height:1.23;letter-spacing:-0.5px;margin-bottom:16px}
-  .hero-text p{font-size:16px;color:#4b4b4b;line-height:1.5;margin-bottom:24px}
-  .hero-actions{display:flex;gap:10px;flex-wrap:wrap}
-  @media(max-width:768px){.hero-actions{justify-content:center}}
-  .btn{display:inline-flex;align-items:center;padding:10px 14px;border-radius:999px;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;border:none;transition:background 0.15s}
-  .btn-black{background:#000;color:#fff}.btn-black:hover{background:#333}
-  .btn-white{background:#fff;color:#000;border:1px solid #000}.btn-white:hover{background:#e2e2e2}
-  .btn-gray{background:#efefef;color:#000}.btn-gray:hover{background:#ddd}
-  .hero-visual{background:#efefef;border-radius:16px;height:320px;display:flex;align-items:center;justify-content:center;font-size:64px}
+  .hero{max-width:1200px;margin:0 auto;padding:48px 24px 24px;display:grid;grid-template-columns:1fr 460px;gap:48px;align-items:start}
+  @media(max-width:1020px){.hero{grid-template-columns:1fr;gap:32px;padding:32px 20px}}
+  .hero-left{padding-top:8px}
+  .hero-left h1{font-size:44px;font-weight:700;line-height:1.12;letter-spacing:-0.8px;margin-bottom:12px;color:#0a0a0a}
+  .hero-left p{font-size:16px;line-height:1.6;color:#555;margin-bottom:20px;max-width:500px}
+  .hero-cta{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+  .hero-stats{display:flex;gap:24px;flex-wrap:wrap}
+  .hero-stat{text-align:left}
+  .hero-stat .num{font-size:22px;font-weight:700;color:#0a0a0a}
+  .hero-stat .lbl{font-size:10px;color:#888;text-transform:uppercase;letter-spacing:0.5px;margin-top:2px}
 
-  /* STATS */
-  .stats-bar{max-width:1136px;margin:0 auto;padding:0 24px 48px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
-  .stat{text-align:center}
-  .stat .num{font-size:28px;font-weight:700}
-  .stat .label{font-size:11px;color:#4b4b4b;text-transform:uppercase;margin-top:4px}
+  /* MOCKUP CARD */
+  .mockup{border:1px solid #e8e8e8;border-radius:20px;background:#fafafa;padding:20px;box-shadow:0 1px 3px rgba(0,0,0,0.04),0 8px 24px rgba(0,0,0,0.06)}
+  .mockup-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+  .mockup-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:999px;font-size:11px;font-weight:600;background:#fff;border:1px solid #e0e0e0}
+  .mockup-pill .dot{width:6px;height:6px;border-radius:50%;background:#0d7d3e}
+  .mockup-pill.live .dot{animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+  .mockup-title{font-size:13px;font-weight:700;margin-bottom:2px}
+  .mockup-sub{font-size:11px;color:#888;margin-bottom:14px}
+
+  /* MAP + SPOTS ROW */
+  .mockup-body{display:grid;grid-template-columns:1fr 1.4fr;gap:14px;margin-bottom:14px}
+  @media(max-width:400px){.mockup-body{grid-template-columns:1fr}}
+  .mockup-map{background:#eef0f4;border-radius:14px;padding:16px;position:relative;min-height:160px;overflow:hidden}
+  .mockup-map .grid{position:absolute;inset:0;background-image:linear-gradient(#ddd 1px,transparent 1px),linear-gradient(90deg,#ddd 1px,transparent 1px);background-size:20px 20px;opacity:0.5}
+  .mockup-map .pin{position:absolute;width:8px;height:8px;background:#111;border:2px solid #fff;border-radius:50%;box-shadow:0 1px 3px rgba(0,0,0,0.2)}
+  .mockup-map .pin.active{background:#0d7d3e;width:11px;height:11px;border:3px solid #b8e6cc;box-shadow:0 0 0 4px rgba(13,125,62,0.1)}
+  .mockup-map .badge-map{position:absolute;bottom:10px;left:10px;background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:5px 10px;font-size:10px;font-weight:600;color:#0d7d3e}
+
+  .mockup-spots{display:flex;flex-direction:column;gap:8px;justify-content:center}
+  .spot-card{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#fff;border:1px solid #eee;border-radius:12px}
+  .spot-num{width:26px;height:26px;border-radius:50%;background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+  .spot-num.taken{background:#e6f7ee;color:#0d7d3e}
+  .spot-info{flex:1;min-width:0}
+  .spot-info .spot-label{font-size:11px;font-weight:600}
+  .spot-info .spot-sub{font-size:9px;color:#999}
+  .spot-status{display:inline-block;padding:2px 8px;border-radius:999px;font-size:8px;font-weight:700;background:#e6f7ee;color:#0d7d3e;flex-shrink:0}
+
+  .mockup-footer{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:#888;padding-top:10px;border-top:1px solid #eee}
+  .mockup-footer .more{color:#0d7d3e;font-weight:600}
+  .mockup-cross-sell{font-size:9px;color:#aaa;margin-top:10px;text-align:center}
+
+  /* SECTIONS BELOW */
+  .section-heading{text-align:center;margin-bottom:28px}
+  .section-heading h2{font-size:32px;font-weight:700;line-height:1.22;margin-bottom:6px}
+  .section-heading p{font-size:14px;color:#666}
+  .container{max-width:1200px;margin:0 auto;padding:48px 24px}
 
   /* HOW IT WORKS */
-  .section-heading{text-align:center;margin-bottom:32px}
-  .section-heading h2{font-size:36px;font-weight:700;line-height:1.22;margin-bottom:8px}
-  .section-heading p{font-size:15px;color:#4b4b4b}
-  .how-grid{max-width:1136px;margin:0 auto;padding:0 24px 64px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   @media(max-width:768px){.how-grid{grid-template-columns:1fr}}
-  .how-card{text-align:center;padding:32px 20px}
-  .how-card .icon{font-size:36px;margin-bottom:12px}
-  .how-card h3{font-size:18px;font-weight:700;margin-bottom:6px}
-  .how-card p{font-size:13px;color:#4b4b4b}
+  .how-card{text-align:center;padding:32px 20px;background:#fff;border:1px solid #e8e8e8;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+  .how-card .icon{font-size:32px;margin-bottom:12px}
+  .how-card h3{font-size:17px;font-weight:700;margin-bottom:6px}
+  .how-card p{font-size:13px;color:#666}
 
   /* SERVICES GRID */
-  .services-section{max-width:1136px;margin:0 auto;padding:0 24px 64px}
-  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
   @media(max-width:600px){.service-grid{grid-template-columns:repeat(2,1fr)}}
-  .service-card{padding:24px;border-radius:8px;text-align:center;cursor:pointer;background:#fff;border:1px solid #e5e5e5;transition:all 0.15s}
-  .service-card:hover{border-color:#000;box-shadow:rgba(0,0,0,0.12) 0px 4px 16px}
-  .service-card.active{background:#000;color:#fff;border-color:#000}
-  .service-card .svc-icon{display:block;font-size:32px;margin-bottom:8px}
-  .service-card .svc-name{font-size:16px;font-weight:700;margin-bottom:4px}
-  .service-card .svc-spots{font-size:12px;color:#4b4b4b}.service-card.active .svc-spots{color:#afafaf}
+  .service-card{padding:20px;border-radius:14px;text-align:center;cursor:pointer;background:#fff;border:1px solid #e8e8e8;transition:all 0.15s}
+  .service-card:hover{border-color:#111;box-shadow:0 4px 16px rgba(0,0,0,0.06)}
+  .service-card.active{background:#111;color:#fff;border-color:#111}
+  .service-card .svc-icon{display:block;font-size:28px;margin-bottom:8px}
+  .service-card .svc-name{font-size:15px;font-weight:700;margin-bottom:2px}
+  .service-card .svc-spots{font-size:11px;color:#888}.service-card.active .svc-spots{color:#aaa}
 
   /* PROVIDER LIST */
-  .providers-section{max-width:1136px;margin:0 auto;padding:0 24px 64px}
-  .providers-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
-  .providers-header h3{font-size:20px;font-weight:700}
-  .live-dot{display:inline-block;width:8px;height:8px;background:#27a644;border-radius:50%;margin-right:6px;animation:pulse 2s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
-  .provider-card{display:flex;align-items:center;gap:14px;padding:16px;margin-bottom:8px;border-radius:8px;background:#fff;border:1px solid #e5e5e5;flex-wrap:wrap}
-  .provider-card:hover{border-color:#000}
-  .provider-card .rank{width:32px;height:32px;border-radius:50%;background:#efefef;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0}
-  .provider-card .info{flex:1;min-width:140px}
-  .provider-card .pname{font-size:15px;font-weight:700;margin-bottom:2px}
-  .provider-card .pname .spot{font-size:10px;padding:2px 8px;border-radius:999px;font-weight:500;margin-left:6px}
-  .spot-available{background:#efefef;color:#000}
-  .provider-card .pmeta{font-size:11px;color:#4b4b4b}
-  .provider-card .actions{display:flex;gap:6px;flex-shrink:0}
-
-  /* PROVIDER CTA */
-  .provider-cta{max-width:1136px;margin:0 auto 64px;padding:40px;background:#000;color:#fff;border-radius:12px;text-align:center}
-  .provider-cta h3{font-size:24px;font-weight:700;margin-bottom:8px}
-  .provider-cta p{font-size:14px;color:#afafaf;margin-bottom:20px}
-  .provider-cta .btn-white{background:#fff;color:#000;border:none}
+  .providers-section{margin-top:32px}
+  .providers-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px}
+  .providers-header h3{font-size:18px;font-weight:700}
+  .live-dot{display:inline-block;width:7px;height:7px;background:#0d7d3e;border-radius:50%;margin-right:6px;animation:pulse 2s infinite}
+  .provider-row{display:flex;align-items:center;gap:12px;padding:14px 16px;margin-bottom:8px;border-radius:12px;background:#fff;border:1px solid #e8e8e8}
+  .provider-row:hover{border-color:#ccc}
+  .provider-row .rank{width:28px;height:28px;border-radius:50%;background:#f0f0f0;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+  .provider-row .info{flex:1;min-width:140px}
+  .provider-row .pname{font-size:14px;font-weight:700}
+  .provider-row .pmeta{font-size:11px;color:#888}
+  .provider-row .actions{display:flex;gap:6px;flex-shrink:0}
 
   /* OBJECTIONS */
-  .obj-grid{max-width:1136px;margin:0 auto;padding:0 24px 64px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .obj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   @media(max-width:768px){.obj-grid{grid-template-columns:1fr}}
-  .obj-card{padding:24px;border-radius:12px;border:1px solid #e5e5e5;box-shadow:rgba(0,0,0,0.12) 0px 4px 16px}
+  .obj-card{padding:20px;border-radius:14px;border:1px solid #e8e8e8;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
   .obj-card .q{font-size:13px;font-weight:700;margin-bottom:6px}
-  .obj-card .a{font-size:12px;color:#4b4b4b;line-height:1.6}
+  .obj-card .a{font-size:12px;color:#666;line-height:1.6}
+
+  /* PROVIDER CTA */
+  .cta-dark{background:#111;color:#fff;border-radius:16px;padding:40px;text-align:center;margin-top:40px}
+  .cta-dark h3{font-size:22px;font-weight:700;margin-bottom:8px}
+  .cta-dark p{font-size:13px;color:#aaa;margin-bottom:20px}
+  .cta-dark .btn-white{background:#fff;color:#111}
 
   /* FOOTER */
-  footer{background:#000;color:#fff;padding:48px 24px 32px}
-  .footer-inner{max-width:1136px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+  footer{background:#111;color:#fff;padding:48px 24px 32px;margin-top:48px}
+  .footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
   @media(max-width:600px){.footer-inner{grid-template-columns:repeat(2,1fr)}}
   footer h4{font-size:14px;font-weight:700;margin-bottom:12px}
-  footer ul{list-style:none}.footer li{margin-bottom:6px}
-  footer a{color:#afafaf;text-decoration:none;font-size:12px}footer a:hover{color:#fff}
-  .footer-bottom{max-width:1136px;margin:32px auto 0;padding-top:24px;border-top:1px solid #333;display:flex;justify-content:space-between;font-size:11px;color:#afafaf;flex-wrap:wrap;gap:8px}
-
-  /* LEAD FORM */
-  .lead-form{max-width:400px;margin:0 auto;padding:24px}
-  .lead-form input,.lead-form select,.lead-form textarea{width:100%;padding:12px;margin-bottom:8px;border:1px solid #000;border-radius:8px;font-size:13px;font-family:inherit}
-  .lead-form textarea{resize:vertical;min-height:60px}
-  .lead-form input:focus,.lead-form select:focus,.lead-form textarea:focus{outline:none;border-width:2px}
+  footer ul{list-style:none}footer li{margin-bottom:6px}
+  footer a{color:#aaa;text-decoration:none;font-size:12px}footer a:hover{color:#fff}
+  .footer-bottom{max-width:1200px;margin:32px auto 0;padding-top:24px;border-top:1px solid #333;display:flex;justify-content:space-between;font-size:11px;color:#aaa;flex-wrap:wrap;gap:8px}
 </style>
 </head>
 <body>
 
-<div class="topbar">24/7 Emergency Services · 505 Cities · 9 Service Categories · 22,725 Provider Slots</div>
+<div class="topbar">Emergency service providers, matched in seconds · 505 cities · 9 categories</div>
 
 <header>
   <div class="logo">Call<span>Now</span>Service</div>
   <div class="header-right">
-    <a href="/provider">List Your Business</a>
-    <a href="/provider" class="btn btn-black">Claim Territory — $49/mo</a>
+    <a href="/provider">For Providers</a>
+    <a href="/provider" class="btn btn-primary" style="padding:8px 18px;font-size:12px">Claim Territory</a>
   </div>
 </header>
 
 <!-- HERO -->
-<div class="hero-wrap">
-  <div class="hero-text">
-    <h1>Emergency help,<br>where you need it.</h1>
-    <p>When people ask ChatGPT, Perplexity, or Google for an emergency plumber — we're the answer. AI-optimized across every major search engine. Your customers find you, not your competitors.</p>
-    <div class="hero-actions">
-      <a href="#services" class="btn btn-black">Find Services Near You</a>
-      <a href="/provider" class="btn btn-gray">List Your Business</a>
+<section class="hero">
+  <div class="hero-left">
+    <h1>Emergency service providers,<br>matched in seconds.</h1>
+    <p>CallNowService connects homeowners to verified emergency providers in their city — and gives service businesses dedicated placement when people need help most.</p>
+    <div class="hero-cta">
+      <a href="#services" class="btn btn-primary">Find Providers Near You</a>
+      <a href="/provider" class="btn btn-secondary">List Your Business</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">505</div><div class="lbl">Cities</div></div>
+      <div class="hero-stat"><div class="num">5</div><div class="lbl">Spots per service</div></div>
+      <div class="hero-stat"><div class="num">22,725</div><div class="lbl">Total placements</div></div>
+      <div class="hero-stat"><div class="num">Flat</div><div class="lbl">Monthly pricing</div></div>
+      <div class="hero-stat"><div class="num">No PPL</div><div class="lbl">No pay-per-lead</div></div>
     </div>
   </div>
-  <div class="hero-visual">🔧</div>
-</div>
 
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="stat"><div class="num">505</div><div class="label">Cities</div></div>
-  <div class="stat"><div class="num">5</div><div class="label">Spots Per Service</div></div>
-  <div class="stat"><div class="num">Flat</div><div class="label">Monthly Fee</div></div>
-  <div class="stat"><div class="num">22,725</div><div class="label">Total Slots</div></div>
-  <div class="stat"><div class="num">AI</div><div class="label">Optimized</div></div>
-</div>
+  <!-- MOCKUP -->
+  <div class="mockup">
+    <div class="mockup-top">
+      <span class="mockup-pill">📍 Chicago, IL</span>
+      <span class="mockup-pill live"><span class="dot"></span> Live placements</span>
+    </div>
+    <div class="mockup-title">Emergency Plumber</div>
+    <div class="mockup-sub">5 verified provider spots available</div>
+
+    <div class="mockup-body">
+      <div class="mockup-map">
+        <div class="grid"></div>
+        <div class="pin" style="top:60%;left:30%"></div>
+        <div class="pin" style="top:40%;left:55%"></div>
+        <div class="pin" style="top:25%;left:70%"></div>
+        <div class="pin active" style="top:50%;left:50%"></div>
+        <div class="pin" style="top:70%;left:40%"></div>
+        <div class="badge-map">Service area detected</div>
+      </div>
+      <div class="mockup-spots">
+        <div class="spot-card">
+          <div class="spot-num taken">1</div>
+          <div class="spot-info"><div class="spot-label">Spot 1</div><div class="spot-sub">Verified provider placement</div></div>
+          <span class="spot-status">Available</span>
+          <button class="btn btn-xs btn-green">Claim</button>
+        </div>
+        <div class="spot-card">
+          <div class="spot-num taken">2</div>
+          <div class="spot-info"><div class="spot-label">Spot 2</div><div class="spot-sub">Verified provider placement</div></div>
+          <span class="spot-status">Available</span>
+          <button class="btn btn-xs btn-green">Claim</button>
+        </div>
+        <div class="spot-card">
+          <div class="spot-num">3</div>
+          <div class="spot-info"><div class="spot-label">Spot 3</div><div class="spot-sub">Verified provider placement</div></div>
+          <span class="spot-status">Available</span>
+          <button class="btn btn-xs btn-green">Claim</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mockup-footer">
+      <span>+ 2 more spots in Chicago</span>
+      <a href="/provider" class="more">View all spots →</a>
+    </div>
+    <div class="mockup-cross-sell">Also available for Electricians, HVAC, Locksmiths, Roofers, and Water Damage</div>
+  </div>
+</section>
 
 <!-- HOW IT WORKS -->
-<div class="section-heading"><h2>How it works</h2><p>Three steps. No friction.</p></div>
-<div class="how-grid">
-  <div class="how-card card-shadow">
-    <div class="icon">📍</div><h3>We detect your location</h3><p>Automatically matches you with providers in your city. No typing required.</p>
-  </div>
-  <div class="how-card card-shadow">
-    <div class="icon">⚡</div><h3>We match instantly</h3><p>Five verified providers per category. You choose who to call.</p>
-  </div>
-  <div class="how-card card-shadow">
-    <div class="icon">📞</div><h3>They answer</h3><p>One tap to call. Provider picks up. Problem solved.</p>
+<div class="container">
+  <div class="section-heading"><h2>How it works</h2><p>Three steps. No friction.</p></div>
+  <div class="how-grid">
+    <div class="how-card"><div class="icon">📍</div><h3>We detect your location</h3><p>Automatically matches you with providers in your city.</p></div>
+    <div class="how-card"><div class="icon">⚡</div><h3>We match instantly</h3><p>Five verified providers per category. You choose.</p></div>
+    <div class="how-card"><div class="icon">📞</div><h3>They answer</h3><p>One tap to call. Provider picks up. Problem solved.</p></div>
   </div>
 </div>
 
 <!-- SERVICES -->
-<div class="services-section" id="services">
-  <div class="section-heading"><h2>Emergency services</h2><p>Select a category to see available providers in your area</p></div>
+<div class="container" id="services">
+  <div class="section-heading"><h2>Emergency services</h2><p>Select a category to see available providers</p></div>
   <div class="service-grid" id="service-grid">
-    <div class="service-card active" data-service="plumber" onclick="selectService(this,'plumber')"><span class="svc-icon">🔧</span><span class="svc-name">Plumber</span><span class="svc-spots">5 spots</span></div>
-    <div class="service-card" data-service="electrician" onclick="selectService(this,'electrician')"><span class="svc-icon">⚡</span><span class="svc-name">Electrician</span><span class="svc-spots">5 spots</span></div>
-    <div class="service-card" data-service="hvac" onclick="selectService(this,'hvac')"><span class="svc-icon">❄️</span><span class="svc-name">HVAC</span><span class="svc-spots">5 spots</span></div>
-    <div class="service-card" data-service="locksmith" onclick="selectService(this,'locksmith')"><span class="svc-icon">🔐</span><span class="svc-name">Locksmith</span><span class="svc-spots">5 spots</span></div>
-    <div class="service-card" data-service="mechanic" onclick="selectService(this,'mechanic')"><span class="svc-icon">🚗</span><span class="svc-name">Mechanic</span><span class="svc-spots">5 spots</span></div>
-    <div class="service-card" data-service="roofer" onclick="selectService(this,'roofer')"><span class="svc-icon">🏠</span><span class="svc-name">Roofer</span><span class="svc-spots">5 spots</span></div>
-    <div class="service-card" data-service="appliance" onclick="selectService(this,'appliance')"><span class="svc-icon">🔌</span><span class="svc-name">Appliance Repair</span><span class="svc-spots">5 spots</span></div>
-    <div class="service-card" data-service="pest-control" onclick="selectService(this,'pest-control')"><span class="svc-icon">🐛</span><span class="svc-name">Pest Control</span><span class="svc-spots">5 spots</span></div>
-    <div class="service-card" data-service="water-damage" onclick="selectService(this,'water-damage')"><span class="svc-icon">💧</span><span class="svc-name">Water Damage</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card active" onclick="selectService(this,'plumber')"><span class="svc-icon">🔧</span><span class="svc-name">Plumber</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" onclick="selectService(this,'electrician')"><span class="svc-icon">⚡</span><span class="svc-name">Electrician</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" onclick="selectService(this,'hvac')"><span class="svc-icon">❄️</span><span class="svc-name">HVAC</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" onclick="selectService(this,'locksmith')"><span class="svc-icon">🔐</span><span class="svc-name">Locksmith</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" onclick="selectService(this,'mechanic')"><span class="svc-icon">🚗</span><span class="svc-name">Mechanic</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" onclick="selectService(this,'roofer')"><span class="svc-icon">🏠</span><span class="svc-name">Roofer</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" onclick="selectService(this,'appliance')"><span class="svc-icon">🔌</span><span class="svc-name">Appliance Repair</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" onclick="selectService(this,'pest-control')"><span class="svc-icon">🐛</span><span class="svc-name">Pest Control</span><span class="svc-spots">5 spots</span></div>
+    <div class="service-card" onclick="selectService(this,'water-damage')"><span class="svc-icon">💧</span><span class="svc-name">Water Damage</span><span class="svc-spots">5 spots</span></div>
   </div>
-</div>
 
-<!-- PROVIDERS -->
-<div class="providers-section">
-  <div class="providers-header">
-    <h3><span class="live-dot"></span> Plumber — Chicago, IL</h3>
-    <a href="/provider" class="btn btn-gray" style="font-size:12px">Claim a spot</a>
+  <!-- PROVIDER LIST -->
+  <div class="providers-section">
+    <div class="providers-header">
+      <h3><span class="live-dot"></span> Plumber — Chicago, IL</h3>
+      <a href="/provider" class="btn btn-secondary" style="font-size:12px;padding:8px 16px">Claim a spot</a>
+    </div>
+    <div id="provider-list"></div>
   </div>
-  <div id="provider-list"></div>
 </div>
 
 <!-- OBJECTIONS -->
-<div class="section-heading"><h2>Already have a website?</h2><p>Here's why you still need us.</p></div>
-<div class="obj-grid">
-  <div class="obj-card"><div class="q">"I already have a website."</div><div class="a">Your website waits for people to find it. We put you where people are already searching: ChatGPT, Perplexity, Google AI. When someone asks AI "emergency plumber near me," we're in the answer. Your site alone won't be.</div></div>
-  <div class="obj-card"><div class="q">"I'm on Google Maps."</div><div class="a">Maps is one channel. AI assistants are three more — and growing faster. We're indexed on all of them. Maps doesn't help when someone asks ChatGPT at 2am.</div></div>
-  <div class="obj-card"><div class="q">"I use HomeAdvisor."</div><div class="a">They show 20 competitors next to you and charge per lead. We show 5 providers per city total. Flat monthly fee. No commissions. No bidding wars.</div></div>
-</div>
+<div class="container">
+  <div class="section-heading"><h2>Already have a website?</h2><p>Here's why you still need us.</p></div>
+  <div class="obj-grid">
+    <div class="obj-card"><div class="q">"I already have a website."</div><div class="a">Your website waits. We put you where people search: ChatGPT, Perplexity, Google AI.</div></div>
+    <div class="obj-card"><div class="q">"I'm on Google Maps."</div><div class="a">Maps is one channel. AI assistants are 3 more. We're indexed on all of them.</div></div>
+    <div class="obj-card"><div class="q">"I use HomeAdvisor."</div><div class="a">They show 20 competitors and charge per lead. We show 5. Flat monthly. No bidding.</div></div>
+  </div>
 
-<!-- PROVIDER CTA -->
-<div class="provider-cta">
-  <h3>Are you a service provider?</h3>
-  <p>5 spots per service per city. First come, first served. Flat monthly fee. No per-lead charges.</p>
-  <a href="/provider" class="btn btn-white">Claim Your Territory — from $49/mo</a>
-  <a href="/provider" class="btn btn-gray" style="margin-left:8px">Pricing Plans</a>
+  <!-- CTA -->
+  <div class="cta-dark">
+    <h3>Are you a service provider?</h3>
+    <p>5 spots per service per city. Flat monthly fee. No pay-per-lead. First come, first served.</p>
+    <a href="/provider" class="btn btn-primary btn-white">Claim Your Territory — from $49/mo</a>
+    <a href="/provider" class="btn btn-secondary" style="margin-left:8px;color:#fff;border-color:#555">Pricing Plans</a>
+  </div>
 </div>
 
 <!-- FOOTER -->
@@ -227,12 +291,9 @@ function selectService(el,svc){
 function renderProviders(){
   var h='';
   providers.forEach(function(p,i){
-    h+='<div class="provider-card card-shadow">';
-    h+='<div class="rank">'+(i+1)+'</div>';
-    h+='<div class="info"><div class="pname">'+p.name+'<span class="spot spot-available">Spot '+(i+1)+'</span></div>';
-    h+='<div class="pmeta">5 providers per category · First come, first served</div></div>';
-    h+='<div class="actions"><a href="/provider" class="btn btn-black" style="font-size:12px">Claim This Spot</a></div>';
-    h+='</div>';
+    h+='<div class="provider-row"><div class="rank">'+(i+1)+'</div>';
+    h+='<div class="info"><div class="pname">'+p.name+'</div><div class="pmeta">5 providers per category · First come, first served</div></div>';
+    h+='<div class="actions"><a href="/provider" class="btn btn-primary" style="font-size:11px;padding:7px 14px">Claim This Spot</a></div></div>';
   });
   document.getElementById('provider-list').innerHTML=h;
 }
