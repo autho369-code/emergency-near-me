@@ -228,12 +228,24 @@ function submitClaim(){
   d.time=new Date().toISOString();
   d.status='pending';
   
+  // Count how many spots are already filled in this category
+  var filledInCategory = 0;
+  var existing = JSON.parse(localStorage.getItem('cns_signups')||'[]');
+  existing.forEach(function(s){ if(s.service===d.service && s.city===d.city) filledInCategory++; });
+  
   // Save to pending signups (visible on dashboard)
   var signups=JSON.parse(localStorage.getItem('cns_signups')||'[]');
   signups.push(d);
   localStorage.setItem('cns_signups',JSON.stringify(signups));
   
-  alert('Territory claim submitted! Check dashboard to review.\n\n'+d.service+' — '+d.city+' — '+d.plan);
+  // Send to server for email notification
+  fetch('/api/signup',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(d)
+  }).catch(function(){});
+  
+  alert('Thank you! We will reach out within 24 hours to verify your business and arrange payment.\n\nService: '+d.service+'\nCity: '+d.city+'\nPlan: '+d.plan+'\n\nOnly '+ (5 - filledInCategory) +' spots remain in this category — we will prioritize your application.');
   document.querySelectorAll('#signup input,#signup select').forEach(function(el){el.value=''});
 }
 </script>
