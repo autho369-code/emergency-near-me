@@ -1,44 +1,40 @@
 #!/usr/bin/env python3
 """
-SendGrid email sender for CallNowService
+Gmail SMTP email sender for CallNowService
+Requirements:
+  - Gmail account with 2FA enabled
+  - App Password generated at https://myaccount.google.com/apppasswords
+  - Set env: GMAIL_APP_PASSWORD
+
 Usage: python send_email.py <to_email> <subject> <body_text>
-API key read from environment: SENDGRID_API_KEY
 """
 
-import os, sys, json, urllib.request, urllib.error
+import os, sys, smtplib
+from email.mime.text import MIMEText
 
-SENDGRID_API_KEY = os.environ.get("SENDGRID_API_KEY", "")
-FROM_EMAIL = "hello@callservicenow.com"
+SMTP_SERVER = "smtp.gmail.com"
+SMTP_PORT = 587
+FROM_EMAIL = "autho369@gmail.com"
 FROM_NAME = "CallNowService"
 
-def send_email(to_email, subject, body, api_key=None):
-    key = api_key or SENDGRID_API_KEY
-    if not key:
-        return {"error": "SENDGRID_API_KEY not set"}
+def send_email(to_email, subject, body, password=None):
+    pw = password or os.environ.get("GMAIL_APP_PASSWORD", "")
+    if not pw:
+        return {"error": "GMAIL_APP_PASSWORD not set. Get one at https://myaccount.google.com/apppasswords"}
     
-    data = {
-        "personalizations": [{"to": [{"email": to_email}]}],
-        "from": {"email": FROM_EMAIL, "name": FROM_NAME},
-        "subject": subject,
-        "content": [{"type": "text/plain", "value": body}]
-    }
-    
-    req = urllib.request.Request(
-        "https://api.sendgrid.com/v3/mail/send",
-        data=json.dumps(data).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {key}",
-            "Content-Type": "application/json"
-        },
-        method="POST"
-    )
+    msg = MIMEText(body)
+    msg["From"] = f"{FROM_NAME} <{FROM_EMAIL}>"
+    msg["To"] = to_email
+    msg["Subject"] = subject
     
     try:
-        with urllib.request.urlopen(req) as resp:
-            return {"status": resp.status, "sent": True, "to": to_email, "subject": subject}
-    except urllib.error.HTTPError as e:
-        err = json.loads(e.read().decode())
-        return {"error": str(e.code), "detail": err}
+        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+            server.starttls()
+            server.login(FROM_EMAIL, pw)
+            server.send_message(msg)
+        return {"status": "sent", "to": to_email, "subject": subject}
+    except Exception as e:
+        return {"error": str(e)}
 
 if __name__ == "__main__":
     if len(sys.argv) < 4:
@@ -46,4 +42,4 @@ if __name__ == "__main__":
         sys.exit(1)
     
     result = send_email(sys.argv[1], sys.argv[2], sys.argv[3])
-    print(json.dumps(result, indent=2))
+    print(result.get("status") or f"Error: {result['error']}")
