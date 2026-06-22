@@ -238,13 +238,6 @@ function submitClaim(){
   signups.push(d);
   localStorage.setItem('cns_signups',JSON.stringify(signups));
   
-  // Send to server for email notification
-  fetch('/api/signup',{
-    method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(d)
-  }).catch(function(){});
-  
   alert('Thank you! We will reach out within 24 hours to verify your business and arrange payment.\n\nService: '+d.service+'\nCity: '+d.city+'\nPlan: '+d.plan+'\n\nOnly '+ (5 - filledInCategory) +' spots remain in this category — we will prioritize your application.');
   document.querySelectorAll('#signup input,#signup select').forEach(function(el){el.value=''});
 }

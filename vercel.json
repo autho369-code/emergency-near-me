@@ -3,13 +3,7 @@
   "buildCommand": "echo 'Static site — no build needed'",
   "outputDirectory": ".",
   "cleanUrls": true,
-  "functions": {
-    "api/signup.py": {
-      "runtime": "@vercel/python"
-    }
-  },
   "rewrites": [
-    { "source": "/api/signup", "destination": "/api/signup" },
     { "source": "/dashboard", "destination": "/dashboard.html" },
     { "source": "/dashboard/", "destination": "/dashboard.html" },
     { "source": "/agents", "destination": "/agent_dashboard.html" },
