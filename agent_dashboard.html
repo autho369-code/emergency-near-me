@@ -3,145 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CallNowService — AIOS Agent Dashboard</title>
+<title>CallNowService — Agent Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,system-ui,sans-serif;background:#0f1117;color:#e1e4e8;padding:20px}
-  h1{font-size:18px;margin-bottom:4px}
-  .sub{color:#8b949e;font-size:11px;margin-bottom:20px}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#000;line-height:1.5;padding:20px}
+  h1{font-size:18px;font-weight:700;margin-bottom:4px}
+  .sub{font-size:11px;color:#4b4b4b;margin-bottom:16px}
   .stats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-  .stat{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px 14px;text-align:center;min-width:80px}
+  .stat{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:10px 14px;text-align:center;min-width:80px}
   .stat .num{font-size:20px;font-weight:700}
-  .stat .label{font-size:9px;color:#8b949e;text-transform:uppercase;margin-top:2px}
-  .flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:16px;padding:12px;background:#161b22;border:1px solid #30363d;border-radius:10px;font-size:11px}
-  .flow-step{background:#0d1117;border:1px solid #30363d;border-radius:7px;padding:8px 10px;text-align:center;min-width:70px}
-  .flow-step .icon{font-size:16px}
-  .flow-step .name{font-size:9px;font-weight:700;margin-top:2px;text-transform:uppercase}
-  .flow-step .count{font-size:16px;font-weight:700;color:#58a6ff;margin-top:2px}
-  .flow-step .count.green{color:#3fb950}
-  .flow-step .count.orange{color:#d2991d}
-  .flow-arrow{color:#30363d;font-size:14px}
-  h2{font-size:14px;margin-bottom:10px;margin-top:20px}
+  .stat .label{font-size:9px;color:#4b4b4b;text-transform:uppercase;margin-top:2px}
+  .flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:20px;padding:16px;background:#fff;border:1px solid #e5e5e5;border-radius:12px;font-size:11px}
+  .flow-step{background:#f8f8f8;border:1px solid #e5e5e5;border-radius:8px;padding:8px 10px;text-align:center;min-width:70px}
+  .flow-step .icon{font-size:16px}.flow-step .name{font-size:9px;font-weight:700;text-transform:uppercase;margin-top:2px}
+  .flow-step .count{font-size:16px;font-weight:700;margin-top:2px}.flow-arrow{color:#ccc;font-size:14px}
+  h2{font-size:14px;font-weight:700;margin-bottom:10px;margin-top:20px}
   .agent-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:8px}
-  .agent-card{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px}
+  .agent-card{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:14px}
+  .agent-card:hover{box-shadow:rgba(0,0,0,0.12)0px 4px 16px}
   .agent-card .top{display:flex;justify-content:space-between;align-items:start;margin-bottom:4px}
-  .agent-card h3{font-size:13px}
-  .badge{display:inline-block;padding:2px 7px;border-radius:7px;font-size:9px;font-weight:700}
-  .badge.on{background:rgba(63,185,80,0.12);color:#3fb950}
-  .badge.wait{background:rgba(88,166,255,0.12);color:#58a6ff}
-  .agent-card .desc{font-size:10px;color:#8b949e;margin-bottom:6px}
-  .agent-card .sched{font-size:10px;color:#8b949e}
-  .agent-card .edit{font-size:9px;color:#d2991d;margin-top:6px;font-style:italic}
-  .recent{font-size:10px;color:#8b949e;margin-top:20px;padding:10px 14px;background:#161b22;border:1px solid #30363d;border-radius:8px}
-  .recent div{margin-bottom:3px}
-  .signup-bar{background:#0d1117;border:1px solid #238636;border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:11px;display:none}
-  .signup-bar a{color:#58a6ff}
+  .agent-card h3{font-size:13px;font-weight:700}
+  .badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:9px;font-weight:700}
+  .badge.on{background:#d4edda;color:#155724}.badge.wait{background:#efefef;color:#000}
+  .agent-card .desc{font-size:10px;color:#4b4b4b;margin-bottom:6px}
+  .agent-card .sched{font-size:10px;color:#4b4b4b}.agent-card .edit{font-size:9px;color:#4b4b4b;margin-top:6px;font-style:italic}
+  .recent{font-size:10px;color:#4b4b4b;margin-top:20px;padding:12px 16px;background:#fff;border:1px solid #e5e5e5;border-radius:8px}
 </style>
 </head>
 <body>
 
-<h1>CallNowService — Agent Control Board</h1>
-<div class="sub" id="updated">Loading real data...</div>
-
-<div class="signup-bar" id="signup-bar">
-  📥 <strong id="signup-count">0</strong> pending signups — <a href="/dashboard">review now</a>
-</div>
-
+<h1>CallNowService — Agent Dashboard</h1>
+<div class="sub" id="updated">Loading...</div>
 <div class="stats" id="stats"></div>
 
-<h2>Pipeline: 5 Slots Per Service</h2>
+<h2>Pipeline</h2>
 <div class="flow">
-  <div class="flow-step"><div class="icon">🔍</div><div class="name">Searching</div><div class="count" id="cnt-searching">—</div></div>
-  <div class="flow-arrow">→</div>
-  <div class="flow-step"><div class="icon">✅</div><div class="name">Found</div><div class="count orange" id="cnt-found">—</div></div>
-  <div class="flow-arrow">→</div>
-  <div class="flow-step"><div class="icon">✉️</div><div class="name">Contacted</div><div class="count orange" id="cnt-contacted">—</div></div>
-  <div class="flow-arrow">→</div>
-  <div class="flow-step"><div class="icon">📥</div><div class="name">Signups</div><div class="count orange" id="cnt-intake">—</div></div>
-  <div class="flow-arrow">→</div>
-  <div class="flow-step"><div class="icon">💰</div><div class="name">Active</div><div class="count green" id="cnt-active">—</div></div>
-  <div class="flow-arrow">→</div>
-  <div class="flow-step"><div class="icon">📊</div><div class="name">Revenue</div><div class="count green" id="cnt-revenue">—</div></div>
+  <div class="flow-step"><div class="icon">🔍</div><div class="name">Searching</div><div class="count" id="cnt-searching">—</div></div><div class="flow-arrow">→</div>
+  <div class="flow-step"><div class="icon">✅</div><div class="name">Found</div><div class="count" id="cnt-found">—</div></div><div class="flow-arrow">→</div>
+  <div class="flow-step"><div class="icon">✉️</div><div class="name">Contacted</div><div class="count" id="cnt-contacted">—</div></div><div class="flow-arrow">→</div>
+  <div class="flow-step"><div class="icon">📥</div><div class="name">Signups</div><div class="count" id="cnt-intake">—</div></div><div class="flow-arrow">→</div>
+  <div class="flow-step"><div class="icon">💰</div><div class="name">Active</div><div class="count" id="cnt-active">—</div></div>
 </div>
 
-<h2>7 Agents</h2>
+<h2>Agents</h2>
 <div class="agent-grid" id="agents"></div>
-
 <div class="recent" id="recent"></div>
 
 <script>
 fetch('providers.json').then(r=>r.json()).then(DATA=>{
-  var m = DATA._meta||{};
-  document.getElementById('updated').textContent = 'Real data from providers.json | Updated: '+(m.updated||'never')+' | '+(m.total_vendor_slots||0).toLocaleString()+' total slots | 5 vendors per slot';
+  var m=DATA._meta||{};document.getElementById('updated').textContent='Real data from providers.json | Updated: '+(m.updated||'never')+' | '+((m.total_vendor_slots||0).toLocaleString())+' slots';
+  var st={total:0};for(var ck in DATA){if(ck.startsWith('_'))continue;for(var sk in DATA[ck]){if(sk.startsWith('_'))continue;if(Array.isArray(DATA[ck][sk]))DATA[ck][sk].forEach(function(v){st[v.status]=(st[v.status]||0)+1;st.total++;});}}
+  document.getElementById('stats').innerHTML='<div class="stat"><div class="num">'+(st.searching||0)+'</div><div class="label">Searching</div></div><div class="stat"><div class="num">'+(st.found||0)+'</div><div class="label">Found</div></div><div class="stat"><div class="num">'+(st.contacted||0)+'</div><div class="label">Contacted</div></div><div class="stat"><div class="num">'+(st.active||0)+'</div><div class="label">Active</div></div><div class="stat"><div class="num">$'+(m.revenue_month||0)+'</div><div class="label">Revenue/mo</div></div><div class="stat"><div class="num">'+st.total+'</div><div class="label">Total Slots</div></div>';
+  document.getElementById('cnt-searching').textContent=st.searching||0;document.getElementById('cnt-found').textContent=st.found||0;document.getElementById('cnt-contacted').textContent=st.contacted||0;document.getElementById('cnt-intake').textContent=(st.intake||0)+(st.onboarding||0)+(st.paid||0);document.getElementById('cnt-active').textContent=st.active||0;
 
-  var st={total:0};
-  for(var ck in DATA){if(ck.startsWith('_'))continue;var c=DATA[ck];
-    for(var sk in c){if(sk.startsWith('_'))continue;var vendors=c[sk];
-      if(Array.isArray(vendors)) vendors.forEach(function(v){
-        st[v.status]=(st[v.status]||0)+1;
-        st.total++;
-      });
-    }
-  }
-
-  document.getElementById('stats').innerHTML =
-    '<div class="stat"><div class="num" style="color:#58a6ff">'+(st.searching||0)+'</div><div class="label">Searching</div></div>'+
-    '<div class="stat"><div class="num" style="color:#d2991d">'+(st.found||0)+'</div><div class="label">Found</div></div>'+
-    '<div class="stat"><div class="num">'+(st.contacted||0)+'</div><div class="label">Contacted</div></div>'+
-    '<div class="stat"><div class="num" style="color:#bc8cff">'+(st.intake||0)+'</div><div class="label">Intake</div></div>'+
-    '<div class="stat"><div class="num" style="color:#3fb950">'+(st.active||0)+'</div><div class="label">Active</div></div>'+
-    '<div class="stat"><div class="num" style="color:#f85149">'+(st.rejected||0)+'</div><div class="label">Rejected</div></div>'+
-    '<div class="stat"><div class="num">$'+(m.revenue_month||0)+'</div><div class="label">Revenue/mo</div></div>'+
-    '<div class="stat"><div class="num">'+st.total+'</div><div class="label">Total Slots</div></div>';
-
-  document.getElementById('cnt-searching').textContent = st.searching||0;
-  document.getElementById('cnt-found').textContent = st.found||0;
-  document.getElementById('cnt-contacted').textContent = st.contacted||0;
-  document.getElementById('cnt-intake').textContent = (st.intake||0)+(st.onboarding||0)+(st.paid||0);
-  document.getElementById('cnt-active').textContent = st.active||0;
-  document.getElementById('cnt-revenue').textContent = '$'+(m.revenue_month||0);
-
-  // Show pending signups from localStorage (same-origin)
-  try {
-    var signups = JSON.parse(localStorage.getItem('cns_signups')||'[]');
-    var pending = signups.filter(function(s){return s.status==='pending'}).length;
-    if(pending > 0){
-      document.getElementById('signup-bar').style.display='block';
-      document.getElementById('signup-count').textContent = pending;
-    }
-  } catch(e){}
-
-  var agents = [
-    {icon:"🔍",name:"Research Agent",desc:"Finds providers via Google search. Passes to Outreach Agent. Does NOT contact.",sched:"Mon 8am",skill:"callnow-research"},
-    {icon:"✉️",name:"Outreach Agent",desc:"Sends cold emails via Gmail to found providers",sched:"Mon 10am",skill:"callnow-outreach"},
-    {icon:"📥",name:"Intake Agent",desc:"Checks for provider replies, extracts details for onboarding",sched:"Every hour",skill:"callnow-intake"},
-    {icon:"🤝",name:"Onboarding Agent",desc:"Sends pricing + payment info to interested providers",sched:"Every hour",skill:"callnow-onboarding"},
-    {icon:"💰",name:"Payment Agent",desc:"Confirms payments, marks providers as paid",sched:"Daily 9am",skill:"callnow-payment"},
-    {icon:"👁️",name:"Supervisor Agent",desc:"Activates paid listings, oversees pipeline health",sched:"Daily 10am",skill:"callnow-supervisor"},
-    {icon:"📊",name:"Monitor Agent",desc:"Tracks leads via click counter, monthly invoices",sched:"Daily 7am",skill:"callnow-monitor"}
-  ];
-
-  var ah='';
-  agents.forEach(function(a){
-    ah+='<div class="agent-card">';
-    ah+='<div class="top"><h3>'+a.icon+' '+a.name+'</h3><span class="badge wait">LIVE</span></div>';
-    ah+='<div class="desc">'+a.desc+'</div>';
-    ah+='<div class="sched">Schedule: '+a.sched+'</div>';
-    ah+='<div class="edit">Edit: skills/callnow/'+a.skill+'</div>';
-    ah+='</div>';
-  });
+  var agents=[{icon:"🔍",name:"Research Agent",desc:"Finds providers via Google. Passes to Outreach.",sched:"Mon 8am",skill:"callnow-research"},{icon:"✉️",name:"Outreach Agent",desc:"Sends cold emails via Gmail to found providers",sched:"Mon 10am",skill:"callnow-outreach"},{icon:"📥",name:"Intake Agent",desc:"Reads provider replies, routes to onboarding",sched:"Every hour",skill:"callnow-intake"},{icon:"🤝",name:"Onboarding Agent",desc:"Sends pricing + payment to interested providers",sched:"Every hour",skill:"callnow-onboarding"},{icon:"💰",name:"Payment Agent",desc:"Confirms payments, marks providers paid",sched:"Daily 9am",skill:"callnow-payment"},{icon:"👁️",name:"Supervisor Agent",desc:"Activates listings, checks pipeline health",sched:"Daily 10am",skill:"callnow-supervisor"},{icon:"📊",name:"Monitor Agent",desc:"Tracks leads, uptime, monthly invoices",sched:"Daily 7am",skill:"callnow-monitor"}];
+  var ah='';agents.forEach(function(a){ah+='<div class="agent-card"><div class="top"><h3>'+a.icon+' '+a.name+'</h3><span class="badge wait">LIVE</span></div><div class="desc">'+a.desc+'</div><div class="sched">Schedule: '+a.sched+'</div><div class="edit">Edit: skills/callnow/'+a.skill+'</div></div>';});
   document.getElementById('agents').innerHTML=ah;
-
-  var contacted = st.contacted||0, active = st.active||0, found = st.found||0;
-  document.getElementById('recent').innerHTML =
-    '<strong>Live Status</strong><br>'+
-    (active > 0 ? '<div>✅ <b style="color:#3fb950">'+active+' active providers</b> receiving leads</div>' : '<div>💰 No active providers yet</div>')+
-    (contacted > 0 ? '<div>✉️ <b>'+contacted+' providers contacted</b> — waiting for replies</div>' : '')+
-    (found > 0 ? '<div>🔍 <b>'+found+' providers found</b> — ready for outreach</div>' : '<div>🔍 Research Agent runs Monday — will find providers</div>')+
-    '<div style="margin-top:6px;color:#8b949e">3 outreach emails sent this week | Template includes (847) 652-2338 | From: autho369@gmail.com</div>';
-}).catch(function(){
-  document.getElementById('updated').textContent = 'Cannot load providers.json';
-});
+  document.getElementById('recent').innerHTML='<strong>Live Status</strong><br>'+((st.active||0)>0?'<div>✅ <b>'+(st.active||0)+' active providers</b></div>':'<div>💰 No active providers yet</div>')+((st.contacted||0)>0?'<div>✉️ <b>'+(st.contacted||0)+' providers contacted</b></div>':'')+'<div style="margin-top:6px">3 outreach emails sent | From: hello@callnowservice.com</div>';
+}).catch(function(){document.getElementById('updated').textContent='Cannot load providers.json';});
 </script>
 </body>
 </html>

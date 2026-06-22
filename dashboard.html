@@ -4,180 +4,87 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CallNowService — Provider Database</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,system-ui,sans-serif;background:#0f1117;color:#e1e4e8;padding:20px}
-  .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
-  .header h1{font-size:18px}
-  .loading-msg{text-align:center;padding:60px;color:#8b949e;font-size:14px}
-  .spinner{display:inline-block;width:20px;height:20px;border:2px solid #30363d;border-top-color:#e03131;border-radius:50%;animation:spin 0.6s linear infinite;margin-right:8px;vertical-align:middle}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-  .stat{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px 14px;text-align:center;min-width:80px}
-  .stat .num{font-size:22px;font-weight:700}
-  .stat .label{font-size:9px;color:#8b949e;text-transform:uppercase;margin-top:2px}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',system-ui,sans-serif;background:#fff;color:#000;line-height:1.5;padding:20px}
+  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+  .logo{font-size:18px;font-weight:700}.logo span{font-weight:400}.logo a{color:#000;text-decoration:none}
+  .loading{text-align:center;padding:60px;color:#4b4b4b;font-size:14px}
+  .stats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  .stat{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:10px 14px;text-align:center;min-width:80px}
+  .stat .num{font-size:20px;font-weight:700}
+  .stat .label{font-size:9px;color:#4b4b4b;text-transform:uppercase;margin-top:2px}
   .filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-  .filters select,.filters input{background:#161b22;border:1px solid #30363d;color:#e4e4e8;padding:6px 10px;border-radius:6px;font-size:12px}
+  .filters select,.filters input{padding:6px 12px;border:1px solid #e5e5e5;border-radius:999px;font-size:12px;font-family:inherit;background:#fff}
   table{width:100%;border-collapse:collapse;font-size:11px}
-  th{padding:8px;background:#161b22;border-bottom:1px solid #30363d;color:#8b949e;font-size:10px;text-transform:uppercase;text-align:left;position:sticky;top:0;z-index:1}
-  td{padding:6px 8px;border-bottom:1px solid #21262d}
-  tr:hover td{background:rgba(255,255,255,0.02)}
-  .badge{display:inline-block;padding:2px 7px;border-radius:8px;font-size:9px;font-weight:600}
-  .badge.searching{background:rgba(88,166,255,0.12);color:#58a6ff}
-  .badge.found{background:rgba(210,153,29,0.12);color:#d2991d}
-  .badge.contacted{background:rgba(139,148,158,0.12);color:#8b949e}
-  .badge.active{background:rgba(63,185,80,0.12);color:#3fb950}
-  .badge.onboarding,.badge.intake{background:rgba(188,140,255,0.12);color:#bc8cff}
-  .badge.rejected{background:rgba(248,81,73,0.12);color:#f85149}
-  .total-row{background:#161b22;font-weight:700}
-  .phone-link{color:#58a6ff;text-decoration:none;font-size:10px}
+  th{padding:8px;background:#f8f8f8;border-bottom:1px solid #e5e5e5;font-size:10px;text-transform:uppercase;color:#4b4b4b;text-align:left;position:sticky;top:0}
+  td{padding:6px 8px;border-bottom:1px solid #f0f0f0}
+  tr:hover td{background:#fafafa}
+  .badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:9px;font-weight:700}
+  .badge.searching{background:#efefef;color:#000}
+  .badge.found{background:#fff3cd;color:#856404}
+  .badge.contacted{background:#e2e2e2;color:#000}
+  .badge.active{background:#d4edda;color:#155724}
+  .badge.rejected{background:#f8d7da;color:#721c24}
+  .signup-bar{background:#000;color:#fff;border-radius:12px;padding:10px 16px;margin-bottom:16px;font-size:12px;display:none}
+  .signup-bar a{color:#fff;text-decoration:underline}
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>CallNowService — Provider Database</h1>
-  <span style="font-size:11px;color:#8b949e" id="meta-info"></span>
-</div>
+<header>
+  <div class="logo"><a href="/">Call<span>Now</span>Service</a></div>
+  <span style="font-size:12px;color:#4b4b4b" id="meta-info"></span>
+</header>
 
-<div id="loading" class="loading-msg"><span class="spinner"></span> Loading provider data...</div>
+<div id="loading" class="loading">Loading provider data...</div>
 
 <div id="content" style="display:none">
+  <div class="signup-bar" id="signup-bar">📥 <span id="signup-count">0</span> pending signups — <a href="#">review now</a></div>
   <div class="stats" id="stats"></div>
-
-  <div id="signups-section" style="display:none;margin-bottom:16px;padding:12px;background:#0d1117;border:1px solid #238636;border-radius:10px"></div>
-
   <div class="filters">
     <select id="fState"><option value="">All States</option></select>
     <select id="fService"><option value="">All Services</option></select>
     <select id="fStatus"><option value="">All Status</option><option value="searching">Searching</option><option value="found">Found</option><option value="contacted">Contacted</option><option value="active">Active</option></select>
     <input type="text" id="fSearch" placeholder="Search provider..." style="min-width:140px">
   </div>
-
-  <table>
-    <thead><tr><th>City</th><th>St</th><th>Service</th><th>Status</th><th>Provider</th><th>Phone</th><th>Leads</th><th>$/mo</th></tr></thead>
-    <tbody id="tbody"></tbody>
-  </table>
+  <table><thead><tr><th>City</th><th>St</th><th>Service</th><th>Status</th><th>Provider</th><th>Phone</th><th>Leads</th><th>$/mo</th></tr></thead><tbody id="tbody"></tbody></table>
 </div>
 
 <script>
-var DATA = [];
-
-fetch('providers.json')
-  .then(r=>r.json())
-  .then(d=>{
-    for(var ck in d){if(ck.startsWith('_'))continue;var c=d[ck];
-      for(var sk in c){if(sk.startsWith('_'))continue;var vendors=c[sk];
-        if(!Array.isArray(vendors))continue;
-        vendors.forEach(function(v,i){
-          DATA.push({
-            city:c._name||ck,state:c._state||'',service:sk,vendor:v,slot:i
-          });
-        });
-      }
+var DATA=[];
+fetch('providers.json').then(r=>r.json()).then(d=>{
+  for(var ck in d){if(ck.startsWith('_'))continue;var c=d[ck];
+    for(var sk in c){if(sk.startsWith('_'))continue;var vendors=c[sk];if(!Array.isArray(vendors))continue;
+      vendors.forEach(function(v,i){DATA.push({city:c._name||ck,state:c._state||'',service:sk,vendor:v,slot:i});});
     }
-    document.getElementById('loading').style.display='none';
-    document.getElementById('content').style.display='block';
-    if(d._meta) document.getElementById('meta-info').textContent='Updated: '+(d._meta.updated||'')+' | Slots: '+(d._meta.total_slots||0);
-    initFilters();
-    render();
-  }).catch(function(e){
-    document.getElementById('loading').innerHTML='Error loading data. <br><small>'+e.message+'</small>';
-  });
+  }
+  document.getElementById('loading').style.display='none';document.getElementById('content').style.display='block';
+  if(d._meta)document.getElementById('meta-info').textContent='Updated: '+(d._meta.updated||'')+' | Slots: '+(d._meta.total_slots||0);
+  initFilters();render();
+}).catch(function(e){document.getElementById('loading').innerHTML='Error: '+e.message;});
 
 function initFilters(){
-  var states={},services={};
-  DATA.forEach(function(r){states[r.state]=1;services[r.service]=1});
+  var states={},services={};DATA.forEach(function(r){states[r.state]=1;services[r.service]=1;});
   var sh='<option value="">All States</option>',sv='<option value="">All Services</option>';
-  Object.keys(states).sort().forEach(function(s){sh+='<option value="'+s+'">'+s+'</option>'});
-  Object.keys(services).sort().forEach(function(s){sv+='<option value="'+s+'">'+s+'</option>'});
-  document.getElementById('fState').innerHTML=sh;
-  document.getElementById('fService').innerHTML=sv;
-  document.getElementById('fState').onchange=render;
-  document.getElementById('fService').onchange=render;
-  document.getElementById('fStatus').onchange=render;
-  document.getElementById('fSearch').oninput=render;
-  loadSignups();
-}
-
-var SIGNUPS = [];
-
-function loadSignups(){
-  SIGNUPS = JSON.parse(localStorage.getItem('cns_signups')||'[]');
-  renderSignups();
-}
-
-function renderSignups(){
-  var div = document.getElementById('signups-section');
-  if(SIGNUPS.length === 0){ div.style.display='none'; return; }
-  div.style.display='block';
-  var html = '';
-  SIGNUPS.forEach(function(s,i){
-    html += '<div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:10px 14px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">';
-    html += '<div><strong>'+s.service+'</strong> — '+s.city+'<br><span style="font-size:11px;color:#8b949e">'+s.name+' | '+s.email+' | '+s.phone+' | '+s.plan+'</span></div>';
-    html += '<div style="display:flex;gap:4px">';
-    html += '<button onclick="approveSignup('+i+')" style="background:#238636;border:none;color:#fff;padding:4px 12px;border-radius:6px;cursor:pointer;font-size:11px">Approve</button>';
-    html += '<button onclick="rejectSignup('+i+')" style="background:#21262d;border:1px solid #30363d;color:#f85149;padding:4px 12px;border-radius:6px;cursor:pointer;font-size:11px">Reject</button>';
-    html += '</div></div>';
-  });
-  div.innerHTML = '<h3 style="font-size:14px;margin-bottom:8px">📥 Pending Signups ('+SIGNUPS.length+')</h3>'+html;
-}
-
-function approveSignup(i){
-  var s = SIGNUPS[i];
-  // Here we'd add to providers.json — for now, mark as approved
-  s.status = 'approved';
-  SIGNUPS[i] = s;
-  localStorage.setItem('cns_signups', JSON.stringify(SIGNUPS));
-  alert('Approved '+s.name+' for '+s.service+' in '+s.city+'. Add them to providers.json to go live.');
-  loadSignups();
-}
-
-function rejectSignup(i){
-  var s = SIGNUPS[i];
-  s.status = 'rejected';
-  SIGNUPS[i] = s;
-  localStorage.setItem('cns_signups', JSON.stringify(SIGNUPS));
-  alert('Rejected '+s.name);
-  loadSignups();
+  Object.keys(states).sort().forEach(function(s){sh+='<option>'+s+'</option>'});Object.keys(services).sort().forEach(function(s){sv+='<option>'+s+'</option>'});
+  document.getElementById('fState').innerHTML=sh;document.getElementById('fService').innerHTML=sv;
+  ['fState','fService','fStatus','fSearch'].forEach(function(id){document.getElementById(id).onchange=render;document.getElementById(id).oninput=render;});
+  try{
+    var signups=JSON.parse(localStorage.getItem('cns_signups')||'[]');var pending=signups.filter(function(s){return s.status==='pending'}).length;
+    if(pending>0){document.getElementById('signup-bar').style.display='block';document.getElementById('signup-count').textContent=pending;}
+  }catch(e){}
 }
 
 function render(){
-  var sf=document.getElementById('fState').value,svf=document.getElementById('fService').value;
-  var stf=document.getElementById('fStatus').value,q=document.getElementById('fSearch').value.toLowerCase();
-
-  var filtered=DATA.filter(function(r){
-    if(sf&&r.state!==sf)return false;
-    if(svf&&r.service!==svf)return false;
-    if(stf&&r.vendor.status!==stf)return false;
-    if(q&&r.vendor.provider_name&&!r.vendor.provider_name.toLowerCase().includes(q))return false;
-    return true;
-  });
-
-  var st={};var totalLeads=0,totalRevenue=0;
-  filtered.forEach(function(r){st[r.vendor.status]=(st[r.vendor.status]||0)+1;totalLeads+=r.vendor.leads_month||0;totalRevenue+=(r.vendor.leads_month||0)*(r.vendor.rate||0);});
-
-  document.getElementById('stats').innerHTML=
-    '<div class="stat"><div class="num" style="color:#58a6ff">'+(st.searching||0)+'</div><div class="label">Searching</div></div>'+
-    '<div class="stat"><div class="num" style="color:#d2991d">'+(st.found||0)+'</div><div class="label">Found</div></div>'+
-    '<div class="stat"><div class="num">'+(st.contacted||0)+'</div><div class="label">Contacted</div></div>'+
-    '<div class="stat"><div class="num" style="color:#3fb950">'+(st.active||0)+'</div><div class="label">Active</div></div>'+
-    '<div class="stat"><div class="num">'+totalLeads+'</div><div class="label">Leads</div></div>'+
-    '<div class="stat"><div class="num" style="color:#3fb950">$'+totalRevenue.toLocaleString()+'</div><div class="label">Revenue</div></div>'+
-    '<div class="stat"><div class="num">'+filtered.length+'</div><div class="label">Showing</div></div>';
-
-  var html='';
-  var maxRows=200;
-  filtered.slice(0,maxRows).forEach(function(r){
-    var v=r.vendor,badge=v.status||'searching';
-    html+='<tr><td>'+r.city+'</td><td>'+r.state+'</td><td>'+r.service+'</td>'+
-      '<td><span class="badge '+badge+'">'+badge+'</span></td>'+
-      '<td>'+(v.provider_name||'—')+'</td>'+
-      '<td><a href="tel:'+v.provider_phone+'" class="phone-link">'+(v.provider_phone||'—')+'</a></td>'+
-      '<td>'+(v.leads_month||0)+'</td><td>$'+((v.leads_month||0)*(v.rate||30))+'</td></tr>';
-  });
-  if(filtered.length>maxRows) html+='<tr class="total-row"><td colspan="8">... and '+(filtered.length-maxRows)+' more results (filter to see details)</td></tr>';
-  document.getElementById('tbody').innerHTML=html||'<tr><td colspan="8" style="text-align:center;padding:30px;color:#8b949e">No results</td></tr>';
+  var sf=document.getElementById('fState').value,svf=document.getElementById('fService').value,stf=document.getElementById('fStatus').value,q=document.getElementById('fSearch').value.toLowerCase();
+  var filtered=DATA.filter(function(r){if(sf&&r.state!==sf)return false;if(svf&&r.service!==svf)return false;if(stf&&r.vendor.status!==stf)return false;if(q&&r.vendor.provider_name&&!r.vendor.provider_name.toLowerCase().includes(q))return false;return true;});
+  var st={};var tl=0,tr=0;filtered.forEach(function(r){st[r.vendor.status]=(st[r.vendor.status]||0)+1;tl+=r.vendor.leads_month||0;tr+=(r.vendor.leads_month||0)*(r.vendor.rate||0);});
+  document.getElementById('stats').innerHTML='<div class="stat"><div class="num">'+(st.searching||0)+'</div><div class="label">Searching</div></div><div class="stat"><div class="num">'+(st.found||0)+'</div><div class="label">Found</div></div><div class="stat"><div class="num">'+(st.contacted||0)+'</div><div class="label">Contacted</div></div><div class="stat"><div class="num">'+(st.active||0)+'</div><div class="label">Active</div></div><div class="stat"><div class="num">'+tl+'</div><div class="label">Leads</div></div><div class="stat"><div class="num">$'+tr.toLocaleString()+'</div><div class="label">Revenue</div></div>';
+  var h='',max=200;filtered.slice(0,max).forEach(function(r){var v=r.vendor;h+='<tr><td>'+r.city+'</td><td>'+r.state+'</td><td>'+r.service+'</td><td><span class="badge '+v.status+'">'+v.status+'</span></td><td>'+(v.provider_name||'—')+'</td><td>'+(v.provider_phone||'—')+'</td><td>'+(v.leads_month||0)+'</td><td>$'+((v.leads_month||0)*(v.rate||30))+'</td></tr>';});
+  if(filtered.length>max)h+='<tr><td colspan="8">... '+(filtered.length-max)+' more (filter to refine)</td></tr>';
+  document.getElementById('tbody').innerHTML=h||'<tr><td colspan="8" style="text-align:center;padding:30px;color:#4b4b4b">No results</td></tr>';
 }
 </script>
 </body>

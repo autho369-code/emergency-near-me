@@ -3,146 +3,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CallNowService — Claim Your Territory | $99/mo Flat</title>
-<meta name="description" content="5 spots per city. AI-optimized. Your website isn't enough anymore — 62% of emergency calls now start with ChatGPT, Perplexity, or Google AI. We get you found there.">
+<title>CallNowService — Pricing & Signup | $49/mo Flat</title>
+<meta name="description" content="5 spots per city. $49/mo flat. AI-optimized. Claim your territory before it fills.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,system-ui,sans-serif;background:#0f1117;color:#e4e4e8;line-height:1.5}
-  header{background:#0d0d1a;border-bottom:1px solid #1a1a33;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-  .logo{font-size:18px;font-weight:800}.logo span{color:#e03131}.logo a{color:inherit;text-decoration:none}
-  .container{max-width:800px;margin:0 auto;padding:40px 20px}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',system-ui,-apple-system,sans-serif;color:#000;background:#fff;line-height:1.5}
+  .topbar{background:#000;color:#fff;text-align:center;padding:8px;font-size:12px;font-weight:500}
+  header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1136px;margin:0 auto}
+  .logo{font-size:18px;font-weight:700}.logo span{font-weight:400}.logo a{color:#000;text-decoration:none}
+  .container{max-width:860px;margin:0 auto;padding:48px 24px}
+  h1{font-size:36px;font-weight:700;line-height:1.22;text-align:center;margin-bottom:8px}
+  .sub{text-align:center;font-size:14px;color:#4b4b4b;margin-bottom:40px}
 
-  /* HERO */
-  .hero{text-align:center;margin-bottom:32px}
-  .urgency-badge{display:inline-block;background:#e03131;color:#fff;padding:4px 16px;border-radius:100px;font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:12px}
-  h1{font-size:32px;line-height:1.15;margin-bottom:8px}
-  h1 span{color:#e03131}
-  .hero-sub{font-size:15px;color:#8b949e;max-width:600px;margin:0 auto 20px}
-
-  /* OBJECTION BOXES */
-  .objections{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin-bottom:32px}
-  .obj-card{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px}
-  .obj-card .q{font-size:13px;font-weight:700;color:#f85149;margin-bottom:6px}
-  .obj-card .a{font-size:12px;color:#8b949e;line-height:1.6}
-
-  /* STATS */
-  .stat-strip{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:32px;padding:20px;background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:14px;border:1px solid #30363d}
-  .stat-item{text-align:center}
-  .stat-item .num{font-size:26px;font-weight:800;color:#fff}
-  .stat-item .label{font-size:10px;color:#8b949e;text-transform:uppercase;margin-top:4px}
+  /* URGENCY BAR */
+  .urgency-bar{background:#000;color:#fff;border-radius:12px;padding:20px 28px;text-align:center;margin-bottom:40px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+  .urgency-bar .slot-count{text-align:center}
+  .urgency-bar .slot-count .num{font-size:28px;font-weight:700}
+  .urgency-bar .slot-count .lbl{font-size:10px;color:#afafaf;text-transform:uppercase;margin-top:2px}
 
   /* PRICING */
-  .section-title{text-align:center;margin-bottom:16px}
-  .section-title h2{font-size:20px}.section-title p{font-size:12px;color:#8b949e}
-  .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:32px;align-items:stretch}
+  .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:40px;align-items:stretch}
   @media(max-width:768px){.pricing-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:480px){.pricing-grid{grid-template-columns:1fr}}
-  .plan{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:20px;text-align:center;display:flex;flex-direction:column}
-  .plan.best{border-color:#e03131;background:linear-gradient(180deg,#1a0f0f 0%,#161b22 30%)}
-  .best-badge{background:#e03131;color:#fff;padding:2px 10px;border-radius:100px;font-size:9px;font-weight:700;margin-bottom:8px;display:inline-block}
-  .plan h3{font-size:15px;margin-bottom:2px}
-  .plan .cities{font-size:10px;color:#8b949e;margin-bottom:10px}
-  .plan .price{font-size:30px;font-weight:800}
-  .plan .price sub{font-size:13px;font-weight:400;color:#8b949e}
+  .plan{padding:24px;border-radius:12px;border:1px solid #e5e5e5;text-align:center;display:flex;flex-direction:column}
+  .plan:hover{box-shadow:rgba(0,0,0,0.12) 0px 4px 16px}
+  .plan.featured{border-color:#000;box-shadow:rgba(0,0,0,0.16) 0px 4px 16px}
+  .featured-badge{display:inline-block;background:#000;color:#fff;padding:4px 14px;border-radius:999px;font-size:10px;font-weight:700;margin-bottom:12px}
+  .plan h3{font-size:16px;font-weight:700;margin-bottom:4px}
+  .plan .cities{font-size:11px;color:#4b4b4b;margin-bottom:12px}
+  .plan .price{font-size:32px;font-weight:700}
+  .plan .price sub{font-size:14px;font-weight:400;color:#4b4b4b}
+  .plan .annual{font-size:10px;color:#4b4b4b;margin-bottom:12px}
   .plan ul{list-style:none;text-align:left;margin:12px 0;flex-grow:1}
-  .plan li{font-size:11px;padding:4px 0;border-bottom:1px solid #21262d}
-  .plan li::before{content:'✓ ';color:#3fb950}
-  .btn{display:inline-block;padding:10px 20px;border-radius:8px;font-size:12px;font-weight:600;text-decoration:none;cursor:pointer;width:100%;text-align:center;border:none;transition:all 0.12s}
-  .btn-red{background:#e03131;color:#fff}.btn-red:hover{background:#c92a2a}
-  .btn-outline{background:transparent;border:1px solid #30363d;color:#e4e4e8}.btn-outline:hover{border-color:#e03131}
+  .plan li{font-size:12px;padding:5px 0;border-bottom:1px solid #f0f0f0}
+  .plan li::before{content:'✓ ';font-weight:700}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 18px;border-radius:999px;font-size:13px;font-weight:700;text-decoration:none;cursor:pointer;border:none;width:100%;transition:background 0.15s}
+  .btn-black{background:#000;color:#fff}.btn-black:hover{background:#333}
+  .btn-outline{background:#fff;color:#000;border:1px solid #e5e5e5}.btn-outline:hover{background:#f5f5f5}
 
-  /* COUNTER */
-  .urgency-box{text-align:center;background:#161b22;border:1px solid #e03131;border-radius:14px;padding:24px;margin-bottom:32px}
-  .urgency-box h2{font-size:18px;margin-bottom:4px}.urgency-box h2 span{color:#e03131}
-  .urgency-box p{font-size:12px;color:#8b949e;margin-bottom:12px}
-  .slots-remaining{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
-  .slot-count{text-align:center;min-width:100px}
-  .slot-count .count{font-size:28px;font-weight:800;color:#3fb950}
-  .slot-count .label{font-size:10px;color:#8b949e}
-
-  /* SIGNUP */
-  .signup-box{text-align:center;padding:32px;background:#161b22;border:1px solid #30363d;border-radius:14px}
-  .signup-box h2{font-size:18px;margin-bottom:6px}
-  .signup-box p{font-size:12px;color:#8b949e;margin-bottom:16px}
-  .form-row{display:flex;gap:8px;max-width:500px;margin:8px auto;flex-wrap:wrap}
-  .form-row input,.form-row select{flex:1;min-width:140px;padding:12px;background:#0d1117;border:1px solid #30363d;border-radius:8px;color:#e4e4e8;font-size:12px;font-family:inherit}
-  .form-row input:focus,.form-row select:focus{outline:none;border-color:#e03131}
+  /* OBJECTIONS */
+  .obj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px}
+  @media(max-width:768px){.obj-grid{grid-template-columns:1fr}}
+  .obj-card{padding:20px;border-radius:12px;border:1px solid #e5e5e5;box-shadow:rgba(0,0,0,0.12) 0px 4px 16px}
+  .obj-card .q{font-size:13px;font-weight:700;margin-bottom:6px}
+  .obj-card .a{font-size:12px;color:#4b4b4b;line-height:1.6}
 
   /* FAQ */
-  .faq{margin-bottom:32px}.faq h2{text-align:center;font-size:16px;margin-bottom:12px}
-  .faq-item{background:#161b22;border:1px solid #30363d;border-radius:10px;padding:12px 16px;margin-bottom:6px}
-  .faq-item h3{font-size:13px;margin-bottom:3px}
-  .faq-item p{font-size:11px;color:#8b949e}
+  .faq{margin-bottom:40px}.faq h2{text-align:center;font-size:20px;margin-bottom:16px}
+  .faq-item{padding:14px 18px;border-radius:8px;border:1px solid #e5e5e5;margin-bottom:8px}
+  .faq-item h3{font-size:14px;font-weight:700;margin-bottom:4px}
+  .faq-item p{font-size:12px;color:#4b4b4b}
+
+  /* SIGNUP */
+  .signup-box{background:#000;color:#fff;border-radius:16px;padding:40px;text-align:center;margin-bottom:40px}
+  .signup-box h2{font-size:22px;font-weight:700;margin-bottom:8px}
+  .signup-box p{font-size:13px;color:#afafaf;margin-bottom:20px}
+  .signup-box a{color:#fff}
+  .form-row{display:flex;gap:8px;max-width:500px;margin:8px auto;flex-wrap:wrap}
+  .form-row input,.form-row select{flex:1;min-width:140px;padding:12px 16px;background:#111;border:1px solid #333;border-radius:999px;color:#fff;font-size:13px;font-family:inherit}
+  .form-row input:focus,.form-row select:focus{outline:none;border-color:#fff}
+  .form-row select option{background:#111;color:#fff}
+  .btn-white{background:#fff;color:#000}.btn-white:hover{background:#e2e2e2}
+
+  /* FOOTER */
+  footer{background:#000;color:#fff;padding:48px 24px 32px}
+  .footer-inner{max-width:1136px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+  @media(max-width:600px){.footer-inner{grid-template-columns:repeat(2,1fr)}}
+  footer h4{font-size:14px;font-weight:700;margin-bottom:12px}
+  footer ul{list-style:none}footer li{margin-bottom:6px}
+  footer a{color:#afafaf;text-decoration:none;font-size:12px}footer a:hover{color:#fff}
+  .footer-bottom{max-width:1136px;margin:32px auto 0;padding-top:24px;border-top:1px solid #333;display:flex;justify-content:space-between;font-size:11px;color:#afafaf;flex-wrap:wrap;gap:8px}
 </style>
 </head>
 <body>
 
+<div class="topbar">5 spots per service per city · First come, first served · No exceptions</div>
+
 <header>
-  <div class="logo"><a href="/">CALL<span>NOW</span>SERVICE</a></div>
-  <span style="font-size:11px;color:#8b949e">hello@callnowservice.com · (847) 652-2338</span>
+  <div class="logo"><a href="/">Call<span>Now</span>Service</a></div>
 </header>
 
 <div class="container">
-
-  <!-- HERO -->
-  <div class="hero">
-    <div class="urgency-badge">⚠ Only 5 Spots Per City — First Come, First Served</div>
-    <h1>Your Website Is <span>Not Enough</span> Anymore.</h1>
-    <div class="hero-sub">62% of emergency service calls now start with ChatGPT, Perplexity, or Google AI — not your website. If you're not indexed where customers are searching, you're invisible. We fix that.</div>
-  </div>
-
-  <!-- OBJECTIONS -->
-  <div class="objections">
-    <div class="obj-card">
-      <div class="q">"I already have a website."</div>
-      <div class="a">Your website only works if people find it. Most customers don't search for you by name — they ask AI "who's the best emergency plumber near me?" We put you in those results. Your website + our AI indexing = double coverage.</div>
-    </div>
-    <div class="obj-card">
-      <div class="q">"I'm already on Google Maps."</div>
-      <div class="a">Google Maps is one channel. ChatGPT, Perplexity, and Claude are three more — and growing faster. We're indexed on all of them. Maps doesn't help when someone asks "emergency HVAC at 2am" to an AI assistant.</div>
-    </div>
-    <div class="obj-card">
-      <div class="q">"I already use HomeAdvisor / Angi."</div>
-      <div class="a">Those platforms show your competitors right next to you. We show 5 providers per city total. And you keep 100% of the revenue — no commission, no lead fees, no bidding wars. Flat monthly. Done.</div>
-    </div>
-  </div>
-
-  <!-- STATS -->
-  <div class="stat-strip">
-    <div class="stat-item"><div class="num">505</div><div class="label">Cities Covered</div></div>
-    <div class="stat-item"><div class="num">5</div><div class="label">Spots Per Service</div></div>
-    <div class="stat-item"><div class="num">Flat</div><div class="label">Monthly Fee</div></div>
-    <div class="stat-item"><div class="num">4,545</div><div class="label">SEO Pages</div></div>
-    <div class="stat-item"><div class="num">AI</div><div class="label">Optimized</div></div>
-  </div>
+  <h1>Be one of five.</h1>
+  <div class="sub">5 providers per category per city. When the spots fill, they're gone. Flat monthly. No per-lead.</div>
 
   <!-- URGENCY -->
-  <div class="urgency-box" id="slots">
-    <h2>Spots Are Filling — <span id="slots-taken">0</span> of 22,725 Taken</h2>
-    <p>Once all 5 spots in your city and category are claimed, we close the category. No exceptions.</p>
-    <div class="slots-remaining">
-      <div class="slot-count"><div class="count" id="count-available">22,725</div><div class="label">Available Nationwide</div></div>
-      <div class="slot-count"><div class="count" style="color:#d2991d" id="count-pending">0</div><div class="label">Pending Review</div></div>
-      <div class="slot-count"><div class="count" style="color:#3fb950" id="count-active">0</div><div class="label">Active Providers</div></div>
-    </div>
+  <div class="urgency-bar" id="urgency">
+    <div class="slot-count"><div class="num" id="cnt-available">22,725</div><div class="lbl">Available Nationwide</div></div>
+    <div class="slot-count"><div class="num" id="cnt-active">0</div><div class="lbl">Active Providers</div></div>
   </div>
 
   <!-- PRICING -->
-  <div class="section-title"><h2>Simple Flat Pricing</h2><p>No per-lead charges. No bidding. No commission. Just one monthly fee.</p></div>
   <div class="pricing-grid">
-    <div class="plan"><h3>Starter</h3><div class="cities">1 City · 1 Service</div><div class="price">$49<sub>/mo</sub></div><div style="font-size:10px;color:#8b949e">or $490/yr — save 17%</div><ul><li>1 exclusive territory</li><li>1 service category</li><li>Click tracking</li><li>Cancel anytime</li></ul><a href="#signup" class="btn btn-outline">Claim Spot</a></div>
+    <div class="plan"><h3>Starter</h3><div class="cities">1 City · 1 Service</div><div class="price">$49<sub>/mo</sub></div><div class="annual">or $490/yr — save 17%</div><ul><li>1 exclusive territory</li><li>1 service category</li><li>Click tracking</li><li>Cancel anytime</li></ul><a href="#signup" class="btn btn-outline">Claim Spot</a></div>
 
-    <div class="plan best"><div class="best-badge">BEST VALUE</div><h3>Growth</h3><div class="cities">3 Cities · 1 Service</div><div class="price">$97<sub>/mo</sub></div><div style="font-size:10px;color:#8b949e">or $970/yr — save 17%</div><ul><li>3 exclusive territories</li><li>1 service each</li><li>Priority placement</li><li>Cancel anytime</li></ul><a href="#signup" class="btn btn-red">Claim Spots</a></div>
+    <div class="plan featured"><div class="featured-badge">BEST VALUE</div><h3>Growth</h3><div class="cities">3 Cities · 1 Service</div><div class="price">$97<sub>/mo</sub></div><div class="annual">or $970/yr — save 17%</div><ul><li>3 exclusive territories</li><li>1 service each</li><li>Priority placement</li><li>Cancel anytime</li></ul><a href="#signup" class="btn btn-black">Claim Spots</a></div>
 
-    <div class="plan"><h3>Pro</h3><div class="cities">5 Cities · 3 Services</div><div class="price">$197<sub>/mo</sub></div><div style="font-size:10px;color:#8b949e">or $1,970/yr — save 17%</div><ul><li>5 exclusive territories</li><li>3 service categories</li><li>Homepage featured</li><li>Cancel anytime</li></ul><a href="#signup" class="btn btn-outline">Claim Spots</a></div>
+    <div class="plan"><h3>Pro</h3><div class="cities">5 Cities · 3 Services</div><div class="price">$197<sub>/mo</sub></div><div class="annual">or $1,970/yr — save 17%</div><ul><li>5 exclusive territories</li><li>3 service categories</li><li>Homepage featured</li><li>Cancel anytime</li></ul><a href="#signup" class="btn btn-outline">Claim Spots</a></div>
 
-    <div class="plan"><h3>Enterprise</h3><div class="cities">Unlimited</div><div class="price">Custom</div><ul><li>Unlimited cities</li><li>All services</li><li>Dedicated manager</li><li>Multi-year terms</li></ul><a href="mailto:hello@callnowservice.com" class="btn btn-outline">Contact Us</a></div>
+    <div class="plan"><h3>Enterprise</h3><div class="cities">Unlimited</div><div class="price">Custom</div><div class="annual">&nbsp;</div><ul><li>Unlimited cities</li><li>All services</li><li>Dedicated manager</li><li>Multi-year terms</li></ul><a href="mailto:hello@callnowservice.com" class="btn btn-outline">Contact Us</a></div>
+  </div>
+
+  <!-- OBJECTIONS -->
+  <div class="obj-grid">
+    <div class="obj-card"><div class="q">"I already have a website."</div><div class="a">Your website waits. We put you where people search: ChatGPT, Perplexity, Google AI. When someone asks AI for a plumber, we're the answer.</div></div>
+    <div class="obj-card"><div class="q">"I'm on Google Maps."</div><div class="a">Maps is one channel. AI assistants are 3 more. We're indexed on all of them. Maps doesn't show up in ChatGPT results.</div></div>
+    <div class="obj-card"><div class="q">"I use HomeAdvisor."</div><div class="a">They show 20 competitors and charge per lead. We show 5 providers flat. No bidding. No commissions. No surprises.</div></div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq">
+    <h2>Common questions</h2>
+    <div class="faq-item"><h3>What does "5 spots per city" mean?</h3><p>Exactly 5 listing slots per service per city. Once full, no more providers can join. First come, first served.</p></div>
+    <div class="faq-item"><h3>What if calls don't come?</h3><p>You pay a flat fee — not per lead. Some months are slower. You're never penalized for low volume.</p></div>
+    <div class="faq-item"><h3>Can I cancel?</h3><p>Anytime. No contract. Your listing comes down within 24 hours. The spot opens for someone else.</p></div>
+    <div class="faq-item"><h3>How are you different?</h3><p>AI-optimized. Flat fee. Limited competition. 505 cities. That's the difference.</p></div>
   </div>
 
   <!-- SIGNUP -->
   <div class="signup-box" id="signup">
-    <h2>Lock In Your Territory Before Someone Else Does</h2>
-    <p>First come, first served. No exceptions. Pay now and skip the wait: <a href="https://paypal.me/CallNowService" style="color:#58a6ff">paypal.me/CallNowService</a></p>
+    <h2>Claim your territory now</h2>
+    <p>First come, first served. Pay now at <a href="https://paypal.me/CallNowService">paypal.me/CallNowService</a> and skip the wait.</p>
     <div class="form-row"><input type="text" id="name" placeholder="Company Name" required><input type="text" id="contact" placeholder="Your Name"></div>
     <div class="form-row"><input type="email" id="email" placeholder="Email" required><input type="tel" id="phone" placeholder="Phone" required></div>
     <div class="form-row">
@@ -150,40 +132,38 @@
       <input type="text" id="city" placeholder="City" required>
     </div>
     <div class="form-row">
-      <select id="plan" required><option value="">Select Plan</option><option>Starter — $99/mo</option><option>Growth — $199/mo</option><option>Pro — $399/mo</option><option>Enterprise — Custom</option></select>
+      <select id="plan" required><option value="">Select Plan</option><option>Starter — $49/mo</option><option>Growth — $97/mo</option><option>Pro — $197/mo</option><option>Enterprise — Custom</option></select>
     </div>
-    <button class="btn btn-red" style="width:auto;min-width:250px" onclick="submitClaim()">Claim My Territory Now</button>
+    <button class="btn btn-white" style="width:auto;min-width:250px" onclick="submitClaim()">Claim My Territory</button>
   </div>
-
-  <!-- FAQ -->
-  <div class="faq">
-    <h2>Quick Answers</h2>
-    <div class="faq-item"><h3>I have a website — why do I need this?</h3><p>Your website waits for people to find it. We put you where people are already searching: ChatGPT, Perplexity, Google AI. When someone asks "emergency plumber near me," we're in the answer. Your website alone won't show up there.</p></div>
-    <div class="faq-item"><h3>How are you different from HomeAdvisor or Yelp?</h3><p>They show every provider and charge per lead. We show only 5 and charge a flat monthly fee. No bidding. No competing with 20 other plumbers on the same page. No lead fees eating into your margins.</p></div>
-    <div class="faq-item"><h3>What if the spots are already taken?</h3><p>Then they're gone. That's why we say first come, first served. We don't oversell. When 5 providers are listed for your city and service, we close it. Your competitors who wait will be locked out.</p></div>
-    <div class="faq-item"><h3>Can I cancel?</h3><p>Anytime. No contract. Your listing comes down within 24 hours and the spot opens for someone else. Simple as that.</p></div>
-  </div>
-
 </div>
 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div><h4>Services</h4><ul><li><a href="#">Plumber</a></li><li><a href="#">Electrician</a></li><li><a href="#">HVAC</a></li><li><a href="#">Locksmith</a></li></ul></div>
+    <div><h4>More</h4><ul><li><a href="#">Mechanic</a></li><li><a href="#">Roofer</a></li><li><a href="#">Appliance Repair</a></li><li><a href="#">Pest Control</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="/provider">List Your Business</a></li><li><a href="/provider">Pricing</a></li><li><a href="/privacy">Privacy</a></li><li><a href="/terms">Terms</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li>hello@callnowservice.com</li><li>(847) 652-2338</li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 CallNowService.com — Emergency service connections nationwide.</span>
+    <span>AI-optimized · Geo-targeted · 505 cities</span>
+  </div>
+</footer>
+
 <script>
-// Load real counts
 fetch('providers.json').then(r=>r.json()).then(d=>{
-  var st={active:0,total:0};
-  for(var ck in d){if(ck.startsWith('_'))continue;for(var sk in d[ck]){if(sk.startsWith('_'))continue;var v=d[ck][sk];if(Array.isArray(v))v.forEach(function(vv){st.total++;if(vv.status==='active')st.active++;});}}
-  document.getElementById('slots-taken').textContent = st.active;
-  document.getElementById('count-available').textContent = (st.total - st.active).toLocaleString();
-  document.getElementById('count-active').textContent = st.active;
+  var st={active:0,total:0};for(var ck in d){if(ck.startsWith('_'))continue;for(var sk in d[ck]){if(sk.startsWith('_'))continue;if(Array.isArray(d[ck][sk]))d[ck][sk].forEach(function(v){st.total++;if(v.status==='active')st.active++;});}}
+  document.getElementById('cnt-available').textContent=(st.total-st.active).toLocaleString();document.getElementById('cnt-active').textContent=st.active;
 }).catch(function(){});
 
 function submitClaim(){
   var fields=['name','contact','email','phone','service','city','plan'];
-  var d={};
-  for(var i=0;i<fields.length;i++){d[fields[i]]=document.getElementById(fields[i]).value;if(!d[fields[i]]){alert('Please fill all fields');return;}}
+  var d={};for(var i=0;i<fields.length;i++){d[fields[i]]=document.getElementById(fields[i]).value;if(!d[fields[i]]){alert('Please fill all fields');return;}}
   d.time=new Date().toISOString();d.status='pending';
-  var signups=JSON.parse(localStorage.getItem('cns_signups')||'[]');signups.push(d);
-  localStorage.setItem('cns_signups',JSON.stringify(signups));
-  alert('✅ Territory claim submitted! We will reach out within 24 hours to verify your business.\n\nService: '+d.service+' | City: '+d.city+' | Plan: '+d.plan+'\n\nOr skip the wait — pay now at paypal.me/CallNowService');
+  var signups=JSON.parse(localStorage.getItem('cns_signups')||'[]');signups.push(d);localStorage.setItem('cns_signups',JSON.stringify(signups));
+  alert('Territory claim submitted! We will reach out within 24 hours.\n\n'+d.service+' | '+d.city+' | '+d.plan+'\n\nOr skip the wait: paypal.me/CallNowService');
   document.querySelectorAll('#signup input,#signup select').forEach(function(el){el.value=''});
 }
 </script>
