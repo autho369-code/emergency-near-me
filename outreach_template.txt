@@ -1,52 +1,49 @@
-Subject: 72-hour listing hold: [City] emergency [service] (CallNowService)
+Subject: [City] emergency [service] — 72-hour listing hold (CallNowService)
 
 Hi [Company Name],
 
-We've activated a temporary CallNowService listing for [Company Name] on our [City] emergency [service] page and reserved the spot for 72 hours while you decide whether to keep it.
+We've placed a temporary listing for [Company Name] on our [City] emergency [service] page and reserved the spot for 72 hours while you decide whether to claim it.
 
-Your temporary listing is here:
-
+Your temporary listing:
 callnowservice.com/[state]/[city]/[service]/
 
-What this means
+What your listing includes:
+• Your business name and phone number
+• A direct link to your website — [their website]
+• A "Call Now" button that connects customers to you
+• Your service category and city coverage clearly displayed
 
-When someone in [City] searches for an emergency [service], CallNowService shows up to five providers for that city and category. During this 72-hour window, your business can appear with:
+What this means:
+When someone in [City] searches for an emergency [service], CallNowService shows up to five providers. During this 72-hour window, your business appears on the page alongside up to four others.
 
-your business name
-phone number
-website link
-direct call button
-service category and city coverage
+Why we added you:
+Your company serves [City] for [service], and we select businesses that look like a strong fit. We only accept five providers per service per city — once those spots are filled, they're gone.
 
-Why we added your business
+If you want to keep the listing after 72 hours:
 
-Your company already appears to serve [City] for [service], and CallNowService is built specifically around city-by-city emergency service discovery. We're only accepting five providers per service category in each city, so we selected businesses that look like a strong fit for the market.
+Claim the spot and your listing stays live.
 
-If you want to keep the listing after 72 hours
-
-Claim the spot and we'll keep your listing active.
-
-Pricing
+Pricing:
 $49/month flat
 No per-lead fees
 No commissions
 Cancel anytime
 
-Optional annual plan:
+Annual: $490/year (2 months free)
 
-$490/year (2 months free)
-
-What happens if you do nothing
+Keeping your listing active:
+Your listing stays on the page for as long as your subscription is current. If a payment is missed, the listing is removed and the spot is offered to the next provider on our waitlist. Spots are limited to five per service per city — once a spot opens, it doesn't stay open for long.
 
 If the spot isn't claimed within 72 hours, the listing expires and we'll offer it to another provider in [City].
 
-If you'd like to keep the listing active, just reply to this email and we'll send the claim link and confirm the business details we should display.
+To keep the listing active, just reply to this email and we'll send the claim link with payment details.
 
 Thanks,
 
 Adrian Cole
 Founder, CallNowService
 Glenview, Illinois, USA
+hello@callnowservice.com
 
 ---
 If you'd rather not hear from us about CallNowService, reply with unsubscribe and we'll remove you from future outreach.
