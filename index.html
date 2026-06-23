@@ -143,11 +143,14 @@
 <script>
 var userCity=null,userState=null,userCityName=null;
 
+var userLat=null,userLng=null;
+
 function useLocation(){
   document.getElementById('loc-status').innerHTML='Detecting your location...';
   if(!navigator.geolocation){document.getElementById('loc-status').innerHTML='Location not available. Please enter your ZIP or city.';return;}
   navigator.geolocation.getCurrentPosition(function(pos){
-    fetch('https://nominatim.openstreetmap.org/reverse?format=json&lat='+pos.coords.latitude+'&lon='+pos.coords.longitude+'&zoom=10')
+    userLat=pos.coords.latitude;userLng=pos.coords.longitude;
+    fetch('https://nominatim.openstreetmap.org/reverse?format=json&lat='+userLat+'&lon='+userLng+'&zoom=10')
       .then(function(r){return r.json()})
       .then(function(d){
         var city=(d.address||{}).city||(d.address||{}).town||'';
@@ -234,12 +237,47 @@ function matchToCity(cityName,stateName){
         return;
       }
     }
-    // FALLBACK: first city in same state
-    var first=Object.keys(st.cities)[0];
-    userCity=first;userState=matchedState;userCityName=st.cities[first].name;
-    document.getElementById('loc-status').innerHTML='<strong>'+cityName+'</strong> not in coverage. Showing nearest: <strong>'+userCityName+', '+st.abbr+'</strong>.';
-    document.getElementById('loc-input').value=userCityName+', '+st.abbr;
+    // FALLBACK: find closest city by GPS distance
+    userState = matchedState;
+    findClosestCity(st, cityName, st.abbr);
   });
+}
+
+function findClosestCity(st, cityName, stAbbr){
+  if(userLat===null||userLng===null){
+    // No GPS — use first city
+    var first=Object.keys(st.cities)[0];
+    userCity=first;userCityName=st.cities[first].name;
+    document.getElementById('loc-status').innerHTML='<strong>'+cityName+'</strong> not in coverage. Showing nearest: <strong>'+userCityName+', '+stAbbr+'</strong>.';
+    // set userState from callback
+    return;
+  }
+
+  // Haversine distance
+  var closest=null, closestDist=Infinity;
+  for(var ck in st.cities){
+    var c=st.cities[ck];
+    if(!c.lat||!c.lng)continue;
+    var d=haversine(userLat,userLng,c.lat,c.lng);
+    if(d<closestDist){closestDist=d;closest=ck;}
+  }
+  if(closest){
+    userCity=closest;
+    // Find state key
+    fetch('/data.json').then(function(r){return r.json()}).then(function(data){
+      for(var sk in data.states){if(data.states[sk].abbr===stAbbr||data.states[sk].name===st.name){userState=sk;break;}}
+    });
+    userCityName=st.cities[closest].name;
+    document.getElementById('loc-status').innerHTML='<strong>'+cityName+'</strong> ('+Math.round(closestDist)+'mi). Showing: <strong>'+userCityName+', '+stAbbr+'</strong>.';
+    document.getElementById('loc-input').value=userCityName+', '+stAbbr;
+  }
+}
+
+function haversine(lat1,lon1,lat2,lon2){
+  var R=3959;var dLat=(lat2-lat1)*Math.PI/180;var dLon=(lon2-lon1)*Math.PI/180;
+  var a=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)*Math.sin(dLon/2);
+  return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+}
 }
 
 function routeService(svc){
