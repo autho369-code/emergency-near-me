@@ -12,7 +12,7 @@ SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
 SMTP_USER = "autho369@gmail.com"
 FROM_EMAIL = "hello@callnowservice.com"
-FROM_NAME = "CallNowService"
+FROM_NAME = "Adrian Cole, CallNowService"
 
 def send_email(to_email, subject, body, password=None):
     pw = password or os.environ.get("GMAIL_APP_PASSWORD", "")

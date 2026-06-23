@@ -32,7 +32,7 @@ Once payment is received, your listing goes live within 24 hours and calls start
 
 Questions? Call me at hello@callnowservice.com.
 
-- Mirsad
+- Adrian Cole
   Founder, CallNowService.com
   hello@callnowservice.com
 """

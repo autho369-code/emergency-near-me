@@ -4,29 +4,49 @@ Hi [Company Name],
 
 We've activated a temporary CallNowService listing for [Company Name] on our [City] emergency [service] page and reserved the spot for 72 hours while you decide whether to keep it.
 
-Your temporary listing: callnowservice.com/[state]/[city]/[service]/
+Your temporary listing is here:
 
-WHAT THIS MEANS
-When someone in [City] searches for an emergency [service], CallNowService shows up to five providers for that city and category. During this 72-hour window, your business can appear with your name, phone, website, and a direct call button.
+callnowservice.com/[state]/[city]/[service]/
 
-WHY WE ADDED YOUR BUSINESS
-Your company already serves [City] for [service], and CallNowService is built around city-by-city emergency discovery. We're accepting five providers per category per city, and you look like a strong fit.
+What this means
 
-WHAT HAPPENS AFTER 72 HOURS
-If the spot isn't claimed, the listing expires and we offer it to another provider in [City].
+When someone in [City] searches for an emergency [service], CallNowService shows up to five providers for that city and category. During this 72-hour window, your business can appear with:
 
-TO KEEP THE LISTING
-Reply to this email and we'll send the claim link and confirm your business details.
+your business name
+phone number
+website link
+direct call button
+service category and city coverage
 
-PRICING
-$49/month flat. No per-lead fees. No commissions. Cancel anytime.
-Optional annual: $490/year (2 months free).
+Why we added your business
+
+Your company already appears to serve [City] for [service], and CallNowService is built specifically around city-by-city emergency service discovery. We're only accepting five providers per service category in each city, so we selected businesses that look like a strong fit for the market.
+
+If you want to keep the listing after 72 hours
+
+Claim the spot and we'll keep your listing active.
+
+Pricing
+$49/month flat
+No per-lead fees
+No commissions
+Cancel anytime
+
+Optional annual plan:
+
+$490/year (2 months free)
+
+What happens if you do nothing
+
+If the spot isn't claimed within 72 hours, the listing expires and we'll offer it to another provider in [City].
+
+If you'd like to keep the listing active, just reply to this email and we'll send the claim link and confirm the business details we should display.
 
 Thanks,
 
-Mirsad
+Adrian Cole
 Founder, CallNowService
-hello@callnowservice.com
+Glenview, Illinois, USA
 
 ---
-If you'd rather not hear from us, reply with "unsubscribe" and we'll remove you.
+If you'd rather not hear from us about CallNowService, reply with unsubscribe and we'll remove you from future outreach.
