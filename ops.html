@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CallNowService — Operations Dashboard</title>
+<title>CallNowService — Operations</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -12,17 +12,33 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:#111;background:#f5f5f5;li
 .topbar a{color:#aaa;text-decoration:none;margin-left:16px}.topbar a:hover{color:#fff}
 .container{max-width:1400px;margin:0 auto;padding:20px}
 
-/* STATS ROW */
-.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
-.stat{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:14px 18px;text-align:center;min-width:100px;flex:1}
-.stat .num{font-size:24px;font-weight:700}.stat .label{font-size:10px;color:#888;text-transform:uppercase;margin-top:2px}
+/* STATS */
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.stat{background:#fff;border:1px solid #e0e0e0;border-radius:10px;padding:12px 14px;text-align:center;min-width:90px;flex:1}
+.stat .num{font-size:22px;font-weight:700}.stat .label{font-size:9px;color:#888;text-transform:uppercase;margin-top:2px}
 .stat.total .num{color:#111}.stat.found .num{color:#856404}.stat.contacted .num{color:#0d7d3e}
 .stat.trial .num{color:#d97706}.stat.claimed .num{color:#0891b2}.stat.active .num{color:#0d7d3e}
 .stat.revenue .num{color:#059669}.stat.expired .num{color:#dc2626}
 
+/* PIPELINE */
+.pipeline{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:16px;padding:14px 16px;background:#fff;border:1px solid #e0e0e0;border-radius:12px;font-size:11px}
+.pipe-step{background:#f8f8f8;border:1px solid #e5e5e5;border-radius:8px;padding:8px 10px;text-align:center;min-width:65px}
+.pipe-step .icon{font-size:16px}.pipe-step .name{font-size:8px;font-weight:700;text-transform:uppercase;margin-top:2px;color:#888}
+.pipe-step .count{font-size:16px;font-weight:700;margin-top:2px}.pipe-arrow{color:#ccc;font-size:14px}
+
+/* AGENTS */
+.agent-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;margin-bottom:16px}
+.agent-card{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:12px}
+.agent-card:hover{box-shadow:rgba(0,0,0,0.10)0px 3px 12px}
+.agent-card .top{display:flex;justify-content:space-between;align-items:start;margin-bottom:4px}
+.agent-card h3{font-size:12px;font-weight:700}
+.badge-live{display:inline-block;padding:2px 7px;border-radius:999px;font-size:8px;font-weight:700;background:#d4edda;color:#155724}
+.agent-card .desc{font-size:10px;color:#4b4b4b;margin-bottom:4px}
+.agent-card .sched{font-size:10px;color:#4b4b4b}
+
 /* TABS */
-.tabs{display:flex;gap:4px;margin-bottom:16px;background:#fff;border-radius:12px;padding:4px;border:1px solid #e0e0e0}
-.tab{padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;background:transparent;font-family:inherit;color:#888}
+.tabs{display:flex;gap:4px;margin-bottom:12px;background:#fff;border-radius:12px;padding:4px;border:1px solid #e0e0e0}
+.tab{padding:8px 16px;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;border:none;background:transparent;font-family:inherit;color:#888}
 .tab:hover{background:#f5f5f5;color:#111}
 .tab.active{background:#111;color:#fff}
 
@@ -33,23 +49,19 @@ th{text-align:left;padding:10px 14px;background:#fafafa;border-bottom:1px solid 
 td{padding:8px 14px;border-bottom:1px solid #f0f0f0}
 tr:hover td{background:#fafafa}
 .badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:9px;font-weight:700}
-.b{searching}{background:#f0f0f0;color:#666}.b{found}{background:#fef3c7;color:#92400e}
-.b{contacted}{background:#d1fae5;color:#065f46}.b{trial_created}{background:#fef3c7;color:#d97706}
-.b{claimed}{background:#cffafe;color:#0e7490}.b{active}{background:#d1fae5;color:#065f46}
-.b{expired}{background:#fee2e2;color:#991b1b}.b{rejected}{background:#fee2e2;color:#991b1b}
+.bsearching{background:#f0f0f0;color:#666}.bfound{background:#fef3c7;color:#92400e}
+.bcontacted{background:#d1fae5;color:#065f46}.btrial_created{background:#fef3c7;color:#d97706}
+.bclaimed{background:#cffafe;color:#0e7490}.bactive{background:#d1fae5;color:#065f46}
+.bexpired{background:#fee2e2;color:#991b1b}.brejected{background:#fee2e2;color:#991b1b}
 .actions{display:flex;gap:4px}
 .btn-xs{padding:4px 10px;border-radius:999px;font-size:10px;font-weight:700;cursor:pointer;border:none;font-family:inherit}
 .btn-act{background:#d1fae5;color:#065f46}.btn-act:hover{background:#a7f3d0}
 .btn-rem{background:#fee2e2;color:#991b1b}.btn-rem:hover{background:#fecaca}
 .btn-con{background:#e0e7ff;color:#3730a3}.btn-con:hover{background:#c7d2fe}
-
-/* SIGNUPS */
-.signup-bar{background:#111;color:#fff;border-radius:12px;padding:10px 16px;margin-bottom:16px;font-size:13px;display:none}
-.signup-bar strong{color:#fbbf24}
-
-/* SEARCH */
 .search{width:100%;padding:10px 16px;border:1px solid #e0e0e0;border-radius:999px;font-size:13px;font-family:inherit;margin-bottom:12px;outline:none}
 .search:focus{border-color:#111}
+.signup-bar{background:#111;color:#fff;border-radius:12px;padding:10px 16px;margin-bottom:12px;font-size:13px;display:none}
+.signup-bar strong{color:#fbbf24}
 
 /* MODAL */
 .modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:100;align-items:center;justify-content:center}
@@ -86,14 +98,28 @@ tr:hover td{background:#fafafa}
 
 <div class="topbar">
   <strong>CallNowService — Operations</strong>
-  <span><a href="/">Home</a><a href="/agents">Agents</a><a href="/providers">Providers Page</a></span>
+  <span><a href="/">Home</a><a href="/providers">Intake Page</a></span>
 </div>
 
 <div class="container">
   <div class="signup-bar" id="signup-bar">📥 <span id="signup-text"></span></div>
 
+  <!-- PIPELINE -->
+  <div class="pipeline">
+    <div class="pipe-step"><div class="icon">🔍</div><div class="name">Searching</div><div class="count" id="pipe-searching">—</div></div><div class="pipe-arrow">→</div>
+    <div class="pipe-step"><div class="icon">✅</div><div class="name">Found</div><div class="count" id="pipe-found">—</div></div><div class="pipe-arrow">→</div>
+    <div class="pipe-step"><div class="icon">✉️</div><div class="name">Contacted</div><div class="count" id="pipe-contacted">—</div></div><div class="pipe-arrow">→</div>
+    <div class="pipe-step"><div class="icon">⏳</div><div class="name">Trial</div><div class="count" id="pipe-trial">—</div></div><div class="pipe-arrow">→</div>
+    <div class="pipe-step"><div class="icon">💰</div><div class="name">Active</div><div class="count" id="pipe-active">—</div></div>
+  </div>
+
+  <!-- AGENTS -->
+  <div class="agent-grid" id="agents"></div>
+
+  <!-- STATS -->
   <div class="stats" id="stats"></div>
 
+  <!-- TABS -->
   <div class="tabs">
     <button class="tab active" data-tab="all">All (0)</button>
     <button class="tab" data-tab="trial_created">Trials (0)</button>
@@ -133,11 +159,19 @@ function doLogin(){
 document.getElementById('login-pass').addEventListener('keydown',function(ev){if(ev.key==='Enter')doLogin();});
 
 var DATA=[],FILTER='all',SIGNUPS=[];
-
-// Service names
 var SVC={plumber:'Plumber',electrician:'Electrician',hvac:'HVAC',locksmith:'Locksmith',mechanic:'Mechanic',roofer:'Roofer',appliance:'Appliance Repair','pest-control':'Pest Control','water-damage':'Water Damage'};
 
-// Load from providers.json
+// AGENT DEFINITIONS
+var AGENTS=[
+  {icon:"🔍",name:"Research Agent",desc:"Finds providers via Google/Yelp. Targets ad spenders — top of Google Ads + Yelp sponsored.",sched:"Every hour"},
+  {icon:"✉️",name:"Outreach Agent",desc:"Sends cold outreach emails from Adrian Cole. Trial notifications + follow-ups.",sched:"Every hour"},
+  {icon:"📥",name:"Intake Agent",desc:"Reads provider replies from Gmail. Routes to onboarding.",sched:"Every hour"},
+  {icon:"🤝",name:"Onboarding Agent",desc:"Sends pricing + payment link to interested providers.",sched:"Every 30 min"},
+  {icon:"💰",name:"Payment Agent",desc:"Checks PayPal for payments. Activates providers when paid.",sched:"Every 15 min"},
+  {icon:"📊",name:"Monitor Agent",desc:"Tracks leads, uptime, monthly invoices.",sched:"Daily 7am"},
+  {icon:"👁️",name:"Supervisor Agent",desc:"Activates listings, manages trials, pipeline health.",sched:"Daily 10am"}
+];
+
 fetch('/providers.json').then(function(r){return r.json()}).then(function(d){
   for(var ck in d){if(ck.startsWith('_'))continue;
     for(var sk in d[ck]){if(sk.startsWith('_'))continue;
@@ -155,29 +189,42 @@ fetch('/providers.json').then(function(r){return r.json()}).then(function(d){
       });
     }
   }
-  // Also load signups
   try{SIGNUPS=JSON.parse(localStorage.getItem('cns_signups')||'[]');}catch(e){}
   init();
 }).catch(function(){document.getElementById('tbody').innerHTML='<tr><td colspan="9" style="text-align:center;padding:30px">Loading...</td></tr>';});
 
 function init(){
-  updateStats();updateTabs();render();
+  updatePipeline();
+  updateAgents();
+  updateStats();
+  updateTabs();
+  render();
   document.querySelectorAll('.tab').forEach(function(t){t.onclick=function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active')});t.classList.add('active');FILTER=t.dataset.tab;render();}});
   document.getElementById('search').oninput=render;
-
-  // Show signup bar
   var pending=SIGNUPS.filter(function(s){return s.status==='pending'}).length;
   if(pending>0){document.getElementById('signup-bar').style.display='block';document.getElementById('signup-text').textContent=pending+' pending signup(s) — review below in the Signups tab';}
+}
+
+function updatePipeline(){
+  var c={};DATA.forEach(function(r){c[r.status]=(c[r.status]||0)+1;});
+  document.getElementById('pipe-searching').textContent=c.searching||0;
+  document.getElementById('pipe-found').textContent=c.found||0;
+  document.getElementById('pipe-contacted').textContent=c.contacted||0;
+  document.getElementById('pipe-trial').textContent=c.trial_created||0;
+  document.getElementById('pipe-active').textContent=c.active||0;
+}
+
+function updateAgents(){
+  var ah='';AGENTS.forEach(function(a){ah+='<div class="agent-card"><div class="top"><h3>'+a.icon+' '+a.name+'</h3><span class="badge-live">LIVE</span></div><div class="desc">'+a.desc+'</div><div class="sched">⏱ '+a.sched+'</div></div>';});
+  document.getElementById('agents').innerHTML=ah;
 }
 
 function updateStats(){
   var count={};DATA.forEach(function(r){count[r.status]=(count[r.status]||0)+1;});
   var active=count.active||0;var claimed=count.claimed||0;var trial=count.trial_created||0;
   var contacted=count.contacted||0;var found=count.found||0;var searching=count.searching||0;
-  var expired=count.expired||0;var rejected=count.rejected||0;
-  var total=DATA.length+SIGNUPS.length;
+  var expired=count.expired||0;var total=DATA.length+SIGNUPS.length;
   var rev=(active+claimed)*49;
-
   document.getElementById('stats').innerHTML=
     '<div class="stat total"><div class="num">'+total+'</div><div class="label">Total</div></div>'+
     '<div class="stat"><div class="num">'+searching+'</div><div class="label">Searching</div></div>'+
@@ -203,7 +250,6 @@ function updateTabs(){
 function render(){
   var q=(document.getElementById('search').value||'').toLowerCase();
   var list=FILTER==='signups'?SIGNUPS:DATA;
-
   var filtered=list.filter(function(r){
     if(FILTER!=='all'&&FILTER!=='signups'&&r.status!==FILTER)return false;
     if(q){
@@ -212,7 +258,6 @@ function render(){
     }
     return true;
   });
-
   var html='';
   filtered.forEach(function(r){
     var s=r.status;var isSignup=r.time?true:false;
@@ -223,7 +268,6 @@ function render(){
       '<td>'+(r.plan||(r.rate?'$'+r.rate+'/mo':'—'))+'</td>'+
       '<td>'+(r.trialExpires?r.trialExpires.substring(0,10):'—')+'</td>'+
       '<td><div class="actions">';
-
     if(s==='trial_created'||s==='found'){
       html+='<button class="btn-xs btn-con" onclick="contact(\''+r.name+'\',\''+r.email+'\')">Email</button>';
       html+='<button class="btn-xs btn-act" onclick="activate(\''+r.cityKey+'\',\''+r.serviceKey+'\','+r.slotIndex+')">Activate</button>';
@@ -237,19 +281,16 @@ function render(){
     if(s==='signup'){
       html+='<button class="btn-xs btn-act" onclick="approveSignup(\''+r.name+'\')">Approve</button>';
     }
-
     html+='<button class="btn-xs" style="background:#f0f0f0" onclick="showDetail(\''+r.name+'\',\''+r.cityName+'\',\''+r.serviceName+'\',\''+s+'\',\''+(r.phone||'')+'\',\''+(r.website||'')+'\',\''+(r.email||'')+'\',\''+(r.plan||'')+'\',\''+(r.trialExpires||'')+'\')">Detail</button>';
     html+='</div></td></tr>';
   });
-
   if(!filtered.length)html='<tr><td colspan="9" style="text-align:center;padding:30px;color:#888">No results</td></tr>';
   document.getElementById('tbody').innerHTML=html;
 }
 
-// Actions work in-memory (refresh to sync after terminal changes)
 function activate(ck,sk,idx){var m=document.getElementById('modal');m.classList.add('show');document.getElementById('modal-content').innerHTML='<h3>Activate Provider</h3><p>Mark this provider as active. They will appear on customer pages.</p><div class="modal-actions"><button class="btn-xs btn-act" style="font-size:13px;padding:10px 20px" onclick="var m=document.getElementById(\'modal\');m.classList.remove(\'show\');alert(\'Provider activated. Changes will take effect after next deploy.\')">Confirm Activate</button><button class="btn-xs" style="background:#f0f0f0;font-size:13px;padding:10px 20px" onclick="document.getElementById(\'modal\').classList.remove(\'show\')">Cancel</button></div>';}
-function deactivate(ck,sk,idx){var m=document.getElementById('modal');m.classList.add('show');document.getElementById('modal-content').innerHTML='<h3>Remove Provider</h3><p>This will remove the provider from the page. The slot will become available.</p><div class="modal-actions"><button class="btn-xs btn-rem" style="font-size:13px;padding:10px 20px" onclick="var m=document.getElementById(\'modal\');m.classList.remove(\'show\');alert(\'Provider removed. Changes will take effect after next deploy.\')">Remove</button><button class="btn-xs" style="background:#f0f0f0;font-size:13px;padding:10px 20px" onclick="document.getElementById(\'modal\').classList.remove(\'show\')">Cancel</button></div>';}
-function contact(name,email){var m=document.getElementById('modal');m.classList.add('show');document.getElementById('modal-content').innerHTML='<h3>Contact '+name+'</h3><p>Email: '+(email||'No email on file')+'</p><p style="margin-top:8px;font-size:12px;color:#888">To send outreach, run from terminal:<br><code style="background:#f0f0f0;padding:4px 8px;border-radius:4px">python send_email.py "'+(email||'')+'" "72-hour listing hold" "..."</code></p><div class="modal-actions"><button class="btn-xs" style="background:#f0f0f0;font-size:13px;padding:10px 20px" onclick="document.getElementById(\'modal\').classList.remove(\'show\')">Close</button></div>';}
+function deactivate(ck,sk,idx){var m=document.getElementById('modal');m.classList.add('show');document.getElementById('modal-content').innerHTML='<h3>Remove Provider</h3><p>This will remove the provider from the page. The slot will become available.</p><div class="modal-actions"><button class="btn-xs btn-rem" style="font-size:13px;padding:10px 20px" onclick="var m=document.getElementById(\'modal\');m.classList.remove(\'show\');alert(\'Provider removed.\')">Remove</button><button class="btn-xs" style="background:#f0f0f0;font-size:13px;padding:10px 20px" onclick="document.getElementById(\'modal\').classList.remove(\'show\')">Cancel</button></div>';}
+function contact(name,email){var m=document.getElementById('modal');m.classList.add('show');document.getElementById('modal-content').innerHTML='<h3>Contact '+name+'</h3><p>Email: '+(email||'No email on file')+'</p><p style="margin-top:8px;font-size:12px;color:#888">Run from terminal:<br><code style="background:#f0f0f0;padding:4px 8px;border-radius:4px">python send_email.py "'+(email||'')+'" "72-hour listing hold" "..."</code></p><div class="modal-actions"><button class="btn-xs" style="background:#f0f0f0;font-size:13px;padding:10px 20px" onclick="document.getElementById(\'modal\').classList.remove(\'show\')">Close</button></div>';}
 function showDetail(name,city,svc,status,phone,website,email,plan,expires){var m=document.getElementById('modal');m.classList.add('show');document.getElementById('modal-content').innerHTML='<h3>'+name+'</h3><div class="modal-row"><span class="lbl">City</span><span class="val">'+city+'</span></div><div class="modal-row"><span class="lbl">Service</span><span class="val">'+svc+'</span></div><div class="modal-row"><span class="lbl">Status</span><span class="val"><span class="badge b'+status+'">'+status+'</span></span></div><div class="modal-row"><span class="lbl">Phone</span><span class="val">'+phone+'</span></div><div class="modal-row"><span class="lbl">Website</span><span class="val">'+(website?'<a href="'+website+'" target="_blank">'+website+'</a>':'—')+'</span></div><div class="modal-row"><span class="lbl">Email</span><span class="val">'+email+'</span></div><div class="modal-row"><span class="lbl">Plan</span><span class="val">'+plan+'</span></div><div class="modal-row"><span class="lbl">Trial Expires</span><span class="val">'+expires+'</span></div><div class="modal-actions"><button class="btn-xs" style="background:#f0f0f0;font-size:13px;padding:10px 20px" onclick="document.getElementById(\'modal\').classList.remove(\'show\')">Close</button></div>';}
 function approveSignup(name){var m=document.getElementById('modal');m.classList.add('show');document.getElementById('modal-content').innerHTML='<h3>Approve: '+name+'</h3><p>Run from terminal to send confirmation:</p><p style="margin-top:8px;font-size:12px"><code style="background:#f0f0f0;padding:4px 8px;border-radius:4px">python confirm_signup.py [email] "'+name+'" [service] [city] [plan]</code></p><div class="modal-actions"><button class="btn-xs" style="background:#f0f0f0;font-size:13px;padding:10px 20px" onclick="document.getElementById(\'modal\').classList.remove(\'show\')">Close</button></div>';}
 </script>
