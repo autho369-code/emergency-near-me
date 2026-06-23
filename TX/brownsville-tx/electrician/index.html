@@ -186,7 +186,7 @@
 
 <footer>
   <p>© 2026 <a href="/">CallNowService.com</a> — City-based emergency provider placement nationwide.</p>
-  <p style="margin-top:4px"><a href="/provider">List Your Business</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
+  <p style="margin-top:4px"><a href="/providers">For Providers</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></p>
 </footer>
 
 <script>
@@ -239,7 +239,8 @@ fetch('/providers.json').then(function(r){return r.json()}).then(function(data){
     var website = v.provider_website||'';
     var status = v.status||'searching';
 
-    if(isReal && (status==='active'||status==='contacted'||status==='found')){
+    if(isReal && status==='active'){
+      // Approved provider — full card
       html += '<div class="provider-card featured">';
       html += '<div class="rank-badge">'+(i+1)+'</div>';
       html += '<div class="card-info">';
