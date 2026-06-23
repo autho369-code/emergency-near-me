@@ -157,7 +157,9 @@
             "appliance": "+1630XXXX0707",
             "pest-control": "+1630XXXX0808",
             "water-damage": "+1630XXXX0909"
-          }
+          },
+          "lat": 41.76,
+          "lng": -88.32
         },
         "bloomington": {
           "name": "Bloomington",
@@ -183,7 +185,9 @@
             "appliance": "+1309XXXX0707",
             "pest-control": "+1309XXXX0808",
             "water-damage": "+1309XXXX0909"
-          }
+          },
+          "lat": 40.48,
+          "lng": -88.99
         },
         "champaign": {
           "name": "Champaign",
@@ -209,7 +213,9 @@
             "appliance": "+1217XXXX0707",
             "pest-control": "+1217XXXX0808",
             "water-damage": "+1217XXXX0909"
-          }
+          },
+          "lat": 40.12,
+          "lng": -88.24
         },
         "chicago": {
           "name": "Chicago",
@@ -240,7 +246,9 @@
             "appliance": "+1773XXXX0707",
             "pest-control": "+1773XXXX0808",
             "water-damage": "+1773XXXX0909"
-          }
+          },
+          "lat": 41.88,
+          "lng": -87.63
         },
         "elgin": {
           "name": "Elgin",
@@ -266,7 +274,9 @@
             "appliance": "+1847XXXX0707",
             "pest-control": "+1847XXXX0808",
             "water-damage": "+1847XXXX0909"
-          }
+          },
+          "lat": 42.04,
+          "lng": -88.29
         },
         "evanston": {
           "name": "Evanston",
@@ -292,11 +302,15 @@
             "appliance": "+1847XXXX0707",
             "pest-control": "+1847XXXX0808",
             "water-damage": "+1847XXXX0909"
-          }
+          },
+          "lat": 42.05,
+          "lng": -87.69
         },
         "glenview": {
           "name": "Glenview",
-          "phones": {}
+          "phones": {},
+          "lat": 42.07,
+          "lng": -87.81
         },
         "naperville": {
           "name": "Naperville",
@@ -322,7 +336,9 @@
             "appliance": "+1630XXXX0707",
             "pest-control": "+1630XXXX0808",
             "water-damage": "+1630XXXX0909"
-          }
+          },
+          "lat": 41.75,
+          "lng": -88.15
         },
         "rockford": {
           "name": "Rockford",
@@ -348,7 +364,9 @@
             "appliance": "+1815XXXX0707",
             "pest-control": "+1815XXXX0808",
             "water-damage": "+1815XXXX0909"
-          }
+          },
+          "lat": 42.27,
+          "lng": -89.06
         },
         "schaumburg": {
           "name": "Schaumburg",
@@ -374,7 +392,9 @@
             "appliance": "+1847XXXX0707",
             "pest-control": "+1847XXXX0808",
             "water-damage": "+1847XXXX0909"
-          }
+          },
+          "lat": 42.03,
+          "lng": -88.08
         },
         "springfield-il": {
           "name": "Springfield",
@@ -400,7 +420,9 @@
             "appliance": "+1217XXXX0707",
             "pest-control": "+1217XXXX0808",
             "water-damage": "+1217XXXX0909"
-          }
+          },
+          "lat": 39.78,
+          "lng": -89.65
         },
         "waukegan": {
           "name": "Waukegan",
@@ -426,7 +448,9 @@
             "appliance": "+1847XXXX0707",
             "pest-control": "+1847XXXX0808",
             "water-damage": "+1847XXXX0909"
-          }
+          },
+          "lat": 42.36,
+          "lng": -87.84
         }
       }
     },
@@ -458,7 +482,9 @@
             "appliance": "+1907XXXX0707",
             "pest-control": "+1907XXXX0808",
             "water-damage": "+1907XXXX0909"
-          }
+          },
+          "lat": 61.22,
+          "lng": -149.9
         },
         "fairbanks": {
           "name": "Fairbanks",
@@ -620,7 +646,9 @@
             "appliance": "+1205XXXX0707",
             "pest-control": "+1205XXXX0808",
             "water-damage": "+1205XXXX0909"
-          }
+          },
+          "lat": 33.52,
+          "lng": -86.8
         },
         "daphne": {
           "name": "Daphne",
@@ -750,7 +778,9 @@
             "appliance": "+1251XXXX0707",
             "pest-control": "+1251XXXX0808",
             "water-damage": "+1251XXXX0909"
-          }
+          },
+          "lat": 30.69,
+          "lng": -88.04
         },
         "montgomery": {
           "name": "Montgomery",
@@ -776,7 +806,9 @@
             "appliance": "+1334XXXX0707",
             "pest-control": "+1334XXXX0808",
             "water-damage": "+1334XXXX0909"
-          }
+          },
+          "lat": 32.38,
+          "lng": -86.3
         },
         "prattville": {
           "name": "Prattville",
@@ -1048,7 +1080,9 @@
             "appliance": "+1480XXXX0707",
             "pest-control": "+1480XXXX0808",
             "water-damage": "+1480XXXX0909"
-          }
+          },
+          "lat": 33.31,
+          "lng": -111.84
         },
         "flagstaff": {
           "name": "Flagstaff",
@@ -1126,7 +1160,9 @@
             "appliance": "+1623XXXX0707",
             "pest-control": "+1623XXXX0808",
             "water-damage": "+1623XXXX0909"
-          }
+          },
+          "lat": 33.54,
+          "lng": -112.18
         },
         "goodyear": {
           "name": "Goodyear",
@@ -1230,7 +1266,9 @@
             "appliance": "+1480XXXX0707",
             "pest-control": "+1480XXXX0808",
             "water-damage": "+1480XXXX0909"
-          }
+          },
+          "lat": 33.42,
+          "lng": -111.83
         },
         "peoria-az": {
           "name": "Peoria",
@@ -1282,7 +1320,9 @@
             "appliance": "+1602XXXX0707",
             "pest-control": "+1602XXXX0808",
             "water-damage": "+1602XXXX0909"
-          }
+          },
+          "lat": 33.45,
+          "lng": -112.07
         },
         "prescott": {
           "name": "Prescott",
@@ -1438,7 +1478,9 @@
             "appliance": "+1520XXXX0707",
             "pest-control": "+1520XXXX0808",
             "water-damage": "+1520XXXX0909"
-          }
+          },
+          "lat": 32.22,
+          "lng": -110.97
         },
         "yuma": {
           "name": "Yuma",
@@ -1496,7 +1538,9 @@
             "appliance": "+1714XXXX0707",
             "pest-control": "+1714XXXX0808",
             "water-damage": "+1714XXXX0909"
-          }
+          },
+          "lat": 33.84,
+          "lng": -117.91
         },
         "bakersfield": {
           "name": "Bakersfield",
@@ -1522,7 +1566,9 @@
             "appliance": "+1661XXXX0707",
             "pest-control": "+1661XXXX0808",
             "water-damage": "+1661XXXX0909"
-          }
+          },
+          "lat": 35.37,
+          "lng": -119.02
         },
         "berkeley": {
           "name": "Berkeley",
@@ -1834,7 +1880,9 @@
             "appliance": "+1559XXXX0707",
             "pest-control": "+1559XXXX0808",
             "water-damage": "+1559XXXX0909"
-          }
+          },
+          "lat": 36.74,
+          "lng": -119.77
         },
         "glendale-ca": {
           "name": "Glendale",
@@ -2042,7 +2090,9 @@
             "appliance": "+1562XXXX0707",
             "pest-control": "+1562XXXX0808",
             "water-damage": "+1562XXXX0909"
-          }
+          },
+          "lat": 33.77,
+          "lng": -118.19
         },
         "los-angeles": {
           "name": "Los Angeles",
@@ -2068,7 +2118,9 @@
             "appliance": "+1310XXXX0707",
             "pest-control": "+1310XXXX0808",
             "water-damage": "+1310XXXX0909"
-          }
+          },
+          "lat": 34.05,
+          "lng": -118.24
         },
         "menifee": {
           "name": "Menifee",
@@ -2250,7 +2302,9 @@
             "appliance": "+1510XXXX0707",
             "pest-control": "+1510XXXX0808",
             "water-damage": "+1510XXXX0909"
-          }
+          },
+          "lat": 37.8,
+          "lng": -122.27
         },
         "oxnard": {
           "name": "Oxnard",
@@ -2536,7 +2590,9 @@
             "appliance": "+1916XXXX0707",
             "pest-control": "+1916XXXX0808",
             "water-damage": "+1916XXXX0909"
-          }
+          },
+          "lat": 38.58,
+          "lng": -121.49
         },
         "san-bernardino": {
           "name": "San Bernardino",
@@ -2588,7 +2644,9 @@
             "appliance": "+1619XXXX0707",
             "pest-control": "+1619XXXX0808",
             "water-damage": "+1619XXXX0909"
-          }
+          },
+          "lat": 32.72,
+          "lng": -117.16
         },
         "san-francisco": {
           "name": "San Francisco",
@@ -2614,7 +2672,9 @@
             "appliance": "+1415XXXX0707",
             "pest-control": "+1415XXXX0808",
             "water-damage": "+1415XXXX0909"
-          }
+          },
+          "lat": 37.77,
+          "lng": -122.42
         },
         "san-jose": {
           "name": "San Jose",
@@ -2640,7 +2700,9 @@
             "appliance": "+1408XXXX0707",
             "pest-control": "+1408XXXX0808",
             "water-damage": "+1408XXXX0909"
-          }
+          },
+          "lat": 37.34,
+          "lng": -121.89
         },
         "san-mateo": {
           "name": "San Mateo",
@@ -3244,7 +3306,9 @@
             "appliance": "+1719XXXX0707",
             "pest-control": "+1719XXXX0808",
             "water-damage": "+1719XXXX0909"
-          }
+          },
+          "lat": 38.83,
+          "lng": -104.82
         },
         "denver": {
           "name": "Denver",
@@ -3270,7 +3334,9 @@
             "appliance": "+1303XXXX0707",
             "pest-control": "+1303XXXX0808",
             "water-damage": "+1303XXXX0909"
-          }
+          },
+          "lat": 39.74,
+          "lng": -104.99
         },
         "fort-collins": {
           "name": "Fort Collins",
@@ -3692,7 +3758,9 @@
             "appliance": "+1203XXXX0707",
             "pest-control": "+1203XXXX0808",
             "water-damage": "+1203XXXX0909"
-          }
+          },
+          "lat": 41.31,
+          "lng": -72.92
         },
         "norwalk": {
           "name": "Norwalk",
@@ -3886,7 +3954,9 @@
             "appliance": "+1302XXXX0707",
             "pest-control": "+1302XXXX0808",
             "water-damage": "+1302XXXX0909"
-          }
+          },
+          "lat": 39.74,
+          "lng": -75.55
         },
         "wilmington-de": {
           "name": "Wilmington",
@@ -4230,7 +4300,9 @@
             "appliance": "+1904XXXX0707",
             "pest-control": "+1904XXXX0808",
             "water-damage": "+1904XXXX0909"
-          }
+          },
+          "lat": 30.33,
+          "lng": -81.66
         },
         "kissimmee": {
           "name": "Kissimmee",
@@ -4334,7 +4406,9 @@
             "appliance": "+1305XXXX0707",
             "pest-control": "+1305XXXX0808",
             "water-damage": "+1305XXXX0909"
-          }
+          },
+          "lat": 25.76,
+          "lng": -80.19
         },
         "naples": {
           "name": "Naples",
@@ -4438,7 +4512,9 @@
             "appliance": "+1407XXXX0707",
             "pest-control": "+1407XXXX0808",
             "water-damage": "+1407XXXX0909"
-          }
+          },
+          "lat": 28.54,
+          "lng": -81.38
         },
         "palm-coast": {
           "name": "Palm Coast",
@@ -4516,7 +4592,9 @@
             "appliance": "+1772XXXX0707",
             "pest-control": "+1772XXXX0808",
             "water-damage": "+1772XXXX0909"
-          }
+          },
+          "lat": 27.29,
+          "lng": -80.35
         },
         "sanford": {
           "name": "Sanford",
@@ -4620,7 +4698,9 @@
             "appliance": "+1727XXXX0707",
             "pest-control": "+1727XXXX0808",
             "water-damage": "+1727XXXX0909"
-          }
+          },
+          "lat": 27.77,
+          "lng": -82.64
         },
         "tallahassee": {
           "name": "Tallahassee",
@@ -4646,7 +4726,9 @@
             "appliance": "+1850XXXX0707",
             "pest-control": "+1850XXXX0808",
             "water-damage": "+1850XXXX0909"
-          }
+          },
+          "lat": 30.44,
+          "lng": -84.28
         },
         "tampa": {
           "name": "Tampa",
@@ -4672,7 +4754,9 @@
             "appliance": "+1813XXXX0707",
             "pest-control": "+1813XXXX0808",
             "water-damage": "+1813XXXX0909"
-          }
+          },
+          "lat": 27.95,
+          "lng": -82.46
         },
         "venice": {
           "name": "Venice",
@@ -4860,7 +4944,9 @@
             "appliance": "+1404XXXX0707",
             "pest-control": "+1404XXXX0808",
             "water-damage": "+1404XXXX0909"
-          }
+          },
+          "lat": 33.75,
+          "lng": -84.39
         },
         "augusta": {
           "name": "Augusta",
@@ -4886,7 +4972,9 @@
             "appliance": "+1706XXXX0707",
             "pest-control": "+1706XXXX0808",
             "water-damage": "+1706XXXX0909"
-          }
+          },
+          "lat": 33.47,
+          "lng": -82.01
         },
         "duluth-ga": {
           "name": "Duluth",
@@ -5126,7 +5214,9 @@
             "appliance": "+1808XXXX0707",
             "pest-control": "+1808XXXX0808",
             "water-damage": "+1808XXXX0909"
-          }
+          },
+          "lat": 21.31,
+          "lng": -157.86
         }
       }
     },
@@ -5210,7 +5300,9 @@
             "appliance": "+1319XXXX0707",
             "pest-control": "+1319XXXX0808",
             "water-damage": "+1319XXXX0909"
-          }
+          },
+          "lat": 41.98,
+          "lng": -91.67
         },
         "council-bluffs": {
           "name": "Council Bluffs",
@@ -5262,7 +5354,9 @@
             "appliance": "+1563XXXX0707",
             "pest-control": "+1563XXXX0808",
             "water-damage": "+1563XXXX0909"
-          }
+          },
+          "lat": 41.52,
+          "lng": -90.58
         },
         "des-moines": {
           "name": "Des Moines",
@@ -5288,7 +5382,9 @@
             "appliance": "+1515XXXX0707",
             "pest-control": "+1515XXXX0808",
             "water-damage": "+1515XXXX0909"
-          }
+          },
+          "lat": 41.59,
+          "lng": -93.62
         },
         "dubuque": {
           "name": "Dubuque",
@@ -5372,7 +5468,9 @@
             "appliance": "+1208XXXX0707",
             "pest-control": "+1208XXXX0808",
             "water-damage": "+1208XXXX0909"
-          }
+          },
+          "lat": 43.62,
+          "lng": -116.2
         },
         "coeur-dalene": {
           "name": "Coeur d'Alene",
@@ -5508,7 +5606,9 @@
             "appliance": "+1812XXXX0707",
             "pest-control": "+1812XXXX0808",
             "water-damage": "+1812XXXX0909"
-          }
+          },
+          "lat": 37.97,
+          "lng": -87.57
         },
         "fort-wayne": {
           "name": "Fort Wayne",
@@ -5534,7 +5634,9 @@
             "appliance": "+1260XXXX0707",
             "pest-control": "+1260XXXX0808",
             "water-damage": "+1260XXXX0909"
-          }
+          },
+          "lat": 41.08,
+          "lng": -85.14
         },
         "gary": {
           "name": "Gary",
@@ -5638,7 +5740,9 @@
             "appliance": "+1317XXXX0707",
             "pest-control": "+1317XXXX0808",
             "water-damage": "+1317XXXX0909"
-          }
+          },
+          "lat": 39.77,
+          "lng": -86.16
         },
         "kokomo": {
           "name": "Kokomo",
@@ -5904,7 +6008,9 @@
             "appliance": "+1913XXXX0707",
             "pest-control": "+1913XXXX0808",
             "water-damage": "+1913XXXX0909"
-          }
+          },
+          "lat": 38.98,
+          "lng": -94.67
         },
         "shawnee": {
           "name": "Shawnee",
@@ -5982,7 +6088,9 @@
             "appliance": "+1316XXXX0707",
             "pest-control": "+1316XXXX0808",
             "water-damage": "+1316XXXX0909"
-          }
+          },
+          "lat": 37.69,
+          "lng": -97.34
         }
       }
     },
@@ -6040,7 +6148,9 @@
             "appliance": "+1502XXXX0707",
             "pest-control": "+1502XXXX0808",
             "water-damage": "+1502XXXX0909"
-          }
+          },
+          "lat": 38.25,
+          "lng": -85.76
         },
         "owensboro": {
           "name": "Owensboro",
@@ -6124,7 +6234,9 @@
             "appliance": "+1225XXXX0707",
             "pest-control": "+1225XXXX0808",
             "water-damage": "+1225XXXX0909"
-          }
+          },
+          "lat": 30.45,
+          "lng": -91.19
         },
         "bossier-city": {
           "name": "Bossier City",
@@ -6254,7 +6366,9 @@
             "appliance": "+1504XXXX0707",
             "pest-control": "+1504XXXX0808",
             "water-damage": "+1504XXXX0909"
-          }
+          },
+          "lat": 29.95,
+          "lng": -90.07
         },
         "shreveport": {
           "name": "Shreveport",
@@ -6364,7 +6478,9 @@
             "appliance": "+1617XXXX0707",
             "pest-control": "+1617XXXX0808",
             "water-damage": "+1617XXXX0909"
-          }
+          },
+          "lat": 42.36,
+          "lng": -71.06
         },
         "brockton": {
           "name": "Brockton",
@@ -6728,7 +6844,9 @@
             "appliance": "+1508XXXX0707",
             "pest-control": "+1508XXXX0808",
             "water-damage": "+1508XXXX0909"
-          }
+          },
+          "lat": 42.26,
+          "lng": -71.8
         }
       }
     },
@@ -6786,7 +6904,9 @@
             "appliance": "+1410XXXX0707",
             "pest-control": "+1410XXXX0808",
             "water-damage": "+1410XXXX0909"
-          }
+          },
+          "lat": 39.29,
+          "lng": -76.61
         },
         "bethesda": {
           "name": "Bethesda",
@@ -7000,7 +7120,9 @@
             "appliance": "+1207XXXX0707",
             "pest-control": "+1207XXXX0808",
             "water-damage": "+1207XXXX0909"
-          }
+          },
+          "lat": 43.66,
+          "lng": -70.26
         }
       }
     },
@@ -7110,7 +7232,9 @@
             "appliance": "+1313XXXX0707",
             "pest-control": "+1313XXXX0808",
             "water-damage": "+1313XXXX0909"
-          }
+          },
+          "lat": 42.33,
+          "lng": -83.05
         },
         "flint": {
           "name": "Flint",
@@ -7162,7 +7286,9 @@
             "appliance": "+1616XXXX0707",
             "pest-control": "+1616XXXX0808",
             "water-damage": "+1616XXXX0909"
-          }
+          },
+          "lat": 42.96,
+          "lng": -85.66
         },
         "kalamazoo": {
           "name": "Kalamazoo",
@@ -7740,7 +7866,9 @@
             "appliance": "+1612XXXX0707",
             "pest-control": "+1612XXXX0808",
             "water-damage": "+1612XXXX0909"
-          }
+          },
+          "lat": 44.98,
+          "lng": -93.27
         },
         "moorhead": {
           "name": "Moorhead",
@@ -7870,7 +7998,9 @@
             "appliance": "+1651XXXX0707",
             "pest-control": "+1651XXXX0808",
             "water-damage": "+1651XXXX0909"
-          }
+          },
+          "lat": 44.95,
+          "lng": -93.09
         },
         "woodbury": {
           "name": "Woodbury",
@@ -7980,7 +8110,9 @@
             "appliance": "+1816XXXX0707",
             "pest-control": "+1816XXXX0808",
             "water-damage": "+1816XXXX0909"
-          }
+          },
+          "lat": 39.1,
+          "lng": -94.58
         },
         "lees-summit": {
           "name": "Lees Summit",
@@ -8032,7 +8164,9 @@
             "appliance": "+1417XXXX0707",
             "pest-control": "+1417XXXX0808",
             "water-damage": "+1417XXXX0909"
-          }
+          },
+          "lat": 37.21,
+          "lng": -93.29
         },
         "st-charles": {
           "name": "St Charles",
@@ -8110,7 +8244,9 @@
             "appliance": "+1314XXXX0707",
             "pest-control": "+1314XXXX0808",
             "water-damage": "+1314XXXX0909"
-          }
+          },
+          "lat": 38.63,
+          "lng": -90.2
         },
         "strafford-mo": {
           "name": "Strafford",
@@ -8252,7 +8388,9 @@
             "appliance": "+1406XXXX0707",
             "pest-control": "+1406XXXX0808",
             "water-damage": "+1406XXXX0909"
-          }
+          },
+          "lat": 45.78,
+          "lng": -108.5
         },
         "bozeman": {
           "name": "Bozeman",
@@ -8440,7 +8578,9 @@
             "appliance": "+1704XXXX0707",
             "pest-control": "+1704XXXX0808",
             "water-damage": "+1704XXXX0909"
-          }
+          },
+          "lat": 35.23,
+          "lng": -80.84
         },
         "durham": {
           "name": "Durham",
@@ -8492,7 +8632,9 @@
             "appliance": "+1336XXXX0707",
             "pest-control": "+1336XXXX0808",
             "water-damage": "+1336XXXX0909"
-          }
+          },
+          "lat": 36.07,
+          "lng": -79.79
         },
         "henderson-nc": {
           "name": "Henderson",
@@ -8622,7 +8764,9 @@
             "appliance": "+1919XXXX0707",
             "pest-control": "+1919XXXX0808",
             "water-damage": "+1919XXXX0909"
-          }
+          },
+          "lat": 35.78,
+          "lng": -78.64
         },
         "rocky-mount": {
           "name": "Rocky Mount",
@@ -8758,7 +8902,9 @@
             "appliance": "+1701XXXX0707",
             "pest-control": "+1701XXXX0808",
             "water-damage": "+1701XXXX0909"
-          }
+          },
+          "lat": 46.88,
+          "lng": -96.79
         },
         "grand-forks": {
           "name": "Grand Forks",
@@ -8868,7 +9014,9 @@
             "appliance": "+1402XXXX0707",
             "pest-control": "+1402XXXX0808",
             "water-damage": "+1402XXXX0909"
-          }
+          },
+          "lat": 40.81,
+          "lng": -96.71
         },
         "north-platte": {
           "name": "North Platte",
@@ -8920,7 +9068,9 @@
             "appliance": "+1402XXXX0707",
             "pest-control": "+1402XXXX0808",
             "water-damage": "+1402XXXX0909"
-          }
+          },
+          "lat": 41.26,
+          "lng": -95.94
         }
       }
     },
@@ -8978,7 +9128,9 @@
             "appliance": "+1603XXXX0707",
             "pest-control": "+1603XXXX0808",
             "water-damage": "+1603XXXX0909"
-          }
+          },
+          "lat": 42.99,
+          "lng": -71.46
         }
       }
     },
@@ -9062,7 +9214,9 @@
             "appliance": "+1201XXXX0707",
             "pest-control": "+1201XXXX0808",
             "water-damage": "+1201XXXX0909"
-          }
+          },
+          "lat": 40.73,
+          "lng": -74.06
         },
         "newark": {
           "name": "Newark",
@@ -9088,7 +9242,9 @@
             "appliance": "+1973XXXX0707",
             "pest-control": "+1973XXXX0808",
             "water-damage": "+1973XXXX0909"
-          }
+          },
+          "lat": 40.74,
+          "lng": -74.17
         },
         "princeton": {
           "name": "Princeton",
@@ -9146,7 +9302,9 @@
             "appliance": "+1505XXXX0707",
             "pest-control": "+1505XXXX0808",
             "water-damage": "+1505XXXX0909"
-          }
+          },
+          "lat": 35.08,
+          "lng": -106.65
         },
         "farmington": {
           "name": "Farmington",
@@ -9256,7 +9414,9 @@
             "appliance": "+1702XXXX0707",
             "pest-control": "+1702XXXX0808",
             "water-damage": "+1702XXXX0909"
-          }
+          },
+          "lat": 36.04,
+          "lng": -114.98
         },
         "las-vegas": {
           "name": "Las Vegas",
@@ -9282,7 +9442,9 @@
             "appliance": "+1702XXXX0707",
             "pest-control": "+1702XXXX0808",
             "water-damage": "+1702XXXX0909"
-          }
+          },
+          "lat": 36.17,
+          "lng": -115.14
         },
         "reno": {
           "name": "Reno",
@@ -9418,7 +9580,9 @@
             "appliance": "+1716XXXX0707",
             "pest-control": "+1716XXXX0808",
             "water-damage": "+1716XXXX0909"
-          }
+          },
+          "lat": 42.89,
+          "lng": -78.88
         },
         "ithaca": {
           "name": "Ithaca",
@@ -9470,7 +9634,9 @@
             "appliance": "+1212XXXX0707",
             "pest-control": "+1212XXXX0808",
             "water-damage": "+1212XXXX0909"
-          }
+          },
+          "lat": 40.71,
+          "lng": -74.01
         },
         "newburgh": {
           "name": "Newburgh",
@@ -9626,7 +9792,9 @@
             "appliance": "+1315XXXX0707",
             "pest-control": "+1315XXXX0808",
             "water-damage": "+1315XXXX0909"
-          }
+          },
+          "lat": 43.05,
+          "lng": -76.14
         },
         "troy": {
           "name": "Troy",
@@ -9736,7 +9904,9 @@
             "appliance": "+1330XXXX0707",
             "pest-control": "+1330XXXX0808",
             "water-damage": "+1330XXXX0909"
-          }
+          },
+          "lat": 41.08,
+          "lng": -81.52
         },
         "canton": {
           "name": "Canton",
@@ -9788,7 +9958,9 @@
             "appliance": "+1513XXXX0707",
             "pest-control": "+1513XXXX0808",
             "water-damage": "+1513XXXX0909"
-          }
+          },
+          "lat": 39.1,
+          "lng": -84.51
         },
         "cleveland": {
           "name": "Cleveland",
@@ -9814,7 +9986,9 @@
             "appliance": "+1216XXXX0707",
             "pest-control": "+1216XXXX0808",
             "water-damage": "+1216XXXX0909"
-          }
+          },
+          "lat": 41.5,
+          "lng": -81.69
         },
         "columbus": {
           "name": "Columbus",
@@ -9840,7 +10014,9 @@
             "appliance": "+1614XXXX0707",
             "pest-control": "+1614XXXX0808",
             "water-damage": "+1614XXXX0909"
-          }
+          },
+          "lat": 39.96,
+          "lng": -83.0
         },
         "dayton": {
           "name": "Dayton",
@@ -9866,7 +10042,9 @@
             "appliance": "+1937XXXX0707",
             "pest-control": "+1937XXXX0808",
             "water-damage": "+1937XXXX0909"
-          }
+          },
+          "lat": 39.76,
+          "lng": -84.19
         },
         "lima": {
           "name": "Lima",
@@ -10022,7 +10200,9 @@
             "appliance": "+1419XXXX0707",
             "pest-control": "+1419XXXX0808",
             "water-damage": "+1419XXXX0909"
-          }
+          },
+          "lat": 41.65,
+          "lng": -83.54
         },
         "youngstown": {
           "name": "Youngstown",
@@ -10210,7 +10390,9 @@
             "appliance": "+1405XXXX0707",
             "pest-control": "+1405XXXX0808",
             "water-damage": "+1405XXXX0909"
-          }
+          },
+          "lat": 35.47,
+          "lng": -97.52
         },
         "stillwater": {
           "name": "Stillwater",
@@ -10262,7 +10444,9 @@
             "appliance": "+1918XXXX0707",
             "pest-control": "+1918XXXX0808",
             "water-damage": "+1918XXXX0909"
-          }
+          },
+          "lat": 36.15,
+          "lng": -95.99
         }
       }
     },
@@ -10450,7 +10634,9 @@
             "appliance": "+1503XXXX0707",
             "pest-control": "+1503XXXX0808",
             "water-damage": "+1503XXXX0909"
-          }
+          },
+          "lat": 45.52,
+          "lng": -122.68
         },
         "salem": {
           "name": "Salem",
@@ -10612,7 +10798,9 @@
             "appliance": "+1215XXXX0707",
             "pest-control": "+1215XXXX0808",
             "water-damage": "+1215XXXX0909"
-          }
+          },
+          "lat": 39.95,
+          "lng": -75.17
         },
         "pittsburgh": {
           "name": "Pittsburgh",
@@ -10638,7 +10826,9 @@
             "appliance": "+1412XXXX0707",
             "pest-control": "+1412XXXX0808",
             "water-damage": "+1412XXXX0909"
-          }
+          },
+          "lat": 40.44,
+          "lng": -79.99
         },
         "york": {
           "name": "York",
@@ -10748,7 +10938,9 @@
             "appliance": "+1401XXXX0707",
             "pest-control": "+1401XXXX0808",
             "water-damage": "+1401XXXX0909"
-          }
+          },
+          "lat": 41.82,
+          "lng": -71.41
         },
         "warwick-ri": {
           "name": "Warwick",
@@ -10806,7 +10998,9 @@
             "appliance": "+1843XXXX0707",
             "pest-control": "+1843XXXX0808",
             "water-damage": "+1843XXXX0909"
-          }
+          },
+          "lat": 32.78,
+          "lng": -79.93
         },
         "columbia-sc": {
           "name": "Columbia",
@@ -11072,7 +11266,9 @@
             "appliance": "+1605XXXX0707",
             "pest-control": "+1605XXXX0808",
             "water-damage": "+1605XXXX0909"
-          }
+          },
+          "lat": 43.55,
+          "lng": -96.7
         },
         "watertown-sd": {
           "name": "Watertown",
@@ -11312,7 +11508,9 @@
             "appliance": "+1901XXXX0707",
             "pest-control": "+1901XXXX0808",
             "water-damage": "+1901XXXX0909"
-          }
+          },
+          "lat": 35.15,
+          "lng": -90.05
         },
         "nashville": {
           "name": "Nashville",
@@ -11338,7 +11536,9 @@
             "appliance": "+1615XXXX0707",
             "pest-control": "+1615XXXX0808",
             "water-damage": "+1615XXXX0909"
-          }
+          },
+          "lat": 36.16,
+          "lng": -86.78
         }
       }
     },
@@ -11396,7 +11596,9 @@
             "appliance": "+1817XXXX0707",
             "pest-control": "+1817XXXX0808",
             "water-damage": "+1817XXXX0909"
-          }
+          },
+          "lat": 32.74,
+          "lng": -97.11
         },
         "austin": {
           "name": "Austin",
@@ -11422,7 +11624,9 @@
             "appliance": "+1512XXXX0707",
             "pest-control": "+1512XXXX0808",
             "water-damage": "+1512XXXX0909"
-          }
+          },
+          "lat": 30.27,
+          "lng": -97.74
         },
         "brownsville-tx": {
           "name": "Brownsville",
@@ -11526,7 +11730,9 @@
             "appliance": "+1361XXXX0707",
             "pest-control": "+1361XXXX0808",
             "water-damage": "+1361XXXX0909"
-          }
+          },
+          "lat": 27.8,
+          "lng": -97.4
         },
         "dallas": {
           "name": "Dallas",
@@ -11552,7 +11758,9 @@
             "appliance": "+1214XXXX0707",
             "pest-control": "+1214XXXX0808",
             "water-damage": "+1214XXXX0909"
-          }
+          },
+          "lat": 32.78,
+          "lng": -96.8
         },
         "denton": {
           "name": "Denton",
@@ -11604,7 +11812,9 @@
             "appliance": "+1915XXXX0707",
             "pest-control": "+1915XXXX0808",
             "water-damage": "+1915XXXX0909"
-          }
+          },
+          "lat": 31.76,
+          "lng": -106.49
         },
         "fort-worth": {
           "name": "Fort Worth",
@@ -11630,7 +11840,9 @@
             "appliance": "+1817XXXX0707",
             "pest-control": "+1817XXXX0808",
             "water-damage": "+1817XXXX0909"
-          }
+          },
+          "lat": 32.76,
+          "lng": -97.33
         },
         "frisco": {
           "name": "Frisco",
@@ -11760,7 +11972,9 @@
             "appliance": "+1713XXXX0707",
             "pest-control": "+1713XXXX0808",
             "water-damage": "+1713XXXX0909"
-          }
+          },
+          "lat": 29.76,
+          "lng": -95.37
         },
         "longview": {
           "name": "Longview",
@@ -11916,7 +12130,9 @@
             "appliance": "+1972XXXX0707",
             "pest-control": "+1972XXXX0808",
             "water-damage": "+1972XXXX0909"
-          }
+          },
+          "lat": 33.02,
+          "lng": -96.7
         },
         "round-rock": {
           "name": "Round Rock",
@@ -11994,7 +12210,9 @@
             "appliance": "+1210XXXX0707",
             "pest-control": "+1210XXXX0808",
             "water-damage": "+1210XXXX0909"
-          }
+          },
+          "lat": 29.42,
+          "lng": -98.49
         },
         "temple": {
           "name": "Temple",
@@ -12552,7 +12770,9 @@
             "appliance": "+1757XXXX0707",
             "pest-control": "+1757XXXX0808",
             "water-damage": "+1757XXXX0909"
-          }
+          },
+          "lat": 36.85,
+          "lng": -76.29
         },
         "portsmouth": {
           "name": "Portsmouth",
@@ -12682,7 +12902,9 @@
             "appliance": "+1757XXXX0707",
             "pest-control": "+1757XXXX0808",
             "water-damage": "+1757XXXX0909"
-          }
+          },
+          "lat": 36.85,
+          "lng": -75.98
         }
       }
     },
@@ -12714,7 +12936,9 @@
             "appliance": "+1802XXXX0707",
             "pest-control": "+1802XXXX0808",
             "water-damage": "+1802XXXX0909"
-          }
+          },
+          "lat": 44.48,
+          "lng": -73.21
         }
       }
     },
@@ -12954,7 +13178,9 @@
             "appliance": "+1206XXXX0707",
             "pest-control": "+1206XXXX0808",
             "water-damage": "+1206XXXX0909"
-          }
+          },
+          "lat": 47.61,
+          "lng": -122.33
         },
         "spokane": {
           "name": "Spokane",
@@ -12980,7 +13206,9 @@
             "appliance": "+1509XXXX0707",
             "pest-control": "+1509XXXX0808",
             "water-damage": "+1509XXXX0909"
-          }
+          },
+          "lat": 47.66,
+          "lng": -117.42
         },
         "spokane-valley": {
           "name": "Spokane Valley",
@@ -13142,7 +13370,9 @@
             "appliance": "+1920XXXX0707",
             "pest-control": "+1920XXXX0808",
             "water-damage": "+1920XXXX0909"
-          }
+          },
+          "lat": 44.51,
+          "lng": -88.02
         },
         "janesville": {
           "name": "Janesville",
@@ -13246,7 +13476,9 @@
             "appliance": "+1608XXXX0707",
             "pest-control": "+1608XXXX0808",
             "water-damage": "+1608XXXX0909"
-          }
+          },
+          "lat": 43.07,
+          "lng": -89.4
         },
         "milwaukee": {
           "name": "Milwaukee",
@@ -13272,7 +13504,9 @@
             "appliance": "+1414XXXX0707",
             "pest-control": "+1414XXXX0808",
             "water-damage": "+1414XXXX0909"
-          }
+          },
+          "lat": 43.04,
+          "lng": -87.91
         },
         "oshkosh": {
           "name": "Oshkosh",
@@ -13408,7 +13642,9 @@
             "appliance": "+1304XXXX0707",
             "pest-control": "+1304XXXX0808",
             "water-damage": "+1304XXXX0909"
-          }
+          },
+          "lat": 38.35,
+          "lng": -81.63
         },
         "morgantown": {
           "name": "Morgantown",
@@ -13492,7 +13728,9 @@
             "appliance": "+1307XXXX0707",
             "pest-control": "+1307XXXX0808",
             "water-damage": "+1307XXXX0909"
-          }
+          },
+          "lat": 41.14,
+          "lng": -104.82
         },
         "gillette": {
           "name": "Gillette",

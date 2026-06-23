@@ -171,28 +171,8 @@ function useLocation(){
         var city = (d.address||{}).city||(d.address||{}).town||'';
         var state = (d.address||{}).state||'';
         if(city&&state){
-          // Match to our data
-          fetch('/data.json').then(function(r){return r.json()}).then(function(data){
-            var lower = city.toLowerCase();
-            for(var sk in data.states){
-              for(var ck in data.states[sk].cities){
-                if(data.states[sk].cities[ck].name.toLowerCase()===lower){
-                  userCity = ck;
-                  userState = sk;
-                  userCityName = data.states[sk].cities[ck].name;
-                  var stAbbr = data.states[sk].abbr;
-                  document.getElementById('loc-status').innerHTML = 'Showing emergency services near <strong>'+userCityName+', '+stAbbr+'</strong>.';
-                  document.getElementById('loc-input').value = userCityName+', '+stAbbr;
-                  return;
-                }
-              }
-            }
-            // City matched but not in our DB - use closest match
-            userCityName = city;
-            document.getElementById('loc-status').innerHTML = 'Showing services near <strong>'+city+', '+state+'</strong>.';
-            document.getElementById('loc-input').value = city+', '+state;
-          });
-        }
+          matchToCity(city, state);
+        } else {
       }).catch(function(){locationFailed();});
   },function(){locationFailed();},{timeout:5000});
 }
@@ -245,11 +225,14 @@ function fallbackSearch(val){
       }
     }
     document.getElementById('loc-status').innerHTML='<strong>'+val+'</strong> not in our coverage yet. Try a nearby city like Chicago, Evanston, or Naperville.';
+    // If typed something that looks like "City, ST" — try state fallback
+    var parts = val.split(',');
   })
 
 function matchToCity(cityName, stateAbbr){
   fetch('/data.json').then(function(r){return r.json()}).then(function(data){
     var lower = cityName.toLowerCase();
+    // Exact match in matching state
     for(var sk in data.states){
       if(data.states[sk].abbr !== stateAbbr) continue;
       for(var ck in data.states[sk].cities){
@@ -268,6 +251,11 @@ function matchToCity(cityName, stateAbbr){
           return;
         }
       }
+      // FALLBACK: match to largest city in same state
+      var firstCity = Object.keys(data.states[sk].cities)[0];
+      userCity=firstCity;userState=sk;userCityName=data.states[sk].cities[firstCity].name;
+      document.getElementById('loc-status').innerHTML='<strong>'+cityName+'</strong> not in coverage yet. Showing nearest: <strong>'+userCityName+', '+stateAbbr+'</strong>.';
+      return;
     }
     document.getElementById('loc-status').innerHTML='<strong>'+cityName+', '+stateAbbr+'</strong> not in coverage. Try a nearby city.';
   });
