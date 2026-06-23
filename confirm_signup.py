@@ -30,11 +30,11 @@ https://paypal.me/CallNowService
 
 Once payment is received, your listing goes live within 24 hours and calls start coming to your phone.
 
-Questions? Call me at (847) 652-2338.
+Questions? Call me at hello@callnowservice.com.
 
 - Mirsad
   Founder, CallNowService.com
-  (847) 652-2338
+  hello@callnowservice.com
 """
 
 result = send_email(email, subject, body)
