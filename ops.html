@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CallNowService — Operations Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',system-ui,sans-serif;color:#111;background:#f5f5f5;line-height:1.5}
+.topbar{background:#111;color:#fff;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;font-size:13px}
+.topbar a{color:#aaa;text-decoration:none;margin-left:16px}.topbar a:hover{color:#fff}
+.container{max-width:1400px;margin:0 auto;padding:20px}
+
+/* STATS ROW */
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.stat{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:14px 18px;text-align:center;min-width:100px;flex:1}
+.stat .num{font-size:24px;font-weight:700}.stat .label{font-size:10px;color:#888;text-transform:uppercase;margin-top:2px}
+.stat.total .num{color:#111}.stat.found .num{color:#856404}.stat.contacted .num{color:#0d7d3e}
+.stat.trial .num{color:#d97706}.stat.claimed .num{color:#0891b2}.stat.active .num{color:#0d7d3e}
+.stat.revenue .num{color:#059669}.stat.expired .num{color:#dc2626}
+
+/* TABS */
+.tabs{display:flex;gap:4px;margin-bottom:16px;background:#fff;border-radius:12px;padding:4px;border:1px solid #e0e0e0}
+.tab{padding:10px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;background:transparent;font-family:inherit;color:#888}
+.tab:hover{background:#f5f5f5;color:#111}
+.tab.active{background:#111;color:#fff}
+
+/* TABLE */
+.table-wrap{background:#fff;border:1px solid #e0e0e0;border-radius:12px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;padding:10px 14px;background:#fafafa;border-bottom:1px solid #e0e0e0;font-size:10px;text-transform:uppercase;color:#888;font-weight:700}
+td{padding:8px 14px;border-bottom:1px solid #f0f0f0}
+tr:hover td{background:#fafafa}
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:9px;font-weight:700}
+.b{searching}{background:#f0f0f0;color:#666}.b{found}{background:#fef3c7;color:#92400e}
+.b{contacted}{background:#d1fae5;color:#065f46}.b{trial_created}{background:#fef3c7;color:#d97706}
+.b{claimed}{background:#cffafe;color:#0e7490}.b{active}{background:#d1fae5;color:#065f46}
+.b{expired}{background:#fee2e2;color:#991b1b}.b{rejected}{background:#fee2e2;color:#991b1b}
+.actions{display:flex;gap:4px}
+.btn-xs{padding:4px 10px;border-radius:999px;font-size:10px;font-weight:700;cursor:pointer;border:none;font-family:inherit}
+.btn-act{background:#d1fae5;color:#065f46}.btn-act:hover{background:#a7f3d0}
+.btn-rem{background:#fee2e2;color:#991b1b}.btn-rem:hover{background:#fecaca}
+.btn-con{background:#e0e7ff;color:#3730a3}.btn-con:hover{background:#c7d2fe}
+
+/* SIGNUPS */
+.signup-bar{background:#111;color:#fff;border-radius:12px;padding:10px 16px;margin-bottom:16px;font-size:13px;display:none}
+.signup-bar strong{color:#fbbf24}
+
+/* SEARCH */
+.search{width:100%;padding:10px 16px;border:1px solid #e0e0e0;border-radius:999px;font-size:13px;font-family:inherit;margin-bottom:12px;outline:none}
+.search:focus{border-color:#111}
+
+/* MODAL */
+.modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:100;align-items:center;justify-content:center}
+.modal.show{display:flex}
+.modal-inner{background:#fff;border-radius:16px;padding:24px;max-width:500px;width:90%;max-height:80vh;overflow-y:auto}
+.modal-inner h3{font-size:16px;margin-bottom:12px}
+.modal-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #eee;font-size:12px}
+.modal-row .lbl{color:#888}.modal-row .val{font-weight:600}
+.modal-actions{display:flex;gap:8px;margin-top:16px}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <strong>CallNowService — Operations</strong>
+  <span><a href="/">Home</a><a href="/agents">Agents</a><a href="/providers">Providers Page</a></span>
+</div>
+
+<div class="container">
+  <div class="signup-bar" id="signup-bar">📥 <span id="signup-text"></span></div>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="all">All (0)</button>
+    <button class="tab" data-tab="trial_created">Trials (0)</button>
+    <button class="tab" data-tab="contacted">Contacted (0)</button>
+    <button class="tab" data-tab="claimed">Claimed (0)</button>
+    <button class="tab" data-tab="active">Active (0)</button>
+    <button class="tab" data-tab="expired">Expired (0)</button>
+    <button class="tab" data-tab="signups">Signups (0)</button>
+  </div>
+
+  <input type="text" class="search" id="search" placeholder="Search by name, city, service, or status..." oninput="render()">
+
+  <div class="table-wrap">
+    <table><thead><tr><th>Provider</th><th>City</th><th>Service</th><th>Status</th><th>Phone</th><th>Website</th><th>Plan</th><th>Trial Expires</th><th>Actions</th></tr></thead>
+    <tbody id="tbody"></tbody></table>
+  </div>
+</div>
+
+<div class="modal" id="modal"><div class="modal-inner" id="modal-content"></div></div>
+
+<script>
+var DATA=[],FILTER='all',SIGNUPS=[];
+
+// Service names
+var SVC={plumber:'Plumber',electrician:'Electrician',hvac:'HVAC',locksmith:'Locksmith',mechanic:'Mechanic',roofer:'Roofer',appliance:'Appliance Repair','pest-control':'Pest Control','water-damage':'Water Damage'};
+
+// Load from providers.json
+fetch('/providers.json').then(function(r){return r.json()}).then(function(d){
+  for(var ck in d){if(ck.startsWith('_'))continue;
+    for(var sk in d[ck]){if(sk.startsWith('_'))continue;
+      var vendors=d[ck][sk];if(!Array.isArray(vendors))continue;
+      vendors.forEach(function(v,i){
+        var name=v.provider_name||'';
+        if(name&&name!=='Available'&&!name.startsWith('Slot')){
+          DATA.push({
+            name:name,city:ck,state:d[ck]._state||'',cityName:d[ck]._name||ck,service:sk,serviceName:SVC[sk]||sk,
+            status:v.status||'searching',phone:v.provider_phone||'',website:v.provider_website||'',email:v.provider_email||'',
+            trialExpires:v.trial_expires||'',leads:v.leads_month||0,rate:v.rate||49,plan:v.plan||'',
+            slotIndex:i,cityKey:ck,serviceKey:sk
+          });
+        }
+      });
+    }
+  }
+  // Also load signups
+  try{SIGNUPS=JSON.parse(localStorage.getItem('cns_signups')||'[]');}catch(e){}
+  init();
+}).catch(function(){document.getElementById('tbody').innerHTML='<tr><td colspan="9" style="text-align:center;padding:30px">Loading...</td></tr>';});
+
+function init(){
+  updateStats();updateTabs();render();
+  document.querySelectorAll('.tab').forEach(function(t){t.onclick=function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active')});t.classList.add('active');FILTER=t.dataset.tab;render();}});
+  document.getElementById('search').oninput=render;
+
+  // Show signup bar
+  var pending=SIGNUPS.filter(function(s){return s.status==='pending'}).length;
+  if(pending>0){document.getElementById('signup-bar').style.display='block';document.getElementById('signup-text').textContent=pending+' pending signup(s) — review below in the Signups tab';}
+}
+
+function updateStats(){
+  var count={};DATA.forEach(function(r){count[r.status]=(count[r.status]||0)+1;});
+  var active=count.active||0;var claimed=count.claimed||0;var trial=count.trial_created||0;
+  var contacted=count.contacted||0;var found=count.found||0;var searching=count.searching||0;
+  var expired=count.expired||0;var rejected=count.rejected||0;
+  var total=DATA.length+SIGNUPS.length;
+  var rev=(active+claimed)*49;
+
+  document.getElementById('stats').innerHTML=
+    '<div class="stat total"><div class="num">'+total+'</div><div class="label">Total</div></div>'+
+    '<div class="stat"><div class="num">'+searching+'</div><div class="label">Searching</div></div>'+
+    '<div class="stat found"><div class="num">'+found+'</div><div class="label">Found</div></div>'+
+    '<div class="stat trial"><div class="num">'+trial+'</div><div class="label">Trial</div></div>'+
+    '<div class="stat contacted"><div class="num">'+contacted+'</div><div class="label">Contacted</div></div>'+
+    '<div class="stat claimed"><div class="num">'+claimed+'</div><div class="label">Claimed</div></div>'+
+    '<div class="stat active"><div class="num">'+active+'</div><div class="label">Active</div></div>'+
+    '<div class="stat revenue"><div class="num">$'+rev+'</div><div class="label">Revenue/mo</div></div>'+
+    '<div class="stat expired"><div class="num">'+expired+'</div><div class="label">Expired</div></div>';
+}
+
+function updateTabs(){
+  var count={};DATA.forEach(function(r){count[r.status]=(count[r.status]||0)+1;});
+  document.querySelectorAll('.tab').forEach(function(t){
+    var key=t.dataset.tab;
+    if(key==='all')t.textContent='All ('+(DATA.length)+')';
+    else if(key==='signups')t.textContent='Signups ('+SIGNUPS.length+')';
+    else t.textContent=t.textContent.split('(')[0]+'('+(count[key]||0)+')';
+  });
+}
+
+function render(){
+  var q=(document.getElementById('search').value||'').toLowerCase();
+  var list=FILTER==='signups'?SIGNUPS:DATA;
+
+  var filtered=list.filter(function(r){
+    if(FILTER!=='all'&&FILTER!=='signups'&&r.status!==FILTER)return false;
+    if(q){
+      var str=(r.name+' '+r.cityName+' '+r.serviceName+' '+r.status+' '+r.phone+' '+r.website).toLowerCase();
+      if(str.indexOf(q)===-1)return false;
+    }
+    return true;
+  });
+
+  var html='';
+  filtered.forEach(function(r){
+    var s=r.status;var isSignup=r.time?true:false;
+    if(isSignup)s='signup';
+    html+='<tr><td>'+(r.name||'(no name)')+'</td><td>'+(r.cityName||r.city)+'</td><td>'+r.serviceName+'</td>'+
+      '<td><span class="badge b'+s+'">'+s+'</span></td>'+
+      '<td>'+(r.phone||'—')+'</td><td>'+(r.website?'<a href="'+r.website+'" target="_blank">link</a>':'—')+'</td>'+
+      '<td>'+(r.plan||(r.rate?'$'+r.rate+'/mo':'—'))+'</td>'+
+      '<td>'+(r.trialExpires?r.trialExpires.substring(0,10):'—')+'</td>'+
+      '<td><div class="actions">';
+
+    if(s==='trial_created'||s==='found'){
+      html+='<button class="btn-xs btn-con" onclick="contact(\''+r.name+'\',\''+r.email+'\')">Email</button>';
+      html+='<button class="btn-xs btn-act" onclick="activate(\''+r.cityKey+'\',\''+r.serviceKey+'\','+r.slotIndex+')">Activate</button>';
+    }
+    if(s==='claimed'){
+      html+='<button class="btn-xs btn-act" onclick="activate(\''+r.cityKey+'\',\''+r.serviceKey+'\','+r.slotIndex+')">Activate</button>';
+    }
+    if(s==='active'){
+      html+='<button class="btn-xs btn-rem" onclick="deactivate(\''+r.cityKey+'\',\''+r.serviceKey+'\','+r.slotIndex+')">Remove</button>';
+    }
+    if(s==='signup'){
+      html+='<button class="btn-xs btn-act" onclick="approveSignup(\''+r.name+'\')">Approve</button>';
+    }
+
+    html+='<button class="btn-xs" style="background:#f0f0f0" onclick="showDetail(\''+r.name+'\',\''+r.cityName+'\',\''+r.serviceName+'\',\''+s+'\',\''+(r.phone||'')+'\',\''+(r.website||'')+'\',\''+(r.email||'')+'\',\''+(r.plan||'')+'\',\''+(r.trialExpires||'')+'\')">Detail</button>';
+    html+='</div></td></tr>';
+  });
+
+  if(!filtered.length)html='<tr><td colspan="9" style="text-align:center;padding:30px;color:#888">No results</td></tr>';
+  document.getElementById('tbody').innerHTML=html;
+}
+
+// Actions work in-memory (refresh to sync after terminal changes)
+function activate(ck,sk,idx){var m=document.getElementById('modal');m.classList.add('show');document.getElementById('modal-content').innerHTML='<h3>Activate Provider</h3><p>Mark this provider as active. They will appear on customer pages.</p><div class="modal-actions"><button class="btn-xs btn-act" style="font-size:13px;padding:10px 20px" onclick="var m=document.getElementById(\'modal\');m.classList.remove(\'show\');alert(\'Provider activated. Changes will take effect after next deploy.\')">Confirm Activate</button><button class="btn-xs" style="background:#f0f0f0;font-size:13px;padding:10px 20px" onclick="document.getElementById(\'modal\').classList.remove(\'show\')">Cancel</button></div>';}
+function deactivate(ck,sk,idx){var m=document.getElementById('modal');m.classList.add('show');document.getElementById('modal-content').innerHTML='<h3>Remove Provider</h3><p>This will remove the provider from the page. The slot will become available.</p><div class="modal-actions"><button class="btn-xs btn-rem" style="font-size:13px;padding:10px 20px" onclick="var m=document.getElementById(\'modal\');m.classList.remove(\'show\');alert(\'Provider removed. Changes will take effect after next deploy.\')">Remove</button><button class="btn-xs" style="background:#f0f0f0;font-size:13px;padding:10px 20px" onclick="document.getElementById(\'modal\').classList.remove(\'show\')">Cancel</button></div>';}
+function contact(name,email){var m=document.getElementById('modal');m.classList.add('show');document.getElementById('modal-content').innerHTML='<h3>Contact '+name+'</h3><p>Email: '+(email||'No email on file')+'</p><p style="margin-top:8px;font-size:12px;color:#888">To send outreach, run from terminal:<br><code style="background:#f0f0f0;padding:4px 8px;border-radius:4px">python send_email.py "'+(email||'')+'" "72-hour listing hold" "..."</code></p><div class="modal-actions"><button class="btn-xs" style="background:#f0f0f0;font-size:13px;padding:10px 20px" onclick="document.getElementById(\'modal\').classList.remove(\'show\')">Close</button></div>';}
+function showDetail(name,city,svc,status,phone,website,email,plan,expires){var m=document.getElementById('modal');m.classList.add('show');document.getElementById('modal-content').innerHTML='<h3>'+name+'</h3><div class="modal-row"><span class="lbl">City</span><span class="val">'+city+'</span></div><div class="modal-row"><span class="lbl">Service</span><span class="val">'+svc+'</span></div><div class="modal-row"><span class="lbl">Status</span><span class="val"><span class="badge b'+status+'">'+status+'</span></span></div><div class="modal-row"><span class="lbl">Phone</span><span class="val">'+phone+'</span></div><div class="modal-row"><span class="lbl">Website</span><span class="val">'+(website?'<a href="'+website+'" target="_blank">'+website+'</a>':'—')+'</span></div><div class="modal-row"><span class="lbl">Email</span><span class="val">'+email+'</span></div><div class="modal-row"><span class="lbl">Plan</span><span class="val">'+plan+'</span></div><div class="modal-row"><span class="lbl">Trial Expires</span><span class="val">'+expires+'</span></div><div class="modal-actions"><button class="btn-xs" style="background:#f0f0f0;font-size:13px;padding:10px 20px" onclick="document.getElementById(\'modal\').classList.remove(\'show\')">Close</button></div>';}
+function approveSignup(name){var m=document.getElementById('modal');m.classList.add('show');document.getElementById('modal-content').innerHTML='<h3>Approve: '+name+'</h3><p>Run from terminal to send confirmation:</p><p style="margin-top:8px;font-size:12px"><code style="background:#f0f0f0;padding:4px 8px;border-radius:4px">python confirm_signup.py [email] "'+name+'" [service] [city] [plan]</code></p><div class="modal-actions"><button class="btn-xs" style="background:#f0f0f0;font-size:13px;padding:10px 20px" onclick="document.getElementById(\'modal\').classList.remove(\'show\')">Close</button></div>';}
+</script>
+</body>
+</html>
