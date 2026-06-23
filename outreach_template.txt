@@ -1,4 +1,6 @@
-Subject: {City} emergency {service} — 72-hour listing hold (CallNowService)
+=== EMAIL 1 — 72-HOUR LISTING HOLD ===
+
+Subject: {City} emergency {service} — 72-hour listing hold
 
 Hi {Company Name},
 
@@ -6,28 +8,100 @@ We've placed a temporary listing for {Company Name} on our {City} emergency {ser
 
 Your listing: callnowservice.com/IL/{city_key}/{service_key}/
 
-Why this matters now:
+What your listing includes:
+• your business name
+• your phone number
+• a direct link to your website
+• a Call Now button
+• placement on the {City} emergency {service} page
 
-Google search is fading. People don't type "emergency plumber Chicago" into a search bar anymore — they ask their phone, their car, their AI assistant. "Hey Siri, find an emergency plumber near me." "Alexa, I need a locksmith right now."
+Why we added your business:
+CallNowService is building city-by-city emergency service pages that connect customers directly to providers. We only show five providers per service in each city, and your business looks like a strong fit for {City} {service}.
 
-CallNowService is built for this shift. We specialize in GEO-AI mobile discovery — when someone near {City} searches by voice, location, or AI assistant, our pages surface first. Not generic Google results. Not paid ads. Direct, geo-targeted provider listings designed for how people actually search today.
-
-Traditional SEO takes months to rank and even then you're competing with dozens of others. We put five providers per city per service — and that's it. Limited spots, geo-optimized, AI-discovery ready.
-
-Pricing:
-$49/month flat — No per-lead fees — No commissions — Cancel anytime
+Pricing if you keep the spot:
+$49/month flat — No per-lead fees. No commissions. Cancel anytime.
 Annual: $490/year (2 months free)
 
-Your listing stays active as long as paid. Missed payment = removal, spot offered to the next provider.
+What happens after 72 hours:
+If the spot isn't claimed, the listing expires and we'll offer it to another provider in {City}.
 
-See what we're building: callnowservice.com
+To keep the listing active, just reply to this email or visit callnowservice.com.
 
-To claim your spot, just reply to this email.
-
+Thanks,
 Adrian Cole
 Founder, CallNowService
-Glenview, Illinois, USA
 hello@callnowservice.com
+callnowservice.com
+
+---
+Unsubscribe: reply "unsubscribe"
+
+
+=== EMAIL 2 — WHY WE PICKED YOU (sent 24 hours after email 1) ===
+
+Subject: Why we added {Company Name} to our {City} {service} page
+
+Hi {Company Name},
+
+A quick follow-up on the 72-hour CallNowService listing hold we set up for {Company Name} on our {City} emergency {service} page.
+
+Your listing: callnowservice.com/IL/{city_key}/{service_key}/
+
+Why we picked your business:
+We're building CallNowService around city-by-city emergency service discovery. Instead of showing dozens of providers, each city/service page is limited to five provider spots.
+
+We added {Company Name} because your business already appears to serve {City} for {service}, and you look like a strong fit for the market.
+
+What makes this different:
+When someone lands on a CallNowService city/service page, they don't submit a lead form and wait. They can contact providers directly using:
+• Call Now
+• Website
+• Booking / contact page (if available)
+
+The goal is simple: put local emergency providers in front of customers without pay-per-lead fees or shared lead marketplaces.
+
+Pricing if you keep the spot:
+$49/month flat — No per-lead fees. No commissions. Cancel anytime.
+Annual: $490/year (2 months free)
+
+If you want to keep the listing active after the 72-hour hold, reply to this email or visit callnowservice.com.
+
+Thanks,
+Adrian Cole
+Founder, CallNowService
+hello@callnowservice.com
+callnowservice.com
+
+---
+Unsubscribe: reply "unsubscribe"
+
+
+=== EMAIL 3 — FINAL NOTICE (sent 48 hours after email 1) ===
+
+Subject: Final notice: your {City} {service} listing expires soon
+
+Hi {Company Name},
+
+This is the final notice for the temporary CallNowService listing we placed for {Company Name} on our {City} emergency {service} page.
+
+Your listing: callnowservice.com/IL/{city_key}/{service_key}/
+
+The 72-hour hold expires soon. If the spot isn't claimed, the listing will be removed and offered to another provider in {City}.
+
+To keep the spot:
+Reply to this email or visit callnowservice.com.
+
+Pricing:
+$49/month flat — No per-lead fees. No commissions. Cancel anytime.
+Annual: $490/year (2 months free)
+
+CallNowService only allows five providers per service per city, so once a spot is gone, it may not reopen.
+
+Thanks,
+Adrian Cole
+Founder, CallNowService
+hello@callnowservice.com
+callnowservice.com
 
 ---
 Unsubscribe: reply "unsubscribe"

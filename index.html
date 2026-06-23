@@ -69,6 +69,12 @@
   .provider-cta{text-align:center;padding:48px 0}
   .provider-cta h3{font-size:16px;font-weight:700;margin-bottom:6px}
   .provider-cta p{font-size:13px;color:#888;max-width:480px;margin:0 auto 16px}
+  .provider-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:700px;margin:0 auto}
+  .cta-card{display:flex;flex-direction:column;align-items:center;gap:6px;background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:20px 24px;text-decoration:none;color:#111;min-width:180px;flex:1;transition:border-color .2s,box-shadow .2s}
+  .cta-card:hover{border-color:#111;box-shadow:0 4px 16px rgba(0,0,0,0.08)}
+  .cta-icon{font-size:24px}
+  .cta-label{font-size:14px;font-weight:700}
+  .cta-desc{font-size:11px;color:#888}
   footer{background:#111;color:#fff;padding:40px 24px 32px;text-align:center}
   footer .footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:8px}
   footer a{color:#aaa;text-decoration:none;font-size:12px}footer a:hover{color:#fff}
@@ -129,9 +135,25 @@
 
 <div class="provider-cta">
   <div class="container">
-    <h3>Are you an emergency service provider?</h3>
-    <p>CallNowService accepts up to five approved providers per service in each city. Apply to claim an available spot.</p>
-    <a href="/providers" class="btn btn-secondary">Apply as a Provider</a>
+    <h3>For Providers</h3>
+    <p style="font-size:15px;max-width:600px;margin:0 auto 24px;color:#555">Claim your city. Own your territory. Five spots per service per city — first come, first served. $49/month flat.</p>
+    <div class="provider-actions">
+      <a href="/providers" class="cta-card">
+        <span class="cta-icon">📍</span>
+        <span class="cta-label">Claim Your Spot</span>
+        <span class="cta-desc">See if your city is available</span>
+      </a>
+      <a href="/providers" class="cta-card">
+        <span class="cta-icon">✅</span>
+        <span class="cta-label">Keep My Listing Active</span>
+        <span class="cta-desc">Already listed? Manage your spot</span>
+      </a>
+      <a href="/providers" class="cta-card">
+        <span class="cta-icon">📋</span>
+        <span class="cta-label">Apply as a Provider</span>
+        <span class="cta-desc">Submit your business for review</span>
+      </a>
+    </div>
   </div>
 </div>
 
