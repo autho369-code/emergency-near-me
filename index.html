@@ -204,21 +204,72 @@ function locationFailed(){
 function findHelp(){
   var val = document.getElementById('loc-input').value.trim();
   if(!val){alert('Please enter a ZIP code or city name');return;}
-  // Try to match city
+
+  // Try ZIP code lookup
+  if(/^\d{5}$/.test(val)){
+    fetch('https://api.zippopotam.us/us/'+val)
+      .then(function(r){return r.json()})
+      .then(function(d){
+        var city = d.places[0]['place name'];
+        var state = d.places[0]['state abbreviation'];
+        matchToCity(city, state);
+      }).catch(function(){fallbackSearch(val);});
+    return;
+  }
+
+  fallbackSearch(val);
+}
+
+function fallbackSearch(val){
   fetch('/data.json').then(function(r){return r.json()}).then(function(data){
-    var lower = val.toLowerCase();
+    var lower = val.toLowerCase().trim();
+    // Exact match
     for(var sk in data.states){
       for(var ck in data.states[sk].cities){
-        var nm = data.states[sk].cities[ck].name.toLowerCase();
-        if(nm===lower || lower.includes(nm) || nm.includes(lower)){
+        if(data.states[sk].cities[ck].name.toLowerCase()===lower){
           userCity=ck;userState=sk;userCityName=data.states[sk].cities[ck].name;
-          var abbr = data.states[sk].abbr;
-          document.getElementById('loc-status').innerHTML='Showing emergency services near <strong>'+userCityName+', '+abbr+'</strong>.';
+          document.getElementById('loc-status').innerHTML='Showing services near <strong>'+userCityName+', '+data.states[sk].abbr+'</strong>.';
           return;
         }
       }
     }
-    document.getElementById('loc-status').innerHTML='<strong>'+val+'</strong> — enter a city from our coverage area.';
+    // Partial match
+    for(var sk in data.states){
+      for(var ck in data.states[sk].cities){
+        var nm = data.states[sk].cities[ck].name.toLowerCase();
+        if(nm.includes(lower)||lower.includes(nm)){
+          userCity=ck;userState=sk;userCityName=data.states[sk].cities[ck].name;
+          document.getElementById('loc-status').innerHTML='Showing services near <strong>'+userCityName+', '+data.states[sk].abbr+'</strong>.';
+          return;
+        }
+      }
+    }
+    document.getElementById('loc-status').innerHTML='<strong>'+val+'</strong> not in our coverage yet. Try a nearby city like Chicago, Evanston, or Naperville.';
+  })
+
+function matchToCity(cityName, stateAbbr){
+  fetch('/data.json').then(function(r){return r.json()}).then(function(data){
+    var lower = cityName.toLowerCase();
+    for(var sk in data.states){
+      if(data.states[sk].abbr !== stateAbbr) continue;
+      for(var ck in data.states[sk].cities){
+        if(data.states[sk].cities[ck].name.toLowerCase()===lower){
+          userCity=ck;userState=sk;userCityName=data.states[sk].cities[ck].name;
+          document.getElementById('loc-status').innerHTML='Showing services near <strong>'+userCityName+', '+stateAbbr+'</strong>.';
+          return;
+        }
+      }
+      // Partial match in same state
+      for(var ck in data.states[sk].cities){
+        var nm = data.states[sk].cities[ck].name.toLowerCase();
+        if(nm.includes(lower)||lower.includes(nm)){
+          userCity=ck;userState=sk;userCityName=data.states[sk].cities[ck].name;
+          document.getElementById('loc-status').innerHTML='Showing services near <strong>'+userCityName+', '+stateAbbr+'</strong>.';
+          return;
+        }
+      }
+    }
+    document.getElementById('loc-status').innerHTML='<strong>'+cityName+', '+stateAbbr+'</strong> not in coverage. Try a nearby city.';
   });
 }
 
