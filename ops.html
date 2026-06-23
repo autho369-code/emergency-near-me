@@ -143,14 +143,14 @@ tr:hover td{background:#fafafa}
 <script>
 // AUTH
 var AUTH_EMAIL='hello@callnowservice.com',AUTH_PASS='1322@Pfinsgten';
-if(sessionStorage.getItem('cns_ops_auth')!=='1'){
+if(localStorage.getItem('cns_ops_auth')!=='1'){
   document.getElementById('login-overlay').style.display='flex';
 }
 function doLogin(){
   var e=document.getElementById('login-email').value.trim();
   var p=document.getElementById('login-pass').value;
   if(e===AUTH_EMAIL&&p===AUTH_PASS){
-    sessionStorage.setItem('cns_ops_auth','1');
+    localStorage.setItem('cns_ops_auth','1');
     document.getElementById('login-overlay').style.display='none';
   }else{
     document.getElementById('login-err').style.display='block';
