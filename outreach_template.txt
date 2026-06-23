@@ -1,44 +1,28 @@
-Subject: [City] emergency [service] — 72-hour listing hold (CallNowService)
+Subject: {City} emergency {service} — 72-hour listing hold (CallNowService)
 
-Hi [Company Name],
+Hi {Company Name},
 
-We've placed a temporary listing for [Company Name] on our [City] emergency [service] page and reserved the spot for 72 hours while you decide whether to claim it.
+We've placed a temporary listing for {Company Name} on our {City} emergency {service} page and reserved the spot for 72 hours.
 
-Your temporary listing:
-callnowservice.com/[state]/[city]/[service]/
+Your listing: callnowservice.com/IL/{city_key}/{service_key}/
 
-What your listing includes:
-• Your business name and phone number
-• A direct link to your website — [their website]
-• A "Call Now" button that connects customers to you
-• Your service category and city coverage clearly displayed
+Why this matters now:
 
-What this means:
-When someone in [City] searches for an emergency [service], CallNowService shows up to five providers. During this 72-hour window, your business appears on the page alongside up to four others.
+Google search is fading. People don't type "emergency plumber Chicago" into a search bar anymore — they ask their phone, their car, their AI assistant. "Hey Siri, find an emergency plumber near me." "Alexa, I need a locksmith right now."
 
-Why we added you:
-Your company serves [City] for [service], and we select businesses that look like a strong fit. We only accept five providers per service per city — once those spots are filled, they're gone.
+CallNowService is built for this shift. We specialize in GEO-AI mobile discovery — when someone near {City} searches by voice, location, or AI assistant, our pages surface first. Not generic Google results. Not paid ads. Direct, geo-targeted provider listings designed for how people actually search today.
 
-If you want to keep the listing after 72 hours:
-
-Claim the spot and your listing stays live.
+Traditional SEO takes months to rank and even then you're competing with dozens of others. We put five providers per city per service — and that's it. Limited spots, geo-optimized, AI-discovery ready.
 
 Pricing:
-$49/month flat
-No per-lead fees
-No commissions
-Cancel anytime
-
+$49/month flat — No per-lead fees — No commissions — Cancel anytime
 Annual: $490/year (2 months free)
 
-Keeping your listing active:
-Your listing stays on the page for as long as your subscription is current. If a payment is missed, the listing is removed and the spot is offered to the next provider on our waitlist. Spots are limited to five per service per city — once a spot opens, it doesn't stay open for long.
+Your listing stays active as long as paid. Missed payment = removal, spot offered to the next provider.
 
-If the spot isn't claimed within 72 hours, the listing expires and we'll offer it to another provider in [City].
+See what we're building: callnowservice.com
 
-To keep the listing active, just reply to this email and we'll send the claim link with payment details.
-
-Thanks,
+To claim your spot, just reply to this email.
 
 Adrian Cole
 Founder, CallNowService
@@ -46,4 +30,4 @@ Glenview, Illinois, USA
 hello@callnowservice.com
 
 ---
-If you'd rather not hear from us about CallNowService, reply with unsubscribe and we'll remove you from future outreach.
+Unsubscribe: reply "unsubscribe"
