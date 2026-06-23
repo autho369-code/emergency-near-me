@@ -337,10 +337,23 @@ function submitForm(){
   for(var i=0;i<fields.length;i++){d[fields[i]]=document.getElementById(fields[i]).value;if(!d[fields[i]]&&['website'].indexOf(fields[i])===-1){alert('Please fill all required fields');return;}}
   d.extra_cities=document.getElementById('cities-extra').value;d.extra_services=document.getElementById('services-extra').value;
   d.gbp=document.getElementById('gbp').value;d.routing=document.getElementById('routing').value;d.desc=document.getElementById('desc').value;
-  d.time=new Date().toISOString();d.status='pending';
-  var signups=JSON.parse(localStorage.getItem('cns_signups')||'[]');signups.push(d);localStorage.setItem('cns_signups',JSON.stringify(signups));
-  alert('Thank you! We will review your business and reach out within 24 hours.\n\nService: '+d.service+' | City: '+d.city+' | Plan: '+d.plan+'\n\nOr skip the wait — pay now: paypal.me/CallNowService');
-  document.querySelectorAll('#form input,#form select,#form textarea').forEach(function(el){el.value=''});
+
+  var btn=document.querySelector('#form button');var orig=btn.textContent;btn.textContent='Submitting...';btn.disabled=true;
+
+  fetch('/api/signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+  .then(function(r){return r.json()})
+  .then(function(data){
+    alert('Thank you! We will review your business and reach out within 24 hours.\n\nService: '+d.service+' | City: '+d.city+' | Plan: '+d.plan+'\n\nOr skip the wait — pay now: paypal.me/CallNowService');
+    document.querySelectorAll('#form input,#form select,#form textarea').forEach(function(el){el.value=''});
+  })
+  .catch(function(){
+    // Fallback: save to localStorage
+    var signups=JSON.parse(localStorage.getItem('cns_signups')||'[]');
+    d.time=new Date().toISOString();d.status='pending';
+    signups.push(d);localStorage.setItem('cns_signups',JSON.stringify(signups));
+    alert('Thank you! We will review your business and reach out within 24 hours.\n\nService: '+d.service+' | City: '+d.city+' | Plan: '+d.plan+'\n\nOr skip the wait — pay now: paypal.me/CallNowService');
+  })
+  .finally(function(){btn.textContent=orig;btn.disabled=false;});
 }
 </script>
 </body>

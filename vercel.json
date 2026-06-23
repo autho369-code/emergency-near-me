@@ -1,20 +1,62 @@
 {
   "version": 2,
-  "buildCommand": "echo 'Static site — no build needed'",
+  "buildCommand": "echo 'Static site \u2014 no build needed'",
   "outputDirectory": ".",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/ops", "destination": "/ops.html" },
-    { "source": "/ops/", "destination": "/ops.html" },
-    { "source": "/dashboard", "destination": "/dashboard.html" },
-    { "source": "/agents", "destination": "/agent_dashboard.html" },
-    { "source": "/providers/claim", "destination": "/claim.html" },
-    { "source": "/providers/claim/", "destination": "/claim.html" },
-    { "source": "/providers", "destination": "/providers.html" },
-    { "source": "/providers/", "destination": "/providers.html" },
-    { "source": "/pricing", "destination": "/providers.html" },
-    { "source": "/pricing/", "destination": "/providers.html" },
-    { "source": "/:state/:city/:service/", "destination": "/:state/:city/:service/index.html" },
-    { "source": "/:state/:city/", "destination": "/:state/:city/index.html" }
-  ]
+    {
+      "source": "/ops",
+      "destination": "/ops.html"
+    },
+    {
+      "source": "/ops/",
+      "destination": "/ops.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/dashboard.html"
+    },
+    {
+      "source": "/agents",
+      "destination": "/agent_dashboard.html"
+    },
+    {
+      "source": "/providers/claim",
+      "destination": "/claim.html"
+    },
+    {
+      "source": "/providers/claim/",
+      "destination": "/claim.html"
+    },
+    {
+      "source": "/providers",
+      "destination": "/providers.html"
+    },
+    {
+      "source": "/providers/",
+      "destination": "/providers.html"
+    },
+    {
+      "source": "/pricing",
+      "destination": "/providers.html"
+    },
+    {
+      "source": "/pricing/",
+      "destination": "/providers.html"
+    },
+    {
+      "source": "/:state/:city/:service/",
+      "destination": "/:state/:city/:service/index.html"
+    },
+    {
+      "source": "/:state/:city/",
+      "destination": "/:state/:city/index.html"
+    }
+  ],
+  "functions": {
+    "api/signup.js": {
+      "memory": 128,
+      "maxDuration": 10
+    }
+  }
 }
