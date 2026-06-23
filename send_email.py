@@ -10,7 +10,7 @@ from email.mime.text import MIMEText
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-SMTP_USER = "autho369@gmail.com"
+SMTP_USER = "hello@callnowservice.com"
 FROM_EMAIL = "hello@callnowservice.com"
 FROM_NAME = "Adrian Cole, CallNowService"
 
