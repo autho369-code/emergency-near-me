@@ -133,6 +133,39 @@
       "name": "Illinois",
       "abbr": "IL",
       "cities": {
+        "chicago": {
+          "name": "Chicago",
+          "state": "IL",
+          "areaCode": "773",
+          "neighborhoods": [
+            "Lincoln Park",
+            "Wicker Park",
+            "Logan Square",
+            "River North",
+            "West Loop",
+            "South Loop",
+            "Hyde Park",
+            "Lakeview",
+            "Bucktown",
+            "Old Town",
+            "Gold Coast",
+            "Pilsen",
+            "Bridgeport"
+          ],
+          "phones": {
+            "plumber": "+1773XXXX0101",
+            "electrician": "+1773XXXX0202",
+            "locksmith": "+1773XXXX0303",
+            "hvac": "+1773XXXX0404",
+            "roofer": "+1773XXXX0505",
+            "mechanic": "+1773XXXX0606",
+            "appliance": "+1773XXXX0707",
+            "pest-control": "+1773XXXX0808",
+            "water-damage": "+1773XXXX0909"
+          },
+          "lat": 41.88,
+          "lng": -87.63
+        },
         "aurora-il": {
           "name": "Aurora",
           "state": "IL",
@@ -216,39 +249,6 @@
           },
           "lat": 40.12,
           "lng": -88.24
-        },
-        "chicago": {
-          "name": "Chicago",
-          "state": "IL",
-          "areaCode": "773",
-          "neighborhoods": [
-            "Lincoln Park",
-            "Wicker Park",
-            "Logan Square",
-            "River North",
-            "West Loop",
-            "South Loop",
-            "Hyde Park",
-            "Lakeview",
-            "Bucktown",
-            "Old Town",
-            "Gold Coast",
-            "Pilsen",
-            "Bridgeport"
-          ],
-          "phones": {
-            "plumber": "+1773XXXX0101",
-            "electrician": "+1773XXXX0202",
-            "locksmith": "+1773XXXX0303",
-            "hvac": "+1773XXXX0404",
-            "roofer": "+1773XXXX0505",
-            "mechanic": "+1773XXXX0606",
-            "appliance": "+1773XXXX0707",
-            "pest-control": "+1773XXXX0808",
-            "water-damage": "+1773XXXX0909"
-          },
-          "lat": 41.88,
-          "lng": -87.63
         },
         "elgin": {
           "name": "Elgin",
@@ -570,6 +570,34 @@
       "name": "Alabama",
       "abbr": "AL",
       "cities": {
+        "birmingham": {
+          "name": "Birmingham",
+          "state": "AL",
+          "areaCode": "205",
+          "neighborhoods": [
+            "Downtown",
+            "Five Points South",
+            "Highland Park",
+            "Avondale",
+            "Homewood",
+            "Mountain Brook",
+            "Vestavia Hills",
+            "Forest Park"
+          ],
+          "phones": {
+            "plumber": "+1205XXXX0101",
+            "electrician": "+1205XXXX0202",
+            "locksmith": "+1205XXXX0303",
+            "hvac": "+1205XXXX0404",
+            "roofer": "+1205XXXX0505",
+            "mechanic": "+1205XXXX0606",
+            "appliance": "+1205XXXX0707",
+            "pest-control": "+1205XXXX0808",
+            "water-damage": "+1205XXXX0909"
+          },
+          "lat": 33.52,
+          "lng": -86.8
+        },
         "alabaster": {
           "name": "Alabaster",
           "state": "AL",
@@ -621,34 +649,6 @@
             "pest-control": "+1334XXXX0808",
             "water-damage": "+1334XXXX0909"
           }
-        },
-        "birmingham": {
-          "name": "Birmingham",
-          "state": "AL",
-          "areaCode": "205",
-          "neighborhoods": [
-            "Downtown",
-            "Five Points South",
-            "Highland Park",
-            "Avondale",
-            "Homewood",
-            "Mountain Brook",
-            "Vestavia Hills",
-            "Forest Park"
-          ],
-          "phones": {
-            "plumber": "+1205XXXX0101",
-            "electrician": "+1205XXXX0202",
-            "locksmith": "+1205XXXX0303",
-            "hvac": "+1205XXXX0404",
-            "roofer": "+1205XXXX0505",
-            "mechanic": "+1205XXXX0606",
-            "appliance": "+1205XXXX0707",
-            "pest-control": "+1205XXXX0808",
-            "water-damage": "+1205XXXX0909"
-          },
-          "lat": 33.52,
-          "lng": -86.8
         },
         "daphne": {
           "name": "Daphne",
@@ -868,6 +868,32 @@
       "name": "Arkansas",
       "abbr": "AR",
       "cities": {
+        "little-rock": {
+          "name": "Little Rock",
+          "state": "AR",
+          "areaCode": "501",
+          "neighborhoods": [
+            "Downtown",
+            "River Market",
+            "Heights",
+            "Hillcrest",
+            "West Little Rock",
+            "Argenta",
+            "Chenal Valley",
+            "Midtown"
+          ],
+          "phones": {
+            "plumber": "+1501XXXX0101",
+            "electrician": "+1501XXXX0202",
+            "locksmith": "+1501XXXX0303",
+            "hvac": "+1501XXXX0404",
+            "roofer": "+1501XXXX0505",
+            "mechanic": "+1501XXXX0606",
+            "appliance": "+1501XXXX0707",
+            "pest-control": "+1501XXXX0808",
+            "water-damage": "+1501XXXX0909"
+          }
+        },
         "conway": {
           "name": "Conway",
           "state": "AR",
@@ -972,32 +998,6 @@
             "water-damage": "+1870XXXX0909"
           }
         },
-        "little-rock": {
-          "name": "Little Rock",
-          "state": "AR",
-          "areaCode": "501",
-          "neighborhoods": [
-            "Downtown",
-            "River Market",
-            "Heights",
-            "Hillcrest",
-            "West Little Rock",
-            "Argenta",
-            "Chenal Valley",
-            "Midtown"
-          ],
-          "phones": {
-            "plumber": "+1501XXXX0101",
-            "electrician": "+1501XXXX0202",
-            "locksmith": "+1501XXXX0303",
-            "hvac": "+1501XXXX0404",
-            "roofer": "+1501XXXX0505",
-            "mechanic": "+1501XXXX0606",
-            "appliance": "+1501XXXX0707",
-            "pest-control": "+1501XXXX0808",
-            "water-damage": "+1501XXXX0909"
-          }
-        },
         "rogers": {
           "name": "Rogers",
           "state": "AR",
@@ -1056,6 +1056,34 @@
       "name": "Arizona",
       "abbr": "AZ",
       "cities": {
+        "phoenix": {
+          "name": "Phoenix",
+          "state": "AZ",
+          "areaCode": "602",
+          "neighborhoods": [
+            "Downtown",
+            "Scottsdale",
+            "Tempe",
+            "Mesa",
+            "Glendale",
+            "Chandler",
+            "Arcadia",
+            "Desert Ridge"
+          ],
+          "phones": {
+            "plumber": "+1602XXXX0101",
+            "electrician": "+1602XXXX0202",
+            "locksmith": "+1602XXXX0303",
+            "hvac": "+1602XXXX0404",
+            "roofer": "+1602XXXX0505",
+            "mechanic": "+1602XXXX0606",
+            "appliance": "+1602XXXX0707",
+            "pest-control": "+1602XXXX0808",
+            "water-damage": "+1602XXXX0909"
+          },
+          "lat": 33.45,
+          "lng": -112.07
+        },
         "chandler": {
           "name": "Chandler",
           "state": "AZ",
@@ -1296,34 +1324,6 @@
             "water-damage": "+1623XXXX0909"
           }
         },
-        "phoenix": {
-          "name": "Phoenix",
-          "state": "AZ",
-          "areaCode": "602",
-          "neighborhoods": [
-            "Downtown",
-            "Scottsdale",
-            "Tempe",
-            "Mesa",
-            "Glendale",
-            "Chandler",
-            "Arcadia",
-            "Desert Ridge"
-          ],
-          "phones": {
-            "plumber": "+1602XXXX0101",
-            "electrician": "+1602XXXX0202",
-            "locksmith": "+1602XXXX0303",
-            "hvac": "+1602XXXX0404",
-            "roofer": "+1602XXXX0505",
-            "mechanic": "+1602XXXX0606",
-            "appliance": "+1602XXXX0707",
-            "pest-control": "+1602XXXX0808",
-            "water-damage": "+1602XXXX0909"
-          },
-          "lat": 33.45,
-          "lng": -112.07
-        },
         "prescott": {
           "name": "Prescott",
           "state": "AZ",
@@ -1514,6 +1514,34 @@
       "name": "California",
       "abbr": "CA",
       "cities": {
+        "los-angeles": {
+          "name": "Los Angeles",
+          "state": "CA",
+          "areaCode": "310",
+          "neighborhoods": [
+            "Downtown",
+            "Hollywood",
+            "Santa Monica",
+            "Venice",
+            "Beverly Hills",
+            "Silver Lake",
+            "Echo Park",
+            "Koreatown"
+          ],
+          "phones": {
+            "plumber": "+1310XXXX0101",
+            "electrician": "+1310XXXX0202",
+            "locksmith": "+1310XXXX0303",
+            "hvac": "+1310XXXX0404",
+            "roofer": "+1310XXXX0505",
+            "mechanic": "+1310XXXX0606",
+            "appliance": "+1310XXXX0707",
+            "pest-control": "+1310XXXX0808",
+            "water-damage": "+1310XXXX0909"
+          },
+          "lat": 34.05,
+          "lng": -118.24
+        },
         "anaheim": {
           "name": "Anaheim",
           "state": "CA",
@@ -2093,34 +2121,6 @@
           },
           "lat": 33.77,
           "lng": -118.19
-        },
-        "los-angeles": {
-          "name": "Los Angeles",
-          "state": "CA",
-          "areaCode": "310",
-          "neighborhoods": [
-            "Downtown",
-            "Hollywood",
-            "Santa Monica",
-            "Venice",
-            "Beverly Hills",
-            "Silver Lake",
-            "Echo Park",
-            "Koreatown"
-          ],
-          "phones": {
-            "plumber": "+1310XXXX0101",
-            "electrician": "+1310XXXX0202",
-            "locksmith": "+1310XXXX0303",
-            "hvac": "+1310XXXX0404",
-            "roofer": "+1310XXXX0505",
-            "mechanic": "+1310XXXX0606",
-            "appliance": "+1310XXXX0707",
-            "pest-control": "+1310XXXX0808",
-            "water-damage": "+1310XXXX0909"
-          },
-          "lat": 34.05,
-          "lng": -118.24
         },
         "menifee": {
           "name": "Menifee",
@@ -3152,6 +3152,34 @@
       "name": "Colorado",
       "abbr": "CO",
       "cities": {
+        "denver": {
+          "name": "Denver",
+          "state": "CO",
+          "areaCode": "303",
+          "neighborhoods": [
+            "LoDo",
+            "RiNo",
+            "Capitol Hill",
+            "Highlands",
+            "Cherry Creek",
+            "Wash Park",
+            "Baker",
+            "Five Points"
+          ],
+          "phones": {
+            "plumber": "+1303XXXX0101",
+            "electrician": "+1303XXXX0202",
+            "locksmith": "+1303XXXX0303",
+            "hvac": "+1303XXXX0404",
+            "roofer": "+1303XXXX0505",
+            "mechanic": "+1303XXXX0606",
+            "appliance": "+1303XXXX0707",
+            "pest-control": "+1303XXXX0808",
+            "water-damage": "+1303XXXX0909"
+          },
+          "lat": 39.74,
+          "lng": -104.99
+        },
         "aurora": {
           "name": "Aurora",
           "state": "CO",
@@ -3309,34 +3337,6 @@
           },
           "lat": 38.83,
           "lng": -104.82
-        },
-        "denver": {
-          "name": "Denver",
-          "state": "CO",
-          "areaCode": "303",
-          "neighborhoods": [
-            "LoDo",
-            "RiNo",
-            "Capitol Hill",
-            "Highlands",
-            "Cherry Creek",
-            "Wash Park",
-            "Baker",
-            "Five Points"
-          ],
-          "phones": {
-            "plumber": "+1303XXXX0101",
-            "electrician": "+1303XXXX0202",
-            "locksmith": "+1303XXXX0303",
-            "hvac": "+1303XXXX0404",
-            "roofer": "+1303XXXX0505",
-            "mechanic": "+1303XXXX0606",
-            "appliance": "+1303XXXX0707",
-            "pest-control": "+1303XXXX0808",
-            "water-damage": "+1303XXXX0909"
-          },
-          "lat": 39.74,
-          "lng": -104.99
         },
         "fort-collins": {
           "name": "Fort Collins",
@@ -3904,6 +3904,32 @@
       "name": "Delaware",
       "abbr": "DE",
       "cities": {
+        "wilmington-de": {
+          "name": "Wilmington",
+          "state": "DE",
+          "areaCode": "302",
+          "neighborhoods": [
+            "Downtown",
+            "Trolley Square",
+            "Riverfront",
+            "Highlands",
+            "Little Italy",
+            "Brandywine Hills",
+            "Baynard Village",
+            "Forty Acres"
+          ],
+          "phones": {
+            "plumber": "+1302XXXX0101",
+            "electrician": "+1302XXXX0202",
+            "locksmith": "+1302XXXX0303",
+            "hvac": "+1302XXXX0404",
+            "roofer": "+1302XXXX0505",
+            "mechanic": "+1302XXXX0606",
+            "appliance": "+1302XXXX0707",
+            "pest-control": "+1302XXXX0808",
+            "water-damage": "+1302XXXX0909"
+          }
+        },
         "dover": {
           "name": "Dover",
           "state": "DE",
@@ -3957,32 +3983,6 @@
           },
           "lat": 39.74,
           "lng": -75.55
-        },
-        "wilmington-de": {
-          "name": "Wilmington",
-          "state": "DE",
-          "areaCode": "302",
-          "neighborhoods": [
-            "Downtown",
-            "Trolley Square",
-            "Riverfront",
-            "Highlands",
-            "Little Italy",
-            "Brandywine Hills",
-            "Baynard Village",
-            "Forty Acres"
-          ],
-          "phones": {
-            "plumber": "+1302XXXX0101",
-            "electrician": "+1302XXXX0202",
-            "locksmith": "+1302XXXX0303",
-            "hvac": "+1302XXXX0404",
-            "roofer": "+1302XXXX0505",
-            "mechanic": "+1302XXXX0606",
-            "appliance": "+1302XXXX0707",
-            "pest-control": "+1302XXXX0808",
-            "water-damage": "+1302XXXX0909"
-          }
         }
       }
     },
@@ -3990,6 +3990,34 @@
       "name": "Florida",
       "abbr": "FL",
       "cities": {
+        "miami": {
+          "name": "Miami",
+          "state": "FL",
+          "areaCode": "305",
+          "neighborhoods": [
+            "South Beach",
+            "Brickell",
+            "Coral Gables",
+            "Coconut Grove",
+            "Wynwood",
+            "Doral",
+            "Hialeah",
+            "Design District"
+          ],
+          "phones": {
+            "plumber": "+1305XXXX0101",
+            "electrician": "+1305XXXX0202",
+            "locksmith": "+1305XXXX0303",
+            "hvac": "+1305XXXX0404",
+            "roofer": "+1305XXXX0505",
+            "mechanic": "+1305XXXX0606",
+            "appliance": "+1305XXXX0707",
+            "pest-control": "+1305XXXX0808",
+            "water-damage": "+1305XXXX0909"
+          },
+          "lat": 25.76,
+          "lng": -80.19
+        },
         "boca-raton": {
           "name": "Boca Raton",
           "state": "FL",
@@ -4381,34 +4409,6 @@
             "pest-control": "+1321XXXX0808",
             "water-damage": "+1321XXXX0909"
           }
-        },
-        "miami": {
-          "name": "Miami",
-          "state": "FL",
-          "areaCode": "305",
-          "neighborhoods": [
-            "South Beach",
-            "Brickell",
-            "Coral Gables",
-            "Coconut Grove",
-            "Wynwood",
-            "Doral",
-            "Hialeah",
-            "Design District"
-          ],
-          "phones": {
-            "plumber": "+1305XXXX0101",
-            "electrician": "+1305XXXX0202",
-            "locksmith": "+1305XXXX0303",
-            "hvac": "+1305XXXX0404",
-            "roofer": "+1305XXXX0505",
-            "mechanic": "+1305XXXX0606",
-            "appliance": "+1305XXXX0707",
-            "pest-control": "+1305XXXX0808",
-            "water-damage": "+1305XXXX0909"
-          },
-          "lat": 25.76,
-          "lng": -80.19
         },
         "naples": {
           "name": "Naples",
@@ -4842,6 +4842,34 @@
       "name": "Georgia",
       "abbr": "GA",
       "cities": {
+        "atlanta": {
+          "name": "Atlanta",
+          "state": "GA",
+          "areaCode": "404",
+          "neighborhoods": [
+            "Midtown",
+            "Buckhead",
+            "Old Fourth Ward",
+            "Inman Park",
+            "Virginia Highland",
+            "West Midtown",
+            "Grant Park",
+            "Decatur"
+          ],
+          "phones": {
+            "plumber": "+1404XXXX0101",
+            "electrician": "+1404XXXX0202",
+            "locksmith": "+1404XXXX0303",
+            "hvac": "+1404XXXX0404",
+            "roofer": "+1404XXXX0505",
+            "mechanic": "+1404XXXX0606",
+            "appliance": "+1404XXXX0707",
+            "pest-control": "+1404XXXX0808",
+            "water-damage": "+1404XXXX0909"
+          },
+          "lat": 33.75,
+          "lng": -84.39
+        },
         "albany-ga": {
           "name": "Albany",
           "state": "GA",
@@ -4919,34 +4947,6 @@
             "pest-control": "+1706XXXX0808",
             "water-damage": "+1706XXXX0909"
           }
-        },
-        "atlanta": {
-          "name": "Atlanta",
-          "state": "GA",
-          "areaCode": "404",
-          "neighborhoods": [
-            "Midtown",
-            "Buckhead",
-            "Old Fourth Ward",
-            "Inman Park",
-            "Virginia Highland",
-            "West Midtown",
-            "Grant Park",
-            "Decatur"
-          ],
-          "phones": {
-            "plumber": "+1404XXXX0101",
-            "electrician": "+1404XXXX0202",
-            "locksmith": "+1404XXXX0303",
-            "hvac": "+1404XXXX0404",
-            "roofer": "+1404XXXX0505",
-            "mechanic": "+1404XXXX0606",
-            "appliance": "+1404XXXX0707",
-            "pest-control": "+1404XXXX0808",
-            "water-damage": "+1404XXXX0909"
-          },
-          "lat": 33.75,
-          "lng": -84.39
         },
         "augusta": {
           "name": "Augusta",
@@ -5224,6 +5224,34 @@
       "name": "Iowa",
       "abbr": "IA",
       "cities": {
+        "des-moines": {
+          "name": "Des Moines",
+          "state": "IA",
+          "areaCode": "515",
+          "neighborhoods": [
+            "Downtown",
+            "East Village",
+            "Sherman Hill",
+            "Beaverdale",
+            "South of Grand",
+            "Waterbury",
+            "Highland Park",
+            "Drake"
+          ],
+          "phones": {
+            "plumber": "+1515XXXX0101",
+            "electrician": "+1515XXXX0202",
+            "locksmith": "+1515XXXX0303",
+            "hvac": "+1515XXXX0404",
+            "roofer": "+1515XXXX0505",
+            "mechanic": "+1515XXXX0606",
+            "appliance": "+1515XXXX0707",
+            "pest-control": "+1515XXXX0808",
+            "water-damage": "+1515XXXX0909"
+          },
+          "lat": 41.59,
+          "lng": -93.62
+        },
         "ames": {
           "name": "Ames",
           "state": "IA",
@@ -5357,34 +5385,6 @@
           },
           "lat": 41.52,
           "lng": -90.58
-        },
-        "des-moines": {
-          "name": "Des Moines",
-          "state": "IA",
-          "areaCode": "515",
-          "neighborhoods": [
-            "Downtown",
-            "East Village",
-            "Sherman Hill",
-            "Beaverdale",
-            "South of Grand",
-            "Waterbury",
-            "Highland Park",
-            "Drake"
-          ],
-          "phones": {
-            "plumber": "+1515XXXX0101",
-            "electrician": "+1515XXXX0202",
-            "locksmith": "+1515XXXX0303",
-            "hvac": "+1515XXXX0404",
-            "roofer": "+1515XXXX0505",
-            "mechanic": "+1515XXXX0606",
-            "appliance": "+1515XXXX0707",
-            "pest-control": "+1515XXXX0808",
-            "water-damage": "+1515XXXX0909"
-          },
-          "lat": 41.59,
-          "lng": -93.62
         },
         "dubuque": {
           "name": "Dubuque",
@@ -5530,6 +5530,34 @@
       "name": "Indiana",
       "abbr": "IN",
       "cities": {
+        "indianapolis": {
+          "name": "Indianapolis",
+          "state": "IN",
+          "areaCode": "317",
+          "neighborhoods": [
+            "Downtown",
+            "Broad Ripple",
+            "Fountain Square",
+            "Mass Ave",
+            "Carmel",
+            "Fishers",
+            "Irvington",
+            "Meridian-Kessler"
+          ],
+          "phones": {
+            "plumber": "+1317XXXX0101",
+            "electrician": "+1317XXXX0202",
+            "locksmith": "+1317XXXX0303",
+            "hvac": "+1317XXXX0404",
+            "roofer": "+1317XXXX0505",
+            "mechanic": "+1317XXXX0606",
+            "appliance": "+1317XXXX0707",
+            "pest-control": "+1317XXXX0808",
+            "water-damage": "+1317XXXX0909"
+          },
+          "lat": 39.77,
+          "lng": -86.16
+        },
         "carmel": {
           "name": "Carmel",
           "state": "IN",
@@ -5716,34 +5744,6 @@
             "water-damage": "+1219XXXX0909"
           }
         },
-        "indianapolis": {
-          "name": "Indianapolis",
-          "state": "IN",
-          "areaCode": "317",
-          "neighborhoods": [
-            "Downtown",
-            "Broad Ripple",
-            "Fountain Square",
-            "Mass Ave",
-            "Carmel",
-            "Fishers",
-            "Irvington",
-            "Meridian-Kessler"
-          ],
-          "phones": {
-            "plumber": "+1317XXXX0101",
-            "electrician": "+1317XXXX0202",
-            "locksmith": "+1317XXXX0303",
-            "hvac": "+1317XXXX0404",
-            "roofer": "+1317XXXX0505",
-            "mechanic": "+1317XXXX0606",
-            "appliance": "+1317XXXX0707",
-            "pest-control": "+1317XXXX0808",
-            "water-damage": "+1317XXXX0909"
-          },
-          "lat": 39.77,
-          "lng": -86.16
-        },
         "kokomo": {
           "name": "Kokomo",
           "state": "IN",
@@ -5906,6 +5906,34 @@
       "name": "Kansas",
       "abbr": "KS",
       "cities": {
+        "wichita": {
+          "name": "Wichita",
+          "state": "KS",
+          "areaCode": "316",
+          "neighborhoods": [
+            "Downtown",
+            "Delano",
+            "College Hill",
+            "Riverside",
+            "Eastborough",
+            "Andover",
+            "Derby",
+            "Bel Aire"
+          ],
+          "phones": {
+            "plumber": "+1316XXXX0101",
+            "electrician": "+1316XXXX0202",
+            "locksmith": "+1316XXXX0303",
+            "hvac": "+1316XXXX0404",
+            "roofer": "+1316XXXX0505",
+            "mechanic": "+1316XXXX0606",
+            "appliance": "+1316XXXX0707",
+            "pest-control": "+1316XXXX0808",
+            "water-damage": "+1316XXXX0909"
+          },
+          "lat": 37.69,
+          "lng": -97.34
+        },
         "kansas-city-ks": {
           "name": "Kansas City",
           "state": "KS",
@@ -6063,34 +6091,6 @@
             "pest-control": "+1785XXXX0808",
             "water-damage": "+1785XXXX0909"
           }
-        },
-        "wichita": {
-          "name": "Wichita",
-          "state": "KS",
-          "areaCode": "316",
-          "neighborhoods": [
-            "Downtown",
-            "Delano",
-            "College Hill",
-            "Riverside",
-            "Eastborough",
-            "Andover",
-            "Derby",
-            "Bel Aire"
-          ],
-          "phones": {
-            "plumber": "+1316XXXX0101",
-            "electrician": "+1316XXXX0202",
-            "locksmith": "+1316XXXX0303",
-            "hvac": "+1316XXXX0404",
-            "roofer": "+1316XXXX0505",
-            "mechanic": "+1316XXXX0606",
-            "appliance": "+1316XXXX0707",
-            "pest-control": "+1316XXXX0808",
-            "water-damage": "+1316XXXX0909"
-          },
-          "lat": 37.69,
-          "lng": -97.34
         }
       }
     },
@@ -6098,32 +6098,6 @@
       "name": "Kentucky",
       "abbr": "KY",
       "cities": {
-        "covington": {
-          "name": "Covington",
-          "state": "KY",
-          "areaCode": "859",
-          "neighborhoods": [
-            "MainStrasse",
-            "Latonia",
-            "Wallace Woods",
-            "Peaselburg",
-            "Licking Riverside",
-            "Austinburg",
-            "Covington Central",
-            "Kenton Hills"
-          ],
-          "phones": {
-            "plumber": "+1859XXXX0101",
-            "electrician": "+1859XXXX0202",
-            "locksmith": "+1859XXXX0303",
-            "hvac": "+1859XXXX0404",
-            "roofer": "+1859XXXX0505",
-            "mechanic": "+1859XXXX0606",
-            "appliance": "+1859XXXX0707",
-            "pest-control": "+1859XXXX0808",
-            "water-damage": "+1859XXXX0909"
-          }
-        },
         "louisville": {
           "name": "Louisville",
           "state": "KY",
@@ -6151,6 +6125,32 @@
           },
           "lat": 38.25,
           "lng": -85.76
+        },
+        "covington": {
+          "name": "Covington",
+          "state": "KY",
+          "areaCode": "859",
+          "neighborhoods": [
+            "MainStrasse",
+            "Latonia",
+            "Wallace Woods",
+            "Peaselburg",
+            "Licking Riverside",
+            "Austinburg",
+            "Covington Central",
+            "Kenton Hills"
+          ],
+          "phones": {
+            "plumber": "+1859XXXX0101",
+            "electrician": "+1859XXXX0202",
+            "locksmith": "+1859XXXX0303",
+            "hvac": "+1859XXXX0404",
+            "roofer": "+1859XXXX0505",
+            "mechanic": "+1859XXXX0606",
+            "appliance": "+1859XXXX0707",
+            "pest-control": "+1859XXXX0808",
+            "water-damage": "+1859XXXX0909"
+          }
         },
         "owensboro": {
           "name": "Owensboro",
@@ -6184,6 +6184,34 @@
       "name": "Louisiana",
       "abbr": "LA",
       "cities": {
+        "new-orleans": {
+          "name": "New Orleans",
+          "state": "LA",
+          "areaCode": "504",
+          "neighborhoods": [
+            "French Quarter",
+            "Garden District",
+            "Marigny",
+            "Bywater",
+            "Uptown",
+            "Warehouse District",
+            "Mid-City",
+            "Carrollton"
+          ],
+          "phones": {
+            "plumber": "+1504XXXX0101",
+            "electrician": "+1504XXXX0202",
+            "locksmith": "+1504XXXX0303",
+            "hvac": "+1504XXXX0404",
+            "roofer": "+1504XXXX0505",
+            "mechanic": "+1504XXXX0606",
+            "appliance": "+1504XXXX0707",
+            "pest-control": "+1504XXXX0808",
+            "water-damage": "+1504XXXX0909"
+          },
+          "lat": 29.95,
+          "lng": -90.07
+        },
         "alexandria-la": {
           "name": "Alexandria",
           "state": "LA",
@@ -6342,34 +6370,6 @@
             "water-damage": "+1318XXXX0909"
           }
         },
-        "new-orleans": {
-          "name": "New Orleans",
-          "state": "LA",
-          "areaCode": "504",
-          "neighborhoods": [
-            "French Quarter",
-            "Garden District",
-            "Marigny",
-            "Bywater",
-            "Uptown",
-            "Warehouse District",
-            "Mid-City",
-            "Carrollton"
-          ],
-          "phones": {
-            "plumber": "+1504XXXX0101",
-            "electrician": "+1504XXXX0202",
-            "locksmith": "+1504XXXX0303",
-            "hvac": "+1504XXXX0404",
-            "roofer": "+1504XXXX0505",
-            "mechanic": "+1504XXXX0606",
-            "appliance": "+1504XXXX0707",
-            "pest-control": "+1504XXXX0808",
-            "water-damage": "+1504XXXX0909"
-          },
-          "lat": 29.95,
-          "lng": -90.07
-        },
         "shreveport": {
           "name": "Shreveport",
           "state": "LA",
@@ -6402,6 +6402,34 @@
       "name": "Massachusetts",
       "abbr": "MA",
       "cities": {
+        "boston": {
+          "name": "Boston",
+          "state": "MA",
+          "areaCode": "617",
+          "neighborhoods": [
+            "Back Bay",
+            "Beacon Hill",
+            "South End",
+            "North End",
+            "Seaport",
+            "Cambridge",
+            "Somerville",
+            "Jamaica Plain"
+          ],
+          "phones": {
+            "plumber": "+1617XXXX0101",
+            "electrician": "+1617XXXX0202",
+            "locksmith": "+1617XXXX0303",
+            "hvac": "+1617XXXX0404",
+            "roofer": "+1617XXXX0505",
+            "mechanic": "+1617XXXX0606",
+            "appliance": "+1617XXXX0707",
+            "pest-control": "+1617XXXX0808",
+            "water-damage": "+1617XXXX0909"
+          },
+          "lat": 42.36,
+          "lng": -71.06
+        },
         "acton": {
           "name": "Acton",
           "state": "MA",
@@ -6453,34 +6481,6 @@
             "pest-control": "+1978XXXX0808",
             "water-damage": "+1978XXXX0909"
           }
-        },
-        "boston": {
-          "name": "Boston",
-          "state": "MA",
-          "areaCode": "617",
-          "neighborhoods": [
-            "Back Bay",
-            "Beacon Hill",
-            "South End",
-            "North End",
-            "Seaport",
-            "Cambridge",
-            "Somerville",
-            "Jamaica Plain"
-          ],
-          "phones": {
-            "plumber": "+1617XXXX0101",
-            "electrician": "+1617XXXX0202",
-            "locksmith": "+1617XXXX0303",
-            "hvac": "+1617XXXX0404",
-            "roofer": "+1617XXXX0505",
-            "mechanic": "+1617XXXX0606",
-            "appliance": "+1617XXXX0707",
-            "pest-control": "+1617XXXX0808",
-            "water-damage": "+1617XXXX0909"
-          },
-          "lat": 42.36,
-          "lng": -71.06
         },
         "brockton": {
           "name": "Brockton",
@@ -6854,32 +6854,6 @@
       "name": "Maryland",
       "abbr": "MD",
       "cities": {
-        "annapolis": {
-          "name": "Annapolis",
-          "state": "MD",
-          "areaCode": "410",
-          "neighborhoods": [
-            "Historic District",
-            "Eastport",
-            "West Annapolis",
-            "Arnold",
-            "Cape St Claire",
-            "Severna Park",
-            "Naval Academy",
-            "Bay Ridge"
-          ],
-          "phones": {
-            "plumber": "+1410XXXX0101",
-            "electrician": "+1410XXXX0202",
-            "locksmith": "+1410XXXX0303",
-            "hvac": "+1410XXXX0404",
-            "roofer": "+1410XXXX0505",
-            "mechanic": "+1410XXXX0606",
-            "appliance": "+1410XXXX0707",
-            "pest-control": "+1410XXXX0808",
-            "water-damage": "+1410XXXX0909"
-          }
-        },
         "baltimore": {
           "name": "Baltimore",
           "state": "MD",
@@ -6907,6 +6881,32 @@
           },
           "lat": 39.29,
           "lng": -76.61
+        },
+        "annapolis": {
+          "name": "Annapolis",
+          "state": "MD",
+          "areaCode": "410",
+          "neighborhoods": [
+            "Historic District",
+            "Eastport",
+            "West Annapolis",
+            "Arnold",
+            "Cape St Claire",
+            "Severna Park",
+            "Naval Academy",
+            "Bay Ridge"
+          ],
+          "phones": {
+            "plumber": "+1410XXXX0101",
+            "electrician": "+1410XXXX0202",
+            "locksmith": "+1410XXXX0303",
+            "hvac": "+1410XXXX0404",
+            "roofer": "+1410XXXX0505",
+            "mechanic": "+1410XXXX0606",
+            "appliance": "+1410XXXX0707",
+            "pest-control": "+1410XXXX0808",
+            "water-damage": "+1410XXXX0909"
+          }
         },
         "bethesda": {
           "name": "Bethesda",
@@ -7044,6 +7044,34 @@
       "name": "Maine",
       "abbr": "ME",
       "cities": {
+        "portland-me": {
+          "name": "Portland",
+          "state": "ME",
+          "areaCode": "207",
+          "neighborhoods": [
+            "Old Port",
+            "East End",
+            "West End",
+            "Munjoy Hill",
+            "Deering",
+            "Back Cove",
+            "Parkside",
+            "Libbytown"
+          ],
+          "phones": {
+            "plumber": "+1207XXXX0101",
+            "electrician": "+1207XXXX0202",
+            "locksmith": "+1207XXXX0303",
+            "hvac": "+1207XXXX0404",
+            "roofer": "+1207XXXX0505",
+            "mechanic": "+1207XXXX0606",
+            "appliance": "+1207XXXX0707",
+            "pest-control": "+1207XXXX0808",
+            "water-damage": "+1207XXXX0909"
+          },
+          "lat": 43.66,
+          "lng": -70.26
+        },
         "auburn-me": {
           "name": "Auburn",
           "state": "ME",
@@ -7095,34 +7123,6 @@
             "pest-control": "+1207XXXX0808",
             "water-damage": "+1207XXXX0909"
           }
-        },
-        "portland-me": {
-          "name": "Portland",
-          "state": "ME",
-          "areaCode": "207",
-          "neighborhoods": [
-            "Old Port",
-            "East End",
-            "West End",
-            "Munjoy Hill",
-            "Deering",
-            "Back Cove",
-            "Parkside",
-            "Libbytown"
-          ],
-          "phones": {
-            "plumber": "+1207XXXX0101",
-            "electrician": "+1207XXXX0202",
-            "locksmith": "+1207XXXX0303",
-            "hvac": "+1207XXXX0404",
-            "roofer": "+1207XXXX0505",
-            "mechanic": "+1207XXXX0606",
-            "appliance": "+1207XXXX0707",
-            "pest-control": "+1207XXXX0808",
-            "water-damage": "+1207XXXX0909"
-          },
-          "lat": 43.66,
-          "lng": -70.26
         }
       }
     },
@@ -7130,6 +7130,34 @@
       "name": "Michigan",
       "abbr": "MI",
       "cities": {
+        "detroit": {
+          "name": "Detroit",
+          "state": "MI",
+          "areaCode": "313",
+          "neighborhoods": [
+            "Downtown",
+            "Midtown",
+            "Corktown",
+            "Eastern Market",
+            "Indian Village",
+            "Palmer Woods",
+            "Boston-Edison",
+            "Riverfront"
+          ],
+          "phones": {
+            "plumber": "+1313XXXX0101",
+            "electrician": "+1313XXXX0202",
+            "locksmith": "+1313XXXX0303",
+            "hvac": "+1313XXXX0404",
+            "roofer": "+1313XXXX0505",
+            "mechanic": "+1313XXXX0606",
+            "appliance": "+1313XXXX0707",
+            "pest-control": "+1313XXXX0808",
+            "water-damage": "+1313XXXX0909"
+          },
+          "lat": 42.33,
+          "lng": -83.05
+        },
         "ann-arbor": {
           "name": "Ann Arbor",
           "state": "MI",
@@ -7207,34 +7235,6 @@
             "pest-control": "+1313XXXX0808",
             "water-damage": "+1313XXXX0909"
           }
-        },
-        "detroit": {
-          "name": "Detroit",
-          "state": "MI",
-          "areaCode": "313",
-          "neighborhoods": [
-            "Downtown",
-            "Midtown",
-            "Corktown",
-            "Eastern Market",
-            "Indian Village",
-            "Palmer Woods",
-            "Boston-Edison",
-            "Riverfront"
-          ],
-          "phones": {
-            "plumber": "+1313XXXX0101",
-            "electrician": "+1313XXXX0202",
-            "locksmith": "+1313XXXX0303",
-            "hvac": "+1313XXXX0404",
-            "roofer": "+1313XXXX0505",
-            "mechanic": "+1313XXXX0606",
-            "appliance": "+1313XXXX0707",
-            "pest-control": "+1313XXXX0808",
-            "water-damage": "+1313XXXX0909"
-          },
-          "lat": 42.33,
-          "lng": -83.05
         },
         "flint": {
           "name": "Flint",
@@ -7634,6 +7634,34 @@
       "name": "Minnesota",
       "abbr": "MN",
       "cities": {
+        "minneapolis": {
+          "name": "Minneapolis",
+          "state": "MN",
+          "areaCode": "612",
+          "neighborhoods": [
+            "Downtown",
+            "North Loop",
+            "Uptown",
+            "Northeast",
+            "Linden Hills",
+            "Whittier",
+            "Longfellow",
+            "Dinkytown"
+          ],
+          "phones": {
+            "plumber": "+1612XXXX0101",
+            "electrician": "+1612XXXX0202",
+            "locksmith": "+1612XXXX0303",
+            "hvac": "+1612XXXX0404",
+            "roofer": "+1612XXXX0505",
+            "mechanic": "+1612XXXX0606",
+            "appliance": "+1612XXXX0707",
+            "pest-control": "+1612XXXX0808",
+            "water-damage": "+1612XXXX0909"
+          },
+          "lat": 44.98,
+          "lng": -93.27
+        },
         "blaine": {
           "name": "Blaine",
           "state": "MN",
@@ -7842,34 +7870,6 @@
             "water-damage": "+1763XXXX0909"
           }
         },
-        "minneapolis": {
-          "name": "Minneapolis",
-          "state": "MN",
-          "areaCode": "612",
-          "neighborhoods": [
-            "Downtown",
-            "North Loop",
-            "Uptown",
-            "Northeast",
-            "Linden Hills",
-            "Whittier",
-            "Longfellow",
-            "Dinkytown"
-          ],
-          "phones": {
-            "plumber": "+1612XXXX0101",
-            "electrician": "+1612XXXX0202",
-            "locksmith": "+1612XXXX0303",
-            "hvac": "+1612XXXX0404",
-            "roofer": "+1612XXXX0505",
-            "mechanic": "+1612XXXX0606",
-            "appliance": "+1612XXXX0707",
-            "pest-control": "+1612XXXX0808",
-            "water-damage": "+1612XXXX0909"
-          },
-          "lat": 44.98,
-          "lng": -93.27
-        },
         "moorhead": {
           "name": "Moorhead",
           "state": "MN",
@@ -8034,6 +8034,34 @@
       "name": "Missouri",
       "abbr": "MO",
       "cities": {
+        "kansas-city": {
+          "name": "Kansas City",
+          "state": "MO",
+          "areaCode": "816",
+          "neighborhoods": [
+            "Downtown",
+            "Plaza",
+            "Westport",
+            "Crossroads",
+            "Brookside",
+            "River Market",
+            "Waldo",
+            "Power & Light"
+          ],
+          "phones": {
+            "plumber": "+1816XXXX0101",
+            "electrician": "+1816XXXX0202",
+            "locksmith": "+1816XXXX0303",
+            "hvac": "+1816XXXX0404",
+            "roofer": "+1816XXXX0505",
+            "mechanic": "+1816XXXX0606",
+            "appliance": "+1816XXXX0707",
+            "pest-control": "+1816XXXX0808",
+            "water-damage": "+1816XXXX0909"
+          },
+          "lat": 39.1,
+          "lng": -94.58
+        },
         "blue-springs": {
           "name": "Blue Springs",
           "state": "MO",
@@ -8085,34 +8113,6 @@
             "pest-control": "+1573XXXX0808",
             "water-damage": "+1573XXXX0909"
           }
-        },
-        "kansas-city": {
-          "name": "Kansas City",
-          "state": "MO",
-          "areaCode": "816",
-          "neighborhoods": [
-            "Downtown",
-            "Plaza",
-            "Westport",
-            "Crossroads",
-            "Brookside",
-            "River Market",
-            "Waldo",
-            "Power & Light"
-          ],
-          "phones": {
-            "plumber": "+1816XXXX0101",
-            "electrician": "+1816XXXX0202",
-            "locksmith": "+1816XXXX0303",
-            "hvac": "+1816XXXX0404",
-            "roofer": "+1816XXXX0505",
-            "mechanic": "+1816XXXX0606",
-            "appliance": "+1816XXXX0707",
-            "pest-control": "+1816XXXX0808",
-            "water-damage": "+1816XXXX0909"
-          },
-          "lat": 39.1,
-          "lng": -94.58
         },
         "lees-summit": {
           "name": "Lees Summit",
@@ -8280,6 +8280,32 @@
       "name": "Mississippi",
       "abbr": "MS",
       "cities": {
+        "jackson-ms": {
+          "name": "Jackson",
+          "state": "MS",
+          "areaCode": "601",
+          "neighborhoods": [
+            "Downtown",
+            "Belhaven",
+            "Fondren",
+            "Eastover",
+            "Madison",
+            "Ridgeland",
+            "Flowood",
+            "Brandon"
+          ],
+          "phones": {
+            "plumber": "+1601XXXX0101",
+            "electrician": "+1601XXXX0202",
+            "locksmith": "+1601XXXX0303",
+            "hvac": "+1601XXXX0404",
+            "roofer": "+1601XXXX0505",
+            "mechanic": "+1601XXXX0606",
+            "appliance": "+1601XXXX0707",
+            "pest-control": "+1601XXXX0808",
+            "water-damage": "+1601XXXX0909"
+          }
+        },
         "biloxi": {
           "name": "Biloxi",
           "state": "MS",
@@ -8319,32 +8345,6 @@
             "Purvis",
             "Sumrall",
             "West Hattiesburg"
-          ],
-          "phones": {
-            "plumber": "+1601XXXX0101",
-            "electrician": "+1601XXXX0202",
-            "locksmith": "+1601XXXX0303",
-            "hvac": "+1601XXXX0404",
-            "roofer": "+1601XXXX0505",
-            "mechanic": "+1601XXXX0606",
-            "appliance": "+1601XXXX0707",
-            "pest-control": "+1601XXXX0808",
-            "water-damage": "+1601XXXX0909"
-          }
-        },
-        "jackson-ms": {
-          "name": "Jackson",
-          "state": "MS",
-          "areaCode": "601",
-          "neighborhoods": [
-            "Downtown",
-            "Belhaven",
-            "Fondren",
-            "Eastover",
-            "Madison",
-            "Ridgeland",
-            "Flowood",
-            "Brandon"
           ],
           "phones": {
             "plumber": "+1601XXXX0101",
@@ -8476,6 +8476,34 @@
       "name": "North Carolina",
       "abbr": "NC",
       "cities": {
+        "charlotte": {
+          "name": "Charlotte",
+          "state": "NC",
+          "areaCode": "704",
+          "neighborhoods": [
+            "Uptown",
+            "South End",
+            "NoDa",
+            "Plaza Midwood",
+            "Dilworth",
+            "Ballantyne",
+            "Myers Park",
+            "Elizabeth"
+          ],
+          "phones": {
+            "plumber": "+1704XXXX0101",
+            "electrician": "+1704XXXX0202",
+            "locksmith": "+1704XXXX0303",
+            "hvac": "+1704XXXX0404",
+            "roofer": "+1704XXXX0505",
+            "mechanic": "+1704XXXX0606",
+            "appliance": "+1704XXXX0707",
+            "pest-control": "+1704XXXX0808",
+            "water-damage": "+1704XXXX0909"
+          },
+          "lat": 35.23,
+          "lng": -80.84
+        },
         "asheville": {
           "name": "Asheville",
           "state": "NC",
@@ -8553,34 +8581,6 @@
             "pest-control": "+1919XXXX0808",
             "water-damage": "+1919XXXX0909"
           }
-        },
-        "charlotte": {
-          "name": "Charlotte",
-          "state": "NC",
-          "areaCode": "704",
-          "neighborhoods": [
-            "Uptown",
-            "South End",
-            "NoDa",
-            "Plaza Midwood",
-            "Dilworth",
-            "Ballantyne",
-            "Myers Park",
-            "Elizabeth"
-          ],
-          "phones": {
-            "plumber": "+1704XXXX0101",
-            "electrician": "+1704XXXX0202",
-            "locksmith": "+1704XXXX0303",
-            "hvac": "+1704XXXX0404",
-            "roofer": "+1704XXXX0505",
-            "mechanic": "+1704XXXX0606",
-            "appliance": "+1704XXXX0707",
-            "pest-control": "+1704XXXX0808",
-            "water-damage": "+1704XXXX0909"
-          },
-          "lat": 35.23,
-          "lng": -80.84
         },
         "durham": {
           "name": "Durham",
@@ -8852,32 +8852,6 @@
       "name": "North Dakota",
       "abbr": "ND",
       "cities": {
-        "bismarck-nd": {
-          "name": "Bismarck",
-          "state": "ND",
-          "areaCode": "701",
-          "neighborhoods": [
-            "Downtown",
-            "Cathedral",
-            "Pioneer",
-            "Mandan",
-            "Lincoln",
-            "Wachter",
-            "Century",
-            "Promontory Point"
-          ],
-          "phones": {
-            "plumber": "+1701XXXX0101",
-            "electrician": "+1701XXXX0202",
-            "locksmith": "+1701XXXX0303",
-            "hvac": "+1701XXXX0404",
-            "roofer": "+1701XXXX0505",
-            "mechanic": "+1701XXXX0606",
-            "appliance": "+1701XXXX0707",
-            "pest-control": "+1701XXXX0808",
-            "water-damage": "+1701XXXX0909"
-          }
-        },
         "fargo": {
           "name": "Fargo",
           "state": "ND",
@@ -8905,6 +8879,32 @@
           },
           "lat": 46.88,
           "lng": -96.79
+        },
+        "bismarck-nd": {
+          "name": "Bismarck",
+          "state": "ND",
+          "areaCode": "701",
+          "neighborhoods": [
+            "Downtown",
+            "Cathedral",
+            "Pioneer",
+            "Mandan",
+            "Lincoln",
+            "Wachter",
+            "Century",
+            "Promontory Point"
+          ],
+          "phones": {
+            "plumber": "+1701XXXX0101",
+            "electrician": "+1701XXXX0202",
+            "locksmith": "+1701XXXX0303",
+            "hvac": "+1701XXXX0404",
+            "roofer": "+1701XXXX0505",
+            "mechanic": "+1701XXXX0606",
+            "appliance": "+1701XXXX0707",
+            "pest-control": "+1701XXXX0808",
+            "water-damage": "+1701XXXX0909"
+          }
         },
         "grand-forks": {
           "name": "Grand Forks",
@@ -8964,6 +8964,34 @@
       "name": "Nebraska",
       "abbr": "NE",
       "cities": {
+        "omaha": {
+          "name": "Omaha",
+          "state": "NE",
+          "areaCode": "402",
+          "neighborhoods": [
+            "Downtown",
+            "Old Market",
+            "Blackstone",
+            "Dundee",
+            "Aksarben",
+            "Benson",
+            "Midtown Crossing",
+            "Millard"
+          ],
+          "phones": {
+            "plumber": "+1402XXXX0101",
+            "electrician": "+1402XXXX0202",
+            "locksmith": "+1402XXXX0303",
+            "hvac": "+1402XXXX0404",
+            "roofer": "+1402XXXX0505",
+            "mechanic": "+1402XXXX0606",
+            "appliance": "+1402XXXX0707",
+            "pest-control": "+1402XXXX0808",
+            "water-damage": "+1402XXXX0909"
+          },
+          "lat": 41.26,
+          "lng": -95.94
+        },
         "bellevue": {
           "name": "Bellevue",
           "state": "NE",
@@ -9043,34 +9071,6 @@
             "pest-control": "+1308XXXX0808",
             "water-damage": "+1308XXXX0909"
           }
-        },
-        "omaha": {
-          "name": "Omaha",
-          "state": "NE",
-          "areaCode": "402",
-          "neighborhoods": [
-            "Downtown",
-            "Old Market",
-            "Blackstone",
-            "Dundee",
-            "Aksarben",
-            "Benson",
-            "Midtown Crossing",
-            "Millard"
-          ],
-          "phones": {
-            "plumber": "+1402XXXX0101",
-            "electrician": "+1402XXXX0202",
-            "locksmith": "+1402XXXX0303",
-            "hvac": "+1402XXXX0404",
-            "roofer": "+1402XXXX0505",
-            "mechanic": "+1402XXXX0606",
-            "appliance": "+1402XXXX0707",
-            "pest-control": "+1402XXXX0808",
-            "water-damage": "+1402XXXX0909"
-          },
-          "lat": 41.26,
-          "lng": -95.94
         }
       }
     },
@@ -9078,32 +9078,6 @@
       "name": "New Hampshire",
       "abbr": "NH",
       "cities": {
-        "concord-nh": {
-          "name": "Concord",
-          "state": "NH",
-          "areaCode": "603",
-          "neighborhoods": [
-            "Downtown",
-            "Penacook",
-            "East Concord",
-            "West Concord",
-            "Bow",
-            "Loudon",
-            "Boscawen",
-            "Hopkinton"
-          ],
-          "phones": {
-            "plumber": "+1603XXXX0101",
-            "electrician": "+1603XXXX0202",
-            "locksmith": "+1603XXXX0303",
-            "hvac": "+1603XXXX0404",
-            "roofer": "+1603XXXX0505",
-            "mechanic": "+1603XXXX0606",
-            "appliance": "+1603XXXX0707",
-            "pest-control": "+1603XXXX0808",
-            "water-damage": "+1603XXXX0909"
-          }
-        },
         "manchester": {
           "name": "Manchester",
           "state": "NH",
@@ -9131,6 +9105,32 @@
           },
           "lat": 42.99,
           "lng": -71.46
+        },
+        "concord-nh": {
+          "name": "Concord",
+          "state": "NH",
+          "areaCode": "603",
+          "neighborhoods": [
+            "Downtown",
+            "Penacook",
+            "East Concord",
+            "West Concord",
+            "Bow",
+            "Loudon",
+            "Boscawen",
+            "Hopkinton"
+          ],
+          "phones": {
+            "plumber": "+1603XXXX0101",
+            "electrician": "+1603XXXX0202",
+            "locksmith": "+1603XXXX0303",
+            "hvac": "+1603XXXX0404",
+            "roofer": "+1603XXXX0505",
+            "mechanic": "+1603XXXX0606",
+            "appliance": "+1603XXXX0707",
+            "pest-control": "+1603XXXX0808",
+            "water-damage": "+1603XXXX0909"
+          }
         }
       }
     },
@@ -9138,6 +9138,34 @@
       "name": "New Jersey",
       "abbr": "NJ",
       "cities": {
+        "newark": {
+          "name": "Newark",
+          "state": "NJ",
+          "areaCode": "973",
+          "neighborhoods": [
+            "Downtown",
+            "Ironbound",
+            "University Heights",
+            "Forest Hill",
+            "Weequahic",
+            "North Ironbound",
+            "South Ward",
+            "Vailsburg"
+          ],
+          "phones": {
+            "plumber": "+1973XXXX0101",
+            "electrician": "+1973XXXX0202",
+            "locksmith": "+1973XXXX0303",
+            "hvac": "+1973XXXX0404",
+            "roofer": "+1973XXXX0505",
+            "mechanic": "+1973XXXX0606",
+            "appliance": "+1973XXXX0707",
+            "pest-control": "+1973XXXX0808",
+            "water-damage": "+1973XXXX0909"
+          },
+          "lat": 40.74,
+          "lng": -74.17
+        },
         "atlantic-city": {
           "name": "Atlantic City",
           "state": "NJ",
@@ -9217,34 +9245,6 @@
           },
           "lat": 40.73,
           "lng": -74.06
-        },
-        "newark": {
-          "name": "Newark",
-          "state": "NJ",
-          "areaCode": "973",
-          "neighborhoods": [
-            "Downtown",
-            "Ironbound",
-            "University Heights",
-            "Forest Hill",
-            "Weequahic",
-            "North Ironbound",
-            "South Ward",
-            "Vailsburg"
-          ],
-          "phones": {
-            "plumber": "+1973XXXX0101",
-            "electrician": "+1973XXXX0202",
-            "locksmith": "+1973XXXX0303",
-            "hvac": "+1973XXXX0404",
-            "roofer": "+1973XXXX0505",
-            "mechanic": "+1973XXXX0606",
-            "appliance": "+1973XXXX0707",
-            "pest-control": "+1973XXXX0808",
-            "water-damage": "+1973XXXX0909"
-          },
-          "lat": 40.74,
-          "lng": -74.17
         },
         "princeton": {
           "name": "Princeton",
@@ -9390,34 +9390,6 @@
       "name": "Nevada",
       "abbr": "NV",
       "cities": {
-        "henderson": {
-          "name": "Henderson",
-          "state": "NV",
-          "areaCode": "702",
-          "neighborhoods": [
-            "Green Valley",
-            "MacDonald Ranch",
-            "Anthem",
-            "Seven Hills",
-            "Green Valley Ranch",
-            "Lake Las Vegas",
-            "Inspirada",
-            "Cadence"
-          ],
-          "phones": {
-            "plumber": "+1702XXXX0101",
-            "electrician": "+1702XXXX0202",
-            "locksmith": "+1702XXXX0303",
-            "hvac": "+1702XXXX0404",
-            "roofer": "+1702XXXX0505",
-            "mechanic": "+1702XXXX0606",
-            "appliance": "+1702XXXX0707",
-            "pest-control": "+1702XXXX0808",
-            "water-damage": "+1702XXXX0909"
-          },
-          "lat": 36.04,
-          "lng": -114.98
-        },
         "las-vegas": {
           "name": "Las Vegas",
           "state": "NV",
@@ -9445,6 +9417,34 @@
           },
           "lat": 36.17,
           "lng": -115.14
+        },
+        "henderson": {
+          "name": "Henderson",
+          "state": "NV",
+          "areaCode": "702",
+          "neighborhoods": [
+            "Green Valley",
+            "MacDonald Ranch",
+            "Anthem",
+            "Seven Hills",
+            "Green Valley Ranch",
+            "Lake Las Vegas",
+            "Inspirada",
+            "Cadence"
+          ],
+          "phones": {
+            "plumber": "+1702XXXX0101",
+            "electrician": "+1702XXXX0202",
+            "locksmith": "+1702XXXX0303",
+            "hvac": "+1702XXXX0404",
+            "roofer": "+1702XXXX0505",
+            "mechanic": "+1702XXXX0606",
+            "appliance": "+1702XXXX0707",
+            "pest-control": "+1702XXXX0808",
+            "water-damage": "+1702XXXX0909"
+          },
+          "lat": 36.04,
+          "lng": -114.98
         },
         "reno": {
           "name": "Reno",
@@ -9504,6 +9504,34 @@
       "name": "New York",
       "abbr": "NY",
       "cities": {
+        "new-york": {
+          "name": "New York",
+          "state": "NY",
+          "areaCode": "212",
+          "neighborhoods": [
+            "Manhattan",
+            "Brooklyn",
+            "Queens",
+            "Bronx",
+            "Staten Island",
+            "Harlem",
+            "Long Island City",
+            "Williamsburg"
+          ],
+          "phones": {
+            "plumber": "+1212XXXX0101",
+            "electrician": "+1212XXXX0202",
+            "locksmith": "+1212XXXX0303",
+            "hvac": "+1212XXXX0404",
+            "roofer": "+1212XXXX0505",
+            "mechanic": "+1212XXXX0606",
+            "appliance": "+1212XXXX0707",
+            "pest-control": "+1212XXXX0808",
+            "water-damage": "+1212XXXX0909"
+          },
+          "lat": 40.71,
+          "lng": -74.01
+        },
         "albany": {
           "name": "Albany",
           "state": "NY",
@@ -9609,34 +9637,6 @@
             "pest-control": "+1607XXXX0808",
             "water-damage": "+1607XXXX0909"
           }
-        },
-        "new-york": {
-          "name": "New York",
-          "state": "NY",
-          "areaCode": "212",
-          "neighborhoods": [
-            "Manhattan",
-            "Brooklyn",
-            "Queens",
-            "Bronx",
-            "Staten Island",
-            "Harlem",
-            "Long Island City",
-            "Williamsburg"
-          ],
-          "phones": {
-            "plumber": "+1212XXXX0101",
-            "electrician": "+1212XXXX0202",
-            "locksmith": "+1212XXXX0303",
-            "hvac": "+1212XXXX0404",
-            "roofer": "+1212XXXX0505",
-            "mechanic": "+1212XXXX0606",
-            "appliance": "+1212XXXX0707",
-            "pest-control": "+1212XXXX0808",
-            "water-damage": "+1212XXXX0909"
-          },
-          "lat": 40.71,
-          "lng": -74.01
         },
         "newburgh": {
           "name": "Newburgh",
@@ -9880,6 +9880,34 @@
       "name": "Ohio",
       "abbr": "OH",
       "cities": {
+        "columbus": {
+          "name": "Columbus",
+          "state": "OH",
+          "areaCode": "614",
+          "neighborhoods": [
+            "Short North",
+            "German Village",
+            "Arena District",
+            "Clintonville",
+            "Upper Arlington",
+            "Dublin",
+            "Grandview",
+            "Brewery District"
+          ],
+          "phones": {
+            "plumber": "+1614XXXX0101",
+            "electrician": "+1614XXXX0202",
+            "locksmith": "+1614XXXX0303",
+            "hvac": "+1614XXXX0404",
+            "roofer": "+1614XXXX0505",
+            "mechanic": "+1614XXXX0606",
+            "appliance": "+1614XXXX0707",
+            "pest-control": "+1614XXXX0808",
+            "water-damage": "+1614XXXX0909"
+          },
+          "lat": 39.96,
+          "lng": -83.0
+        },
         "akron": {
           "name": "Akron",
           "state": "OH",
@@ -9989,34 +10017,6 @@
           },
           "lat": 41.5,
           "lng": -81.69
-        },
-        "columbus": {
-          "name": "Columbus",
-          "state": "OH",
-          "areaCode": "614",
-          "neighborhoods": [
-            "Short North",
-            "German Village",
-            "Arena District",
-            "Clintonville",
-            "Upper Arlington",
-            "Dublin",
-            "Grandview",
-            "Brewery District"
-          ],
-          "phones": {
-            "plumber": "+1614XXXX0101",
-            "electrician": "+1614XXXX0202",
-            "locksmith": "+1614XXXX0303",
-            "hvac": "+1614XXXX0404",
-            "roofer": "+1614XXXX0505",
-            "mechanic": "+1614XXXX0606",
-            "appliance": "+1614XXXX0707",
-            "pest-control": "+1614XXXX0808",
-            "water-damage": "+1614XXXX0909"
-          },
-          "lat": 39.96,
-          "lng": -83.0
         },
         "dayton": {
           "name": "Dayton",
@@ -10262,6 +10262,34 @@
       "name": "Oklahoma",
       "abbr": "OK",
       "cities": {
+        "oklahoma-city": {
+          "name": "Oklahoma City",
+          "state": "OK",
+          "areaCode": "405",
+          "neighborhoods": [
+            "Downtown",
+            "Bricktown",
+            "Midtown",
+            "Nichols Hills",
+            "Edmond",
+            "Norman",
+            "Yukon",
+            "Mustang"
+          ],
+          "phones": {
+            "plumber": "+1405XXXX0101",
+            "electrician": "+1405XXXX0202",
+            "locksmith": "+1405XXXX0303",
+            "hvac": "+1405XXXX0404",
+            "roofer": "+1405XXXX0505",
+            "mechanic": "+1405XXXX0606",
+            "appliance": "+1405XXXX0707",
+            "pest-control": "+1405XXXX0808",
+            "water-damage": "+1405XXXX0909"
+          },
+          "lat": 35.47,
+          "lng": -97.52
+        },
         "bartlesville": {
           "name": "Bartlesville",
           "state": "OK",
@@ -10366,34 +10394,6 @@
             "water-damage": "+1918XXXX0909"
           }
         },
-        "oklahoma-city": {
-          "name": "Oklahoma City",
-          "state": "OK",
-          "areaCode": "405",
-          "neighborhoods": [
-            "Downtown",
-            "Bricktown",
-            "Midtown",
-            "Nichols Hills",
-            "Edmond",
-            "Norman",
-            "Yukon",
-            "Mustang"
-          ],
-          "phones": {
-            "plumber": "+1405XXXX0101",
-            "electrician": "+1405XXXX0202",
-            "locksmith": "+1405XXXX0303",
-            "hvac": "+1405XXXX0404",
-            "roofer": "+1405XXXX0505",
-            "mechanic": "+1405XXXX0606",
-            "appliance": "+1405XXXX0707",
-            "pest-control": "+1405XXXX0808",
-            "water-damage": "+1405XXXX0909"
-          },
-          "lat": 35.47,
-          "lng": -97.52
-        },
         "stillwater": {
           "name": "Stillwater",
           "state": "OK",
@@ -10454,6 +10454,34 @@
       "name": "Oregon",
       "abbr": "OR",
       "cities": {
+        "portland": {
+          "name": "Portland",
+          "state": "OR",
+          "areaCode": "503",
+          "neighborhoods": [
+            "Downtown",
+            "Pearl District",
+            "Alberta",
+            "Hawthorne",
+            "Division",
+            "Nob Hill",
+            "Sellwood",
+            "Mississippi"
+          ],
+          "phones": {
+            "plumber": "+1503XXXX0101",
+            "electrician": "+1503XXXX0202",
+            "locksmith": "+1503XXXX0303",
+            "hvac": "+1503XXXX0404",
+            "roofer": "+1503XXXX0505",
+            "mechanic": "+1503XXXX0606",
+            "appliance": "+1503XXXX0707",
+            "pest-control": "+1503XXXX0808",
+            "water-damage": "+1503XXXX0909"
+          },
+          "lat": 45.52,
+          "lng": -122.68
+        },
         "beaverton": {
           "name": "Beaverton",
           "state": "OR",
@@ -10610,34 +10638,6 @@
             "water-damage": "+1541XXXX0909"
           }
         },
-        "portland": {
-          "name": "Portland",
-          "state": "OR",
-          "areaCode": "503",
-          "neighborhoods": [
-            "Downtown",
-            "Pearl District",
-            "Alberta",
-            "Hawthorne",
-            "Division",
-            "Nob Hill",
-            "Sellwood",
-            "Mississippi"
-          ],
-          "phones": {
-            "plumber": "+1503XXXX0101",
-            "electrician": "+1503XXXX0202",
-            "locksmith": "+1503XXXX0303",
-            "hvac": "+1503XXXX0404",
-            "roofer": "+1503XXXX0505",
-            "mechanic": "+1503XXXX0606",
-            "appliance": "+1503XXXX0707",
-            "pest-control": "+1503XXXX0808",
-            "water-damage": "+1503XXXX0909"
-          },
-          "lat": 45.52,
-          "lng": -122.68
-        },
         "salem": {
           "name": "Salem",
           "state": "OR",
@@ -10670,6 +10670,34 @@
       "name": "Pennsylvania",
       "abbr": "PA",
       "cities": {
+        "philadelphia": {
+          "name": "Philadelphia",
+          "state": "PA",
+          "areaCode": "215",
+          "neighborhoods": [
+            "Center City",
+            "Fishtown",
+            "Northern Liberties",
+            "South Philly",
+            "University City",
+            "Manayunk",
+            "Old City",
+            "Rittenhouse"
+          ],
+          "phones": {
+            "plumber": "+1215XXXX0101",
+            "electrician": "+1215XXXX0202",
+            "locksmith": "+1215XXXX0303",
+            "hvac": "+1215XXXX0404",
+            "roofer": "+1215XXXX0505",
+            "mechanic": "+1215XXXX0606",
+            "appliance": "+1215XXXX0707",
+            "pest-control": "+1215XXXX0808",
+            "water-damage": "+1215XXXX0909"
+          },
+          "lat": 39.95,
+          "lng": -75.17
+        },
         "allentown": {
           "name": "Allentown",
           "state": "PA",
@@ -10774,34 +10802,6 @@
             "water-damage": "+1717XXXX0909"
           }
         },
-        "philadelphia": {
-          "name": "Philadelphia",
-          "state": "PA",
-          "areaCode": "215",
-          "neighborhoods": [
-            "Center City",
-            "Fishtown",
-            "Northern Liberties",
-            "South Philly",
-            "University City",
-            "Manayunk",
-            "Old City",
-            "Rittenhouse"
-          ],
-          "phones": {
-            "plumber": "+1215XXXX0101",
-            "electrician": "+1215XXXX0202",
-            "locksmith": "+1215XXXX0303",
-            "hvac": "+1215XXXX0404",
-            "roofer": "+1215XXXX0505",
-            "mechanic": "+1215XXXX0606",
-            "appliance": "+1215XXXX0707",
-            "pest-control": "+1215XXXX0808",
-            "water-damage": "+1215XXXX0909"
-          },
-          "lat": 39.95,
-          "lng": -75.17
-        },
         "pittsburgh": {
           "name": "Pittsburgh",
           "state": "PA",
@@ -10862,6 +10862,34 @@
       "name": "Rhode Island",
       "abbr": "RI",
       "cities": {
+        "providence": {
+          "name": "Providence",
+          "state": "RI",
+          "areaCode": "401",
+          "neighborhoods": [
+            "Downtown",
+            "College Hill",
+            "Federal Hill",
+            "Wayland",
+            "Elmhurst",
+            "Fox Point",
+            "Blackstone",
+            "Mount Hope"
+          ],
+          "phones": {
+            "plumber": "+1401XXXX0101",
+            "electrician": "+1401XXXX0202",
+            "locksmith": "+1401XXXX0303",
+            "hvac": "+1401XXXX0404",
+            "roofer": "+1401XXXX0505",
+            "mechanic": "+1401XXXX0606",
+            "appliance": "+1401XXXX0707",
+            "pest-control": "+1401XXXX0808",
+            "water-damage": "+1401XXXX0909"
+          },
+          "lat": 41.82,
+          "lng": -71.41
+        },
         "cranston": {
           "name": "Cranston",
           "state": "RI",
@@ -10913,34 +10941,6 @@
             "pest-control": "+1401XXXX0808",
             "water-damage": "+1401XXXX0909"
           }
-        },
-        "providence": {
-          "name": "Providence",
-          "state": "RI",
-          "areaCode": "401",
-          "neighborhoods": [
-            "Downtown",
-            "College Hill",
-            "Federal Hill",
-            "Wayland",
-            "Elmhurst",
-            "Fox Point",
-            "Blackstone",
-            "Mount Hope"
-          ],
-          "phones": {
-            "plumber": "+1401XXXX0101",
-            "electrician": "+1401XXXX0202",
-            "locksmith": "+1401XXXX0303",
-            "hvac": "+1401XXXX0404",
-            "roofer": "+1401XXXX0505",
-            "mechanic": "+1401XXXX0606",
-            "appliance": "+1401XXXX0707",
-            "pest-control": "+1401XXXX0808",
-            "water-damage": "+1401XXXX0909"
-          },
-          "lat": 41.82,
-          "lng": -71.41
         },
         "warwick-ri": {
           "name": "Warwick",
@@ -11190,6 +11190,34 @@
       "name": "South Dakota",
       "abbr": "SD",
       "cities": {
+        "sioux-falls": {
+          "name": "Sioux Falls",
+          "state": "SD",
+          "areaCode": "605",
+          "neighborhoods": [
+            "Downtown",
+            "McKennan Park",
+            "Whittier",
+            "Cathedral",
+            "All Saints",
+            "Pettigrew Heights",
+            "Brandon",
+            "Tea"
+          ],
+          "phones": {
+            "plumber": "+1605XXXX0101",
+            "electrician": "+1605XXXX0202",
+            "locksmith": "+1605XXXX0303",
+            "hvac": "+1605XXXX0404",
+            "roofer": "+1605XXXX0505",
+            "mechanic": "+1605XXXX0606",
+            "appliance": "+1605XXXX0707",
+            "pest-control": "+1605XXXX0808",
+            "water-damage": "+1605XXXX0909"
+          },
+          "lat": 43.55,
+          "lng": -96.7
+        },
         "aberdeen": {
           "name": "Aberdeen",
           "state": "SD",
@@ -11242,34 +11270,6 @@
             "water-damage": "+1605XXXX0909"
           }
         },
-        "sioux-falls": {
-          "name": "Sioux Falls",
-          "state": "SD",
-          "areaCode": "605",
-          "neighborhoods": [
-            "Downtown",
-            "McKennan Park",
-            "Whittier",
-            "Cathedral",
-            "All Saints",
-            "Pettigrew Heights",
-            "Brandon",
-            "Tea"
-          ],
-          "phones": {
-            "plumber": "+1605XXXX0101",
-            "electrician": "+1605XXXX0202",
-            "locksmith": "+1605XXXX0303",
-            "hvac": "+1605XXXX0404",
-            "roofer": "+1605XXXX0505",
-            "mechanic": "+1605XXXX0606",
-            "appliance": "+1605XXXX0707",
-            "pest-control": "+1605XXXX0808",
-            "water-damage": "+1605XXXX0909"
-          },
-          "lat": 43.55,
-          "lng": -96.7
-        },
         "watertown-sd": {
           "name": "Watertown",
           "state": "SD",
@@ -11302,6 +11302,34 @@
       "name": "Tennessee",
       "abbr": "TN",
       "cities": {
+        "nashville": {
+          "name": "Nashville",
+          "state": "TN",
+          "areaCode": "615",
+          "neighborhoods": [
+            "Downtown",
+            "East Nashville",
+            "Germantown",
+            "12 South",
+            "Green Hills",
+            "The Gulch",
+            "Midtown",
+            "Sylvan Park"
+          ],
+          "phones": {
+            "plumber": "+1615XXXX0101",
+            "electrician": "+1615XXXX0202",
+            "locksmith": "+1615XXXX0303",
+            "hvac": "+1615XXXX0404",
+            "roofer": "+1615XXXX0505",
+            "mechanic": "+1615XXXX0606",
+            "appliance": "+1615XXXX0707",
+            "pest-control": "+1615XXXX0808",
+            "water-damage": "+1615XXXX0909"
+          },
+          "lat": 36.16,
+          "lng": -86.78
+        },
         "brentwood": {
           "name": "Brentwood",
           "state": "TN",
@@ -11511,34 +11539,6 @@
           },
           "lat": 35.15,
           "lng": -90.05
-        },
-        "nashville": {
-          "name": "Nashville",
-          "state": "TN",
-          "areaCode": "615",
-          "neighborhoods": [
-            "Downtown",
-            "East Nashville",
-            "Germantown",
-            "12 South",
-            "Green Hills",
-            "The Gulch",
-            "Midtown",
-            "Sylvan Park"
-          ],
-          "phones": {
-            "plumber": "+1615XXXX0101",
-            "electrician": "+1615XXXX0202",
-            "locksmith": "+1615XXXX0303",
-            "hvac": "+1615XXXX0404",
-            "roofer": "+1615XXXX0505",
-            "mechanic": "+1615XXXX0606",
-            "appliance": "+1615XXXX0707",
-            "pest-control": "+1615XXXX0808",
-            "water-damage": "+1615XXXX0909"
-          },
-          "lat": 36.16,
-          "lng": -86.78
         }
       }
     },
@@ -11546,6 +11546,34 @@
       "name": "Texas",
       "abbr": "TX",
       "cities": {
+        "houston": {
+          "name": "Houston",
+          "state": "TX",
+          "areaCode": "713",
+          "neighborhoods": [
+            "Downtown",
+            "Midtown",
+            "Montrose",
+            "Heights",
+            "Galleria",
+            "Woodlands",
+            "Sugar Land",
+            "Eado"
+          ],
+          "phones": {
+            "plumber": "+1713XXXX0101",
+            "electrician": "+1713XXXX0202",
+            "locksmith": "+1713XXXX0303",
+            "hvac": "+1713XXXX0404",
+            "roofer": "+1713XXXX0505",
+            "mechanic": "+1713XXXX0606",
+            "appliance": "+1713XXXX0707",
+            "pest-control": "+1713XXXX0808",
+            "water-damage": "+1713XXXX0909"
+          },
+          "lat": 29.76,
+          "lng": -95.37
+        },
         "amarillo": {
           "name": "Amarillo",
           "state": "TX",
@@ -11948,34 +11976,6 @@
             "water-damage": "+1956XXXX0909"
           }
         },
-        "houston": {
-          "name": "Houston",
-          "state": "TX",
-          "areaCode": "713",
-          "neighborhoods": [
-            "Downtown",
-            "Midtown",
-            "Montrose",
-            "Heights",
-            "Galleria",
-            "Woodlands",
-            "Sugar Land",
-            "Eado"
-          ],
-          "phones": {
-            "plumber": "+1713XXXX0101",
-            "electrician": "+1713XXXX0202",
-            "locksmith": "+1713XXXX0303",
-            "hvac": "+1713XXXX0404",
-            "roofer": "+1713XXXX0505",
-            "mechanic": "+1713XXXX0606",
-            "appliance": "+1713XXXX0707",
-            "pest-control": "+1713XXXX0808",
-            "water-damage": "+1713XXXX0909"
-          },
-          "lat": 29.76,
-          "lng": -95.37
-        },
         "longview": {
           "name": "Longview",
           "state": "TX",
@@ -12324,6 +12324,32 @@
       "name": "Utah",
       "abbr": "UT",
       "cities": {
+        "salt-lake-city": {
+          "name": "Salt Lake City",
+          "state": "UT",
+          "areaCode": "801",
+          "neighborhoods": [
+            "Downtown",
+            "Sugar House",
+            "Avenues",
+            "9th & 9th",
+            "Liberty Wells",
+            "Marmalade",
+            "Central City",
+            "Yalecrest"
+          ],
+          "phones": {
+            "plumber": "+1801XXXX0101",
+            "electrician": "+1801XXXX0202",
+            "locksmith": "+1801XXXX0303",
+            "hvac": "+1801XXXX0404",
+            "roofer": "+1801XXXX0505",
+            "mechanic": "+1801XXXX0606",
+            "appliance": "+1801XXXX0707",
+            "pest-control": "+1801XXXX0808",
+            "water-damage": "+1801XXXX0909"
+          }
+        },
         "bountiful": {
           "name": "Bountiful",
           "state": "UT",
@@ -12480,32 +12506,6 @@
             "water-damage": "+1801XXXX0909"
           }
         },
-        "salt-lake-city": {
-          "name": "Salt Lake City",
-          "state": "UT",
-          "areaCode": "801",
-          "neighborhoods": [
-            "Downtown",
-            "Sugar House",
-            "Avenues",
-            "9th & 9th",
-            "Liberty Wells",
-            "Marmalade",
-            "Central City",
-            "Yalecrest"
-          ],
-          "phones": {
-            "plumber": "+1801XXXX0101",
-            "electrician": "+1801XXXX0202",
-            "locksmith": "+1801XXXX0303",
-            "hvac": "+1801XXXX0404",
-            "roofer": "+1801XXXX0505",
-            "mechanic": "+1801XXXX0606",
-            "appliance": "+1801XXXX0707",
-            "pest-control": "+1801XXXX0808",
-            "water-damage": "+1801XXXX0909"
-          }
-        },
         "sandy": {
           "name": "Sandy",
           "state": "UT",
@@ -12590,6 +12590,34 @@
       "name": "Virginia",
       "abbr": "VA",
       "cities": {
+        "virginia-beach": {
+          "name": "Virginia Beach",
+          "state": "VA",
+          "areaCode": "757",
+          "neighborhoods": [
+            "Oceanfront",
+            "Town Center",
+            "Sandbridge",
+            "Chicks Beach",
+            "Great Neck",
+            "Kempsville",
+            "Shore Drive",
+            "Chesapeake Beach"
+          ],
+          "phones": {
+            "plumber": "+1757XXXX0101",
+            "electrician": "+1757XXXX0202",
+            "locksmith": "+1757XXXX0303",
+            "hvac": "+1757XXXX0404",
+            "roofer": "+1757XXXX0505",
+            "mechanic": "+1757XXXX0606",
+            "appliance": "+1757XXXX0707",
+            "pest-control": "+1757XXXX0808",
+            "water-damage": "+1757XXXX0909"
+          },
+          "lat": 36.85,
+          "lng": -75.98
+        },
         "alexandria": {
           "name": "Alexandria",
           "state": "VA",
@@ -12877,34 +12905,6 @@
             "pest-control": "+1757XXXX0808",
             "water-damage": "+1757XXXX0909"
           }
-        },
-        "virginia-beach": {
-          "name": "Virginia Beach",
-          "state": "VA",
-          "areaCode": "757",
-          "neighborhoods": [
-            "Oceanfront",
-            "Town Center",
-            "Sandbridge",
-            "Chicks Beach",
-            "Great Neck",
-            "Kempsville",
-            "Shore Drive",
-            "Chesapeake Beach"
-          ],
-          "phones": {
-            "plumber": "+1757XXXX0101",
-            "electrician": "+1757XXXX0202",
-            "locksmith": "+1757XXXX0303",
-            "hvac": "+1757XXXX0404",
-            "roofer": "+1757XXXX0505",
-            "mechanic": "+1757XXXX0606",
-            "appliance": "+1757XXXX0707",
-            "pest-control": "+1757XXXX0808",
-            "water-damage": "+1757XXXX0909"
-          },
-          "lat": 36.85,
-          "lng": -75.98
         }
       }
     },
@@ -12946,6 +12946,34 @@
       "name": "Washington",
       "abbr": "WA",
       "cities": {
+        "seattle": {
+          "name": "Seattle",
+          "state": "WA",
+          "areaCode": "206",
+          "neighborhoods": [
+            "Downtown",
+            "Capitol Hill",
+            "Ballard",
+            "Fremont",
+            "Queen Anne",
+            "Wallingford",
+            "Belltown",
+            "Green Lake"
+          ],
+          "phones": {
+            "plumber": "+1206XXXX0101",
+            "electrician": "+1206XXXX0202",
+            "locksmith": "+1206XXXX0303",
+            "hvac": "+1206XXXX0404",
+            "roofer": "+1206XXXX0505",
+            "mechanic": "+1206XXXX0606",
+            "appliance": "+1206XXXX0707",
+            "pest-control": "+1206XXXX0808",
+            "water-damage": "+1206XXXX0909"
+          },
+          "lat": 47.61,
+          "lng": -122.33
+        },
         "auburn-wa": {
           "name": "Auburn",
           "state": "WA",
@@ -13154,34 +13182,6 @@
             "water-damage": "+1509XXXX0909"
           }
         },
-        "seattle": {
-          "name": "Seattle",
-          "state": "WA",
-          "areaCode": "206",
-          "neighborhoods": [
-            "Downtown",
-            "Capitol Hill",
-            "Ballard",
-            "Fremont",
-            "Queen Anne",
-            "Wallingford",
-            "Belltown",
-            "Green Lake"
-          ],
-          "phones": {
-            "plumber": "+1206XXXX0101",
-            "electrician": "+1206XXXX0202",
-            "locksmith": "+1206XXXX0303",
-            "hvac": "+1206XXXX0404",
-            "roofer": "+1206XXXX0505",
-            "mechanic": "+1206XXXX0606",
-            "appliance": "+1206XXXX0707",
-            "pest-control": "+1206XXXX0808",
-            "water-damage": "+1206XXXX0909"
-          },
-          "lat": 47.61,
-          "lng": -122.33
-        },
         "spokane": {
           "name": "Spokane",
           "state": "WA",
@@ -13320,6 +13320,34 @@
       "name": "Wisconsin",
       "abbr": "WI",
       "cities": {
+        "milwaukee": {
+          "name": "Milwaukee",
+          "state": "WI",
+          "areaCode": "414",
+          "neighborhoods": [
+            "Downtown",
+            "Third Ward",
+            "East Side",
+            "Bay View",
+            "Walker's Point",
+            "Shorewood",
+            "Wauwatosa",
+            "Riverwest"
+          ],
+          "phones": {
+            "plumber": "+1414XXXX0101",
+            "electrician": "+1414XXXX0202",
+            "locksmith": "+1414XXXX0303",
+            "hvac": "+1414XXXX0404",
+            "roofer": "+1414XXXX0505",
+            "mechanic": "+1414XXXX0606",
+            "appliance": "+1414XXXX0707",
+            "pest-control": "+1414XXXX0808",
+            "water-damage": "+1414XXXX0909"
+          },
+          "lat": 43.04,
+          "lng": -87.91
+        },
         "eau-claire": {
           "name": "Eau Claire",
           "state": "WI",
@@ -13479,34 +13507,6 @@
           },
           "lat": 43.07,
           "lng": -89.4
-        },
-        "milwaukee": {
-          "name": "Milwaukee",
-          "state": "WI",
-          "areaCode": "414",
-          "neighborhoods": [
-            "Downtown",
-            "Third Ward",
-            "East Side",
-            "Bay View",
-            "Walker's Point",
-            "Shorewood",
-            "Wauwatosa",
-            "Riverwest"
-          ],
-          "phones": {
-            "plumber": "+1414XXXX0101",
-            "electrician": "+1414XXXX0202",
-            "locksmith": "+1414XXXX0303",
-            "hvac": "+1414XXXX0404",
-            "roofer": "+1414XXXX0505",
-            "mechanic": "+1414XXXX0606",
-            "appliance": "+1414XXXX0707",
-            "pest-control": "+1414XXXX0808",
-            "water-damage": "+1414XXXX0909"
-          },
-          "lat": 43.04,
-          "lng": -87.91
         },
         "oshkosh": {
           "name": "Oshkosh",
@@ -13678,32 +13678,6 @@
       "name": "Wyoming",
       "abbr": "WY",
       "cities": {
-        "casper-wy": {
-          "name": "Casper",
-          "state": "WY",
-          "areaCode": "307",
-          "neighborhoods": [
-            "Downtown",
-            "Paradise Valley",
-            "East Casper",
-            "West Casper",
-            "Mills",
-            "Evansville",
-            "Vista West",
-            "Wolf Creek"
-          ],
-          "phones": {
-            "plumber": "+1307XXXX0101",
-            "electrician": "+1307XXXX0202",
-            "locksmith": "+1307XXXX0303",
-            "hvac": "+1307XXXX0404",
-            "roofer": "+1307XXXX0505",
-            "mechanic": "+1307XXXX0606",
-            "appliance": "+1307XXXX0707",
-            "pest-control": "+1307XXXX0808",
-            "water-damage": "+1307XXXX0909"
-          }
-        },
         "cheyenne": {
           "name": "Cheyenne",
           "state": "WY",
@@ -13731,6 +13705,32 @@
           },
           "lat": 41.14,
           "lng": -104.82
+        },
+        "casper-wy": {
+          "name": "Casper",
+          "state": "WY",
+          "areaCode": "307",
+          "neighborhoods": [
+            "Downtown",
+            "Paradise Valley",
+            "East Casper",
+            "West Casper",
+            "Mills",
+            "Evansville",
+            "Vista West",
+            "Wolf Creek"
+          ],
+          "phones": {
+            "plumber": "+1307XXXX0101",
+            "electrician": "+1307XXXX0202",
+            "locksmith": "+1307XXXX0303",
+            "hvac": "+1307XXXX0404",
+            "roofer": "+1307XXXX0505",
+            "mechanic": "+1307XXXX0606",
+            "appliance": "+1307XXXX0707",
+            "pest-control": "+1307XXXX0808",
+            "water-damage": "+1307XXXX0909"
+          }
         },
         "gillette": {
           "name": "Gillette",
