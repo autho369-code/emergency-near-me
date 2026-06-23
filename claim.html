@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claim Your Spot — CallNowService</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',system-ui,sans-serif;color:#111;background:#fff;line-height:1.5}
+  header{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1200px;margin:0 auto;border-bottom:1px solid #eee}
+  .logo{font-size:18px;font-weight:700}.logo span{font-weight:400;opacity:0.6}.logo a{color:#111;text-decoration:none}
+  .container{max-width:640px;margin:0 auto;padding:40px 20px}
+  h1{font-size:28px;font-weight:700;line-height:1.15;margin-bottom:8px}
+  .sub{font-size:14px;color:#555;margin-bottom:24px}
+  .preview-card{background:#fafafa;border:1px solid #e8e8e8;border-radius:16px;padding:24px;margin-bottom:24px}
+  .preview-card h2{font-size:16px;font-weight:700;margin-bottom:8px}
+  .preview-card .row{display:flex;justify-content:space-between;padding:6px 0;font-size:13px;border-bottom:1px solid #eee}
+  .preview-card .row .label{color:#888}.preview-card .row .val{font-weight:600}
+  .price-box{background:#111;color:#fff;border-radius:16px;padding:24px;text-align:center;margin-bottom:24px}
+  .price-box .amount{font-size:36px;font-weight:700}
+  .price-box .period{font-size:14px;color:#aaa}
+  .price-box .annual{font-size:12px;color:#888;margin-top:4px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 28px;border-radius:999px;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;border:none;transition:all 0.15s;font-family:inherit;width:100%}
+  .btn-primary{background:#111;color:#fff}.btn-primary:hover{background:#333}
+  .btn-paypal{background:#0070ba;color:#fff}.btn-paypal:hover{background:#005ea6}
+  .or-divider{text-align:center;font-size:12px;color:#888;margin:12px 0}
+  .info{font-size:12px;color:#888;text-align:center;margin-top:12px}
+  footer{text-align:center;padding:24px;font-size:11px;color:#888}
+</style>
+</head>
+<body>
+<header><div class="logo"><a href="/">Call<span>Now</span>Service</a></div></header>
+<div class="container">
+  <h1 id="claim-title">Claim your spot</h1>
+  <p class="sub" id="claim-sub">Loading your listing details...</p>
+  <div class="preview-card" id="preview" style="display:none">
+    <h2>Your listing preview</h2>
+    <div class="row"><span class="label">Business</span><span class="val" id="p-name">—</span></div>
+    <div class="row"><span class="label">Service</span><span class="val" id="p-service">—</span></div>
+    <div class="row"><span class="label">City</span><span class="val" id="p-city">—</span></div>
+    <div class="row"><span class="label">Website</span><span class="val" id="p-website">—</span></div>
+    <div class="row"><span class="label">Phone</span><span class="val" id="p-phone">—</span></div>
+    <div class="row"><span class="label">Live URL</span><span class="val"><a href="#" id="p-url" target="_blank">View page →</a></span></div>
+  </div>
+  <div class="price-box">
+    <div style="font-size:12px;color:#aaa;margin-bottom:4px">Monthly plan</div>
+    <div class="amount">$49<span class="period">/mo</span></div>
+    <div class="annual">or $490/year — 2 months free</div>
+    <div style="font-size:11px;color:#aaa;margin-top:8px">Flat monthly. No per-lead fees. No commissions. Cancel anytime.</div>
+  </div>
+  <a href="#" class="btn btn-paypal" id="paypal-btn">Pay with PayPal — $49/mo</a>
+  <div class="or-divider">or</div>
+  <a href="#" class="btn btn-primary" id="claim-btn">Claim & Activate Listing</a>
+  <p class="info">You'll be redirected to confirm your listing details after claiming.</p>
+</div>
+<footer>© 2026 CallNowService.com</footer>
+
+<script>
+var params=new URLSearchParams(window.location.search);
+var city=params.get('city')||'';
+var service=params.get('service')||'';
+var business=params.get('business')||decodeURIComponent(params.get('business')||'');
+var SVC_NAMES={plumber:'Plumber',electrician:'Electrician',hvac:'HVAC',locksmith:'Locksmith',mechanic:'Mechanic',roofer:'Roofer',appliance:'Appliance Repair','pest-control':'Pest Control','water-damage':'Water Damage'};
+
+if(city&&service){
+  document.getElementById('claim-title').textContent='Claim your '+SVC_NAMES[service].toLowerCase()+' spot in '+city;
+  document.getElementById('claim-sub').textContent='Review your listing details and choose a plan.';
+  document.getElementById('preview').style.display='block';
+
+  // Load provider data
+  fetch('/providers.json').then(function(r){return r.json()}).then(function(data){
+    var c=data[city];
+    if(c&&c[service]){
+      var vendors=c[service];
+      var match=null;
+      if(business){
+        for(var i=0;i<vendors.length;i++){
+          if((vendors[i].provider_name||'').toLowerCase()===business.toLowerCase()||(vendors[i].provider_name||'').toLowerCase().includes(business.toLowerCase())){
+            match=vendors[i];break;
+          }
+        }
+      }
+      // Find first trial_created
+      if(!match){
+        for(var i=0;i<vendors.length;i++){
+          if(vendors[i].status==='trial_created'||vendors[i].status==='trial'){
+            match=vendors[i];break;
+          }
+        }
+      }
+      if(match){
+        document.getElementById('p-name').textContent=match.provider_name||'Your Business';
+        document.getElementById('p-service').textContent=SVC_NAMES[service];
+        document.getElementById('p-city').textContent=city;
+        document.getElementById('p-website').textContent=(match.provider_website||'Not set').replace('https://','').replace('http://','');
+        document.getElementById('p-phone').textContent=match.provider_phone||'Not set';
+        document.getElementById('p-url').href='/'+c._state+'/'+city+'/'+service+'/';
+      }
+    }
+    document.getElementById('claim-btn').href='/providers#form?city='+city+'&service='+service+'&business='+encodeURIComponent(business);
+    document.getElementById('paypal-btn').href='https://paypal.me/CallNowService';
+  });
+}
+
+// Set state key
+var stateAbbr = document.getElementById('p-city') ? '' : '';
+</script>
+</body>
+</html>

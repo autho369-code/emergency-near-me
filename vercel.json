@@ -6,6 +6,8 @@
   "rewrites": [
     { "source": "/dashboard", "destination": "/dashboard.html" },
     { "source": "/agents", "destination": "/agent_dashboard.html" },
+    { "source": "/providers/claim", "destination": "/claim.html" },
+    { "source": "/providers/claim/", "destination": "/claim.html" },
     { "source": "/providers", "destination": "/providers.html" },
     { "source": "/providers/", "destination": "/providers.html" },
     { "source": "/pricing", "destination": "/providers.html" },
