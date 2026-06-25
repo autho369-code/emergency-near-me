@@ -1,317 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CallNowService — Emergency Help Near You | Find Plumbers, Electricians, HVAC & More</title>
-<meta name="description" content="Find approved emergency plumbers, electricians, HVAC technicians, locksmiths, roofers, and more near you. Enter your ZIP or use your location.">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="CallNowService — Emergency Help Near You">
-<meta property="og:description" content="Find approved emergency plumbers, electricians, HVAC technicians, locksmiths, roofers, and more near you.">
-<meta property="og:url" content="https://callnowservice.com">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CallNowService — Emergency Help Near You">
-<meta name="twitter:description" content="Find approved emergency plumbers, electricians, HVAC, and more near you. Enter your ZIP.">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "CallNowService",
-  "url": "https://callnowservice.com",
-  "description": "Find approved emergency plumbers, electricians, HVAC, locksmiths, roofers, and more. 5 providers per category per city. Flat monthly pricing.",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://callnowservice.com/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
+<title>CallNowService — Emergency Help Near You</title>
+<meta name="description" content="Find approved emergency plumbers, electricians, HVAC, locksmiths, roofers, and more. 5 providers per service per city. Flat monthly pricing.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        borderRadius: { lg: 'var(--radius)', md: 'calc(var(--radius) - 2px)', sm: 'calc(var(--radius) - 4px)' },
+        colors: {
+          background: 'hsl(0 0% 100%)',
+          foreground: 'hsl(0 0% 3.9%)',
+          primary: { DEFAULT: 'hsl(0 0% 9%)', foreground: 'hsl(0 0% 98%)' },
+          secondary: { DEFAULT: 'hsl(0 0% 96.1%)', foreground: 'hsl(0 0% 9%)' },
+          muted: { DEFAULT: 'hsl(0 0% 96.1%)', foreground: 'hsl(0 0% 45.1%)' },
+          accent: { DEFAULT: 'hsl(0 0% 96.1%)', foreground: 'hsl(0 0% 9%)' },
+          destructive: { DEFAULT: 'hsl(0 84.2% 60.2%)', foreground: 'hsl(0 0% 98%)' },
+          border: 'hsl(0 0% 89.8%)',
+          input: 'hsl(0 0% 89.8%)',
+          ring: 'hsl(0 0% 3.9%)',
+        },
+      }
+    }
   }
-}
 </script>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'DM Sans',system-ui,sans-serif;color:#111;background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
-  header{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1200px;margin:0 auto}
-  .logo{font-size:18px;font-weight:700;letter-spacing:-0.3px}.logo span{font-weight:400;opacity:0.6}.logo a{color:#111;text-decoration:none}
-  nav{display:flex;gap:20px;align-items:center;font-size:14px;font-weight:500}nav a{color:#111;text-decoration:none}nav a:hover{opacity:0.7}
-  .btn{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:999px;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;border:none;transition:all 0.15s;font-family:inherit;white-space:nowrap}
-  .btn-primary{background:#111;color:#fff}.btn-primary:hover{background:#333}
-  .btn-secondary{background:#fff;color:#111;border:1.5px solid #ddd}.btn-secondary:hover{border-color:#999}
-  .container{max-width:1200px;margin:0 auto;padding:0 24px}@media(max-width:600px){.container{padding:0 16px}}
-  .hero{text-align:center;padding:56px 24px 48px;max-width:680px;margin:0 auto}
-  .hero h1{font-size:44px;font-weight:700;line-height:1.1;letter-spacing:-0.8px;margin-bottom:12px;color:#0a0a0a}@media(max-width:600px){.hero h1{font-size:30px}}
-  .hero p{font-size:16px;color:#555;line-height:1.6;max-width:540px;margin:0 auto}
-  .loc-wrap{max-width:560px;margin:0 auto 40px;padding:24px;background:#fafafa;border:1px solid #e0e0e0;border-radius:16px}
-  .loc-hint{font-size:13px;color:#888;text-align:center;margin-bottom:16px}
-  .loc-row{display:flex;gap:10px}
-  .loc-input{flex:1;padding:16px 20px;border:2px solid #ddd;border-radius:999px;font-size:15px;font-family:inherit;outline:none;min-width:0}.loc-input:focus{border-color:#111}
-  .loc-btn{padding:16px 28px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;border:none;font-family:inherit;white-space:nowrap;background:#111;color:#fff}.loc-btn:hover{background:#333}
-  .loc-or{text-align:center;font-size:12px;color:#aaa;margin:14px 0}
-  .loc-detect{display:block;width:100%;padding:16px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;border:2px solid #ddd;font-family:inherit;background:#fff;color:#111;text-align:center}.loc-detect:hover{border-color:#111;background:#fafafa}
-  .loc-status{font-size:13px;color:#555;margin-top:14px;text-align:center;min-height:22px}
-  .loc-status strong{color:#111}
-  .services-section{padding:0 0 48px;text-align:center}
-  .services-section h2{font-size:28px;font-weight:700;margin-bottom:6px}
-  .services-section .s-sub{font-size:14px;color:#888;margin-bottom:28px}
-  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:800px;margin:0 auto}@media(max-width:600px){.service-grid{grid-template-columns:repeat(2,1fr)}}
-  .svc-card{display:flex;flex-direction:column;padding:22px 18px;border:1.5px solid #e8e8e8;border-radius:12px;cursor:pointer;text-decoration:none;color:#111;transition:all 0.15s;text-align:left}
-  .svc-card:hover{border-color:#111;box-shadow:0 2px 12px rgba(0,0,0,0.05)}
-  .svc-card .name{font-size:15px;font-weight:700;margin-bottom:2px}
-  .svc-card .desc{font-size:11px;color:#888;line-height:1.4}
-  .svc-card .arrow{float:right;font-size:14px;color:#ccc;margin-top:2px}
-  .how-section{background:#fafafa;padding:48px 0;text-align:center}
-  .how-section h3{font-size:22px;font-weight:700;margin-bottom:24px}
-  .how-steps{display:flex;gap:24px;justify-content:center;max-width:750px;margin:0 auto;flex-wrap:wrap}
-  .how-step{flex:1;min-width:160px;max-width:200px;text-align:center}
-  .how-step .step-num{width:36px;height:36px;border-radius:50%;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:14px;font-weight:700}
-  .how-step .step-title{font-size:13px;font-weight:700;margin-bottom:4px}
-  .how-step .step-desc{font-size:11px;color:#888;line-height:1.4}
-  .provider-cta{text-align:center;padding:48px 0}
-  .provider-cta h3{font-size:16px;font-weight:700;margin-bottom:6px}
-  .provider-cta p{font-size:13px;color:#888;max-width:480px;margin:0 auto 16px}
-  .provider-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:700px;margin:0 auto}
-  .cta-card{display:flex;flex-direction:column;align-items:center;gap:6px;background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:20px 24px;text-decoration:none;color:#111;min-width:180px;flex:1;transition:border-color .2s,box-shadow .2s}
-  .cta-card:hover{border-color:#111;box-shadow:0 4px 16px rgba(0,0,0,0.08)}
-  .cta-icon{font-size:24px}
-  .cta-label{font-size:14px;font-weight:700}
-  .cta-desc{font-size:11px;color:#888}
-  footer{background:#111;color:#fff;padding:40px 24px 32px;text-align:center}
-  footer .footer-links{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:8px}
-  footer a{color:#aaa;text-decoration:none;font-size:12px}footer a:hover{color:#fff}
-  footer p{font-size:11px;color:#888;margin-top:8px}
+  :root { --radius: 0.625rem; }
+  body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 </style>
 </head>
-<body>
+<body class="bg-background text-foreground min-h-screen">
 
-<header>
-  <div class="logo"><a href="/">Call<span>Now</span>Service</a></div>
-  <nav><a href="/providers">For Providers</a></nav>
+<!-- Nav -->
+<header class="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <div class="max-w-6xl mx-auto flex h-14 items-center justify-between px-4 sm:px-6">
+    <a href="/" class="font-semibold text-lg tracking-tight">Call<span class="text-muted-foreground">Now</span>Service</a>
+    <nav class="flex items-center gap-4 sm:gap-6 text-sm font-medium">
+      <a href="/providers" class="text-muted-foreground hover:text-foreground transition-colors">For Providers</a>
+    </nav>
+  </div>
 </header>
 
-<div class="hero">
-  <h1>Emergency help, where you need it.</h1>
-  <p>Find approved plumbers, electricians, HVAC technicians, locksmiths, roofers, appliance repair, pest control, mechanics, and water damage providers near you.</p>
-</div>
+<!-- Hero -->
+<section class="pt-16 pb-12 md:pt-24 md:pb-16 text-center px-4">
+  <div class="max-w-[640px] mx-auto">
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-4">
+      Emergency help, where you need it.
+    </h1>
+    <p class="text-base text-muted-foreground max-w-[540px] mx-auto leading-relaxed">
+      Find approved plumbers, electricians, HVAC, locksmiths, roofers, and more near you.
+      Five providers per service in each city.
+    </p>
+  </div>
+</section>
 
-<div class="container">
-  <div class="loc-wrap">
-    <div class="loc-hint">Enter your ZIP code or use your location to find emergency providers near you.</div>
-    <div class="loc-row">
-      <input type="text" class="loc-input" id="loc-input" placeholder="Enter ZIP code or city" onkeydown="if(event.key==='Enter')findHelp()">
-      <button class="loc-btn" onclick="findHelp()">Find Help</button>
+<!-- Search -->
+<section class="px-4 pb-8">
+  <div class="max-w-lg mx-auto bg-secondary rounded-xl border border-border p-6">
+    <p class="text-xs text-muted-foreground text-center mb-4">Enter your ZIP or use your location</p>
+    <div class="flex gap-2">
+      <input type="text" id="loc-input" placeholder="Enter ZIP code or city"
+        class="flex-1 h-10 rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        onkeydown="if(event.key==='Enter')findHelp()">
+      <button onclick="findHelp()"
+        class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+        Find Help
+      </button>
     </div>
-    <div class="loc-or">or</div>
-    <button class="loc-detect" onclick="useLocation()">📍 Use My Location</button>
-    <div class="loc-status" id="loc-status"></div>
-  </div>
-</div>
-
-<div class="how-section">
-  <h3>How it works</h3>
-  <div class="how-steps">
-    <div class="how-step"><div class="step-num">1</div><div class="step-title">Enter your ZIP or use your location</div><div class="step-desc">We match you with providers in your area.</div></div>
-    <div class="how-step"><div class="step-num">2</div><div class="step-title">Choose the emergency service you need</div><div class="step-desc">Select from 9 emergency categories.</div></div>
-    <div class="how-step"><div class="step-num">3</div><div class="step-title">Call or visit an approved provider directly</div><div class="step-desc">Contact providers by phone, website, or booking page.</div></div>
-  </div>
-</div>
-
-<div class="services-section" id="services">
-  <div class="container">
-    <h2>What do you need help with?</h2>
-    <p class="s-sub">Choose a service to see approved providers near your location.</p>
-    <div class="service-grid">
-      <a href="#" class="svc-card" onclick="event.preventDefault();routeService('plumber')"><span class="name">Plumber<span class="arrow">→</span></span><span class="desc">Leaks, burst pipes, drain backups</span></a>
-      <a href="#" class="svc-card" onclick="event.preventDefault();routeService('electrician')"><span class="name">Electrician<span class="arrow">→</span></span><span class="desc">Power issues, panels, urgent repairs</span></a>
-      <a href="#" class="svc-card" onclick="event.preventDefault();routeService('hvac')"><span class="name">HVAC Technician<span class="arrow">→</span></span><span class="desc">No heat, no AC, system failures</span></a>
-      <a href="#" class="svc-card" onclick="event.preventDefault();routeService('locksmith')"><span class="name">Locksmith<span class="arrow">→</span></span><span class="desc">Lockouts, rekeying, broken locks</span></a>
-      <a href="#" class="svc-card" onclick="event.preventDefault();routeService('roofer')"><span class="name">Roofer<span class="arrow">→</span></span><span class="desc">Roof leaks, storm damage, patching</span></a>
-      <a href="#" class="svc-card" onclick="event.preventDefault();routeService('appliance')"><span class="name">Appliance Repair<span class="arrow">→</span></span><span class="desc">Refrigerator, washer, dryer, oven</span></a>
-      <a href="#" class="svc-card" onclick="event.preventDefault();routeService('pest-control')"><span class="name">Pest Control<span class="arrow">→</span></span><span class="desc">Urgent infestations and removal</span></a>
-      <a href="#" class="svc-card" onclick="event.preventDefault();routeService('water-damage')"><span class="name">Water Damage<span class="arrow">→</span></span><span class="desc">Flooding, cleanup, mitigation</span></a>
-      <a href="#" class="svc-card" onclick="event.preventDefault();routeService('mechanic')"><span class="name">Mechanic<span class="arrow">→</span></span><span class="desc">Urgent vehicle help and repairs</span></a>
+    <div class="relative my-3">
+      <div class="absolute inset-0 flex items-center"><span class="w-full border-t border-border"></span></div>
+      <div class="relative flex justify-center text-xs uppercase"><span class="bg-secondary px-2 text-muted-foreground">or</span></div>
     </div>
+    <button onclick="useLocation()"
+      class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full">
+      📍 Use My Location
+    </button>
+    <div id="loc-status" class="text-xs text-muted-foreground mt-3 text-center min-h-[18px]"></div>
   </div>
-</div>
+</section>
 
-<div class="provider-cta">
-  <div class="container">
-    <h3>For Providers</h3>
-    <p style="font-size:15px;max-width:600px;margin:0 auto 24px;color:#555">Claim your city. Own your territory. Five spots per service per city — first come, first served. $49/month flat.</p>
-    <div class="provider-actions">
-      <a href="/providers" class="cta-card">
-        <span class="cta-icon">📍</span>
-        <span class="cta-label">Claim Your Spot</span>
-        <span class="cta-desc">See if your city is available</span>
-      </a>
-      <a href="/providers" class="cta-card">
-        <span class="cta-icon">✅</span>
-        <span class="cta-label">Keep My Listing Active</span>
-        <span class="cta-desc">Already listed? Manage your spot</span>
-      </a>
-      <a href="/providers" class="cta-card">
-        <span class="cta-icon">📋</span>
-        <span class="cta-label">Apply as a Provider</span>
-        <span class="cta-desc">Submit your business for review</span>
-      </a>
+<!-- How it Works -->
+<section class="bg-secondary py-12 px-4">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-xl font-semibold tracking-tight mb-8">How it works</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div class="flex flex-col items-center gap-2">
+        <div class="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-semibold">1</div>
+        <div class="font-semibold text-sm">Enter your ZIP or use your location</div>
+        <div class="text-xs text-muted-foreground">We match you with providers in your area.</div>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <div class="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-semibold">2</div>
+        <div class="font-semibold text-sm">Choose the emergency service you need</div>
+        <div class="text-xs text-muted-foreground">Select from 9 emergency categories.</div>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <div class="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-primary-foreground text-sm font-semibold">3</div>
+        <div class="font-semibold text-sm">Call or visit an approved provider directly</div>
+        <div class="text-xs text-muted-foreground">Contact providers by phone, website, or booking page.</div>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<footer>
-  <div class="footer-links"><a href="/providers">For Providers</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div>
-  <p>© 2026 CallNowService.com — Emergency service connections nationwide.</p>
+<!-- Service Grid -->
+<section class="py-12 px-4 text-center" id="services">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl font-semibold tracking-tight mb-1.5">What do you need help with?</h2>
+    <p class="text-sm text-muted-foreground mb-8">Choose a service to see approved providers near you.</p>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+      <a href="#" onclick="event.preventDefault();routeService('plumber')" class="flex flex-col items-start gap-0.5 rounded-lg border border-border bg-background p-4 text-left hover:border-foreground/20 hover:shadow-sm transition-all cursor-pointer no-underline text-foreground">
+        <span class="font-semibold text-sm">Plumber <span class="text-muted-foreground/40 font-normal">→</span></span>
+        <span class="text-[11px] text-muted-foreground">Leaks, burst pipes, drain backups</span>
+      </a>
+      <a href="#" onclick="event.preventDefault();routeService('electrician')" class="flex flex-col items-start gap-0.5 rounded-lg border border-border bg-background p-4 text-left hover:border-foreground/20 hover:shadow-sm transition-all cursor-pointer no-underline text-foreground">
+        <span class="font-semibold text-sm">Electrician <span class="text-muted-foreground/40 font-normal">→</span></span>
+        <span class="text-[11px] text-muted-foreground">Power issues, panels, urgent repairs</span>
+      </a>
+      <a href="#" onclick="event.preventDefault();routeService('hvac')" class="flex flex-col items-start gap-0.5 rounded-lg border border-border bg-background p-4 text-left hover:border-foreground/20 hover:shadow-sm transition-all cursor-pointer no-underline text-foreground">
+        <span class="font-semibold text-sm">HVAC <span class="text-muted-foreground/40 font-normal">→</span></span>
+        <span class="text-[11px] text-muted-foreground">No heat, no AC, system failures</span>
+      </a>
+      <a href="#" onclick="event.preventDefault();routeService('locksmith')" class="flex flex-col items-start gap-0.5 rounded-lg border border-border bg-background p-4 text-left hover:border-foreground/20 hover:shadow-sm transition-all cursor-pointer no-underline text-foreground">
+        <span class="font-semibold text-sm">Locksmith <span class="text-muted-foreground/40 font-normal">→</span></span>
+        <span class="text-[11px] text-muted-foreground">Lockouts, rekeying, broken locks</span>
+      </a>
+      <a href="#" onclick="event.preventDefault();routeService('roofer')" class="flex flex-col items-start gap-0.5 rounded-lg border border-border bg-background p-4 text-left hover:border-foreground/20 hover:shadow-sm transition-all cursor-pointer no-underline text-foreground">
+        <span class="font-semibold text-sm">Roofer <span class="text-muted-foreground/40 font-normal">→</span></span>
+        <span class="text-[11px] text-muted-foreground">Roof leaks, storm damage, patching</span>
+      </a>
+      <a href="#" onclick="event.preventDefault();routeService('appliance')" class="flex flex-col items-start gap-0.5 rounded-lg border border-border bg-background p-4 text-left hover:border-foreground/20 hover:shadow-sm transition-all cursor-pointer no-underline text-foreground">
+        <span class="font-semibold text-sm">Appliance Repair <span class="text-muted-foreground/40 font-normal">→</span></span>
+        <span class="text-[11px] text-muted-foreground">Refrigerator, washer, dryer, oven</span>
+      </a>
+      <a href="#" onclick="event.preventDefault();routeService('pest-control')" class="flex flex-col items-start gap-0.5 rounded-lg border border-border bg-background p-4 text-left hover:border-foreground/20 hover:shadow-sm transition-all cursor-pointer no-underline text-foreground">
+        <span class="font-semibold text-sm">Pest Control <span class="text-muted-foreground/40 font-normal">→</span></span>
+        <span class="text-[11px] text-muted-foreground">Urgent infestations and removal</span>
+      </a>
+      <a href="#" onclick="event.preventDefault();routeService('water-damage')" class="flex flex-col items-start gap-0.5 rounded-lg border border-border bg-background p-4 text-left hover:border-foreground/20 hover:shadow-sm transition-all cursor-pointer no-underline text-foreground">
+        <span class="font-semibold text-sm">Water Damage <span class="text-muted-foreground/40 font-normal">→</span></span>
+        <span class="text-[11px] text-muted-foreground">Flooding, cleanup, mitigation</span>
+      </a>
+      <a href="#" onclick="event.preventDefault();routeService('mechanic')" class="flex flex-col items-start gap-0.5 rounded-lg border border-border bg-background p-4 text-left hover:border-foreground/20 hover:shadow-sm transition-all cursor-pointer no-underline text-foreground">
+        <span class="font-semibold text-sm">Mechanic <span class="text-muted-foreground/40 font-normal">→</span></span>
+        <span class="text-[11px] text-muted-foreground">Urgent vehicle help and repairs</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Provider CTA -->
+<section class="border-t border-border py-12 px-4">
+  <div class="max-w-2xl mx-auto text-center">
+    <h3 class="text-lg font-semibold tracking-tight mb-1">For Providers</h3>
+    <p class="text-sm text-muted-foreground max-w-md mx-auto mb-8">Five spots per service per city. $49/month flat.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <a href="/providers" class="flex flex-col items-center gap-1.5 rounded-lg border border-border bg-background p-5 hover:border-foreground/20 hover:shadow-sm transition-all no-underline text-foreground">
+        <span class="text-2xl">📍</span>
+        <span class="font-semibold text-sm">Claim Your Spot</span>
+        <span class="text-[11px] text-muted-foreground">See if your city is available</span>
+      </a>
+      <a href="/providers" class="flex flex-col items-center gap-1.5 rounded-lg border border-border bg-background p-5 hover:border-foreground/20 hover:shadow-sm transition-all no-underline text-foreground">
+        <span class="text-2xl">✅</span>
+        <span class="font-semibold text-sm">Keep My Listing Active</span>
+        <span class="text-[11px] text-muted-foreground">Already listed? Manage your spot</span>
+      </a>
+      <a href="/providers" class="flex flex-col items-center gap-1.5 rounded-lg border border-border bg-background p-5 hover:border-foreground/20 hover:shadow-sm transition-all no-underline text-foreground">
+        <span class="text-2xl">📋</span>
+        <span class="font-semibold text-sm">Apply as a Provider</span>
+        <span class="text-[11px] text-muted-foreground">Submit your business for review</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-foreground text-background py-10 px-4 text-center">
+  <div class="flex justify-center gap-6 flex-wrap mb-2 text-sm">
+    <a href="/providers" class="text-background/60 hover:text-background/90 transition-colors no-underline">For Providers</a>
+    <a href="/privacy" class="text-background/60 hover:text-background/90 transition-colors no-underline">Privacy</a>
+    <a href="/terms" class="text-background/60 hover:text-background/90 transition-colors no-underline">Terms</a>
+  </div>
+  <p class="text-xs text-background/40 mt-3">© 2026 CallNowService</p>
 </footer>
 
 <script>
-var userCity=null,userState=null,userCityName=null;
-
-var userLat=null,userLng=null;
-
-function useLocation(){
-  document.getElementById('loc-status').innerHTML='Detecting your location...';
-  if(!navigator.geolocation){document.getElementById('loc-status').innerHTML='Location not available. Please enter your ZIP or city.';return;}
-  navigator.geolocation.getCurrentPosition(function(pos){
-    userLat=pos.coords.latitude;userLng=pos.coords.longitude;
-    fetch('https://nominatim.openstreetmap.org/reverse?format=json&lat='+userLat+'&lon='+userLng+'&zoom=10')
-      .then(function(r){return r.json()})
-      .then(function(d){
-        var city=(d.address||{}).city||(d.address||{}).town||'';
-        var state=(d.address||{}).state||'';
-        if(city&&state)matchToCity(city,state);
-        else document.getElementById('loc-status').innerHTML='Could not detect location. Please enter your ZIP or city.';
-      })
-      .catch(function(){document.getElementById('loc-status').innerHTML='Could not detect location. Please enter your ZIP or city.';});
-  },function(){document.getElementById('loc-status').innerHTML='Location access denied. Please enter your ZIP or city.';},{timeout:5000});
-}
-
 function findHelp(){
-  var val=document.getElementById('loc-input').value.trim();
-  if(!val){document.getElementById('loc-status').innerHTML='Please enter a ZIP code or city name.';return;}
-  if(/^\d{5}$/.test(val)){
-    fetch('https://api.zippopotam.us/us/'+val)
-      .then(function(r){return r.json()})
-      .then(function(d){matchToCity(d.places[0]['place name'],d.places[0]['state abbreviation']);})
-      .catch(function(){matchToCity(val,'');});
-    return;
-  }
-  matchToCity(val,'');
+  const zip=document.getElementById('loc-input').value.trim();
+  if(!zip){document.getElementById('loc-status').innerHTML='<strong>Enter a ZIP code or city.</strong>';return}
+  document.getElementById('loc-status').innerHTML='Searching...';
+  fetch('/api/geocode?q='+encodeURIComponent(zip)).then(r=>r.json()).then(d=>{
+    if(!d.state||!d.city){document.getElementById('loc-status').innerHTML='<strong>Location not found.</strong> Try a different ZIP.';return}
+    const st=d.state.toLowerCase(),ck=d.city_key||d.city.toLowerCase().replace(/\\s+/g,'-');
+    window.location.href='/'+st+'/'+ck+'/plumber/';
+  }).catch(()=>{document.getElementById('loc-status').innerHTML='<strong>Error finding location.</strong> Try again.'});
 }
-
-function matchToCity(cityName,stateName){
-  var lower=cityName.toLowerCase().trim();
-  var stateLower=(stateName||'').toLowerCase().trim();
-
-  fetch('/data.json').then(function(r){return r.json()}).then(function(data){
-    // Find matching state
-    var matchedState=null;
-    if(stateLower){
-      for(var sk in data.states){
-        if(data.states[sk].abbr.toLowerCase()===stateLower||data.states[sk].name.toLowerCase()===stateLower){
-          matchedState=sk;break;
-        }
-      }
-    }
-    // If no state specified, search all states
-    if(!matchedState){
-      // Try exact city match first
-      for(var sk in data.states){
-        for(var ck in data.states[sk].cities){
-          if(data.states[sk].cities[ck].name.toLowerCase()===lower){
-            userCity=ck;userState=sk;userCityName=data.states[sk].cities[ck].name;
-            document.getElementById('loc-status').innerHTML='Showing services near <strong>'+userCityName+', '+data.states[sk].abbr+'</strong>.';
-            document.getElementById('loc-input').value=userCityName+', '+data.states[sk].abbr;
-            return;
-          }
-        }
-      }
-      // Partial match
-      for(var sk in data.states){
-        for(var ck in data.states[sk].cities){
-          var nm=data.states[sk].cities[ck].name.toLowerCase();
-          if(nm.includes(lower)||lower.includes(nm)){
-            userCity=ck;userState=sk;userCityName=data.states[sk].cities[ck].name;
-            document.getElementById('loc-status').innerHTML='Showing services near <strong>'+userCityName+', '+data.states[sk].abbr+'</strong>.';
-            document.getElementById('loc-input').value=userCityName+', '+data.states[sk].abbr;
-            return;
-          }
-        }
-      }
-      document.getElementById('loc-status').innerHTML='<strong>'+cityName+'</strong> not in our coverage yet. Try a nearby major city.';
-      return;
-    }
-
-    // State matched — search within it
-    var st=data.states[matchedState];
-    for(var ck in st.cities){
-      if(st.cities[ck].name.toLowerCase()===lower){
-        userCity=ck;userState=matchedState;userCityName=st.cities[ck].name;
-        document.getElementById('loc-status').innerHTML='Showing services near <strong>'+userCityName+', '+st.abbr+'</strong>.';
-        document.getElementById('loc-input').value=userCityName+', '+st.abbr;
-        return;
-      }
-    }
-    for(var ck in st.cities){
-      var nm=st.cities[ck].name.toLowerCase();
-      if(nm.includes(lower)||lower.includes(nm)){
-        userCity=ck;userState=matchedState;userCityName=st.cities[ck].name;
-        document.getElementById('loc-status').innerHTML='Showing services near <strong>'+userCityName+', '+st.abbr+'</strong>.';
-        document.getElementById('loc-input').value=userCityName+', '+st.abbr;
-        return;
-      }
-    }
-    // FALLBACK: find closest city by GPS distance
-    userState = matchedState;
-    findClosestCity(st, cityName, st.abbr);
-  });
+function useLocation(){
+  document.getElementById('loc-status').innerHTML='Detecting...';
+  navigator.geolocation.getCurrentPosition(p=>{
+    fetch('/api/reverse-geocode?lat='+p.coords.latitude+'&lon='+p.coords.longitude).then(r=>r.json()).then(d=>{
+      if(!d.state||!d.city){document.getElementById('loc-status').innerHTML='<strong>Could not detect location.</strong>';return}
+      const st=d.state.toLowerCase(),ck=d.city_key||d.city.toLowerCase().replace(/\\s+/g,'-');
+      window.location.href='/'+st+'/'+ck+'/plumber/';
+    }).catch(()=>{document.getElementById('loc-status').innerHTML='<strong>Error. Try entering a ZIP manually.</strong>'});
+  },()=>{document.getElementById('loc-status').innerHTML='<strong>Location access denied.</strong> Enter ZIP instead.'});
 }
-
-function findClosestCity(st, cityName, stAbbr){
-  if(userLat===null||userLng===null){
-    // No GPS — use first city
-    var first=Object.keys(st.cities)[0];
-    userCity=first;userCityName=st.cities[first].name;
-    document.getElementById('loc-status').innerHTML='<strong>'+cityName+'</strong> not in coverage. Showing nearest: <strong>'+userCityName+', '+stAbbr+'</strong>.';
-    // set userState from callback
-    return;
-  }
-
-  // Haversine distance
-  var closest=null, closestDist=Infinity;
-  for(var ck in st.cities){
-    var c=st.cities[ck];
-    if(!c.lat||!c.lng)continue;
-    var d=haversine(userLat,userLng,c.lat,c.lng);
-    if(d<closestDist){closestDist=d;closest=ck;}
-  }
-  if(closest){
-    userCity=closest;
-    // Find state key
-    fetch('/data.json').then(function(r){return r.json()}).then(function(data){
-      for(var sk in data.states){if(data.states[sk].abbr===stAbbr||data.states[sk].name===st.name){userState=sk;break;}}
-    });
-    userCityName=st.cities[closest].name;
-    document.getElementById('loc-status').innerHTML='<strong>'+cityName+'</strong> ('+Math.round(closestDist)+'mi). Showing: <strong>'+userCityName+', '+stAbbr+'</strong>.';
-    document.getElementById('loc-input').value=userCityName+', '+stAbbr;
-  }
-}
-
-function haversine(lat1,lon1,lat2,lon2){
-  var R=3959;var dLat=(lat2-lat1)*Math.PI/180;var dLon=(lon2-lon1)*Math.PI/180;
-  var a=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)*Math.sin(dLon/2);
-  return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
-}
-
 function routeService(svc){
-  if(userCity&&userState){window.location.href='/'+userState+'/'+userCity+'/'+svc+'/';return;}
-  var val=document.getElementById('loc-input').value.trim();
-  if(!val){document.getElementById('loc-status').innerHTML='Please enter your city or ZIP code first.';return;}
-  matchToCity(val,'');
-  setTimeout(function(){
-    if(userCity&&userState){window.location.href='/'+userState+'/'+userCity+'/'+svc+'/';}
-  },800);
+  document.getElementById('loc-status').innerHTML='Select a location first.';
+  document.getElementById('loc-input').focus();
 }
-
-// Location only triggers on user click now
 </script>
 </body>
 </html>
