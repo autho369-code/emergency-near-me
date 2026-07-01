@@ -188,13 +188,13 @@ fetch('/providers.json').then(function(r){return r.json()}).then(function(data){
   var city=data[P_CITY];if(!city){showEmpty();return;}
   var vendors=city[P_SVC];if(!vendors||!Array.isArray(vendors)){showEmpty();return;}
 
-  var approved=vendors.filter(function(v){return (v.status==='active'||v.status==='claimed'||v.status==='trial'||v.status==='trial_created')&&v.provider_name&&v.provider_name!=='Available';});
+  var approved=vendors.filter(function(v){return (v.status==='active'||v.status==='claimed'||v.status==='trial'||v.status==='trial_created'||v.status==='onboarding')&&v.provider_name&&v.provider_name!=='Available';});
   if(approved.length===0){showEmpty();return;}
 
   document.getElementById('result-count').textContent=approved.length+' of 5 spots filled';
   var html='';
   vendors.forEach(function(v,i){
-    var name=v.provider_name||'';var isActive=v.status==='active'&&name&&name!=='Available';var isClaimed=v.status==='claimed'&&name&&name!=='Available';var isTrial=(v.status==='trial'||v.status==='trial_created')&&name&&name!=='Available';
+    var name=v.provider_name||'';var isActive=v.status==='active'&&name&&name!=='Available';var isClaimed=v.status==='claimed'&&name&&name!=='Available';var isTrial=(v.status==='trial'||v.status==='trial_created'||v.status==='onboarding')&&name&&name!=='Available';
     var phone=v.provider_phone||'';var email=v.provider_email||'';var website=v.provider_website||'';
 
     if(isActive||isClaimed||isTrial){
