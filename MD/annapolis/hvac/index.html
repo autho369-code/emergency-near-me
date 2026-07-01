@@ -32,6 +32,54 @@
   "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I find an emergency hvac in Annapolis, MD right now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The listings above show up to five approved hvacs serving Annapolis, MD, each with a direct phone number and website. Call or visit their site directly \u2014 there's no form to fill out and no wait for a callback."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is CallNowService free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Finding and contacting hvacs through CallNowService is free for customers. There are no lead fees, no bidding, and no membership required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the hvacs listed here real, verified businesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each listing is a specific named business with a verified phone number and website \u2014 not a generic call center or lead-routing service. CallNowService allows a maximum of five providers per service per city."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if a listed hvac in Annapolis doesn't answer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Try the next listed provider \u2014 up to five approved hvacs are shown for Annapolis, MD so you have alternatives if the first business is unavailable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does CallNowService perform the hvac work itself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. CallNowService is a directory that connects you directly with independent local hvacs. The businesses listed handle the actual service call."
+      }
+    }
+  ]
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -97,6 +145,14 @@
   .tips-section h3{font-size:16px;font-weight:700;margin-bottom:10px}
   .tips-section ul{padding-left:18px;font-size:12px;color:#555;line-height:1.8}
 
+  /* FAQ */
+  .faq-item{border-bottom:1px solid #eee;padding:12px 0}
+  .faq-item summary{font-size:13px;font-weight:600;cursor:pointer;list-style:none}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::before{content:'+ ';color:#888}
+  .faq-item[open] summary::before{content:'– '}
+  .faq-item p{font-size:12px;color:#555;line-height:1.6;margin-top:8px}
+
   /* PROVIDER CTA */
   .provider-cta{text-align:center;padding:32px 0;margin-top:16px;border-top:1px solid #eee}
   .provider-cta h3{font-size:15px;font-weight:700;margin-bottom:4px}
@@ -134,10 +190,10 @@
   <!-- RESULTS -->
   <div class="results-header">
     <h2>Approved providers near Annapolis, MD</h2>
-    <span class="count" id="result-count"></span>
+    <span class="count" id="result-count">5 of 5 spots filled</span>
   </div>
 
-  <div id="provider-list"></div>
+  <div id="provider-list"><div class="provider-card"><div class="rank">1</div><div class="card-info"><h3>Barstow &amp; Sons Heating and Cooling<span class="badge">Approved provider</span></h3><div class="meta">HVAC</div><div class="desc">Emergency hvac services including urgent repairs, diagnostics, and 24/7 response.</div><div class="contact-links"><span>📞 <a href="tel:(410) 544-2606">(410) 544-2606</a></span><span>🌐 <a href="barstowhvac.com" target="_blank" rel="noopener">Website</a></span><span>✉️ <a href="mailto:onlineteam@barstowandsons.com">Email</a></span></div></div><div class="card-actions"><a href="tel:(410) 544-2606" class="btn btn-call">Call Now</a><a href="barstowhvac.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Website</a></div></div><div class="provider-card"><div class="rank">2</div><div class="card-info"><h3>Pro-Tech HVAC Home<span class="badge">Approved provider</span></h3><div class="meta">HVAC</div><div class="desc">Emergency hvac services including urgent repairs, diagnostics, and 24/7 response.</div><div class="contact-links"><span>📞 <a href="tel:(240) 298-6521">(240) 298-6521</a></span><span>🌐 <a href="protechhvachome.com" target="_blank" rel="noopener">Website</a></span><span>✉️ <a href="mailto:office@protechhvachome.com">Email</a></span></div></div><div class="card-actions"><a href="tel:(240) 298-6521" class="btn btn-call">Call Now</a><a href="protechhvachome.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Website</a></div></div><div class="provider-card"><div class="rank">3</div><div class="card-info"><h3>Bethany Air<span class="badge">Approved provider</span></h3><div class="meta">HVAC</div><div class="desc">Emergency hvac services including urgent repairs, diagnostics, and 24/7 response.</div><div class="contact-links"><span>📞 <a href="tel:(410) 431-2312">(410) 431-2312</a></span><span>🌐 <a href="bethanyair.com" target="_blank" rel="noopener">Website</a></span><span>✉️ <a href="mailto:info@bethanyair.com">Email</a></span></div></div><div class="card-actions"><a href="tel:(410) 431-2312" class="btn btn-call">Call Now</a><a href="bethanyair.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Website</a></div></div><div class="provider-card"><div class="rank">4</div><div class="card-info"><h3>Proactive Heating &amp; Air conditioning<span class="badge">Approved provider</span></h3><div class="meta">HVAC</div><div class="desc">Emergency hvac services including urgent repairs, diagnostics, and 24/7 response.</div><div class="contact-links"><span>📞 <a href="tel:(410) 344-2111">(410) 344-2111</a></span><span>🌐 <a href="proactivehvacservice.com" target="_blank" rel="noopener">Website</a></span><span>✉️ <a href="mailto:service@proactivehvacservice.com">Email</a></span></div></div><div class="card-actions"><a href="tel:(410) 344-2111" class="btn btn-call">Call Now</a><a href="proactivehvacservice.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Website</a></div></div><div class="provider-card"><div class="rank">5</div><div class="card-info"><h3>Building and Mechanical Services<span class="badge">Approved provider</span></h3><div class="meta">HVAC</div><div class="desc">Emergency hvac services including urgent repairs, diagnostics, and 24/7 response.</div><div class="contact-links"><span>📞 <a href="tel:(410) 846-5107">(410) 846-5107</a></span><span>🌐 <a href="bamservicepros.com" target="_blank" rel="noopener">Website</a></span></div></div><div class="card-actions"><a href="tel:(410) 846-5107" class="btn btn-call">Call Now</a><a href="bamservicepros.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Website</a></div></div></div>
 
   <!-- ALTERNATE SERVICES -->
   <div class="alt-section">
@@ -163,6 +219,16 @@
       <li>Unusual burning smell or electrical issue</li>
       <li>Carbon monoxide alarm</li>
       <li>Refrigerant leak</li></ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="tips-section" id="faq-section">
+    <h3>Common questions about emergency HVAC in Annapolis</h3>
+    <details class="faq-item"><summary>How do I find an emergency hvac in Annapolis, MD right now?</summary><p>The listings above show up to five approved hvacs serving Annapolis, MD, each with a direct phone number and website. Call or visit their site directly — there&#x27;s no form to fill out and no wait for a callback.</p></details>
+      <details class="faq-item"><summary>Is CallNowService free to use?</summary><p>Yes. Finding and contacting hvacs through CallNowService is free for customers. There are no lead fees, no bidding, and no membership required.</p></details>
+      <details class="faq-item"><summary>Are the hvacs listed here real, verified businesses?</summary><p>Each listing is a specific named business with a verified phone number and website — not a generic call center or lead-routing service. CallNowService allows a maximum of five providers per service per city.</p></details>
+      <details class="faq-item"><summary>What if a listed hvac in Annapolis doesn&#x27;t answer?</summary><p>Try the next listed provider — up to five approved hvacs are shown for Annapolis, MD so you have alternatives if the first business is unavailable.</p></details>
+      <details class="faq-item"><summary>Does CallNowService perform the hvac work itself?</summary><p>No. CallNowService is a directory that connects you directly with independent local hvacs. The businesses listed handle the actual service call.</p></details>
   </div>
 
   <!-- PROVIDER CTA -->

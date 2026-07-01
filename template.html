@@ -32,6 +32,9 @@
   "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}
 }
 </script>
+<script type="application/ld+json">
+__FAQ_SCHEMA__
+</script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -97,6 +100,14 @@
   .tips-section h3{font-size:16px;font-weight:700;margin-bottom:10px}
   .tips-section ul{padding-left:18px;font-size:12px;color:#555;line-height:1.8}
 
+  /* FAQ */
+  .faq-item{border-bottom:1px solid #eee;padding:12px 0}
+  .faq-item summary{font-size:13px;font-weight:600;cursor:pointer;list-style:none}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::before{content:'+ ';color:#888}
+  .faq-item[open] summary::before{content:'– '}
+  .faq-item p{font-size:12px;color:#555;line-height:1.6;margin-top:8px}
+
   /* PROVIDER CTA */
   .provider-cta{text-align:center;padding:32px 0;margin-top:16px;border-top:1px solid #eee}
   .provider-cta h3{font-size:15px;font-weight:700;margin-bottom:4px}
@@ -134,10 +145,10 @@
   <!-- RESULTS -->
   <div class="results-header">
     <h2>Approved providers near __CITY_NAME__, __STATE_ABBR__</h2>
-    <span class="count" id="result-count"></span>
+    <span class="count" id="result-count">__RESULT_COUNT_STATIC__</span>
   </div>
 
-  <div id="provider-list"></div>
+  <div id="provider-list">__PROVIDER_LIST_STATIC__</div>
 
   <!-- ALTERNATE SERVICES -->
   <div class="alt-section">
@@ -151,6 +162,12 @@
   <div class="tips-section">
     <h3>When to call an emergency __SERVICE_NAME__ provider</h3>
     <ul>__EMERGENCY_TIPS__</ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="tips-section" id="faq-section">
+    <h3>Common questions about emergency __SERVICE_NAME__ in __CITY_NAME__</h3>
+    __FAQ_HTML__
   </div>
 
   <!-- PROVIDER CTA -->

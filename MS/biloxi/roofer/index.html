@@ -32,6 +32,54 @@
   "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I find an emergency roofer in Biloxi, MS right now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The listings above show up to five approved roofers serving Biloxi, MS, each with a direct phone number and website. Call or visit their site directly \u2014 there's no form to fill out and no wait for a callback."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is CallNowService free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Finding and contacting roofers through CallNowService is free for customers. There are no lead fees, no bidding, and no membership required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the roofers listed here real, verified businesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each listing is a specific named business with a verified phone number and website \u2014 not a generic call center or lead-routing service. CallNowService allows a maximum of five providers per service per city."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if a listed roofer in Biloxi doesn't answer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Try the next listed provider \u2014 up to five approved roofers are shown for Biloxi, MS so you have alternatives if the first business is unavailable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does CallNowService perform the roofer work itself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. CallNowService is a directory that connects you directly with independent local roofers. The businesses listed handle the actual service call."
+      }
+    }
+  ]
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -97,6 +145,14 @@
   .tips-section h3{font-size:16px;font-weight:700;margin-bottom:10px}
   .tips-section ul{padding-left:18px;font-size:12px;color:#555;line-height:1.8}
 
+  /* FAQ */
+  .faq-item{border-bottom:1px solid #eee;padding:12px 0}
+  .faq-item summary{font-size:13px;font-weight:600;cursor:pointer;list-style:none}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::before{content:'+ ';color:#888}
+  .faq-item[open] summary::before{content:'– '}
+  .faq-item p{font-size:12px;color:#555;line-height:1.6;margin-top:8px}
+
   /* PROVIDER CTA */
   .provider-cta{text-align:center;padding:32px 0;margin-top:16px;border-top:1px solid #eee}
   .provider-cta h3{font-size:15px;font-weight:700;margin-bottom:4px}
@@ -134,10 +190,10 @@
   <!-- RESULTS -->
   <div class="results-header">
     <h2>Approved providers near Biloxi, MS</h2>
-    <span class="count" id="result-count"></span>
+    <span class="count" id="result-count">5 of 5 spots filled</span>
   </div>
 
-  <div id="provider-list"></div>
+  <div id="provider-list"><div class="provider-card"><div class="rank">1</div><div class="card-info"><h3>ENSURED Roofing<span class="badge">Approved provider</span></h3><div class="meta">Roofer</div><div class="desc">Emergency roofer services including urgent repairs, diagnostics, and 24/7 response.</div><div class="contact-links"><span>📞 <a href="tel:(228) 797-7667">(228) 797-7667</a></span><span>🌐 <a href="ensuredroof.com" target="_blank" rel="noopener">Website</a></span><span>✉️ <a href="mailto:info@ensured.claims">Email</a></span></div></div><div class="card-actions"><a href="tel:(228) 797-7667" class="btn btn-call">Call Now</a><a href="ensuredroof.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Website</a></div></div><div class="provider-card"><div class="rank">2</div><div class="card-info"><h3>Expert Roofing<span class="badge">Approved provider</span></h3><div class="meta">Roofer</div><div class="desc">Emergency roofer services including urgent repairs, diagnostics, and 24/7 response.</div><div class="contact-links"><span>📞 <a href="tel:(228) 331-1215">(228) 331-1215</a></span><span>🌐 <a href="expertroofing.us" target="_blank" rel="noopener">Website</a></span><span>✉️ <a href="mailto:expertroofing97@gmail.com">Email</a></span></div></div><div class="card-actions"><a href="tel:(228) 331-1215" class="btn btn-call">Call Now</a><a href="expertroofing.us" target="_blank" rel="noopener" class="btn btn-secondary">Visit Website</a></div></div><div class="provider-card"><div class="rank">3</div><div class="card-info"><h3>Durden Roof Care<span class="badge">Approved provider</span></h3><div class="meta">Roofer</div><div class="desc">Emergency roofer services including urgent repairs, diagnostics, and 24/7 response.</div><div class="contact-links"><span>📞 <a href="tel:(228) 229-4704">(228) 229-4704</a></span><span>🌐 <a href="durdenroofcare.com" target="_blank" rel="noopener">Website</a></span><span>✉️ <a href="mailto:durdenroofcare@gmail.com">Email</a></span></div></div><div class="card-actions"><a href="tel:(228) 229-4704" class="btn btn-call">Call Now</a><a href="durdenroofcare.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Website</a></div></div><div class="provider-card"><div class="rank">4</div><div class="card-info"><h3>Castle Roofing<span class="badge">Approved provider</span></h3><div class="meta">Roofer</div><div class="desc">Emergency roofer services including urgent repairs, diagnostics, and 24/7 response.</div><div class="contact-links"><span>📞 <a href="tel:(228) 253-7680">(228) 253-7680</a></span><span>🌐 <a href="castleroofingms.com" target="_blank" rel="noopener">Website</a></span><span>✉️ <a href="mailto:%20office@castleroofingms.com">Email</a></span></div></div><div class="card-actions"><a href="tel:(228) 253-7680" class="btn btn-call">Call Now</a><a href="castleroofingms.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Website</a></div></div><div class="provider-card"><div class="rank">5</div><div class="card-info"><h3>Marina&#x27;s Port Roofing Biloxi<span class="badge">Approved provider</span></h3><div class="meta">Roofer</div><div class="desc">Emergency roofer services including urgent repairs, diagnostics, and 24/7 response.</div><div class="contact-links"><span>📞 <a href="tel:(228) 432-4875">(228) 432-4875</a></span><span>🌐 <a href="marinaroofing.com" target="_blank" rel="noopener">Website</a></span><span>✉️ <a href="mailto:administrator@marinaroofing.com">Email</a></span></div></div><div class="card-actions"><a href="tel:(228) 432-4875" class="btn btn-call">Call Now</a><a href="marinaroofing.com" target="_blank" rel="noopener" class="btn btn-secondary">Visit Website</a></div></div></div>
 
   <!-- ALTERNATE SERVICES -->
   <div class="alt-section">
@@ -163,6 +219,16 @@
       <li>Missing shingles exposing underlayment</li>
       <li>Water coming through ceiling</li>
       <li>Ice dam causing interior damage</li></ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="tips-section" id="faq-section">
+    <h3>Common questions about emergency Roofer in Biloxi</h3>
+    <details class="faq-item"><summary>How do I find an emergency roofer in Biloxi, MS right now?</summary><p>The listings above show up to five approved roofers serving Biloxi, MS, each with a direct phone number and website. Call or visit their site directly — there&#x27;s no form to fill out and no wait for a callback.</p></details>
+      <details class="faq-item"><summary>Is CallNowService free to use?</summary><p>Yes. Finding and contacting roofers through CallNowService is free for customers. There are no lead fees, no bidding, and no membership required.</p></details>
+      <details class="faq-item"><summary>Are the roofers listed here real, verified businesses?</summary><p>Each listing is a specific named business with a verified phone number and website — not a generic call center or lead-routing service. CallNowService allows a maximum of five providers per service per city.</p></details>
+      <details class="faq-item"><summary>What if a listed roofer in Biloxi doesn&#x27;t answer?</summary><p>Try the next listed provider — up to five approved roofers are shown for Biloxi, MS so you have alternatives if the first business is unavailable.</p></details>
+      <details class="faq-item"><summary>Does CallNowService perform the roofer work itself?</summary><p>No. CallNowService is a directory that connects you directly with independent local roofers. The businesses listed handle the actual service call.</p></details>
   </div>
 
   <!-- PROVIDER CTA -->

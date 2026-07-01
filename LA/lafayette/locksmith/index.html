@@ -32,6 +32,54 @@
   "openingHoursSpecification": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "00:00", "closes": "23:59"}
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I find an emergency locksmith in Lafayette, LA right now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The listings above show up to five approved locksmiths serving Lafayette, LA, each with a direct phone number and website. Call or visit their site directly \u2014 there's no form to fill out and no wait for a callback."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is CallNowService free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Finding and contacting locksmiths through CallNowService is free for customers. There are no lead fees, no bidding, and no membership required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the locksmiths listed here real, verified businesses?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each listing is a specific named business with a verified phone number and website \u2014 not a generic call center or lead-routing service. CallNowService allows a maximum of five providers per service per city."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if a listed locksmith in Lafayette doesn't answer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Try the next listed provider \u2014 up to five approved locksmiths are shown for Lafayette, LA so you have alternatives if the first business is unavailable."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does CallNowService perform the locksmith work itself?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. CallNowService is a directory that connects you directly with independent local locksmiths. The businesses listed handle the actual service call."
+      }
+    }
+  ]
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -96,6 +144,14 @@
   .tips-section{padding:24px 0;margin-top:16px;border-top:1px solid #eee}
   .tips-section h3{font-size:16px;font-weight:700;margin-bottom:10px}
   .tips-section ul{padding-left:18px;font-size:12px;color:#555;line-height:1.8}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid #eee;padding:12px 0}
+  .faq-item summary{font-size:13px;font-weight:600;cursor:pointer;list-style:none}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary::before{content:'+ ';color:#888}
+  .faq-item[open] summary::before{content:'– '}
+  .faq-item p{font-size:12px;color:#555;line-height:1.6;margin-top:8px}
 
   /* PROVIDER CTA */
   .provider-cta{text-align:center;padding:32px 0;margin-top:16px;border-top:1px solid #eee}
@@ -163,6 +219,16 @@
       <li>Malfunctioning electronic lock</li>
       <li>Lost all copies of a key</li>
       <li>Safe will not open</li></ul>
+  </div>
+
+  <!-- FAQ -->
+  <div class="tips-section" id="faq-section">
+    <h3>Common questions about emergency Locksmith in Lafayette</h3>
+    <details class="faq-item"><summary>How do I find an emergency locksmith in Lafayette, LA right now?</summary><p>The listings above show up to five approved locksmiths serving Lafayette, LA, each with a direct phone number and website. Call or visit their site directly — there&#x27;s no form to fill out and no wait for a callback.</p></details>
+      <details class="faq-item"><summary>Is CallNowService free to use?</summary><p>Yes. Finding and contacting locksmiths through CallNowService is free for customers. There are no lead fees, no bidding, and no membership required.</p></details>
+      <details class="faq-item"><summary>Are the locksmiths listed here real, verified businesses?</summary><p>Each listing is a specific named business with a verified phone number and website — not a generic call center or lead-routing service. CallNowService allows a maximum of five providers per service per city.</p></details>
+      <details class="faq-item"><summary>What if a listed locksmith in Lafayette doesn&#x27;t answer?</summary><p>Try the next listed provider — up to five approved locksmiths are shown for Lafayette, LA so you have alternatives if the first business is unavailable.</p></details>
+      <details class="faq-item"><summary>Does CallNowService perform the locksmith work itself?</summary><p>No. CallNowService is a directory that connects you directly with independent local locksmiths. The businesses listed handle the actual service call.</p></details>
   </div>
 
   <!-- PROVIDER CTA -->
