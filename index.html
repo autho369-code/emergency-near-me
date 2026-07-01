@@ -196,7 +196,7 @@ function findHelp(){
   document.getElementById('loc-status').innerHTML='Searching...';
   fetch('/api/geocode?q='+encodeURIComponent(zip)).then(r=>r.json()).then(d=>{
     if(!d.state||!d.city){document.getElementById('loc-status').innerHTML='<strong>Location not found.</strong> Try a different ZIP.';return}
-    const st=d.state.toLowerCase(),ck=d.city_key||d.city.toLowerCase().replace(/\\s+/g,'-');
+    const st=d.state,ck=d.city_key||d.city.toLowerCase().replace(/\\s+/g,'-');
     window.location.href='/'+st+'/'+ck+'/plumber/';
   }).catch(()=>{document.getElementById('loc-status').innerHTML='<strong>Error finding location.</strong> Try again.'});
 }
@@ -205,7 +205,7 @@ function useLocation(){
   navigator.geolocation.getCurrentPosition(p=>{
     fetch('/api/reverse-geocode?lat='+p.coords.latitude+'&lon='+p.coords.longitude).then(r=>r.json()).then(d=>{
       if(!d.state||!d.city){document.getElementById('loc-status').innerHTML='<strong>Could not detect location.</strong>';return}
-      const st=d.state.toLowerCase(),ck=d.city_key||d.city.toLowerCase().replace(/\\s+/g,'-');
+      const st=d.state,ck=d.city_key||d.city.toLowerCase().replace(/\\s+/g,'-');
       window.location.href='/'+st+'/'+ck+'/plumber/';
     }).catch(()=>{document.getElementById('loc-status').innerHTML='<strong>Error. Try entering a ZIP manually.</strong>'});
   },()=>{document.getElementById('loc-status').innerHTML='<strong>Location access denied.</strong> Enter ZIP instead.'});
