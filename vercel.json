@@ -57,6 +57,16 @@
     "api/signup.js": {
       "memory": 128,
       "maxDuration": 10
+    },
+    "api/geocode.js": {
+      "memory": 128,
+      "maxDuration": 10,
+      "includeFiles": "data.json"
+    },
+    "api/reverse-geocode.js": {
+      "memory": 128,
+      "maxDuration": 10,
+      "includeFiles": "data.json"
     }
   }
 }
