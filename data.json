@@ -4173,34 +4173,6 @@
           },
           "lat": 39.16,
           "lng": -75.53
-        },
-        "wilmington": {
-          "name": "Wilmington",
-          "state": "DE",
-          "areaCode": "302",
-          "neighborhoods": [
-            "Downtown",
-            "Trolley Square",
-            "Riverfront",
-            "Highlands",
-            "Little Italy",
-            "Brandywine Hills",
-            "Baynard Village",
-            "Forty Acres"
-          ],
-          "phones": {
-            "plumber": "+1302XXXX0101",
-            "electrician": "+1302XXXX0202",
-            "locksmith": "+1302XXXX0303",
-            "hvac": "+1302XXXX0404",
-            "roofer": "+1302XXXX0505",
-            "mechanic": "+1302XXXX0606",
-            "appliance": "+1302XXXX0707",
-            "pest-control": "+1302XXXX0808",
-            "water-damage": "+1302XXXX0909"
-          },
-          "lat": 39.74,
-          "lng": -75.55
         }
       }
     },
