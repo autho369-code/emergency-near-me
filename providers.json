@@ -3,14 +3,14 @@
     "total_slots": 4540,
     "vendors_per_slot": 5,
     "total_vendor_slots": 22680,
-    "filled": 18357,
+    "filled": 18369,
     "searching": 4368,
     "found": 0,
     "contacted": 0,
     "active": 0,
     "rejected": 0,
-    "updated": "2026-07-02",
-    "trial_providers": 18338,
+    "updated": "2026-07-06",
+    "trial_providers": 18350,
     "emailed_providers": [
       "Workorders@rbpestsolutions.com",
       "chicagoappliancerepairservice@gmail.com",
@@ -46252,7 +46252,7 @@
       },
       {
         "id": 2,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "Baethke Plumbing",
         "provider_phone": "(312) 548-8712",
         "provider_email": "info@baethkeplumbing.com",
@@ -46270,7 +46270,7 @@
       },
       {
         "id": 3,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "Goode Plumbing",
         "provider_phone": "(773) 930-3451",
         "provider_email": "info@goodeplumbing.com",
@@ -46288,7 +46288,7 @@
       },
       {
         "id": 4,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "Call Plumber Chicago",
         "provider_phone": "(773) 219-6071",
         "provider_email": "office@myrescueplumbing.com",
@@ -46325,7 +46325,7 @@
       },
       {
         "id": 1,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "All Ed Electric",
         "provider_phone": "(773) 842-5536",
         "provider_email": "info@alledelectricil.com",
@@ -46343,7 +46343,7 @@
       },
       {
         "id": 2,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "Wiktorowski Electrical",
         "provider_phone": "(847) 272-8011",
         "provider_email": "office@wiktorowskielectric.com",
@@ -46361,7 +46361,7 @@
       },
       {
         "id": 3,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "STS Electric",
         "provider_phone": "(773) 721-1111",
         "provider_email": "info@stselectric.com",
@@ -46398,7 +46398,7 @@
     "locksmith": [
       {
         "id": 0,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "Goldy Locks Inc",
         "provider_phone": "(708) 633-4750",
         "provider_email": "service@goldylocksinc.com",
@@ -46416,7 +46416,7 @@
       },
       {
         "id": 1,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "Chicago Locksmith Pro",
         "provider_phone": "(773) 234-1198",
         "provider_email": "info@chicagolocksmithpro.com",
@@ -46435,7 +46435,7 @@
       },
       {
         "id": 2,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "J&R Lock & Safe",
         "provider_phone": "+13128782715",
         "provider_email": "info@jrlock.com",
@@ -46502,7 +46502,7 @@
       },
       {
         "id": 1,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "Chicago Heating & Cooling",
         "provider_phone": "(312) 852-5152",
         "provider_email": "info@chicagoheatingandcooling.com",
@@ -46520,7 +46520,7 @@
       },
       {
         "id": 2,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "Jaspers Heating & Cooling",
         "provider_phone": "(773) 354-2541",
         "provider_email": "mjasper241@yahoo.com",
@@ -46570,7 +46570,7 @@
     "roofer": [
       {
         "id": 0,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "SMART Roofing Inc",
         "provider_phone": "(773) 992-5100",
         "provider_email": "contactus@smartroofers.com",
@@ -46655,7 +46655,7 @@
     "mechanic": [
       {
         "id": 0,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "Road Rescue Chicago",
         "provider_phone": "(773) 766-6303",
         "provider_email": "info@roadrescuechicago.com",
@@ -46740,7 +46740,7 @@
     "appliance": [
       {
         "id": 0,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "Chicago Appliance Service Co",
         "provider_phone": "(773) 631-5151",
         "provider_email": "chicagoappliancerepairservice@gmail.com",
@@ -46759,7 +46759,7 @@
       },
       {
         "id": 1,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "Star Appliance Repair",
         "provider_phone": "(224) 724-1082",
         "provider_email": "starappliancerepairteam@gmail.com",
@@ -46828,7 +46828,7 @@
     "pest-control": [
       {
         "id": 0,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "Eco Pest Solutions",
         "provider_phone": "800-769-7988",
         "provider_email": "support@epschicago.com",
@@ -46846,7 +46846,7 @@
       },
       {
         "id": 1,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "R.B. Pest Solutions",
         "provider_phone": "(312) 217-9605",
         "provider_email": "Workorders@rbpestsolutions.com",
@@ -46913,7 +46913,7 @@
     "water-damage": [
       {
         "id": 0,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "Magdan Construction",
         "provider_phone": "(708) 395-5356",
         "provider_email": "office@magdanconstruction.com",
@@ -46931,7 +46931,7 @@
       },
       {
         "id": 1,
-        "status": "onboarding",
+        "status": "stalled",
         "provider_name": "HydroForce Restoration",
         "provider_phone": "(630) 835-0862",
         "provider_email": "info@hydroforcecleaningsystems.com",
@@ -61394,17 +61394,18 @@
       },
       {
         "id": 3,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "+1207XXXX0808",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "Green Shield Pest Solutions",
+        "provider_phone": "(207) 815-1003",
+        "provider_email": "service@gshieldpest.com ",
+        "provider_website": "gshieldpest.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
-        "notes": ""
+        "notes": "",
+        "trial_expires": "2026-07-09T05:14"
       },
       {
         "id": 4,
@@ -68186,17 +68187,18 @@
       },
       {
         "id": 3,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "+1612XXXX0707",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "My Appliance Source",
+        "provider_phone": "(952) 460-3889",
+        "provider_email": "jcarlson@myappliancesource.com",
+        "provider_website": "myappliancesource.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
-        "notes": ""
+        "notes": "",
+        "trial_expires": "2026-07-09T05:14"
       },
       {
         "id": 4,
@@ -156973,17 +156975,18 @@
       },
       {
         "id": 3,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "+1712XXXX0808",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "Advanced Pest Management",
+        "provider_phone": "(402) 612-0250",
+        "provider_email": "impallari@gmail.com",
+        "provider_website": "advancedpestmgmt.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
-        "notes": ""
+        "notes": "",
+        "trial_expires": "2026-07-09T05:14"
       },
       {
         "id": 4,
@@ -176307,17 +176310,18 @@
       },
       {
         "id": 4,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "+1952XXXX0808",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "Markley's Pest Elimination Services Inc",
+        "provider_phone": "(309) 263-0341",
+        "provider_email": "info@markleyspestservices.com",
+        "provider_website": "markleyspestservices.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
-        "notes": ""
+        "notes": "",
+        "trial_expires": "2026-07-09T05:14"
       }
     ],
     "water-damage": [
@@ -186211,17 +186215,18 @@
       },
       {
         "id": 1,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "+1609XXXX0303",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "Jersey Architectural Door & Supply Co.",
+        "provider_phone": "(609) 345-0174",
+        "provider_email": "dhughes@jerseydoor.com",
+        "provider_website": "jerseyarchitectural.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
-        "notes": ""
+        "notes": "",
+        "trial_expires": "2026-07-09T05:14"
       },
       {
         "id": 2,
@@ -186630,17 +186635,18 @@
       },
       {
         "id": 4,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "+1609XXXX0808",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "Viking Pest Control",
+        "provider_phone": "(800) 618-2847",
+        "provider_email": "freequote@vikingpest.com",
+        "provider_website": "vikingpest.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
-        "notes": ""
+        "notes": "",
+        "trial_expires": "2026-07-09T05:14"
       }
     ],
     "water-damage": [
@@ -276312,17 +276318,18 @@
       },
       {
         "id": 4,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "+1207XXXX0808",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "Green Shield Pest Solutions",
+        "provider_phone": "(207) 815-1003",
+        "provider_email": "service@gshieldpest.com ",
+        "provider_website": "gshieldpest.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
-        "notes": ""
+        "notes": "",
+        "trial_expires": "2026-07-09T05:14"
       }
     ],
     "water-damage": [
@@ -289929,17 +289936,18 @@
       },
       {
         "id": 2,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "+1219XXXX0707",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "Novak and Parker Home Appliance",
+        "provider_phone": "(708) 349-5200",
+        "provider_email": "service@novakandparker.com",
+        "provider_website": "novakandparker.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
-        "notes": ""
+        "notes": "",
+        "trial_expires": "2026-07-09T05:14"
       },
       {
         "id": 3,
@@ -289958,17 +289966,18 @@
       },
       {
         "id": 4,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "+1219XXXX0707",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "Blink Appliance & Kitchens",
+        "provider_phone": "(708) 889-1860",
+        "provider_email": "nick@blinkappliance.com",
+        "provider_website": "blinkappliance.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
-        "notes": ""
+        "notes": "",
+        "trial_expires": "2026-07-09T05:14"
       }
     ],
     "pest-control": [
@@ -319754,31 +319763,33 @@
       },
       {
         "id": 3,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "+1740XXXX0101",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "Maccabi Plumbing & Heating",
+        "provider_phone": "(908) 376-9159",
+        "provider_email": "office@maccabiplumbing.com",
+        "provider_website": "maccabiplumbing.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
-        "notes": ""
+        "notes": "",
+        "trial_expires": "2026-07-09T05:14"
       },
       {
         "id": 4,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "+1740XXXX0101",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "Continental Plumbers LLC",
+        "provider_phone": "(973) 900-0430",
+        "provider_email": "continentalplumbers@gmail.com",
+        "provider_website": "continentalplumbers.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
-        "notes": ""
+        "notes": "",
+        "trial_expires": "2026-07-09T05:14"
       }
     ],
     "electrician": [
@@ -319844,17 +319855,18 @@
       },
       {
         "id": 4,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "+1740XXXX0202",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "D & M Master Electric L.L.C.",
+        "provider_phone": "(973) 604-5628",
+        "provider_email": "%20service@dmmasterelectric.com",
+        "provider_website": "dmmasterelectric.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
-        "notes": ""
+        "notes": "",
+        "trial_expires": "2026-07-09T05:14"
       }
     ],
     "locksmith": [
