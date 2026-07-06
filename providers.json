@@ -3,14 +3,14 @@
     "total_slots": 4540,
     "vendors_per_slot": 5,
     "total_vendor_slots": 22680,
-    "filled": 18369,
+    "filled": 18370,
     "searching": 4368,
     "found": 0,
     "contacted": 0,
     "active": 0,
     "rejected": 0,
     "updated": "2026-07-06",
-    "trial_providers": 18350,
+    "trial_providers": 18351,
     "emailed_providers": [
       "Workorders@rbpestsolutions.com",
       "chicagoappliancerepairservice@gmail.com",
@@ -61409,17 +61409,18 @@
       },
       {
         "id": 4,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "+1207XXXX0808",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "Green Shield Pest Solutions",
+        "provider_phone": "(207) 815-1003",
+        "provider_email": "service@gshieldpest.com ",
+        "provider_website": "gshieldpest.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
-        "notes": ""
+        "notes": "",
+        "trial_expires": "2026-07-09T06:02"
       }
     ],
     "water-damage": [
