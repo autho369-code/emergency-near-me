@@ -3,14 +3,14 @@
     "total_slots": 4540,
     "vendors_per_slot": 5,
     "total_vendor_slots": 22680,
-    "filled": 18370,
+    "filled": 18371,
     "searching": 4368,
     "found": 0,
     "contacted": 0,
     "active": 0,
     "rejected": 0,
-    "updated": "2026-07-06",
-    "trial_providers": 18351,
+    "updated": "2026-07-07",
+    "trial_providers": 18352,
     "emailed_providers": [
       "Workorders@rbpestsolutions.com",
       "chicagoappliancerepairservice@gmail.com",
@@ -48569,18 +48569,18 @@
       },
       {
         "id": 4,
-        "status": "searching",
-        "provider_name": "",
-        "provider_phone": "",
-        "provider_email": null,
-        "provider_website": null,
+        "status": "trial_created",
+        "provider_name": "AArdvark Electric Service, Inc.",
+        "provider_phone": "(630) 789-1949",
+        "provider_email": "aardvarkelectricservice@gmail.com",
+        "provider_website": "aardvarkelectricservice.com",
         "leads_month": 0,
         "leads_total": 0,
         "rate": 97,
         "contacted_at": null,
         "active_since": null,
         "notes": "",
-        "trial_expires": null
+        "trial_expires": "2026-07-10T13:47"
       }
     ],
     "locksmith": [
